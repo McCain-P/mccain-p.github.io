@@ -12,6 +12,7 @@
 </form>
 <audio id="audioTag" src="https://www.freesound.org/data/previews/33/33245_65091-lq.mp3" loop=true autoplay=false></audio>
 <script>
+alert("test");
 var timeClock = document.getElementById("timeClock")
 timeClock.innerHTML = "test"
 var time = "".concat(
@@ -29,7 +30,6 @@ While (true) {
 		":",
 		new Date().getSeconds().toString()
 		);
-	alert(time);
 	if (time.slice(0,5) == activationTime) then {
 	document.getElementById("audioTag").play();
 	}
