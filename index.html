@@ -1,7 +1,7 @@
 <html>
 <p>Assure client-side time is synced</p>
 <p><br><br><br>Current Time:<br></p>
-<p id="timeClock">01:01:01</p>
+<p id="timeClock">00:00:00</p>
 <p><br><br>Set Activation-Time:<br>(UTC, Military Time)<br></p>
 <form onsubmit='var activationTime = "".concat(document.getElementbyId("hours").value,":",document.getElementById("minutes").value);
 '>
@@ -21,13 +21,13 @@ new Date().getSeconds().toString()
 );
 While (true) {
 	time = "".concat(
-new Date().getHours().toString(),
-":",
-new Date().getMinutes().toString(),
-":",
-new Date().getSeconds().toString()
-);
-	If slicedHoursAndMinutes == chosenHoursAndMinutes then {
+		new Date().getHours().toString(),
+		":",
+		new Date().getMinutes().toString(),
+		":",
+		new Date().getSeconds().toString()
+		);
+	if (slicedHoursAndMinutes == activationTime) then {
 	document.getElementById("audioTag").play();
 	}
 	document.getElementById("timeClock").value = time
