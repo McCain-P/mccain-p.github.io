@@ -1,3 +1,36 @@
 <html>
-<p>Test</p>
+<p>Assure client-side time is synced</p>
+<p><br><br><br>Current Time:<br></p>
+<p id="timeClock">00:00:00</p>
+<p><br><br>Set Activation-Time:<br>(UTC, Military Time)<br></p>
+<form onsubmit='var activationTime = "".concat(document.getElementbyId("hours").value,":",document.getElementById("minutes").value);
+'>
+<input id="hours" type="text">
+:
+<input id="minutes" type="text">
+<input type=submit value="Enter">
+</form>
+<audio id="audioTag" src="https://www.freesound.org/data/previews/33/33245_65091-lq.mp3" loop=true autoplay=false></audio>
+<script>
+var time = "".concat(
+new Date().getHours().toString(),
+":",
+new Date().getMinutes().toString(),
+":",
+new Date().getSeconds().toString()
+);
+While (true) {
+	time = "".concat(
+new Date().getHours().toString(),
+":",
+new Date().getMinutes().toString(),
+":",
+new Date().getSeconds().toString()
+);
+	If slicedHoursAndMinutes == chosenHoursAndMinutes then {
+	document.getElementById("audioTag").play();
+	}
+	document.getElementById("timeClock").value = time
+}
+</script>
 </html>
