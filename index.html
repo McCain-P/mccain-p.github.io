@@ -27,7 +27,7 @@ While (true) {
 		":",
 		new Date().getSeconds().toString()
 		);
-	if (slicedHoursAndMinutes == activationTime) then {
+	if (time.slice(0,5) == activationTime) then {
 	document.getElementById("audioTag").play();
 	}
 	document.getElementById("timeClock").value = time
