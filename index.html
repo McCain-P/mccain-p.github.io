@@ -3,11 +3,11 @@
 <p><br><br><br>Current Time:<br></p>
 <div id="timeClock">00:00:00</div>
 <p><br><br>Set Activation-Time:<br>(UTC, Military Time)<br></p>
-<form name="timeForm" onsubmit='var activationTime = "".concat(document.getElementbyId("hours").value,":",document.getElementById("minutes").value);
+<form name="timeForm" onsubmit='var activationTime = "".concat(document.timeForm.hours.value,":",document.timeForm.minutes.value);
 '>
-<input id="hours" type="text">
+<input name="hours" type="text">
 :
-<input id="minutes" type="text">
+<input name="minutes" type="text">
 <input type=submit value="Enter">
 </form>
 <audio id="audioTag" src="https://www.freesound.org/data/previews/33/33245_65091-lq.mp3" loop=true autoplay=false></audio>
