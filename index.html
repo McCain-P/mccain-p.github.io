@@ -1,5 +1,5 @@
 <html>
-<p>Assure client-side time is synced</p>
+<p>Assure client-side time is syncedX</p>
 <p><br><br><br>Current Time:<br></p>
 <div id="timeClock">00:00:00</div>
 <p><br><br>Set Activation-Time:<br>(UTC, Military Time)<br></p>
@@ -13,8 +13,7 @@
 <audio id="audioTag" src="https://www.freesound.org/data/previews/33/33245_65091-lq.mp3" loop=true autoplay=false></audio>
 <script>
 console.log("logged");
-var timeClock = document.getElementById("timeClock")
-timeClock.innerHTML = "test"
+var timeClock = document.getElementById("timeClock").innerHTML = "woo!"
 var time = "".concat(
 new Date().getHours().toString(),
 ":",
@@ -22,6 +21,7 @@ new Date().getMinutes().toString(),
 ":",
 new Date().getSeconds().toString()
 );
+var activationTime = null
 while (true) {
 	time = "".concat(
 		new Date().getHours().toString(),
