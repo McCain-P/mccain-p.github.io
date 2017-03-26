@@ -1,5 +1,5 @@
 <html>
-<p>Assure client-side time is synced</p>
+<p>Assure client-side time is syncedX</p>
 <p><br><br><br>Current Time:<br></p>
 <div id="timeClock">00:00:00</div>
 <p><br><br>Set Activation-Time:<br>(UTC, Military Time)<br></p>
@@ -36,12 +36,12 @@ function loopFunc() {
 	":",
 	new Date().getMinutes().toString()
 	);
-	if (activated = 0) {
+	if (activated == 0) {
 		if (hMTime == activationTime) {
 			alert("if statement!");
 			//document.getElementById("audioTag").play();
 			activated = 1
-		}
+		};
 	};
 	document.getElementById("timeClock").innerHTML = time
 };
