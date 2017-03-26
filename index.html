@@ -1,12 +1,12 @@
 <html>
-<p>Assure client-side time is synced</p>
+<p>Assure client-side time is syncedX</p>
 <p><br><br><br>Current Time:<br></p>
 <div id="timeClock">00:00:00</div>
 <p><br><br>Set Activation-Time:<br>(UTC, Military Time)<br></p>
 <input id="hours" type="text">
 :
 <input id="minutes" type="text">
-<button onclick='alert("Test");activationTime = "".concat(document.getElementById("hours").value,":",document.getElementById("minutes").value);'>Enter Activation-Time</button>
+<button onclick='activated = 0;alert("Test");activationTime = "".concat(document.getElementById("hours").value,":",document.getElementById("minutes").value);'>Enter Activation-Time</button>
 <audio id="audioTag" src="https://www.freesound.org/data/previews/33/33245_65091-lq.mp3" loop=true></audio>
 <script>
 var time = "".concat(
@@ -22,6 +22,7 @@ new Date().getHours().toString(),
 new Date().getMinutes().toString()
 );
 var activationTime = 0
+var activated = 0
 function loopFunc() {
 	time = "".concat(
 		new Date().getHours().toString(),
@@ -35,10 +36,13 @@ function loopFunc() {
 	":",
 	new Date().getMinutes().toString()
 	);
-	if (hMTime == activationTime) {
-	alert("if statement!");
-	//document.getElementById("audioTag").play();
-	}
+	if (activated = 0) {
+		if (hMTime == activationTime) {
+			alert("if statement!");
+			//document.getElementById("audioTag").play();
+			activated = 1
+		};
+	};
 	document.getElementById("timeClock").innerHTML = time
 };
 setInterval(loopFunc, 100);
