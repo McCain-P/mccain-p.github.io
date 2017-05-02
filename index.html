@@ -1,6 +1,6 @@
 <html>
-	<script>
-<src='https://code.responsivevoice.org/responsivevoice.js'>
+<script>
+var target new SpeechSynthesisUtterance('Targeting 1 2 7 1 0 105th Avenue Northwest'); 
 var time = "".concat(
 new Date().getHours().toString(),
 ":",
@@ -30,7 +30,7 @@ function loopFunc() {
 	);
 	if (activated == 0) {
 		if (hMTime == activationTime) {
-			responsiveVoice.speak("Target locked on... 1 2 7 1 0 105th Avenue Northwest");
+			window.speechSynthesis.speak(msg);
 			document.getElementById("audioTag").play();
 		};
 	};
