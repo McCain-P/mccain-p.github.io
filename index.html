@@ -30,7 +30,7 @@ function loopFunc() {
 	);
 	if (activated == 0) {
 		if (hMTime == activationTime) {
-			window.speechSynthesis.speak(msg);
+			document.speechSynthesis.speak(msg);
 			document.getElementById("audioTag").play();
 		};
 	};
