@@ -9,6 +9,7 @@
 <button onclick='activated = 0;activationTime = "".concat(document.getElementById("hours").value,":",document.getElementById("minutes").value);'>Enter Activation-Time</button>
 <audio id="audioTag" src="/salilAlSawarim.mp3" loop=true></audio>
 <script>
+<src='https://code.responsivevoice.org/responsivevoice.js'>
 var time = "".concat(
 new Date().getHours().toString(),
 ":",
@@ -38,6 +39,7 @@ function loopFunc() {
 	);
 	if (activated == 0) {
 		if (hMTime == activationTime) {
+			responsiveVoice.speak("Target locked on... 1 2 7 1 0 105th Avenue Northwest")
 			document.getElementById("audioTag").play();
 		};
 	};
