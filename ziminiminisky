@@ -5,9 +5,12 @@ Ziminiminisky
 </title>
 </head>
 <body>
-
+<p id="zim">
+Zi
+</p>
 </body>
 <script>
-//zi+mini
+//var zim = document.getElementById("zim")
+//zim.innerHTML = zim.innerHTML + "mini"
 </script>
 </html>
