@@ -3,6 +3,12 @@
 <title>
 Ziminiminisky
 </title>
+<style>
+#zim {
+height: 100%;
+width: 100%;
+}
+</style>
 </head>
 <body>
 <p id="zim">
@@ -15,5 +21,8 @@ function zimWrite() {
   zim.innerHTML = zim.innerHTML + "mini"
 }
 setInterval(zimWrite, 10);
+//Erros:
+  //new line created
+  //Stays as a single line, and doesn't fit into the window
 </script>
 </html>
