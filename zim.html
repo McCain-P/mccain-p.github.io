@@ -19,10 +19,10 @@ body {
 </body>
 <script>
 var zim = document.getElementById("zim")
-zim.innerHTML = "Ziminisky"
-var sky = zim.innerHTML.slice(0,-2);
+zim.innerHTML = "XZiminisky"
+var sky = zim.innerHTML.slice(-3,string.length) //0, -3 to cut off the end
 function zimWrite() {
-  zim.innerHTML = zim.innerHTML + "mini"
+  zim.innerHTML = zim.innerHTML - sky + "mini" + sky
 }
 setInterval(zimWrite, 1);
 //Erros:
