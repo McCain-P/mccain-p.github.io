@@ -19,10 +19,14 @@ body {
 </body>
 <script>
 var zim = document.getElementById("zim");
-zim.innerHTML = "Ziminisky";
+zim.innerHTML = "XZiminisky";
 function zimWrite() {
   zim.innerHTML = zim.innerHTML.slice(0,-3) + "minisky";
 };
 setInterval(zimWrite, 1);
+//End function on B+O+I
+document.onkeypress = function(e) {
+  console.log(e.key);
+}
 </script>
 </html>
