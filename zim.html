@@ -16,10 +16,10 @@ body {
   border-style: solid;
   border-width: medium;
   border-color: rgb(0, 0, 0);
-  //position: fixed;
-  //bottom: 100%;
-  //right: 100%;
-  //z-index: 1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
 }
 </style>
 </head>
@@ -33,7 +33,7 @@ Testing.
 </body>
 <script>
 var zim = document.getElementById("zim");
-zim.innerHTML = "Ziminisky";
+zim.innerHTML = "XZiminisky";
 function zimWrite() {
   zim.innerHTML = zim.innerHTML.slice(0,-3) + "minisky";
 };
