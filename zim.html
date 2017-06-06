@@ -18,14 +18,11 @@ body {
 </p>
 </body>
 <script>
-var zim = document.getElementById("zim")
-zim.innerHTML = "Ziminisky"
+var zim = document.getElementById("zim").innerHTML
+zim = "Ziminisky"
 function zimWrite() {
-  zim.innerHTML = zim.innerHTML.slice(0,-3) + "minisky"
+  zim = zim.slice(0,-3) + "minisky"
 }
 setInterval(zimWrite, 1);
-//Erros:
-  //new line created
-  //Stays as a single line, and doesn't fit into the window
 </script>
 </html>
