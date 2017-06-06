@@ -11,16 +11,28 @@ body {
   background-color: rgba(255, 255, 255, 0.25);
   word-wrap: break-word;
 }
+#info {
+  background-color: rgb(255, 255, 255);
+  border-width: medium;
+  border-color: rgb(0, 0, 0);
+  position: fixed;
+  bottom: 100%;
+  right: 100%;
+  z-index: 1;
+}
 </style>
 </head>
 <body>
 <audio src="/schunzelZimstorm.mp3" loop=true autoplay=true></audio>
 <p id="zim">
 </p>
+<p id="info">
+Testing.
+</p>
 </body>
 <script>
 var zim = document.getElementById("zim");
-zim.innerHTML = "XZiminisky";
+zim.innerHTML = "Ziminisky";
 function zimWrite() {
   zim.innerHTML = zim.innerHTML.slice(0,-3) + "minisky";
 };
