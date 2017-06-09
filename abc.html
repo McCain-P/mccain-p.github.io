@@ -94,8 +94,10 @@ div {
 //keypress "P" -> window.print();
   
 document.addEventListener("keypress", function(e) {
-    console.log(e.keyCode);
-  }
+    if (e.keyCode == 112) {
+      window.print(); 
+    };
+  };
 );
 </script>
 <script id="data">
