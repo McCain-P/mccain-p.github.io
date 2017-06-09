@@ -11,6 +11,9 @@ div {
 .l0.obj {
    
 }
+.l0 span {
+  
+}
 .l0.txt {
   color: rgb(255, 0, 0);
 }
@@ -20,6 +23,9 @@ div {
   
 .l1.obj {
    
+}
+.l1 span {
+  
 }
 .l1.txt {
   font-size: 100px;
@@ -31,6 +37,9 @@ div {
 .l2.obj {
    
 }
+.l2 span {
+  
+}
 .l2.txt {
 
 }
@@ -41,15 +50,16 @@ div {
 .l3.obj {
    
 }
+.l3 span {
+  
+}
 .l3.txt {
 
 }
 .l3.img {
     
 }
-.char {
-  font-size: 50px;  
-}
+
 .c0 {
   color: rgb(255,128,128); /* = ((255,0,0)+(255,255,255))/2 */
 }
@@ -95,16 +105,16 @@ div {
 for (i = 0; i <= 26; i++) {
   var div = document.createElement("div");
   var obj = document.createElement("p");
-  obj.innerHTML = "<span class='char c2'>A</span>tticus" //[]
-  obj.className = "obj l0" //class loop
+  obj.innerHTML = "<span class='c2'>A</span>tticus" //[]; slice(); class (c) loop
+  obj.className = "obj l0" //class (l) loop
   div.appendChild(obj);
   var txt = document.createElement("p");
   txt.innerHTML = txt[i];
-  txt.className = "txt l0" //class loop
+  txt.className = "txt l0" //class (l) loop
   div.appendChild(txt);
   var img = document.createElement("img");
   img.src = img[i];
-  img.className = img "l0" //class loop
+  img.className = "img l0" //class (l) loop
   div.appendCild(img);
 }
  
