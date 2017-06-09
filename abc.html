@@ -91,21 +91,22 @@ div {
 //just model actual content
 //(CSS for each element + renderFunc that places the elements into the DOM)
   
-//for (stuff) {
+//26 letters in alphabet
+for (i = 0; i <= 26; i++) {
   var div = document.createElement("div");
   var obj = document.createElement("p");
-  obj.innerHTML = "<span class='char c2'>A</span>tticus"
-  obj.className = "obj l0"
+  obj.innerHTML = "<span class='char c2'>A</span>tticus" //[]
+  obj.className = "obj l0" //class loop
   div.appendChild(obj);
   var txt = document.createElement("p");
-  txt.innerHTML = ""
-  txt.className = "txt l0"
+  txt.innerHTML = "" //[]
+  txt.className = "txt l0" //class loop
   div.appendChild(txt);
   var img = document.createElement("img");
-  img.src = ""
-  img.className = img "l0"
+  img.src = "" //[]
+  img.className = img "l0" //class loop
   div.appendCild(img);
-//}
+}
  
 //Print command (P):
 document.addEventListener("keypress", function(e) {
