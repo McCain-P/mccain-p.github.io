@@ -105,7 +105,7 @@ div {
 for (i = 0; i <= 26; i++) {
   var div = document.createElement("div");
   var obj = document.createElement("p");
-  obj.innerHTML = "<span class='c2'>A</span>tticus" //[]; slice(); class (c) loop
+  obj.innerHTML = "<span class='c2'>A</span>tticus" // []; slice(); class (c) loop
   obj.className = "obj l0" //class (l) loop
   div.appendChild(obj);
   var txt = document.createElement("p");
@@ -116,6 +116,7 @@ for (i = 0; i <= 26; i++) {
   img.src = img[i];
   img.className = "img l0" //class (l) loop
   div.appendChild(img);
+  document.body.appendChild(div);
 }
  
 //Print command (P):
