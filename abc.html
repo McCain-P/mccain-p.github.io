@@ -146,6 +146,7 @@ for (i = 0; i <= obj.length - 1; i++) {
   var divE = document.createElement("div");
   var objE = document.createElement("p");
   objE.innerHTML = "<span class='c" + c.toString() + "'>" + obj[i].slice(0,1) + "</span>" + obj[i].slice(1, obj[i].length);
+  objE.className = "obj l" + l.toString();
   divE.appendChild(objE);
   var txtE = document.createElement("p");
   txtE.innerHTML = txt[i];
