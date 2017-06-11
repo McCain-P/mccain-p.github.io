@@ -140,6 +140,8 @@ var img = [
 //(CSS for each element + renderFunc that places the elements into the DOM)
   
 //26 letters in alphabet
+var l = 0
+var c = 0
 for (i = 0; i <= obj.length - 1; i++) {
   var divE = document.createElement("div");
   var objE = document.createElement("p");
@@ -155,6 +157,14 @@ for (i = 0; i <= obj.length - 1; i++) {
   imgE.className = "img l0" //class (l) loop
   divE.appendChild(imgE);
   document.body.appendChild(divE);
+  l = l + 1
+  if (l > 3) {
+   l = 0 
+  }
+  c = c + 1
+  if (c > 4) {
+   c = 0 
+  }
 }
  
 //Print command (P):
