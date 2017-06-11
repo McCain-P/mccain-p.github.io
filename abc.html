@@ -145,16 +145,15 @@ var c = 0
 for (i = 0; i <= obj.length - 1; i++) {
   var divE = document.createElement("div");
   var objE = document.createElement("p");
-  objE.innerHTML = "<span class='c2'>" + obj[i].slice(0,1) + "</span>" + obj[i].slice(1, obj[i].length); //class (c) loop
-  objE.className = "obj l0" //class (l) loop
+  objE.innerHTML = "<span class='c" + c.toString() + "'>" + obj[i].slice(0,1) + "</span>" + obj[i].slice(1, obj[i].length);
   divE.appendChild(objE);
   var txtE = document.createElement("p");
   txtE.innerHTML = txt[i];
-  txtE.className = "txt l0" //class (l) loop
+  txtE.className = "txt l" + l.toString();
   divE.appendChild(txtE);
   var imgE = document.createElement("img");
   imgE.src = img[i];
-  imgE.className = "img l0" //class (l) loop
+  imgE.className = "img l" + l.toString();
   divE.appendChild(imgE);
   document.body.appendChild(divE);
   l = l + 1
