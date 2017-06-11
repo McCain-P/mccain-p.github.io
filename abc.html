@@ -98,15 +98,39 @@ div {
   </div>
 </body>
 <script id="data">
-obj = [
+var obj = [
   "Atticus",
-  "Boo Radley"
+  "Boo Radley",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z"
 ];
-txt = [
+var txt = [
   "Scout's father",
   "Crazy dude"
 ];
-img = [
+var img = [
   "atticus.png",
   "boo.png"
 ];
@@ -116,21 +140,21 @@ img = [
 //(CSS for each element + renderFunc that places the elements into the DOM)
   
 //26 letters in alphabet
-for (i = 0; i <= 26; i++) {
-  var div = document.createElement("div");
-  var obj = document.createElement("p");
-  obj.innerHTML = "<span class='c2'>A</span>tticus" // []; slice(); class (c) loop
-  obj.className = "obj l0" //class (l) loop
-  div.appendChild(obj);
-  var txt = document.createElement("p");
-  txt.innerHTML = txt[i];
-  txt.className = "txt l0" //class (l) loop
-  div.appendChild(txt);
-  var img = document.createElement("img");
-  img.src = img[i];
-  img.className = "img l0" //class (l) loop
-  div.appendChild(img);
-  document.body.appendChild(div);
+for (i = 0; i <= obj.length - 1; i++) {
+  var divE = document.createElement("div");
+  var objE = document.createElement("p");
+  objE.innerHTML = "<span class='c2'>A</span>tticus" // []; slice(); class (c) loop
+  objE.className = "obj l0" //class (l) loop
+  divE.appendChild(objE);
+  var txtE = document.createElement("p");
+  txtE.innerHTML = txt[i];
+  txtE.className = "txt l0" //class (l) loop
+  divE.appendChild(txtE);
+  var imgE = document.createElement("img");
+  imgE.src = img[i];
+  imgE.className = "img l0" //class (l) loop
+  divE.appendChild(imgE);
+  document.body.appendChild(divE);
 }
  
 //Print command (P):
