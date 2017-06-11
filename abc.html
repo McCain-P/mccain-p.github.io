@@ -101,30 +101,30 @@ div {
 var obj = [
   "Atticus",
   "Boo Radley",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z"
+  "C2",
+  "D2",
+  "E2",
+  "F2",
+  "G2",
+  "H2",
+  "I2",
+  "J2",
+  "K2",
+  "L2",
+  "M2",
+  "N2",
+  "O2",
+  "P2",
+  "Q2",
+  "R2",
+  "S2",
+  "T2",
+  "U2",
+  "V2",
+  "W2",
+  "X2",
+  "Y2",
+  "Z2"
 ];
 var txt = [
   "Scout's father",
@@ -143,7 +143,7 @@ var img = [
 for (i = 0; i <= obj.length - 1; i++) {
   var divE = document.createElement("div");
   var objE = document.createElement("p");
-  objE.innerHTML = "<span class='c2'>A</span>tticus" // []; slice(); class (c) loop
+  objE.innerHTML = "<span class='c2'>" + obj[i].slice(0,1) + "</span>" + obj[i].slice(1, obj[i].length); //class (c) loop
   objE.className = "obj l0" //class (l) loop
   divE.appendChild(objE);
   var txtE = document.createElement("p");
