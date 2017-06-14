@@ -163,7 +163,6 @@ for (i = 0; i <= obj.length - 1; i++) {
   spanE.style.color = color[i][0];
   spanE.className = "l" + l.toString();
   objE.appendChild(spanE);
-  //objE.innerHTML = "<span class='l" + l.toString() + "'" + "style='" + "color:" + color[i][0] + "'" + "'>" + obj[i].slice(0,1) + "</span>" + obj[i].slice(1, obj[i].length);
   objE.innerHTML = objE.innerHTML + obj[i].slice(1, obj[i].length);
   objE.style.color = color[i][1];
   objE.style.font = font[i];
