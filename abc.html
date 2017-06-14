@@ -116,9 +116,20 @@ var img = [
   "atticus.png",
   "boo.png"
 ];
+var color = [
+  rgb(0,255,0);
+  rgb(0,255,0);
+  rgb(0,255,0);
+  rgb(0,255,0);
+];
+var font = [
+  
+];
 </script>
 <script>
-//TO-DO: ALL YOU NEED TO DO IS THE ACTUAL CSS LAYOUTS
+//color
+//font
+//span
   
 //26 letters in alphabet
 var l = 0 //cssLayoutVar
@@ -126,7 +137,7 @@ var c = 0 //cssColorVar
 for (i = 0; i <= obj.length - 1; i++) {
   var divE = document.createElement("div");
   var objE = document.createElement("p");
-  objE.innerHTML = "<span class='c" + c.toString() + "'>" + obj[i].slice(0,1) + "</span>" + obj[i].slice(1, obj[i].length);
+  objE.innerHTML = "<span class='l" + l.toString() + "'" + "style='" + "color:" + color[i].toString() + "'" + "'>" + obj[i].slice(0,1) + </span>" + obj[i].slice(1, obj[i].length);
   objE.className = "obj l" + l.toString();
   divE.appendChild(objE);
   var txtE = document.createElement("p");
