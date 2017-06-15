@@ -4,19 +4,21 @@
 TKAM ABC Book
 </title>
 <style>
-@media print {
-  html, body {
-    height: 100%;
-    width: 100%
-  }
-}
 div {
   page-break-after: always;
   position: relative;
-  /*height: 100vh;
-  width: calc(100vh * (17 / 22));*/
-  height: 100%;
-  width: 100%;
+}
+@media print {
+  div {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media screen {
+  div {
+    height: 100vh;
+    width: calc(100vh * (17 / 22));
+  }
 }
   
 .l0.obj {
