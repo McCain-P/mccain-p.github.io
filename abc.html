@@ -164,6 +164,7 @@ var font = [
 var l = 0 //loopingCssLayoutVar
 for (i = 0; i <= obj.length - 1; i++) {
   var divE = document.createElement("div");
+  divE.className = "obj l" + l.toString(); //REMOVE THIS
   var objE = document.createElement("p");
   var spanE = document.createElement("span");
   spanE.innerHTML = obj[i].slice(0,1);
