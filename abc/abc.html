@@ -181,12 +181,14 @@ for (i = 0; i <= obj.length - 1; i++) {
   objE.style.font = font[i];
   objE.className = "obj l" + l.toString();
   divE.appendChild(objE);
+  var txtDivE = document.createElement("div");
+  txtDivE.className = "txtDiv l" + l.toString();
   var txtE = document.createElement("p");
   txtE.innerHTML = txt[i];
   txtE.style.color = color[i][1];
   txtE.style.font = font[i];
   txtE.className = "txt l" + l.toString();
-  divE.appendChild(txtE);
+  txtDivE.appendChild(txtE);
   var imgE = document.createElement("img");
   imgE.src = img[i];
   imgE.className = "img l" + l.toString();
