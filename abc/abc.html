@@ -189,6 +189,7 @@ for (i = 0; i <= obj.length - 1; i++) {
   txtE.style.font = font[i];
   txtE.className = "txt l" + l.toString();
   txtDivE.appendChild(txtE);
+  divE.appendChild(txtDivE);
   var imgE = document.createElement("img");
   imgE.src = img[i];
   imgE.className = "img l" + l.toString();
