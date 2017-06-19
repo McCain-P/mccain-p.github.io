@@ -4,18 +4,18 @@
 TKAM ABC Book
 </title>
 <style>
-#pageDiv {
+.pageDiv {
   page-break-after: always;
   position: relative;
 }
 @media print {
-  #pageDiv {
+  .pageDiv {
     height: 100%;
     width: 100%;
   }
 }
 @media screen {
-  #pageDiv {
+  .pageDiv {
     height: 100vh;
     width: calc(100vh * (17 / 22)); /* 8.5x11 ratio ⇔ 11(17/22) = 8.5 */
     left: 50vw;
