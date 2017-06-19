@@ -4,18 +4,18 @@
 TKAM ABC Book
 </title>
 <style>
-div {
+#pageDiv {
   page-break-after: always;
   position: relative;
 }
 @media print {
-  div {
+  #pageDiv {
     height: 100%;
     width: 100%;
   }
 }
 @media screen {
-  div {
+  #pageDiv {
     height: 100vh;
     width: calc(100vh * (17 / 22)); /* 8.5x11 ratio ⇔ 11(17/22) = 8.5 */
     left: 50vw;
@@ -169,6 +169,7 @@ var font = [
 var l = 0 //loopingCssLayoutVar
 for (i = 0; i <= obj.length - 1; i++) {
   var divE = document.createElement("div");
+  divE.className = "pageDiv";
   var objE = document.createElement("p");
   var spanE = document.createElement("span");
   spanE.innerHTML = obj[i].slice(0,1);
