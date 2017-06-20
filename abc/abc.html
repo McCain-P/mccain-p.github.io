@@ -295,7 +295,7 @@ var font = [
   "", //b
   "", //c
   "", //d
-  "Chalkduster", //e
+  "Chalkduster,Wingdings", //e
   "", //f
   "", //g
   "", //h
@@ -313,7 +313,7 @@ var font = [
   "", //t
   "", //u
   "", //v
-  "Chalkduster", //w
+  "Chalkduster,Wingdings", //w
   "", //x
   "", //y
   "", //z
@@ -337,7 +337,7 @@ for (i = 0; i <= obj.length - 1; i++) {
   objE.appendChild(spanE);
   objE.innerHTML = objE.innerHTML + obj[i].slice(1, obj[i].length);
   objE.style.color = color[i][1];
-  objE.style.font = font[i];
+  objE.style.fontFamily = font[i];
   objE.className = "obj l" + l.toString();
   divE.appendChild(objE);
   var txtDivE = document.createElement("div");
@@ -345,7 +345,7 @@ for (i = 0; i <= obj.length - 1; i++) {
   var txtE = document.createElement("p");
   txtE.innerHTML = txt[i];
   txtE.style.color = color[i][1];
-  txtE.style.font = font[i];
+  txtE.style.fontFamily = font[i];
   txtE.className = "txt l" + l.toString();
   txtDivE.appendChild(txtE);
   divE.appendChild(txtDivE);
