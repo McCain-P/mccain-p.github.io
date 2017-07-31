@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>
+FizzBuzz
+</title>
+</head>
+<body>
+<p id="log">
+</p>
+</body>
+<script>
+function htmlPrint(obj) {
+	console.log(obj.toString());
+	document.getElementById("log").innerHTML += "<br>" + obj.toString();
+};
+
+for (i = 1; i <= 100; i++) {
+	if (i % 3 == 0 && i % 5 == 0) {
+		htmlPrint("FizzBuzz");
+	} else if (i % 3 == 0) {
+		htmlPrint("Fizz");
+	} else  if (i % 5 == 0) {
+		htmlPrint("Buzz");
+	} else {
+		htmlPrint(i);
+	};
+};
+</script>
+</html>
