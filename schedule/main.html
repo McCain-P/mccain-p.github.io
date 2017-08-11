@@ -39,81 +39,89 @@ Schedule System
 //1. Add nuance obj properties and types; basically get the objs working. Classes and declaring objects and their properties
 //2. A function that loads a seperate JS script that is the schedule. This basically loads the schedule you want into the program. The schedule file has the general schedule function, all the objects, and calls the schedule function. This allows the entirety of schedules to be completely relative to each indiviudal schedule, while using the main framework in the program.
 // ^ MAKE IT AN XML FILE. HAVE TO ADD other options such as having sub-objects (like how shower, excersize, brushing teeth, etc. would be sub-objects of the "morning" object), having multiple objects at the same time, having conditional statements that have to be met for an object to be completed (for example, if, or, and, etc. statements about what sub-objects have to be completed), objects that have to be done a certain amount of times, objects that are called after the completion of a certain object, when objects are called, groups of tasks that are repeated, etc. Basically, adding more properties, types, specifications, etc. to how objects function, are executed, and are related to other objects.
-/*
+/* EXAMPLE:
 <schedule>
-<obj>
-  <type>
-   task
-  </type>
-</obj>
-<repeat>
-<end>
-<conditionals>
-<endTime>
-  11:30 PM
-</endTime>
-</conditionals>
-</end>
-<obj>
-  <type>
-    window
-  </type>
-  <name>
-    personal
-  </name>
-</obj>
-<obj>
-  <type>
-    window
-  </type>
-  <name>
-    work
-  </name>
   <obj>
+   <type>
+     task
+   </type>
+   <name>
+     shower
+   </name>
+   <time>
+     5 min
+    </time>
+  </obj>
+  <repeat>
+   <end>
+     <conditionals>
+        <time>
+          11:30 PM
+       </time>
+     </conditionals>
+   </end>
+   <obj>
     <type>
-      task
+      window
     </type>
     <name>
-      programming
+     personal
     </name>
   </obj>
-  <simultaneous>
-    <start>
-      <conditions>
-        "programming" obj has ended
-      </conditions>
-    </start>
-    <end>
-      <conditions>
-        <or>
-        <objEnd>
-          psychology
-        </objEnd>
-        <objEnd>
-          music
-        </objEnd>
-        </or>
-      </conditions>
-    </end>    
+  <obj>
+   <type>
+     window
+   </type>
+   <name>
+      work
+   </name>
     <obj>
       <type>
-        task
-      </type>
-      <name>
-        psychology
+       task
+     </type>
+     <name>
+       programming
       </name>
     </obj>
-    <obj>
-      <type>
-        task
-      </type>   
-      <name>
-        music
-      </name>  
-    </obj>
-  </simultaneous>
-</obj>
-</repeat>
+   <simultaneous>
+     <start>
+       <conditions>
+          <objEnd>
+            programming
+          </objEnd>
+       </conditions>
+     </start>
+      <end>
+       <conditions>
+          <or>
+           <objEnd>
+             psychology
+           </objEnd>
+           <objEnd>
+             music
+           </objEnd>
+          </or>
+       </conditions>
+     </end>    
+     <obj>
+       <type>
+          task
+       </type>
+       <name>
+          psychology
+        </name>
+     </obj>
+      <obj>
+       <type>
+         task
+       </type>   
+       <name>
+         music
+       </name>  
+      </obj>
+   </simultaneous>
+  </obj>
+  </repeat>
 </schedule>
 */
 //3. The graphics (HTML, CSS, simple JS, etc.)
