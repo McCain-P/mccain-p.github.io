@@ -46,6 +46,22 @@ Schedule System
    task
   </type>
 </obj>
+<repeat>
+<end>
+<conditionals>
+<endTime>
+  11:30 PM
+</endTime>
+</conditionals>
+</end>
+<obj>
+  <type>
+    window
+  </type>
+  <name>
+    personal
+  </name>
+</obj>
 <obj>
   <type>
     window
@@ -53,10 +69,54 @@ Schedule System
   <name>
     work
   </name>
+  <obj>
+    <type>
+      task
+    </type>
+    <name>
+      programming
+    </name>
+  </obj>
+  <simultaneous>
+    <start>
+      <conditions>
+        "programming" obj has ended
+      </conditions>
+    </start>
+    <end>
+      <conditions>
+        <or>
+        <objEnd>
+          psychology
+        </objEnd>
+        <objEnd>
+          music
+        </objEnd>
+        </or>
+      </conditions>
+    </end>    
+    <obj>
+      <type>
+        task
+      </type>
+      <name>
+        psychology
+      </name>
+    </obj>
+    <obj>
+      <type>
+        task
+      </type>   
+      <name>
+        music
+      </name>  
+    </obj>
+  </simultaneous>
 </obj>
+</repeat>
 </schedule>
 */
-  //3. The graphics (HTML, CSS, simple JS, etc.)
+//3. The graphics (HTML, CSS, simple JS, etc.)
   
   
 //THE ONLY POSSIBLE ADDED TYPE IS THE WINDOW TYPE, WHERE THE totalTime IS AN INEQUALITY/RANGE/WINDOW
