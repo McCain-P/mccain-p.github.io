@@ -14,9 +14,12 @@
 -->
 </body>
 <script>
+  var queryString = window.location.href.slice();
+  var queryStringIncrement = x;
+  
   var iframeElement = document.createElement("iframe");
   iframeElement.className = "iframeLoop";
-  iframeElement.src = "selfReferential.html"
+  iframeElement.src = "selfReferential.html?n="
   document.body.appendChild(iframeElement);
 </script>
 </html>
