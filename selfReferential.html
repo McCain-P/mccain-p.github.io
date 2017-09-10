@@ -14,9 +14,12 @@
 -->
 </body>
 <script>
-  //(Begin with query selector ?n=0)
-  
   var url = window.location.href
+  
+  if (url.search("\\?n=") == null) {
+      window.location.href += "?n="
+  }; 
+  
   var queryString = url.slice(url.search("\\?n=")+3);
   var baseUrl = url.slice(0, url.search("\\?n=")+3);
   var queryStringIncrement = baseUrl + String(Number(queryString)+1);
