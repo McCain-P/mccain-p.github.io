@@ -18,7 +18,7 @@
   var url = window.location.href
   var queryString = url.slice(url.search("\\?n=")+3);
   var baseUrl = url.slice(0, url.search("\\?n=")+3);
-  var queryStringIncrement = baseUrl + String(queryString+1);
+  var queryStringIncrement = baseUrl + String(Number(queryString)+1);
   
   var iframeElement = document.createElement("iframe");
   iframeElement.className = "iframeLoop";
