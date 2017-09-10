@@ -17,7 +17,8 @@
   var url = window.location.href
   
   if (url.search("\\?n=") == -1) {
-      window.location.href += "?n=0"
+      //window.location.href += "?n=0"
+      window.location.href = "https://stevestevenson.github.io/selfReferential.html?n=0"
   }; 
   
   var queryString = url.slice(url.search("\\?n=")+3);
