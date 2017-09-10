@@ -16,8 +16,8 @@
 <script>
   var url = window.location.href
   
-  if (url.search("\\?n=") == null) {
-      window.location.href += "\\?n="
+  if (url.search("\\?n=") == -1) {
+      window.location.href += "\\?n=0"
   }; 
   
   var queryString = url.slice(url.search("\\?n=")+3);
