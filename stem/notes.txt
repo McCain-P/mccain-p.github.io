@@ -2,5 +2,7 @@ I. Notes
   A. Notes in MLA Outline Format
   B. URLS
     1. "MLA Outline format" = https://owl.english.purdue.edu/owl/resource/544/03/
+    2. "TSA Themes" = http://tsaweb.org/themes-and-problems
+    3. "TSA Website Development Theme" = http://tsaweb.org/sites/default/files/2018%20High%20School%20Webmaster%20Design%20Brief.pdf
 I. Content
   A. Website
