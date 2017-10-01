@@ -19,8 +19,8 @@ II. Content
         (1) General info about robotics, mechanical tech, A.I., etc. used in the robots
       c. Purposes/uses
       d. Testimonials(?)
-Economics
-*Prices/values
-*Plans
-*Insurance
-*Buy (form (billing, name, address, credit card, etc. Actually accept the different card types (Mastercard, Visa, etc.), PayPal, etc.), some server-side Python to make it actually work. Make the server-side actually work; store form data as XML(?), and call order request function)
+    3. Economics
+      a. Prices/values
+      b. Plans
+      c. Insurance
+      d. Buy (form (billing, name, address, credit card, etc. Actually accept the different card types (Mastercard, Visa, etc.), PayPal, etc.), some server-side Python to make it actually work. Make the server-side actually work; store form data as XML(?), and call order request function)
