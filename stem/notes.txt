@@ -13,20 +13,21 @@ I. Notes
 II. Content
   A. Website
     1. Webpage theme is mechanical/robotic, with moving parts, themed objects/images/design, etc. Color scheme of silver (text, secondary), bronze (background, primary), and magenta (highlight, tertiary) color-scheme, like Asimov’s I, Robot. Shiny metal, steampunk.
-    2. About
+    2. Various CSS classes for repeatable things (such as shiny bronze background, silver border, silver text, column, etc.)
+    3. About
       a. Robot models
       b. Technology
         (1) General info about robotics, mechanical tech, A.I., etc. used in the robots
       c. Purposes/uses
       d. Testimonials(?)
-    3. Economics
+    4. Economics
       a. Prices/values
       b. Plans
       c. Insurance
       d. Buy (form (billing, name, address, credit card, etc. Actually accept the different card types (Mastercard, Visa, etc.), PayPal, etc.), some server-side Python to make it actually work. Make the server-side actually work; store form data as XML(?), and call order request function)
-    4. FAQ/About company/policy/etc. The general stuff about the company, website, and their work/business in robotics/AI as a whole.
-    5. Credits ("Website development: McCain Potasky")
-    6. Column
+    5. FAQ/About company/policy/etc. The general stuff about the company, website, and their work/business in robotics/AI as a whole.
+    6. Credits ("Website development: McCain Potasky")
+    7. Column
       a. Background
         (1). Background: Shiny(?) bronze
       b. Pillar
