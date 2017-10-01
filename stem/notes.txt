@@ -30,7 +30,7 @@ II. Content
     7. Column
       a. Background
         (1). Background: Shiny(?) bronze
-      b. Pillar
+      b. Column
         (1). Backround: Shiny bronze
         (2). Border/outline: Silver; medium-thickness
       c. Content
@@ -39,3 +39,7 @@ II. Content
         (2). Siver filler text
         (3). Picture w/ silver border?
         (4). Magenta “Info.” (HTTP URL) button
+      d. Functionality
+        (1). Small, top portion of column (title) is visible
+        (2). On mouseover: cursor changes to magenta "interact" cursor
+        (3). On mouseover or on click: Move column up and down
