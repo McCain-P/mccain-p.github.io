@@ -24,3 +24,5 @@ II. Content
       b. Plans
       c. Insurance
       d. Buy (form (billing, name, address, credit card, etc. Actually accept the different card types (Mastercard, Visa, etc.), PayPal, etc.), some server-side Python to make it actually work. Make the server-side actually work; store form data as XML(?), and call order request function)
+4. FAQ/About company/policy/etc. The general stuff about the company, website, and their work/business in robotics/AI as a whole.
+5. Credits ("Website developer: McCain Potasky")
