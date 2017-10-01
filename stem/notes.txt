@@ -33,7 +33,8 @@ II. Content
         (1). Backround: Shiny bronze
         (2). Border/outline: Silver; medium-thickness
       c. Content
-        (1). Short desc. of specific Robot model (“Model A”)
--Siver filler text
--Picture w/ silver border?
--Magenta “Info.” (http URL) button
+        (1). Short desc. of specific robot model
+          (a). “Model A” title
+        (2). Siver filler text
+        (3). Picture w/ silver border?
+        (4). Magenta “Info.” (HTTP URL) button
