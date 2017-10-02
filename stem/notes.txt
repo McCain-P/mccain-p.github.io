@@ -10,6 +10,7 @@ I. Notes
     1. "MLA Outline format" = https://owl.english.purdue.edu/owl/resource/544/03/
     2. "TSA Themes" = http://tsaweb.org/themes-and-problems
     3. "TSA Website Development Theme" = http://tsaweb.org/sites/default/files/2018%20High%20School%20Webmaster%20Design%20Brief.pdf
+    4. "CSS Box model" = https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
 II. Content
   A. Website
     1. Webpage theme is mechanical/robotic, with moving parts, themed objects/images/design, etc. Color scheme of silver (text, secondary), bronze (background, primary), and magenta (highlight, tertiary) color-scheme, like Asimov’s I, Robot. Shiny metal, steampunk.
