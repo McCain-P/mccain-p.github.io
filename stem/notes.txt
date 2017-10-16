@@ -41,6 +41,7 @@ II. Content
               ((2)). Silver border?
         (2). Siver filler text
         (3). Picture w/ silver border?
+          (a). Margin as thick as border
         (4). Magenta “Info.” (HTTP URL) button
       d. Functionality
         (1). Small, top portion of column (title) is visible
