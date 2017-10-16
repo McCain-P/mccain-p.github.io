@@ -37,6 +37,8 @@ II. Content
       c. Content
         (1). Short desc. of specific robot model
           (a). “Model A” title
+              ((1)). Silver
+              ((2)). Silver border?
         (2). Siver filler text
         (3). Picture w/ silver border?
         (4). Magenta “Info.” (HTTP URL) button
