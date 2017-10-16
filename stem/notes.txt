@@ -43,6 +43,7 @@ II. Content
         (3). Picture w/ silver border?
           (a). Margin as thick as border
         (4). Magenta “Info.” (HTTP URL) button
+          (a). Rounded corners
       d. Functionality
         (1). Small, top portion of column (title) is visible
         (2). On mouseover: cursor changes to magenta "interact" cursor
