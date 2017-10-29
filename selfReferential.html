@@ -9,15 +9,11 @@
 </head>
 <body>
 <p>Self Referential</p>
-<!--
-<iframe src="selfReferential.html" class="iframeLoop"></iframe>
--->
 </body>
 <script>
   var url = window.location.href
   
   if (url.search("\\?n=") == -1) {
-      //window.location.href += "?n=0"
       window.location.href = "https://stevestevenson.github.io/selfReferential.html?n=0"
   }; 
   
