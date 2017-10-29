@@ -3,8 +3,10 @@
 <p>testA</p>
 </body>
 <script>
+var url = window.location.href;
+  
 var cloneIframe = document.createElement("iframe");
-cloneIframe.src = "x";
+cloneIframe.src = url.replace("psd4o1.net", "psd401.net").replace("psd4O1.net", "psd401.net");
 cloneIframe.style.height = "100%";
 cloneIframe.style.width = "100%";
 document.body.appendChild(cloneIframe);
