@@ -7,8 +7,8 @@ var url = window.location.href;
   
 var cloneIframe = document.createElement("iframe");
 //v To be used when the "psd4o1.net" domain is actually aquired:
-//cloneIframe.src = url.replace("psd4o1.net", "psd401.net").replace("psd4O1.net", "psd401.net");
-cloneIframe.src = url.replace("stevestevenson.github.io", "psd401.net");
+//cloneIframe.src = url.replace(/psd4o1.net/i, "psd401.net");
+cloneIframe.src = url.replace(/stevestevenson.github.io/i, "psd401.net");
 cloneIframe.style.height = "100%";
 cloneIframe.style.width = "100%";
 document.body.appendChild(cloneIframe);
