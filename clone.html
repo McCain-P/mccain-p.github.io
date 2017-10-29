@@ -15,7 +15,8 @@ document.body.appendChild(cloneIframe);
 
 //TO-DO:
 //Figure out how to get subdomains working
-//Get the webpage from the actual site and display it on our clone site all via serverside? That way, there wouldn't even need to be an iframe, and it could work with subdomains aswell. This is probably the better way.
+//Get the webpage from the actual site and display it on our clone site all via serverside. That way, there wouldn't even need to be an iframe, and it could work with subdomains aswell. This is probably the better way.
+//^YOU NEED TO DO IT SERVERSIDE, as the different pages don't work in clientside, as psd4o1.net/phs/ does not give the psd4o1.net/index.html file, which has the JS for the iframe. Have a serverside function that takes the string of the URL the user is requesting (login.psd4o1.net/login/), and gives back data from the actual site (login.psd401.net/login/)  
   
 //https://www.quackit.com/javascript/tutorial/javascript_escape_characters.cfm
 //https://www.w3schools.com/jsref/jsref_replace.asp
