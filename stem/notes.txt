@@ -56,3 +56,8 @@ stemai.site
 stemweb.site - $1.06 at Namecheap
 aiweb.site - $1.06 at Namecheap
 stemweb.site
+.ai
+web.ai
+website.ai
+site.ai
+stem.ai
