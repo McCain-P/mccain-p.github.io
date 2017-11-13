@@ -12,16 +12,25 @@
   </head>
   <body>
     <img id="dispenser" src="dispenser.png">
+    <p id="counter"></p>
   </body>
   <script>
-  cursor = topLeft
+  var baps = 0;
+  var counter = document.getElementById("counter");
+  function addBaps(n) {
+    baps += n;
+    counter.innerHTML = baps.toString();
+  };
+    
+  cursor = topLeft;
   
   onMouseDown {
-    cursor = bottomLeft
-    playSound(bap)
-  }
+    cursor = bottomLeft;
+    playSound(bap);
+    addBaps(1);
+  };
   onMouseUp {
-    cursor = topLeft
-  }
+    cursor = topLeft;
+  };
   </script>
 </html>
