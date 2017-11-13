@@ -53,7 +53,7 @@ II. Content
         (2). Before changing window.location.href, closing animation
         (3). changePage() function that plays the closing animation, and then changes the page URL
 ENG SITE: invisible cursor, image position aligns w/ cursor, change image
-
+CURSOR: document.style.cursor
 
 stemweb
 stemai
