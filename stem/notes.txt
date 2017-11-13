@@ -55,6 +55,9 @@ II. Content
 ENG SITE: invisible cursor, image position aligns w/ cursor, change image
 CURSOR: document.style.cursor
 
+https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_User_Interface/Using_URL_values_for_the_cursor_property
+
 stemweb
 stemai
 stemai.website
