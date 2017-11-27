@@ -16,8 +16,10 @@
   function changeTitle() {
     if (titleTxt == 1) {
       titleTag.innerHTML = "";
+      titleTxt = 0;
     } else {
       titleTag.innerHTML = "( ͡° ͜ʖ ͡°)";
+      titleTxt = 1;
     };
   };
   setInterval(changeTitle(), 500);
