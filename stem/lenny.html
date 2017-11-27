@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>( ͡° ͜ʖ ͡°)</title>
+    <title id="title">( ͡° ͜ʖ ͡°)</title>
     <style>
     #lennyTxt {
       font-size: 100px;
@@ -10,4 +10,12 @@
   <body>
     <marquee id="lennyTxt">( ͡° ͜ʖ ͡°)</marquee>
   </body>
+  <script>
+  var titleTag = document.getElementById("title");
+  while (true) {
+    titleTag.innerHTML = "( ͡° ͜ʖ ͡°)";
+    wait(1);
+    titleTag.innerHTML = "";
+  };
+  </script>
 </html>
