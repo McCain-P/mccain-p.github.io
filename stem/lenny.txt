@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>
+      <marquee>
+        X
+      </marquee>
+    </title>
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    <marquee>X</marquee>
+  </body>
+</html>
