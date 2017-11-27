@@ -12,10 +12,14 @@
   </body>
   <script>
   var titleTag = document.getElementById("title");
-  while (true) {
-    titleTag.innerHTML = "( ͡° ͜ʖ ͡°)";
-    wait(1);
-    titleTag.innerHTML = "";
+  var titleTxt = 1
+  function changeTitle() {
+    if (titleTxt == 1) {
+      titleTag.innerHTML = "";
+    } else {
+      titleTag.innerHTML = "( ͡° ͜ʖ ͡°)";
+    };
   };
+  setInterval(changeTitle(), 500);
   </script>
 </html>
