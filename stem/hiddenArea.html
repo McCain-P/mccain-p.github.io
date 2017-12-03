@@ -18,9 +18,11 @@
     if (titleTxt == 1) {
       titleTag.innerHTML = "";
       titleTxt = 0;
+      console.log("titleTxt - " + titleTxt.toString());
     } else {
       titleTag.innerHTML = "( ͡° ͜ʖ ͡°)";
       titleTxt = 1;
+      console.log("titleTxt - " + titleTxt.toString());
     };
   };
   setInterval(changeTitle(), 500);
