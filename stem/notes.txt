@@ -59,7 +59,7 @@ II. Content
             ((2)). User events/actions (the user clicked on this, did this, more statistical things [the user stayed on this page for X amount of time, etc.])
             ((3)). Error. Possible idea is to do what the developers of old games for Nintendo consoles did to pass Nintendo's quality check: Hide the errors by making them seem like a hidden, secret page. The red "Error" event catagory could be renamed and recolored to be a blue or something "Hidden" event catagory. When a "Hidden" event-catagory code occurs, the user is redirected to a "hidden" page to cover up the fact that an error occured somewhere. Possibly have a feature that is an "error event-catagory display configuration" that would have a binary value. If it is 1, the "Error" catagory is called "Hidden," and the user gets redirected to the "hidden" page if an error occurs. If it is a 0, the "Error" catagory is shown as it really is, and the user is NOT redirected to the "hidden" page if an error occurs.
       g. Server
-      h. Chrome
+      h. Random, crazy idea: to address the requirement of having the website work for a whole bunch of browsers, somehow have the Google Chrome language interpreter run on the website. It would basically be like the website encasing itself in Chrome, so that it would basically be ran in Chrome regardless of what browser accessed it.
 ENG SITE: invisible cursor, image position aligns w/ cursor, change image
 CURSOR: document.style.cursor
 
