@@ -21,18 +21,26 @@
     <marquee direction="down" id="rip">R.I.P deprecated &lt;marquee&gt; tag<br>You will be missed</marquee>
   </body>
   <script>
-  var titleTag = document.getElementById("title");
-  var titleTxt = 1
-  function changeTitle() {
-    if (titleTxt == 1) {
-      titleTag.innerHTML = " ";
-      titleTxt = 0;
-    } else {
-      titleTag.innerHTML = "( ͡° ͜ʖ ͡°)";
-      titleTxt = 1;
+  //var titleTag = document.getElementById("title");
+  //var titleTxt = 1
+  //function changeTitle() {
+    //if (titleTxt == 1) {
+      //titleTag.innerHTML = " ";
+      //titleTxt = 0;
+    //} else {
+      //titleTag.innerHTML = "( ͡° ͜ʖ ͡°)";
+      //titleTxt = 1;
+    //};
+  //};
+  //setInterval(changeTitle, 500);
+    
+    var titleTag = document.getElementById("title");
+    var titleTxtString = ["( ͡° ͜ʖ ͡°)"," ( ͡° ͜ʖ ͡°)","  ( ͡° ͜ʖ ͡°)","   ( ͡° ͜ʖ ͡°)","    ( ͡° ͜ʖ ͡°","     ( ͡° ͜ʖ ͡","      ( ͡° ͜ʖ","       ( ͡° ͜","        ( ͡°","         ( ͡","          (",")"];
+    var titleTxtN = 0;
+    function changeTitle() {
+      
     };
-  };
-  setInterval(changeTitle, 500);
+    setInterval(changeTitle, 500);
   </script>
 <!--Possible bronze with magenta zig-zag stripes easter egg vector graphic?-->
 </html>
