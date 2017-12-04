@@ -134,19 +134,19 @@
   eventCatagory.error.eventCodes = [0,1,2,3,4,13,417,404];
     
   var eventCode = {};
-  eventCode.1 = {};
+  eventCode[1] = {};
     
-  eventCode.1.name = "Load error";
-  eventCode.1.description = "Attempted load of unfound file";
-  eventCode.1.parameters = ["fileLocation"]; //eventCode(1,param0,param1,param2,param3,paramEtc)
-  eventCode.1.catagory = eventCatagory.error;
+  eventCode[1].name = "Load error";
+  eventCode[1].description = "Attempted load of unfound file";
+  eventCode[1].parameters = ["fileLocation"]; //eventCode(1,param0,param1,param2,param3,paramEtc)
+  eventCode[1].catagory = eventCatagory.error;
 
     
   function eventCode(eventCodeN, parameters) {
   //log to server-side (txt file, database, etc.?)
   //console.log w/ color
   //eventCode.eventCodeN.catagory.name + ": Event Code " + eventCodeN + ": " + eventCode.eventCodeN.name + " - " + eventCode.eventCodeN.description + " - " //for loop to add parameters "Error: Event Code 1: Load error - Attempted load of unfound file - fileLocation: /imgFile.jpg; param2: answer2;
-  console.log("%c" + eventCode.eventCodeN.catagory.name + ": Event Code " + eventCodeN + ": "+eventCode.eventCodeN.name + " - " + eventCode.eventCodeN.description + " - ", "color: RGB(255,0,0);");
+  console.log("%c" + eventCode[eventCodeN].catagory.name + ": Event Code " + eventCodeN + ": "+eventCode[eventCodeN].name + " - " + eventCode[eventCodeN].description + " - ", "color: RGB(255,0,0);");
   console.log("%ccolorTest","color: RGB(255,0,0);");
   };
     
