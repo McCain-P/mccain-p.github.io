@@ -38,11 +38,13 @@
     var titleTxtString = ["( ͡° ͜ʖ ͡°)","&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡°","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡°","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(",")","°)"," ͡°)","ʖ ͡°)"," ͜ʖ ͡°)","° ͜ʖ ͡°)"," ͡° ͜ʖ ͡°)"];
     var titleTxtN = 0;
     function changeTitle() {
+      console.log("changeTitle1");
       if (titleTxtN = titleTxtString.length) {
         titleTxtN = 0;
       };
       titleTag.innerHTML = titleTxtString[titleTxtN];
       titleTxtN += 1;
+      console.log("changeTitle2");
     };
     setInterval(changeTitle, 500);
   </script>
