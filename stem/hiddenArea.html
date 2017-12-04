@@ -21,6 +21,8 @@
     <marquee direction="down" id="rip">R.I.P deprecated &lt;marquee&gt; tag<br>You will be missed</marquee>
   </body>
   <script>
+  //v Blinking lenny face v  
+  
   //var titleTag = document.getElementById("title");
   //var titleTxt = 1
   //function changeTitle() {
@@ -33,22 +35,23 @@
     //};
   //};
   //setInterval(changeTitle, 500);
-    
-    var titleTag = document.getElementById("title");
-    var titleTxtString = ["( ͡° ͜ʖ ͡°)","&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡°","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡°","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(",")","°)"," ͡°)","ʖ ͡°)"," ͜ʖ ͡°)","° ͜ʖ ͡°)"," ͡° ͜ʖ ͡°)"];
-    var titleTxtN = 0;
-    function changeTitle() {
-      console.log("changeTitle1");
-      if (titleTxtN === titleTxtString.length) {
-        titleTxtN = 0;
-        console.log("Set to 0");
-      };
-      titleTag.innerHTML = titleTxtString[titleTxtN];
-      titleTxtN += 1;
-      console.log("changeTitle2");
-      console.log("titleTxtN = " + titleTxtN);
-    };
-    setInterval(changeTitle, 500);
+
+//Scrolling lenny face in HTML <title> tag:    
+var titleTag = document.getElementById("title");
+var titleTxtString = ["( ͡° ͜ʖ ͡°)","&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡°)","&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡°","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ ͡","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜ʖ","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡° ͜","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡°","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( ͡","&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(",")","°)"," ͡°)","ʖ ͡°)"," ͜ʖ ͡°)","° ͜ʖ ͡°)"," ͡° ͜ʖ ͡°)"];
+var titleTxtN = 0;
+function changeTitle() {
+  console.log("changeTitle1");
+  if (titleTxtN === titleTxtString.length) {
+    titleTxtN = 0;
+    console.log("Set to 0");
+  };
+  titleTag.innerHTML = titleTxtString[titleTxtN];
+  titleTxtN += 1;
+  console.log("changeTitle2");
+  console.log("titleTxtN = " + titleTxtN);
+};
+setInterval(changeTitle, 500);
   </script>
 <!--Possible bronze with magenta zig-zag stripes easter egg vector graphic?-->
 </html>
