@@ -55,6 +55,7 @@ II. Content
         (2). Before changing window.location.href, closing animation
         (3). changePage() function that plays the closing animation, and then changes the page URL
       f. Events
+        *There is also an event code for either all or some of the HTTP codes
         (1). Event codes, catagories, etc. are logged (written to the console and/or server-side txt-file, etc.)
           (a). Event catagories:
             ((1)). Code execution / general events (this part of code ran, this happened, etc.)
