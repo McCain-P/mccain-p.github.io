@@ -65,6 +65,12 @@ II. Content
                 (((5))). The user IP location is acquired via the user's IP
             ((3)). Error. Possible idea is to do what the developers of old games for Nintendo consoles did to pass Nintendo's quality check: Hide the errors by making them seem like a hidden, secret page. The red "Error" event catagory could be renamed and recolored to be a blue or something "Hidden" event catagory. When a "Hidden" event-catagory code occurs, the user is redirected to a "hidden" page to cover up the fact that an error occured somewhere. Possibly have a feature that is an "error event-catagory display configuration" that would have a binary value. If it is 1, the "Error" catagory is called "Hidden," and the user gets redirected to the "hidden" page if an error occurs. If it is a 0, the "Error" catagory is shown as it really is, and the user is NOT redirected to the "hidden" page if an error occurs.
             ((4)). Possibly "Security" event catagory? "Attempted XSS in (X) field," etc.
+          (b). Each event-code catagory has its own color, which is logged to the console
+          Error: Red - RGB(255,0,0)
+            Hidden: Purple - RGB(255,0,255)
+          User: Green - RGB(0,255,0)
+          Execution: Blue - RGB(0,0,255)
+          Security: Orange - RGB(255,128,0)
       g. MAJOR QUESTION: Have server-side stuff, or don't? Server-side Python would be really nice, as you could then have full control and make everything about the website exactly how you want it, including server-side. You could have MUCH more functionality, including generic server-side stuff and server-side stuff that allows the user to interact with the website (order forms that actually work, etc.). Basically, it would allow you to do all of the server-side stuff. The server-side would be in Python. The ONLY, MAJOR CON is figuring out the physical, HOSTING HARDWARE. Do you host it yourself, do you have someone else host it, what do you do? The main problem is going to be the resources required to host the server (money, hardware).
       h. Random, crazy idea: to address the requirement of having the website work for a whole bunch of browsers, somehow have the Google Chrome language interpreter run on the website. It would basically be like the website encasing itself in Chrome, so that it would basically be ran in Chrome regardless of what browser accessed it.
 ENG SITE: invisible cursor, image position aligns w/ cursor, change image
