@@ -136,25 +136,49 @@
   
   eventCatagory.hidden.name = "Hidden";
   eventCatagory.hidden.color = "RGB(255,0,0)";
-  eventCatagory.hidden.eventCodes = [0,1,2,3,4,13,417,404];
+  eventCatagory.hidden.eventCodes = [5,6,7,8];
     
   eventCatagory.user.name = "User";
   eventCatagory.user.color = "RGB(255,0,0)";
-  eventCatagory.user.eventCodes = [0,1,2,3,4,13,417,404];
+  eventCatagory.user.eventCodes = [9,10,11,12];
     
   eventCatagory.execution.name = "Execution";
   eventCatagory.execution.color = "RGB(255,0,0)";
-  eventCatagory.execution.eventCodes = [0,1,2,3,4,13,417,404];
+  eventCatagory.execution.eventCodes = [14,15,16,17];
     
   eventCatagory.security.name = "Security";
   eventCatagory.security.color = "RGB(255,0,0)";
-  eventCatagory.security.eventCodes = [0,1,2,3,4,13,417,404];
+  eventCatagory.security.eventCodes = [18,19,20,21];
   //End declaration of event catagories
   
-  //Declaration of event codes
+  //Declaration of event codes:
   var eventCode = {};
-  eventCode[1] = {};
+     
+  eventCode[1] = {};  
+  eventCode[1].name = "Load error";
+  eventCode[1].description = "Attempted load of unfound file";
+  eventCode[1].parameters = ["fileLocation"]; //eventCode(1,param0,param1,param2,param3,paramEtc)
+  eventCode[1].catagory = eventCatagory.error;
     
+  eventCode[1] = {};  
+  eventCode[1].name = "Load error";
+  eventCode[1].description = "Attempted load of unfound file";
+  eventCode[1].parameters = ["fileLocation"]; //eventCode(1,param0,param1,param2,param3,paramEtc)
+  eventCode[1].catagory = eventCatagory.error;
+    
+  eventCode[1] = {};  
+  eventCode[1].name = "Load error";
+  eventCode[1].description = "Attempted load of unfound file";
+  eventCode[1].parameters = ["fileLocation"]; //eventCode(1,param0,param1,param2,param3,paramEtc)
+  eventCode[1].catagory = eventCatagory.error;
+    
+  eventCode[1] = {};  
+  eventCode[1].name = "Load error";
+  eventCode[1].description = "Attempted load of unfound file";
+  eventCode[1].parameters = ["fileLocation"]; //eventCode(1,param0,param1,param2,param3,paramEtc)
+  eventCode[1].catagory = eventCatagory.error;
+    
+  eventCode[1] = {};  
   eventCode[1].name = "Load error";
   eventCode[1].description = "Attempted load of unfound file";
   eventCode[1].parameters = ["fileLocation"]; //eventCode(1,param0,param1,param2,param3,paramEtc)
