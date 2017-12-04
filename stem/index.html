@@ -117,13 +117,32 @@
     </div>
   </body>
   <script>
-    function changePage(url) {
-      window.location.href = url;
-    };
+  function changePage(url) {
+    window.location.href = url;
+  };
   </script>
   <script id="eventCodes">
-function eventCode(???) {
+  var eventCatagory;
+  eventCatagory.error;
+  eventCatagory.hidden;
+  eventCatagory.user;
+  eventCatagory.execution;
+  eventCatagory.security;
+  
+  eventCatagory.error.name = "Error"
+  eventCatagory.error.color = "RGB(255,0,0)";
+  eventCatagory.error.eventCodes = [0,1,2,3,4,13,417,404];
     
-};
+  var eventCode;
+  eventCode.1;
+    
+  eventCode.1.name = "errorTest";
+  eventCode.1.description = "Event code for testing the error event-catagory.";
+  eventCode1.catagory = "error";
+
+    
+  function eventCode(1, "X") {
+    
+  };
   </script>
 </html>
