@@ -122,6 +122,7 @@
   };
   </script>
   <script id="eventCodes">
+  //Declaration of event catagories:
   var eventCatagory = {};
   eventCatagory.error = {};
   eventCatagory.hidden = {};
@@ -132,7 +133,25 @@
   eventCatagory.error.name = "Error";
   eventCatagory.error.color = "RGB(255,0,0)";
   eventCatagory.error.eventCodes = [0,1,2,3,4,13,417,404];
+  
+  eventCatagory.hidden.name = "Error";
+  eventCatagory.hidden.color = "RGB(255,0,0)";
+  eventCatagory.hidden.eventCodes = [0,1,2,3,4,13,417,404];
     
+  eventCatagory.user.name = "Error";
+  eventCatagory.user.color = "RGB(255,0,0)";
+  eventCatagory.user.eventCodes = [0,1,2,3,4,13,417,404];
+    
+  eventCatagory.execution.name = "Error";
+  eventCatagory.execution.color = "RGB(255,0,0)";
+  eventCatagory.execution.eventCodes = [0,1,2,3,4,13,417,404];
+    
+  eventCatagory.security.name = "Error";
+  eventCatagory.security.color = "RGB(255,0,0)";
+  eventCatagory.security.eventCodes = [0,1,2,3,4,13,417,404];
+  //End declaration of event catagories
+  
+  //Declaration of event codes
   var eventCode = {};
   eventCode[1] = {};
     
@@ -140,7 +159,7 @@
   eventCode[1].description = "Attempted load of unfound file";
   eventCode[1].parameters = ["fileLocation"]; //eventCode(1,param0,param1,param2,param3,paramEtc)
   eventCode[1].catagory = eventCatagory.error;
-
+  //End declaration of event codes
     
   function callEventCode(eventCodeN, parameters) {
   //log to server-side (txt file, database, etc.?)
