@@ -17,7 +17,7 @@
       
       var m = (D-B)/(C-A);
         
-      return m.toString();
+      return m.toString() + "x + " + (B - (m * A)).toString() + " + sqrt(x - " + A.toString() + ") - sqrt(x - " + A.toString() + ") + sqrt(-x + " + C.toString() + ") - sqrt(-x + " + C.toString() + ")";
     };
     function logEquation(equation) {
       console.log(equation);
