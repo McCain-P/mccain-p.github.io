@@ -9,6 +9,19 @@
     </p>
   </body>
   <script>
-  
+    function lineSegmentFormula(pointA, pointB) {
+      var A = pointA[0];
+      var B = pointA[1];
+      var C = pointB[0];
+      var D = pointB[1];
+      
+      var m = (D-B)/(C-A);
+        
+      return m.toString();
+    };
+    function logEquation(equation) {
+      console.log(equation);
+      document.getElementById("graphingEquation").innerHTML += equation + "<br>";
+    };
   </script>
 </html>
