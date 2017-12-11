@@ -3,13 +3,28 @@
     <title>
       Line Segments
     </title>
+    <style>
+      #calculatorFrame {
+        height: 50vh;
+        width: 50vw;
+      }
+      .external {
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <p id="graphingEquation">
     </p>
+    <div id="calculator">
+      <br>
+      <p>
+        <span class="external">Desmos</span> graphing calculator:
+      </p>
+      <iframe id="calculatorFrame" src="https://www.desmos.com/calculator">
+      </iframe>
+    </div>
   </body>
-  <iframe src="https://www.desmos.com/calculator">
-  </iframe>
   <script>
     function lineSegmentFormula(pointA, pointB) {
       var A = pointA[0];
