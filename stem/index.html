@@ -186,16 +186,14 @@
   //End declaration of event codes
     
   function callEventCode(eventCodeN, parameters) {
-  //log to server-side (txt file, database, etc.?)
-  //console.log w/ color
-  //eventCode.eventCodeN.catagory.name + ": Event Code " + eventCodeN + ": " + eventCode.eventCodeN.name + " - " + eventCode.eventCodeN.description + " - " //for loop to add parameters "Error: Event Code 1: Load error - Attempted load of unfound file - fileLocation: /imgFile.jpg; param2: answer2;
-  var logString = "%c" + eventCode[eventCodeN].catagory.name + ": Event Code " + eventCodeN + ": " + eventCode[eventCodeN].name + " - " + eventCode[eventCodeN].description + " - "
-  for (i = 0; i < eventCode[eventCodeN].parameters.length) {
-    logString += eventCode[eventCodeN].parameters[i] + ": " + nextArguement + "; "
+    //log to server-side (txt file, database, etc.?)
+    var logString = "%c" + eventCode[eventCodeN].catagory.name + ": Event Code " + eventCodeN + ": " + eventCode[eventCodeN].name + " - " + eventCode[eventCodeN].description + " - "
+    for (i = 0; i < eventCode[eventCodeN].parameters.length; i++) {
+      logString += eventCode[eventCodeN].parameters[i] + ": " + nextArguement + "; "
+    };
+    console.log(logString, "color: " + eventCode[eventCodeN].catagory.color);
   };
-  console.log(logString, "color: " + eventCode[eventCodeN].catagory.color);
-  };
-  //^Parameters: Declare base string above as a variable. Use a for loop relative to parameters.length to add each parameter to the string
+    //^Parameters: Declare base string above as a variable. Use a for loop relative to parameters.length to add each parameter to the string
     
   callEventCode(1, ["/imgFile.jpg"]);
   callEventCode(5, ["param0",1]);
