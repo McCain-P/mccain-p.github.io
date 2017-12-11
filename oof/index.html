@@ -3,13 +3,23 @@
     <title>
       O O F
     </title>
+    <style>
+      #oofButton {
+       height: 75vh;
+       width:75vw;
+      }
+    </style>
   </head>
   <body>
-    <button onclick="oof()">
+    <audio id="oofAudio" src="oof.mp3">
+    </audio>
+    <button id="oofButton" onclick="oof()">
       O O F
     </button>
   </body>
   <script>
-  
+    function oof() {
+      document.getElementById("oofAudio").play();
+    };
   </script>
 </html>
