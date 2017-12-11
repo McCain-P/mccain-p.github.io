@@ -189,7 +189,7 @@
     //log to server-side (txt file, database, etc.?)
     var logString = "%c" + eventCode[eventCodeN].catagory.name + ": Event Code " + eventCodeN + ": " + eventCode[eventCodeN].name + " - " + eventCode[eventCodeN].description + " - "
     for (i = 0; i < eventCode[eventCodeN].parameters.length; i++) {
-      logString += eventCode[eventCodeN].parameters[i] + ": " + nextArguement + "; "
+      logString += eventCode[eventCodeN].parameters[i] + ": " + arguments[i + 1] + "; "
     };
     console.log(logString, "color: " + eventCode[eventCodeN].catagory.color);
   };
