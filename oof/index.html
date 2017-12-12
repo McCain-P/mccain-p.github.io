@@ -41,12 +41,24 @@
     <button id="oofButton" onclick="oof()">
       O O F
     </button>
+    <button id="machineGunButton" onclick="machineGun()">
+      Machine Gun (X oofs/second)
+    </button>
   </body>
+  <script id="configuration">
+    //Configuration:
+    var machineGun = true;
+    //End of configuration
+  </script>
   <script>
     var oofAudio = document.getElementById("oofAudio");
     function oof() {
       oofAudio.currentTime = 0;
       oofAudio.play();
+    };
+    
+    if (machineGun === false) {
+      document.body.removeChild(document.getElementById("machineGunButton"));
     };
   </script>
 </html>
