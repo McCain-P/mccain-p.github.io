@@ -47,7 +47,7 @@
   </body>
   <script id="configuration">
     //Configuration:
-    var machineGun = false;
+    var machineGun = true;
     //End of configuration
   </script>
   <script>
@@ -64,12 +64,12 @@
     var machineGunEnabled = false;
     function machineGun() {
       if (machineGunEnabled === false) {
-          //setInterval
+          var machineGunInterval = setInterval(oof, 100);
           machineGunEnabled = true;
       } else {
-          //clearInterval
+          clearInterval(machineGunInterval);
           machineGunEnabled = false;
-      }
+      };
     };
   </script>
 </html>
