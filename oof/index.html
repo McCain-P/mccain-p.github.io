@@ -60,5 +60,16 @@
     if (machineGun === false) {
       document.body.removeChild(document.getElementById("machineGunButton"));
     };
+    
+    var machineGunEnabled = false;
+    function machineGun() {
+      if (machineGunEnabled === false) {
+          //setInterval
+          machineGunEnabled = true;
+      } else {
+          //clearInterval
+          machineGunEnabled = false;
+      }
+    };
   </script>
 </html>
