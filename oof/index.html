@@ -42,7 +42,7 @@
       O O F
     </button>
     <button id="machineGunButton" onclick="machineGun()">
-      Machine Gun (300 oofs/minute)
+      Machine Gun (600 oofs/minute)
     </button>
   </body>
   <script id="configuration">
@@ -65,7 +65,7 @@
     var machineGunInterval = null;
     function machineGun() {
       if (machineGunEnabled === false) {
-          machineGunInterval = setInterval(oof, 200);
+          machineGunInterval = setInterval(oof, 100);
           machineGunEnabled = true;
           console.log("gA");
       } else {
