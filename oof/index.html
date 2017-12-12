@@ -43,8 +43,10 @@
     </button>
   </body>
   <script>
+    var oofAudio = document.getElementById("oofAudio");
     function oof() {
-      document.getElementById("oofAudio").play();
+      oofAudio.currentTime = 0;
+      oofAudio.play();
     };
   </script>
 </html>
