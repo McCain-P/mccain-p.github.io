@@ -47,7 +47,7 @@
   </body>
   <script id="configuration">
     //Configuration:
-    var machineGun = false;
+    var machineGunConfig = false;
     //End of configuration
   </script>
   <script>
@@ -57,12 +57,8 @@
       oofAudio.play();
     };
     
-    if (machineGun === false) {
+    if (machineGunConfig === false) {
       document.body.removeChild(document.getElementById("machineGunButton"));
-      console.log("D E L E T  O O F");
-    } else {
-      console.log("O   O   F log:");
-      console.log(machineGun);
     };
     
     var machineGunEnabled = false;
@@ -71,11 +67,9 @@
       if (machineGunEnabled === false) {
           machineGunInterval = setInterval(oof, 100);
           machineGunEnabled = true;
-          console.log("gA");
       } else {
           clearInterval(machineGunInterval);
           machineGunEnabled = false;
-          console.log("gB");
       };
     };
   </script>
