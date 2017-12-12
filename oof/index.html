@@ -62,9 +62,10 @@
     };
     
     var machineGunEnabled = false;
+    var machineGunInterval = null;
     function machineGun() {
       if (machineGunEnabled === false) {
-          var machineGunInterval = setInterval(oof, 200);
+          machineGunInterval = setInterval(oof, 200);
           machineGunEnabled = true;
           console.log("gA");
       } else {
