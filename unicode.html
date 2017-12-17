@@ -13,6 +13,10 @@
       position: fixed;
       right: 0;
     };
+    #generateButton {
+      position: fixed;
+      left: 0;
+    };
   </style>
   <body>
     <p id="inputCircle">
@@ -31,7 +35,8 @@
       <input id="belowCombiningCharacter" placeholder="Below Combining-Char.">
     </p>
     <input id="combiningCharacterRadius" placeholder="Combining-Char. Radius">
-    <button onclick="generateUnicodeString()">
+    <br>
+    <button id="generateButton" onclick="generateUnicodeString()">
       Generate String
     </button>
     <br>
