@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>
-      X&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;Unicode Combining-Character Strings
+      Generate Unicode Combining-Character Strings
     </title>
   </head>
   <style>
@@ -31,12 +31,12 @@
       <input id="belowCombiningCharacter" placeholder="Below Combining-Char.">
     </p>
     <input id="combiningCharacterRadius" placeholder="Combining-Char. Radius">
-    <button>
-      Create String
+    <button onclick="generateUnicodeString()">
+      Generate String
     </button>
     <br>
     <p>
-      Created Unicode-Text-String:
+      Generated Unicode-Text-String:
     </p>
     <br>
     <p id="textField">
@@ -44,6 +44,9 @@
   </body>
   <script>
     var textField = document.getElementById("textField");
+    function generateUnicodeString() {
+      
+    };
     var unicodeTxt = "X&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;";
     textField.innerHTML = unicodeTxt;
   </script>
