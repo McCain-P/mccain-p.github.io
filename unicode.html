@@ -49,8 +49,18 @@
   </body>
   <script>
     var textField = document.getElementById("textField");
+    
+    var initialString = document.getElementById("initialString");
+    var aboveCombiningCharacter = document.getElementById("aboveCombiningCharacter");
+    var leftCombiningCharacter = document.getElementById("leftCombiningCharacter");
+    var rightCombiningCharacter = document.getElementById("rightCombiningCharacter");
+    var belowCombiningCharacter = document.getElementById("belowCombiningCharacter");
+    var combiningCharacterRadius = document.getElementById("combiningCharacterRadius");
+    
     function generateUnicodeString() {
-      
+      var combiningCharRepeat = combiningCharacterRadius.value;
+      var unicodeTxt = initialString.value + aboveCombiningCharacter.value.repeat(combiningCharRepeat) + leftCombiningCharacter.value.repeat(combiningCharRepeat) + rightCombiningCharacter.value.repeat(combiningCharRepeat) + belowCombiningCharacter.value.repeat(combiningCharRepeat);
+      textField.innerHTML = unicodeTxt;
     };
     var unicodeTxt = "X&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;&#x306;";
     textField.innerHTML = unicodeTxt;
