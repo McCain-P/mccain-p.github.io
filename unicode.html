@@ -69,9 +69,11 @@
     var combiningCharacterRadius = document.getElementById("combiningCharacterRadius");
     
     function generateUnicodeString() {
-      var repeatN = combiningCharacterRadius.value;
-      var unicodeTxt = initialString.value + aboveCombiningCharacter.value.repeat(repeatN) + leftCombiningCharacter.value.repeat(repeatN) + rightCombiningCharacter.value.repeat(repeatN) + belowCombiningCharacter.value.repeat(repeatN);
-      textField.innerHTML = unicodeTxt;
+      for (i = 0; i < initialString.innerHTML.length; i++) {
+        var repeatN = combiningCharacterRadius.value;
+        var unicodeTxt = initialString.value + aboveCombiningCharacter.value.repeat(repeatN) + leftCombiningCharacter.value.repeat(repeatN) + rightCombiningCharacter.value.repeat(repeatN) + belowCombiningCharacter.value.repeat(repeatN);
+        textField.innerHTML = unicodeTxt;
+      };
     };
     
     var copyTextField = document.getElementById("copyTextField");
