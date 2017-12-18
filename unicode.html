@@ -17,6 +17,9 @@
       position: fixed;
       left: 0;
     };
+    #copyTextField {
+      visibility: hidden;
+    };
   </style>
   <body>
     <p id="inputCircle">
@@ -46,15 +49,17 @@
       &#x2022;Input radius in number format
     </p>
     <br>
-    <button onclick="document.getElementById('textField').select();document.execCommand('copy');">
-      Copy Unicode-Text-String To Clipboard
-    </button>
-    <br>
     <p>
       Generated Unicode-Text-String:
     </p>
     <br>
-    <input id="textField" accept-charset="UTF-8">
+    <p id="textField">
+    </p>
+    <br>
+    <button onclick="copyText()">
+      Copy Unicode-Text-String To Clipboard
+    </button>
+    <input id="copyTextField">
   </body>
   <script>
     var textField = document.getElementById("textField");
@@ -69,7 +74,15 @@
     function generateUnicodeString() {
       var combiningCharRepeat = combiningCharacterRadius.value;
       var unicodeTxt = initialString.value + aboveCombiningCharacter.value.repeat(combiningCharRepeat) + leftCombiningCharacter.value.repeat(combiningCharRepeat) + rightCombiningCharacter.value.repeat(combiningCharRepeat) + belowCombiningCharacter.value.repeat(combiningCharRepeat);
-      textField.value = unicodeTxt;
+      textField.innerHTML = unicodeTxt;
+    };
+    
+    var copyTextField = document.getElementById("copyTextField");
+    
+    function copyText() {
+      copyTextField.value = textField.innerHTML;
+      copyTextField.select();
+      document.execCommand("copy");
     };
   </script>
 </html>
