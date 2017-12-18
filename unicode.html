@@ -69,7 +69,7 @@
     function generateUnicodeString() {
       var combiningCharRepeat = combiningCharacterRadius.value;
       var unicodeTxt = initialString.value + aboveCombiningCharacter.value.repeat(combiningCharRepeat) + leftCombiningCharacter.value.repeat(combiningCharRepeat) + rightCombiningCharacter.value.repeat(combiningCharRepeat) + belowCombiningCharacter.value.repeat(combiningCharRepeat);
-      textField.innerHTML = unicodeTxt;
+      textField.value = unicodeTxt;
     };
   </script>
 </html>
