@@ -11,6 +11,7 @@
     </style>
   </head>
   <body>
+    <img id="wrench" src="wrenchUp.png">
     <img id="dispenser" src="dispenser.png">
     <p id="counter"></p>
   </body>
@@ -22,16 +23,19 @@
     baps += n;
     counter.innerHTML = baps.toString();
   };
-    
-  cursor = topLeft;
   
-  onMouseDown {
-    cursor = bottomLeft;
-    playSound(bap);
-    addBaps(1);
-  };
-  onMouseUp {
-    cursor = topLeft;
-  };
+  //make image follow cursor  
+   
+  //wrenchUp.png : topLeft
+  //wrenchDown.png : bottomLeft
+  
+  //onMouseDown {
+    //cursor = bottomLeft;
+    //playSound(bap);
+    //addBaps(1);
+  //};
+  //onMouseUp {
+    //cursor = topLeft;
+  //};
   </script>
 </html>
