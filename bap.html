@@ -13,7 +13,10 @@
   <body>
     <img id="wrench" src="wrenchUp.png">
     <img id="dispenser" src="dispenser.png">
-    <p id="counter"></p>
+    <p id="counter">
+    </p>
+    <audio id="bapAudio" src="bap.mp3">
+    </audio>
   </body>
   <script>
   var baps = 0;
@@ -24,23 +27,23 @@
     counter.innerHTML = baps.toString();
   };
   
-  var wrench = document.getElementById("wrench");  
+  var wrench = document.getElementById("wrench");
+  var bapAudio = document.getElementById("bapAudio");
     
   document.onmousemove = function(e) {
     wrench.style.left = e.pageX;
     wrench.style.top = e.pageY;
   };
-   
-  //wrenchUp.png : topLeft
-  //wrenchDown.png : bottomLeft
-  
   document.onmousedown = function(e) {
     wrench.src = "wrenchDown.png";
-    //playSound(bap);
+    bapAudio.play();
     addBaps(1);
   };
   document.onmouseup = function(e) {
     wrench.src = "wrenchUp.png";
   };
+    
+  //wrenchUp.png : topLeft
+  //wrenchDown.png : bottomLeft
   </script>
 </html>
