@@ -24,18 +24,23 @@
     counter.innerHTML = baps.toString();
   };
   
-  //make image follow cursor  
+  var wrench = document.getElementById("wrench");  
+    
+  document.onmousemove = function(e) {
+    wrench.style.left = e.pageX;
+    wrench.style.top = e.pageY;
+  };
    
   //wrenchUp.png : topLeft
   //wrenchDown.png : bottomLeft
   
-  //onMouseDown {
+  document.onmousedown = function(e) {
     //cursor = bottomLeft;
     //playSound(bap);
     //addBaps(1);
-  //};
-  //onMouseUp {
+  };
+  document.onmouseup = function(e) {
     //cursor = topLeft;
-  //};
+  };
   </script>
 </html>
