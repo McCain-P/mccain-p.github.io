@@ -18,11 +18,11 @@
     <!--Wrench - height: 75vh?-->
   </head>
   <body>
-    <img id="wrench" src="wrenchUp.png">
-    <img id="dispenser" src="dispenser.png">
+    <img id="wrench" src="tf2WrenchUp.png">
+    <img id="dispenser" src="tf2DispenserLvl3.png">
     <p id="counter">
     </p>
-    <audio id="bapAudio" src="bap.mp3">
+    <audio id="bapAudio" src="tf2EngineerBap.wav">
     </audio>
   </body>
   <script>
@@ -42,12 +42,12 @@
     wrench.style.top = e.pageY;
   };
   document.onmousedown = function(e) {
-    wrench.src = "wrenchDown.png";
+    wrench.src = "tf2WrenchDown.png";
     bapAudio.play();
     addBaps(1);
   };
   document.onmouseup = function(e) {
-    wrench.src = "wrenchUp.png";
+    wrench.src = "tf2WrenchUp.png";
   };
     
   //wrenchUp.png : topLeft
