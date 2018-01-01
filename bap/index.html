@@ -47,7 +47,7 @@
     baps = 0;
     document.cookie = "expires=" + epochTime;
   } else {
-    baps = Number(document.cookie.slice(5)); //HERE, then cookie is done
+    baps = Number(document.cookie.slice(document.cookie.search("baps=")+5));
   };
     
   var counter = document.getElementById("counter");
