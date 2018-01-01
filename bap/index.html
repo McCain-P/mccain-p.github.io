@@ -38,11 +38,14 @@
     </audio>
   </body>
   <script>
+  var epochTime = "Tue, 19 Jan 2038 03:14:07 UTC";
+    
   var baps = null;
   if (document.cookie.search("baps=") == -1) {
     baps = 0;
+    document.cookie = "expires=" + epochTime;
   } else {
-    baps = Number(document.cookie.slice(5));
+    baps = Number(document.cookie.slice(5)); //HERE, then cookie is done
   };
     
   var counter = document.getElementById("counter");
