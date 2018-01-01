@@ -38,7 +38,7 @@
   if (document.cookie.search("baps=") == -1) {
     baps = 0;
   } else {
-    baps = Number(document.cookie.slice());
+    baps = Number(document.cookie.slice(5));
   };
     
   var counter = document.getElementById("counter");
