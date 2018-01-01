@@ -40,6 +40,7 @@
     </audio>
   </body>
   <script>
+  //<Baps>
   var epochTime = "Tue, 19 Jan 2038 03:14:07 UTC";
     
   var baps = null;
@@ -57,7 +58,9 @@
     document.cookie = "baps=" + baps.toString();
     counter.innerHTML = baps.toString();
   };
+  //</Baps>
   
+  //<Wrench graphics and actions>
   var wrench = document.getElementById("wrench");
   var bapAudio = document.getElementById("bapAudio");
     
@@ -73,8 +76,10 @@
   document.onmouseup = function(e) {
     wrench.src = "tf2WrenchUp.png";
   };
+  //</Wrench graphics and actions>
     
-  //wrenchUp.png : topLeft
-  //wrenchDown.png : bottomLeft
+  //<Notifications script>
+    
+  //</Notifications script>
   </script>
 </html>
