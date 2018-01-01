@@ -34,7 +34,12 @@
     </audio>
   </body>
   <script>
-  var baps = 0;
+  var baps = null;
+  if (document.cookie.search("baps=") == -1) {
+    baps = 0;
+  } else {
+    baps = Number(document.cookie.slice());
+  };
     
   var counter = document.getElementById("counter");
   counter.innerHTML = baps.toString();
