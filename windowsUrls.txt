@@ -1,0 +1,7 @@
+https://alieneyes.wordpress.com/2006/10/23/how-to-gain-access-to-system-account-the-most-powerful-account-in-windows/
+https://www.windowscentral.com/how-enable-god-mode-windows-10
+https://www.youtube.com/watch?v=WMRDYWZIJH8
+https://forums.hak5.org/topic/13619-gain-root-access-on-any-windows-machine/
+https://www.youtube.com/watch?v=X_X2gQowvKs
+
+*Gain access to the System user account; this is the privelage setting that the comptuer itself has. Once there, install the core program into the startup directory.
