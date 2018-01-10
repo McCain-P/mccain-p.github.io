@@ -5,3 +5,4 @@ https://forums.hak5.org/topic/13619-gain-root-access-on-any-windows-machine/
 https://www.youtube.com/watch?v=X_X2gQowvKs
 
 *Gain access to the System user/privelage; this is the privelage setting that the comptuer itself has. Once there, install the core program into the startup directory.
+-Maybe all you need is admin permissions to add the core program to the startup directory
