@@ -6,3 +6,5 @@ https://www.youtube.com/watch?v=X_X2gQowvKs
 
 *Gain access to the System user/privelage; this is the privelage setting that the comptuer itself has. Once there, install the core program into the startup directory.
 -Maybe all you need is admin permissions to add the core program to the startup directory
+
+*Get a flash drive with the core program and a couple batch files in it. The batch files automatically perform as much of the exploit as possible via cmd-prompt commands, and the core program is there to be put into the startup directory via the automating batch-files.
