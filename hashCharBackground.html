@@ -24,7 +24,8 @@
   function hashReplace() {
     var inputString = stringInput.value;
     var outputString = inputString.replace(/ /g,"#");
-    stringOutput.innerHTML = outputString;
+    var newlineString = outputString.replace(/\n/g,"<br>");
+    stringOutput.innerHTML = newlineString;
   };
   </script>
 </html>
