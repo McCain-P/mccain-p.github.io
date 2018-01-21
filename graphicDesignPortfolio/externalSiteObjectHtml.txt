@@ -1,9 +1,9 @@
 <div id="externalPortfolio">
-<object id="externalPortfolioFrame" data="https://stevestevenson.github.io/graphicDesignPortfolio/index.html" type="text/html" style="border-style:none">
-</object>
-<script>
-var externalPortfolioFrame = document.getElementById("externalPortfolioFrame");
-externalPortfolioFrame.height = window.innerHeight * (7/8);
-externalPortfolioFrame.width = window.innerWidth * (5/8);
-</script>
+  <object id="externalPortfolioFrame" data="https://stevestevenson.github.io/graphicDesignPortfolio/index.html" type="text/html" style="border-style:none">
+  </object>
+  <script>
+    var externalPortfolioFrame = document.getElementById("externalPortfolioFrame");
+    externalPortfolioFrame.height = window.innerHeight * (7/8);
+    externalPortfolioFrame.width = window.innerWidth * (5/8);
+  </script>
 </div>
