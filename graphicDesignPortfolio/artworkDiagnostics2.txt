@@ -1,0 +1,11 @@
+*The isolated document () yielded that the error did not occur for any of the images/classes in it (class="artork", class="otherClassName, no class)
+-Error didn't occur when the "artwork" class wasn't referrenced in the CSS
+-Error didn't occur when the "artwork" class was referrenced in the CSS, with position: absolte
+Conclusion: There is something in the code of the original document that is causing the error with the "artwork" class name
+-> Conclusion: Could possibly be that the other class names that start with "artwork" ("artworkHeading", etc.) could be causing this (possibly like some CSS identifier like).
+
+Important conlcusions
+1. The error is that the "onclick" attribute of an element is not executing the code within it when the image is clicked
+2. The error is caused by giving the element the "artwork" class name in the class attribute.
+*If the name of the CSS class is switched (just changing the name, not the code) from "artwork" to something else, the error is fixed and does not occur
+3. The error with the "artwork" class name is caused by code in the original HTML document
