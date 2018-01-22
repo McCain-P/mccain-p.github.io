@@ -76,6 +76,18 @@
     <hr>
   </body>
   <script>
-    alert(document.getElementsByClassName("artwork"));
+    var artworkElements = document.getElementsByClassName("artwork");
+    for (i = 0; i < artworkElements.length; i++) {
+      var artworkElement = artworkElements.item(i)
+      var fileSource = null;
+      if (artworkElement.src !== undefined) {
+        fileSource = artworkElement.src;
+      } else if (artworkElement.data !== undefined) {
+        fileSource = artworkElement.data;
+      } else {
+        console.log("Error: Unfound file-source attribute"); 
+      }
+      artworkElement.onclick = "window.open(" + artworkElement.src + ")";
+    }
   </script>
 </html>
