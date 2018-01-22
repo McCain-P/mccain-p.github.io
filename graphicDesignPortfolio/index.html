@@ -66,7 +66,8 @@
       </p>
       <object class="artwork" data="magazine.swf" type="application/x-shockwave-flash" style="width:77vh">
       </object>
-      <br style="line-height:50vh">
+      <br id="spacingForAbsolutelyPositionedElement" style="line-height:50vh">
+      <!--Elements with "position: absoltue" CSS are taken out of the flow of the HTML document, thus making their space not effect any elements. Here, a break tag is inserted to "make up" for the absolutely-positioned element's lack of space.-->
       <hr>
     </div>
     <p>TESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTESTTEST</p>
