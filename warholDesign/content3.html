@@ -1,12 +1,71 @@
 <html>
   <head>
     <title>
-      Content Subject 3
+      Content Subject 1
     </title>
     <style>
-    
+      body {
+        background-color: RGB(255,255,0);
+      }
+      #header {
+        background-color: RGB(0,192,0);
+        height: 20vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      #title {
+        color: RGB(0,0,128);
+        font-family: "Arial";
+        font-size: 10vh;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 0;
+        border: 0;
+        margin: 0;
+      }
+      #shape {
+        font-size: 15vh;
+      }
+      #headerBorder {
+       background-color: RGB(0,0,128);
+        height: 2vh;
+        width: 100vw;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+      #bodyContent {
+        height: 78vh;
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      }
+      #bodyText {
+        color: RGB(0,192,0);
+        font-family: "Arial";
+        font-size: 2vw;
+      }
     </style>
   </head>
   <body>
+    <div id="header">
+      <h1 id="title">
+        Content Subject 1 <span id="shape">▲</span>
+      </h1>
+      <div id="headerBorder">
+      </div>
+    </div>
+    <div id="bodyContent">
+      <p id="bodyText">
+        Body content.
+      </p>
+    </div>
   </body>
 </html>
