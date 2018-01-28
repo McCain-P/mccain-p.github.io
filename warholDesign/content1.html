@@ -14,9 +14,6 @@
         position: fixed;
         top: 0;
         left: 0;
-        border-bottom-style: solid;
-        border-bottom-width: 5%;
-        border-bottom-color: RGB(0,0,128);
       }
       #title {
         color: RGB(0,0,128);
@@ -34,6 +31,14 @@
       }
       #shape {
         font-size: 15vh;
+      }
+      #headerBorder {
+       background-color: RGB(0,0,128);
+        height: 5vh;
+        width: 100vw;
+        position: absolute;
+        top: 100%;
+        left: 0;
       }
       #bodyContent {
         height: 80vh;
@@ -54,6 +59,8 @@
       <h1 id="title">
         Content Subject 1 <span id="shape">▲</span>
       </h1>
+      <div id="headerBorder">
+      </div>
     </div>
     <div id="bodyContent">
       <p id="bodyText">
