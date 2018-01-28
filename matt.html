@@ -71,13 +71,24 @@
         animation: 8s linear 0s infinite normal none running marqueeAnimation;
       }
       #banners {
-        
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .banner {
+        height: 5%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background-color: RGB(128,128,192);
       }
       #topBanner {
-        
+        top: 0;
       }
       #bottomBanner {
-        
+        bottom: 0;
       }
       #title {
         
@@ -103,12 +114,12 @@
       -->
     </div>
     <div id="banners">
-      <div id="topBanner">
+      <div id="topBanner" class="banner">
         <h3 id="title">
           Quotes From <span id="superTitle">( ͡° ͜ʖ ͡°) Matt</span>
         </h3>
       </div>
-      <div id="bottomBanner">
+      <div id="bottomBanner" class="banner">
         <p id="footer">
           In dedication and preservation of Matt Winn.
         </p>
