@@ -1,2 +1,10 @@
 Keegan Steam account name: "polaroid"
 -Account profile URL: "steamcommunity.com/profiles/76561198111949624
+-Friends: http://steamcommunity.com/profiles/76561198111949624/friends/
+-Suspect accounts: http://steamcommunity.com/profiles/76561198265676606
+--Suspicious name (andrewsalinas75)
+--No profile picture, like Keegan said
+--Only friend is Keegan's account
+--168 hours on a free game, the only game in his account
+--Level 0
+--Problem: Last online 207 days ago
