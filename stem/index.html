@@ -24,8 +24,16 @@
         /*64/32/16 size. Which?*/
         cursor: url(resources/cursors/interact/interact32.png) 16 16, pointer;
       }
+      @keyframes columnRiseAnimation {
+        from {
+          top: 90vh;
+        }
+        to {
+          top: 50vh;
+        }
+      }
       #column:hover {
-        
+        animation: 2s linear 0s 1 normal none running columnRiseAnimation;
       }
       #columnTitleTextDiv {
         height: 18%;
