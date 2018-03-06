@@ -1,1 +1,1 @@
-open -a "Chrome" "https://www.google.com"
+open -a "Google Chrome" "https://www.google.com"
