@@ -38,7 +38,9 @@
     return encodedString;
   };
   
-  document.getElementById("textOutput").value = z408Encode(document.getElementById("textInput").value);
+  function encodeInput() {
+    document.getElementById("textOutput").value = z408Encode(document.getElementById("textInput").value);
+  }
   
   //No symbol for "Z"???
   //No symbol for "Q"???
