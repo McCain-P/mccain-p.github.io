@@ -37,12 +37,14 @@
     };
     return encodedString;
   };
-    console.log(z408Encode("test"));
-    //No symbol for "Z"???
-    //No symbol for "Q"???
-    //Don't have the symbol for "P" yet
-    //No symbol for "J"???
-    //"M" is missing backwards Q character
-    //Multiple Zodiac characters represent the same latin character. So, for example, A could be converted into like 3 different zodiac characters. Will have to update the function (possibly), to pick between the multiple random characters (maybe randomly, or with some pattern).
+  
+  document.getElementById("textOutput").value = z408Encode(document.getElementById("textInput").value);
+  
+  //No symbol for "Z"???
+  //No symbol for "Q"???
+  //Don't have the symbol for "P" yet
+  //No symbol for "J"???
+  //"M" is missing backwards Q character
+  //Multiple Zodiac characters represent the same latin character. So, for example, A could be converted into like 3 different zodiac characters. Will have to update the function (possibly), to pick between the multiple random characters (maybe randomly, or with some pattern).
   </script>
 </html>
