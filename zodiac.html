@@ -35,7 +35,7 @@
     </div>
   </body>
   <script>
-  var z408Key = [["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["G","V","Ǝ","⌖","☉","J","R","⦵","△","�","/","◪","�","Λ","ᗡ","�","�","Я","◬","●","У","⊃","A","τ","◻","�"]];
+  var z408Key = [["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","﷐","﷑","﷒","﷓","﷔"],["﷐","﷑","Ǝ","⌖","☉","﷒","﷓","⦵","△","�","/","◪","�","Λ","ᗡ","�","�","Я","◬","●","У","⊃","﷔","τ","◻","�","G","V","J","R","A"]];
   /*
   Unicode Replacement Character U+FFFD � is used for when the character is not available (for example, if an input character does not currently have a corresponding output character yet)
   
@@ -49,7 +49,7 @@
   
   function z408Encode(asciiLatinString) {
     var encodedString = asciiLatinString;
-    for (i = 0; i < 26; i++) {
+    for (i = 0; i < 31; i++) {
      encodedString = encodedString.replace(RegExp(z408Key[0][i], "ig"), z408Key[1][i]);
     };
     return encodedString;
