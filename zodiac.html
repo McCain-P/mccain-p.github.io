@@ -38,7 +38,7 @@
   var z408Key = [["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["G","V","Ǝ","⌖","☉","J","R","⦵","△","�","/","◪","�","Λ","ᗡ","�","�","Я","◬","●","У","⊃","A","τ","◻","�"]];
   //Unicode Replacement Character (U+FFFD) (used for when the character is not available): �
   var testKey = [["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]];
-  //"Transient" characters (Unicode Non-Characters) at the end of the encoding key are used so that output ASCII characters aren't confused for input ASCII characters and further encoded.
+  //"Transient" characters (Unicode Non-Characters) at the end of the encoding key are used so that ASCII output characters aren't confused for ASCII input characters and further encoded. The ASCII input characters are first encoded to their respective transient characters, which are then encoded to the respective ASCII output characters at the end of the encoding key.
   function z408Encode(asciiLatinString) {
     var encodedString = asciiLatinString;
     for (i = 0; i < 26; i++) {
