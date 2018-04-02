@@ -45,6 +45,16 @@
     J transient character: U+FDD2 ﷒
     R transient character: U+FDD3 ﷓
     A transient character: U+FDD4 ﷔
+    
+  if z408Key[1][i].type == string {
+    do as normal
+  } else {
+    if z408Key[1][i].type == array {
+      z408Key[1][i][math.random(array.length)] //If it's a string, treat as normal. If it's an array, choose a random string from the array
+    } else {
+      � //If not string or array, return replacement character
+    }
+  }
   */
   
   function z408Encode(asciiLatinString) {
