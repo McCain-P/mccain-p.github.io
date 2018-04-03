@@ -62,8 +62,18 @@
   function z408Encode(asciiLatinString) {
     var encodedString = asciiLatinString;
     for (i = 0; i < 31; i++) {
-     //string/array type checking goes here
-     encodedString = encodedString.replace(RegExp(z408Key[0][i], "ig"), z408Key[1][i]);
+      var outputCharacter = null;
+      if (typeof z408Key[1][i] == "string") {
+        outputCharacter = z408Key[1][i];
+      } else {
+        if instanceof {
+          
+        } else {
+          //? char
+        }
+      };
+      //string/array type checking goes here
+      encodedString = encodedString.replace(RegExp(z408Key[0][i], "ig"), z408Key[1][i]);
     };
     return encodedString;
   };
