@@ -15,7 +15,7 @@
   </head>
   <body>
     <h1>
-      Λ̅Ted-Cruz Translator Λ&#x0305;
+      Ted-Cruz Translator
     </h1>
     <h2>
       Set of Zodiac Unicode-Characters:
@@ -30,7 +30,7 @@
         <input type="text" id="textOutput">
       </div>
       <button onclick="encodeInput()">
-        z408-Encode (Harden solution) Input
+        z408-Encode <span class="encodingMethodSpecifics">(Harden solution)</span> Input
       </button>
     </div>
   </body>
@@ -78,5 +78,7 @@
   //No symbol for "J"???
   //"M" is missing backwards Q character
   //Multiple Zodiac characters represent the same latin character. So, for example, A could be converted into like 3 different zodiac characters. Will have to update the function (possibly), to pick between the multiple random characters (maybe randomly, or with some pattern).
+    
+  //For letters that Zodiac didn't use in his cipher, have them encode to the special "?" character. Have a second encoding key and button/interface (either a seperate div, or possibly have a multi-select input they can choose the method from, sort of like a drop-down form thing?), where you use the multiple-substitution method to make a couple characters also decode to the missing ASCII letters
   </script>
 </html>
