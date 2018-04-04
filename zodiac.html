@@ -69,10 +69,9 @@
         if (z408Key[1][i] instanceof Array) {
           
         } else {
-          //? char
-        }
+          outputCharacter = "�";
+        };
       };
-      //string/array type checking goes here
       encodedString = encodedString.replace(RegExp(z408Key[0][i], "ig"), outputCharacter);
     };
     return encodedString;
