@@ -66,7 +66,7 @@
       if (typeof z408Key[1][i] == "string") {
         outputCharacter = z408Key[1][i];
       } else {
-        if instanceof {
+        if (z408Key[1][i] instanceof Array) {
           
         } else {
           //? char
@@ -81,7 +81,7 @@
   function encodeInput() {
     document.getElementById("textOutput").value = z408Encode(document.getElementById("textInput").value);
   }
-  
+  //For the DEcoding key, if inputs a, w, and g all decode to output X, then have one of the input string in the array be a regex that matched for a, w, or g. This regex string can be handled just like the other single-character strings, and will work, because all the strings are being put in a regex statement, and the single-character strings are just simple regex statements
   //No symbol for "Z"???
   //No symbol for "Q"???
   //Don't have the symbol for "P" yet
