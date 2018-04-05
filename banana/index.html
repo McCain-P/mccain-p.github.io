@@ -1,1 +1,51 @@
-
+<html>
+<p>Assure client-side time is synced</p>
+<p><br><br><br>Current Time:<br></p>
+<div id="timeClock">00:00:00</div>
+<p><br><br>Set Activation-Time:<br>(UTC, Military Time)<br></p>
+<input id="hours" type="text">
+:
+<input id="minutes" type="text">
+<button onclick='activated = 0;activationTime = "".concat(document.getElementById("hours").value,":",document.getElementById("minutes").value);'>Enter Activation-Time</button>
+<audio id="audioTag" src="bananaPhone.mp3" loop=true></audio>
+<script>
+var time = "".concat(
+new Date().getHours().toString(),
+":",
+new Date().getMinutes().toString(),
+":",
+new Date().getSeconds().toString()
+);
+var hMTime = "".concat(
+new Date().getHours().toString(),
+":",
+new Date().getMinutes().toString()
+);
+var activationTime = 0
+var activated = 0
+function loopFunc() {
+	time = "".concat(
+		new Date().getHours().toString(),
+		":",
+		new Date().getMinutes().toString(),
+		":",
+		new Date().getSeconds().toString()
+		);
+	hMTime = "".concat(
+	new Date().getHours().toString(),
+	":",
+	new Date().getMinutes().toString()
+	);
+	if (activated == 0) {
+		if (hMTime == activationTime) {
+			document.getElementById("audioTag").play();
+		};
+	};
+	document.getElementById("timeClock").innerHTML = time
+};
+setInterval(loopFunc, 100);
+</script>
+<div id="settings">
+	<button onclick='location.replace("https://stevestevenson.github.io/samEdits");'>Sam Version</button>
+</div>
+</html>
