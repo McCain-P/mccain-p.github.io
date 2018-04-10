@@ -66,18 +66,6 @@
     J transient character: U+FDD2 ﷒
     R transient character: U+FDD3 ﷓
     A transient character: U+FDD4 ﷔
-  
-  //Use object types to check if it has multiple possible chars (string -> normal, single char; array -> multiple possible chars)
-  if z408Key[1][i].type == string {
-    do as normal
-  } else {
-    if z408Key[1][i].type == array {
-      z408Key[1][i][math.random(array.length)] //If it's a string, treat as normal. If it's an array, choose a random string from the array
-    } else {
-      � //If not string or array, return replacement character. This type of value in the key is undefined.
-    }
-  }
-  //Maybe set a local variable as the check's output? Maybe a return statement? It has to return something that will go into the regex.
   */
   //Math.round(Math.random() * 10)
   function z408Encode(asciiLatinString) {
