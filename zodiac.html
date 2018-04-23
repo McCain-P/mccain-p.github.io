@@ -89,7 +89,7 @@
           outputCharacter = "�";
         };
       };
-      encodedString = encodedString.replace(RegExp(z408Key[0][i], "i"), outputCharacter);
+      encodedString = encodedString.replace(RegExp(z408Key[0][i], "ig"), outputCharacter);
       console.log(outputCharacter);
     };
     return encodedString;
