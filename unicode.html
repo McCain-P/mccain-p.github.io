@@ -66,23 +66,25 @@
       Generate String
     </button>
     <br>
-    <p>
-      &#x2022;Input combining-characters in character, hexadecimal, or decimal format
+    <div id="sideElements">
+      <p>
+        &#x2022;Input combining-characters in character, hexadecimal, or decimal format
+        <br>
+        &#x2022;Input radius in number format
+      </p>
       <br>
-      &#x2022;Input radius in number format
-    </p>
-    <br>
-    <p>
-      Generated Unicode-Text-String:
-    </p>
-    <br>
-    <p id="textField">
-    </p>
-    <br>
-    <input id="copyTextField">
-    <button onclick="copyText()">
-      Copy Unicode-Text-String To Clipboard
-    </button>
+      <p>
+        Generated Unicode-Text-String:
+      </p>
+      <br>
+      <p id="textField">
+      </p>
+      <br>
+      <input id="copyTextField">
+      <button onclick="copyText()">
+        Copy Unicode-Text-String To Clipboard
+      </button>
+    </div>
   </body>
   <script>
     var textField = document.getElementById("textField");
