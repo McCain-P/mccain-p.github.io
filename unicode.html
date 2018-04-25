@@ -22,11 +22,15 @@
     #inputCircle {
       width: 100vw;
       text-align: center;
-      font-size: 2.5vw;
+      font-size: 4vw;
     }
     #inputCircle input {
-      width: 5vw;
-      height: 2.5vw;
+      width: 8vw;
+      height: 4vw;
+    }
+    .sideElement {
+      width: 12vw;
+      height: 3vw;
     }
     #combiningCharacterRadius {
       position: fixed;
@@ -56,9 +60,9 @@
       <br>
       <input id="belowCombiningCharacter" placeholder="Below Combining-Char.">
     </p>
-    <input id="combiningCharacterRadius" placeholder="Combining-Char. Radius">
+    <input class="sideElement" id="combiningCharacterRadius" placeholder="Combining-Char. Radius">
     <br>
-    <button id="generateButton" onclick="generateUnicodeString()">
+    <button class="sideElement" id="generateButton" onclick="generateUnicodeString()">
       Generate String
     </button>
     <br>
