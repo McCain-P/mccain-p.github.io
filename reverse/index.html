@@ -12,9 +12,16 @@
       *Helter Skelter
       *Girl
     -->
-    <audio controls="true" src="">
+    <audio controls="true" src="" id="reverseAudio">
     </audio>
-    <video controls="true" src="">
+    <video controls="true" src="" id="reverseVideo">
     </video>
   </body>
+  <script>
+    function reverseMediaElement(mediaElement) {
+      mediaElement.playbackRate = -1;
+    }
+    reverseMediaElement(document.getElementById("reverseAudio"));
+    reverseMediaElement(document.getElementById("reverseVideo"));
+  </script>
 </html>
