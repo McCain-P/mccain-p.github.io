@@ -11,22 +11,23 @@
         .page {
           border: X solid RGB(0,0,0);
           margin: X;
+          padding: X;
+          height: 100vh;
+          width: calc(100vh * (17 / 22));
         }
       }
       @media print {
         .page {
+          break-after: page;
           border: 0;
           margin: 0;
+          padding: calc(100% / 17);
+          height: 100%;
+          width: 100%;
         }
       }
       body * {
         position: static; 
-      }
-      .page {
-        break-after: page;
-        padding: X;
-        height: 11 in;
-        width: 8.5 in;
       }
       h1, h2, p {
         
@@ -46,9 +47,7 @@
     </style>
   </head>
   <body>
-    <div id="contentContainer">
-      
-    </div>
+
   </body>
   <script>
     var dataset = [
