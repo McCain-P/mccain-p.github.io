@@ -8,13 +8,21 @@
         background-color: RGB(255,255,255); 
       }
       @media screen {
-
+        border: X solid RGB(0,0,0);
+        margin: X;
       }
       @media print {
-
+        border: 0;
+        margin: 0;
+      }
+      body * {
+        position: static; 
       }
       .page {
         break-after: page;
+        padding: X;
+        height: 11 in;
+        width: 8.5 in;
       }
       h1, h2, p {
         
@@ -38,4 +46,11 @@
       
     </div>
   </body>
+  <script>
+    var dataset = [
+      [a,b,c],
+      [a,b,c],
+      [a,b,c]
+    ];
+  </script>
 </html>
