@@ -32,16 +32,25 @@
         position: static; 
       }
       h1, h2, p {
+        font-family: "Times New Roman", serif;
+        color: RGB(0,0,0);
         padding: 0;
       }
       h1 {
-        margin: X;
+        font-size: 20pt;
+        margin: calc(100% * (4 / 17)); /*2 inches*/
+        /*bold*/
+        left: 50%;
+        transform: translateX(-50%);
       }
       h2 {
-        margin: X;
+        font-size: 16pt;
+        margin: calc(100% * (2 / 17)); /*1 inch*/
+        text-decoration: underline;
       }
       p {
-        margin: X;
+        font-size: 14pt;
+        margin: calc(100% / 17); /*0.5 (1/2) inches*/
       }
       .graph {
       
@@ -60,6 +69,8 @@
     </div>
   </body>
   <script>
+    var graphCanvas = document.getElementById("infectionGraph");
+    
     var dataset = [
       [a,b,c],
       [a,b,c],
