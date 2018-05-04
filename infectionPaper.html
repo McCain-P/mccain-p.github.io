@@ -57,7 +57,10 @@
         width: 75%; /*6.375 (6 + 3/8) inches*/
         height: calc(100% * (51 / 88)); /*6.375 (6 + 3/8) inches*/
         padding: 0;
-        border: calc(100% / 68) solid RGB(0,0,0); /*0.125 (1/8) inches* calc(100% / 68)/
+        /*border: calc(100% / 68) solid RGB(0,0,0);*/ /*0.125 (1/8) inches calc(100% / 68)*/
+        border-width: calc(100% / 68);
+        border-style: solid;
+        border-color: RGB(0,0,0);
         margin-bottom: calc(100% * (2 / 17)); /*1 inch*/
         margin-left: 12.5%;
         margin-right: 12.5%;
