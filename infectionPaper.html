@@ -5,7 +5,7 @@
     </title>
     <style>
       body {
-        background-color: RGB(255,255,255); 
+        background-color: RGB(0,0,0); 
       }
       @media screen {
         .page {
@@ -14,8 +14,6 @@
           padding: calc(100vh / 22); /*0.5 (1/2) inches*/
           height: 100vh; /*11 inches*/
           width: calc(100vh * (17 / 22)); /*8.5 inches*/
-          /*left: 50vw;
-          transform: translateX(50%);*/
         }
       }
       @media print {
@@ -28,8 +26,11 @@
           width: 100%; /*8.5 inches*/
         }
       }
+      .page {
+        background-color: RGB(255,255,255);
+      }
       body * {
-        position: static; 
+        position: static;
       }
       h1, h2, p {
         font-family: "Times New Roman", serif;
@@ -107,5 +108,9 @@
     var graphCanvas = document.getElementById("infectionGraph");
     var canvasWidth = graphCanvas.width;
     var canvasHeight = graphCanvas.height;
+    
+    //Draw the general stuff
+    //For loop through each row, and each array in the row, to graph the points with whatever color (determined by the number value)
+    //Draw the lines between all the points, with the node it interacts with (back-node) determining the color of the line
   </script>
 </html>
