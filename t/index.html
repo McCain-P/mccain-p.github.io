@@ -4,8 +4,16 @@
       B E G O N E ,  T H O T !
     </title>
     <style>
+    @keyframes flashingBackground {
+      from {
+        background-color: RGB(255,255,255);
+      }
+      to {
+        background-color: RGB(255,0,0);
+      }
+    }
     body {
-    
+      animation: 0.5s linear 0s infinite normal none running flashingBackground;
     }
     h1 {
     
