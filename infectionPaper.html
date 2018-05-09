@@ -122,7 +122,9 @@
           };
         };
         //c.moveTo();
+        c.beginPath();
         c.arc(j*(canvasWidth/4),i*(canvasHeight/dataset.length),canvasWidth/64,0,2*Math.PI,false);
+        c.closePath();
         c.fill();
       };
     };
