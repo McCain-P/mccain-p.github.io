@@ -43,6 +43,12 @@
     </video>
   </body>
   <script>
-    document.getElementById("thotVideo").play();
+    function playAttempt() {
+      try {
+        document.getElementById("thotVideo").play();
+      } catch(e) {
+        playAttempt();
+      };
+    };
   </script>
 </html>
