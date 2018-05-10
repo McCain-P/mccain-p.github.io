@@ -108,7 +108,8 @@
     var c = graphCanvas.getContext("2d");
     
     //Draw general:
-    //x
+    c.moveTo(0,0);
+    
     
     //Draw points:
     for (i = 0; i < dataset.length; i++) {
@@ -123,7 +124,6 @@
             c.fillStyle = "RGB(0,0,255)";
           };
         };
-        //c.moveTo();
         c.beginPath();
         c.arc(j*(canvasWidth/4),i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
         c.closePath();
