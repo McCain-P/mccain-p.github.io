@@ -39,16 +39,7 @@
   </head>
   <body>
     <h1>B    E    G    O    N    E    ,        T    H    O    T    !</h1>
-    <video src="begoneThot.mp4" id="thotVideo">
+    <video src="begoneThot.mp4" id="thotVideo" onclick="document.getElementById("thotVideo").play();">
     </video>
   </body>
-  <script>
-    function playAttempt() {
-      try {
-        document.getElementById("thotVideo").play();
-      } catch(e) {
-        playAttempt();
-      };
-    };
-  </script>
 </html>
