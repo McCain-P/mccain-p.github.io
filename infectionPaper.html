@@ -108,7 +108,13 @@
     var c = graphCanvas.getContext("2d");
     
     //Draw general:
+    //c.beginPath();
+    c.strokeStyle = "RGB(0,0,0)";
     c.moveTo(0,0);
+    c.lineTo(0,canvasHeight);
+    c.lineTo(canvasWidth,canvasHeight);
+    c.stroke()
+    //c.closePath();
     
     
     //Draw points:
