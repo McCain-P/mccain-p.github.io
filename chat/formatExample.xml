@@ -1,0 +1,25 @@
+<xml>
+  <chat>
+    <message sender="UserA" receiver="UserB">
+      <text>
+        This is the XML format of a chat!
+      </text>
+      <image format="base64">
+        base64Data
+      </image>
+    </message>
+    <message sender="UserA" receiver="UserB">
+      <text>
+        This is a message!
+      </text>
+    </message>
+    <message sender="UserB" receiver="UserA>
+      <audio format="???">
+        ???
+      </audio>
+      <video format="???">
+        ???
+      </video>
+    </message>
+  </chat>
+</xml>
