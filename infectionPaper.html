@@ -116,8 +116,10 @@
     c.lineTo(canvasWidth,canvasHeight-10);
     c.stroke()
       //Draw host values:
-    //x
-    
+    c.fillStyle = "RGB(0,0,0)";
+    c.font = X;
+    c.textAlign = "left";
+    c.textBaseline = "alphabetic";
     
     //Draw points:
     for (i = 0; i < dataset.length; i++) {
