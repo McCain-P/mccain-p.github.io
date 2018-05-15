@@ -117,7 +117,7 @@
     c.stroke()
       //Draw host values:
     c.fillStyle = "RGB(0,0,0)";
-    c.font = String(canvasHeight/50) + "px 'Arial', sans-serif"; //canvasHeight/20 dataset.length
+    c.font = String(canvasHeight/dataset.length) + "px 'Arial', sans-serif"; //canvasHeight/20 dataset.length
     c.textAlign = "left";
     c.textBaseline = "alphabetic";
     for (i = 0; i < dataset.length; i++) {
@@ -137,7 +137,7 @@
           };
         };
         c.beginPath();
-        c.arc(j*(canvasWidth/4),i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
+        c.arc(j*(canvasWidth/4),(i+1)*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false); //i*(canvasHeight/dataset.length)
         c.closePath();
         c.fill();
       };
