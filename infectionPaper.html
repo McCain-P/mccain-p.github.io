@@ -121,7 +121,7 @@
     c.textAlign = "left";
     c.textBaseline = "alphabetic";
     for (i = 0; i < dataset.length; i++) {
-      c.fillText(dataset[i][0][0],0,i*(canvasHeight/dataset.length));
+      c.fillText(dataset[i][0][0],0,(i+1)*(canvasHeight/dataset.length));
     };
     
     //Draw points:
@@ -137,7 +137,7 @@
           };
         };
         c.beginPath();
-        c.arc(j*(canvasWidth/4),(i+1)*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false); //i*(canvasHeight/dataset.length)
+        c.arc(j*(canvasWidth/4),i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
         c.closePath();
         c.fill();
       };
