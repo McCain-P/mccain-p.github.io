@@ -110,14 +110,14 @@
     //Draw general:
       //Draw axes:
     c.strokeStyle = "RGB(0,0,0)";
-    c.lineWidth = 2;
-    c.moveTo(10,0);
-    c.lineTo(10,canvasHeight-10);
-    c.lineTo(canvasWidth,canvasHeight-10);
+    c.lineWidth = canvasWidth/128; //2
+    c.moveTo(canvasHeight/30,0); //10
+    c.lineTo(canvasHeight/30,canvasHeight-(canvasHeight/30));
+    c.lineTo(canvasWidth,canvasHeight-(canvasHeight/30));
     c.stroke()
       //Draw host values:
     c.fillStyle = "RGB(0,0,0)";
-    c.font = String(canvasWidth/20) + "px 'Arial', sans-serif";
+    c.font = String(canvasWidth/20) + "px 'Arial', sans-serif"; //MAKE IN CANVASHEIGHT?
     c.textAlign = "left";
     c.textBaseline = "alphabetic";
     for (i = 0; i < dataset.length; i++) {
