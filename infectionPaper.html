@@ -15,6 +15,9 @@
           height: 100vh; /*11 inches*/
           width: calc(100vh * (17 / 22)); /*8.5 inches*/
         }
+        #printButton {
+          /*Styling CSS, position: fixed;*/
+        }
       }
       @media print {
         .page {
@@ -24,6 +27,9 @@
           padding: calc(100% / 17); /*0.5 (1/2) inches*/
           height: 100%; /*11 inches*/
           width: 100%; /*8.5 inches*/
+        }
+        #printButton {
+          display: none;
         }
       }
       body * {
@@ -61,6 +67,9 @@
     </style>
   </head>
   <body>
+    <button id="printButton" onclick="window.print()">
+      Print Document
+    </button>
     <div class="document">
       <div class="page">
         <h1>h1</h1><h2>h2</h2><p>p</p><p>p</p><h2>h2</h2><p>p</p><p>p</p>
