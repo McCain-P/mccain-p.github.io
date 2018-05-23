@@ -112,8 +112,8 @@
     c.strokeStyle = "RGB(0,0,0)";
     c.lineWidth = canvasWidth/128;
     c.moveTo(5*((canvasHeight/dataset.length)/2),0);
-    c.lineTo(5*((canvasHeight/dataset.length)/2),canvasHeight-(5*((canvasHeight/dataset.length)/2)));
-    c.lineTo(canvasWidth,canvasHeight-(5*((canvasHeight/dataset.length)/2)));
+    c.lineTo(5*((canvasHeight/dataset.length)/2),canvasHeight-(canvasHeight/dataset.length));
+    c.lineTo(canvasWidth,canvasHeight-(canvasHeight/dataset.length));
     c.stroke()
       //Draw host values:
     c.fillStyle = "RGB(0,0,0)";
