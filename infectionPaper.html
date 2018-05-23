@@ -137,7 +137,7 @@
           };
         };
         c.beginPath();
-        c.arc(j*((5*((canvasHeight/dataset.length)/2))/4),i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
+        c.arc(j*((canvasWidth-(5*((canvasHeight/dataset.length)/2)))/4),i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
         c.closePath();
         c.fill();
       };
