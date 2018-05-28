@@ -124,54 +124,56 @@
     //0: Unaffected
     //1: Affected/Infected
     //2: Unknown
+   
+    function drawGraph() {
+      var graphCanvas = document.getElementById("infectionGraph");
+      var canvasWidth = graphCanvas.width;
+      var canvasHeight = graphCanvas.height;
+      var c = graphCanvas.getContext("2d");
     
-    var graphCanvas = document.getElementById("infectionGraph");
-    var canvasWidth = graphCanvas.width;
-    var canvasHeight = graphCanvas.height;
-    var c = graphCanvas.getContext("2d");
-    
-    //Draw general:
-      //Draw axes:
-    var graphX = 5*((canvasHeight/dataset.length)/2);
-    var graphY = canvasHeight-(canvasHeight/dataset.length);
-    c.strokeStyle = "RGB(0,0,0)";
-    c.lineWidth = canvasWidth/128;
-    c.moveTo(graphX,0);
-    c.lineTo(graphX,graphY);
-    c.lineTo(canvasWidth,graphY);
-    c.stroke()
-      //Draw host values:
-    c.fillStyle = "RGB(0,0,0)";
-    c.font = String((canvasHeight/dataset.length)/2) + "px 'Arial', sans-serif";
-    c.textAlign = "left";
-    c.textBaseline = "alphabetic";
-    for (i = 0; i < dataset.length; i++) {
-      c.fillText(dataset[i][0][0],0,(i+(1/2))*(canvasHeight/dataset.length));
-    };
-    
-    //Draw points:
-    for (i = 0; i < dataset.length; i++) {
-      for (j = 0; j < dataset[i].length; j++) {
-        if (dataset[i][j][1] === 0) {
-          c.fillStyle = "RGB(0,0,0)";
-        } else {
-          if (dataset[i][j][1] === 1) {
-            c.fillStyle = "RGB(255,0,255)";
-          } else {
-            c.fillStyle = "RGB(0,0,255)";
-          };
-        };
-        c.beginPath();
-        c.arc((j*((canvasWidth-graphX)/4))+graphX,i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
-        c.closePath();
-        c.fill();
+      //Draw general:
+        //Draw axes:
+      var graphX = 5*((canvasHeight/dataset.length)/2);
+      var graphY = canvasHeight-(canvasHeight/dataset.length);
+      c.strokeStyle = "RGB(0,0,0)";
+      c.lineWidth = canvasWidth/128;
+      c.moveTo(graphX,0);
+      c.lineTo(graphX,graphY);
+      c.lineTo(canvasWidth,graphY);
+      c.stroke()
+        //Draw host values:
+      c.fillStyle = "RGB(0,0,0)";
+      c.font = String((canvasHeight/dataset.length)/2) + "px 'Arial', sans-serif";
+      c.textAlign = "left";
+      c.textBaseline = "alphabetic";
+      for (i = 0; i < dataset.length; i++) {
+        c.fillText(dataset[i][0][0],0,(i+(1/2))*(canvasHeight/dataset.length));
       };
-    };
     
-    //Draw lines:   with the node it interacts with (back-node) determining the color of the line
-    for (i = 0; i < dataset.length; i++) {
-      for (j = 1; j < dataset[i].length; j++) {
+      //Draw points:
+      for (i = 0; i < dataset.length; i++) {
+        for (j = 0; j < dataset[i].length; j++) {
+          if (dataset[i][j][1] === 0) {
+            c.fillStyle = "RGB(0,0,0)";
+          } else {
+            if (dataset[i][j][1] === 1) {
+              c.fillStyle = "RGB(255,0,255)";
+            } else {
+              c.fillStyle = "RGB(0,0,255)";
+            };
+          };
+          c.beginPath();
+          c.arc((j*((canvasWidth-graphX)/4))+graphX,i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
+          c.closePath();
+          c.fill();
+        };
+      };
+    
+      //Draw lines:   with the node it interacts with (back-node) determining the color of the line
+      for (i = 0; i < dataset.length; i++) {
+        for (j = 1; j < dataset[i].length; j++) {
         
+        };
       };
     };
   </script>
