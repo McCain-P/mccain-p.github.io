@@ -126,7 +126,6 @@
     //2: Unknown
    
     function drawGraph(dataset,graphCanvas) {
-      var graphCanvas = document.getElementById("infectionGraph");
       var canvasWidth = graphCanvas.width;
       var canvasHeight = graphCanvas.height;
       var c = graphCanvas.getContext("2d");
@@ -177,6 +176,6 @@
       };
     };
     
-    drawGraph();
+    drawGraph(initialDataset,document.getElementById("infectionGraph"));
   </script>
 </html>
