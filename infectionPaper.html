@@ -95,7 +95,7 @@
     </div>
   </body>
   <script>
-    var dataset = [
+    var initialDataset = [
       [["Katie",2],["Morgen",2],["Alexis",2],["Cassie",2],["Ashley",1]],
       [["Cassie",2],["Morgen",2],["Alexis",2],["Cassie",2],["Ashley",1]],
       [["Claire",2],["Morgen",2],["Alexis",2],["Cassie",2],["Ashley",1]],
@@ -125,7 +125,7 @@
     //1: Affected/Infected
     //2: Unknown
    
-    function drawGraph() {
+    function drawGraph(dataset,graphCanvas) {
       var graphCanvas = document.getElementById("infectionGraph");
       var canvasWidth = graphCanvas.width;
       var canvasHeight = graphCanvas.height;
@@ -176,5 +176,7 @@
         };
       };
     };
+    
+    drawGraph();
   </script>
 </html>
