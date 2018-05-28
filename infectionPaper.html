@@ -132,11 +132,13 @@
     
     //Draw general:
       //Draw axes:
+    var graphX = 5*((canvasHeight/dataset.length)/2);
+    var graphY = canvasHeight-(canvasHeight/dataset.length);
     c.strokeStyle = "RGB(0,0,0)";
     c.lineWidth = canvasWidth/128;
-    c.moveTo(5*((canvasHeight/dataset.length)/2),0);
-    c.lineTo(5*((canvasHeight/dataset.length)/2),canvasHeight-(canvasHeight/dataset.length));
-    c.lineTo(canvasWidth,canvasHeight-(canvasHeight/dataset.length));
+    c.moveTo(graphX,0);
+    c.lineTo(graphX,graphY);
+    c.lineTo(canvasWidth,graphY);
     c.stroke()
       //Draw host values:
     c.fillStyle = "RGB(0,0,0)";
@@ -160,7 +162,7 @@
           };
         };
         c.beginPath();
-        c.arc((j*((canvasWidth-(5*((canvasHeight/dataset.length)/2)))/4))+(5*((canvasHeight/dataset.length)/2)),i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
+        c.arc((j*((canvasWidth-graphX)/4))+graphX,i*(canvasHeight/dataset.length),canvasWidth/128,0,2*Math.PI,false);
         c.closePath();
         c.fill();
       };
