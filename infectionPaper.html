@@ -180,13 +180,13 @@
       for (i = 0; i < dataset.length; i++) {
         for (j = 1; j < dataset[i].length; j++) {
           var backNode = hostNodeIndex(dataset[i][j][0]);
-          if (X) {
-            X;
+          if (dataset[backNode][X] === 0) {
+            c.strokeStyle = "RGB(0,0,0)";
           } else {
-            if (X) {
-              X;
+            if (dataset[backNode][X] === 1) {
+              c.strokeStyle = "RGB(255,0,255)";
             } else {
-              X;
+              c.strokeStyle = "RGB(0,0,255)";
             };
           };
           c.moveTo(X);
