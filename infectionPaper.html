@@ -139,7 +139,7 @@
       c.moveTo(graphX,0);
       c.lineTo(graphX,graphY);
       c.lineTo(canvasWidth,graphY);
-      c.stroke()
+      c.stroke();
         //Draw host values:
       c.fillStyle = "RGB(0,0,0)";
       c.font = String((canvasHeight/dataset.length)/2) + "px 'Arial', sans-serif";
@@ -175,6 +175,18 @@
       for (i = 0; i < dataset.length; i++) {
         for (j = 1; j < dataset[i].length; j++) {
           var backNode = hostNodeIndex(X);
+          if (X) {
+            X;
+          } else {
+            if (X) {
+              X;
+            } else {
+              X;
+            };
+          };
+          c.moveTo(X);
+          c.lineTo(X);
+          c.stroke();
         };
       };
     };
