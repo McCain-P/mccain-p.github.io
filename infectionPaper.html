@@ -89,7 +89,11 @@
       </div>
       <div class="page">
         <h2>h2</h2>
-        <canvas class="graph" id="infectionGraph" height="600" width="400">
+        <canvas class="graph" id="initialInfectionGraph" height="600" width="400">
+        </canvas>
+      </div>
+      <div class="page">
+        <canvas class="graph" id="completedInfectionGraph" height="600" width="400">
         </canvas>
       </div>
     </div>
@@ -197,7 +201,7 @@
       };
     };
     
-    drawGraph(initialDataset,document.getElementById("infectionGraph")); //initialInfectionGraph
-    //drawGraph(initialDataset,document.getElementById("infectionGraph")); //completedDataset, completedInfectionGraph  completedDataset is placed right below initialDataset, exact copy except filled out
+    drawGraph(initialDataset,document.getElementById("initialInfectionGraph")); //initialInfectionGraph
+    drawGraph(completedDataset,document.getElementById("completedInfectionGraph")); //completedDataset, completedInfectionGraph  completedDataset is placed right below initialDataset, exact copy except filled out
   </script>
 </html>
