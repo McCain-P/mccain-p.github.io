@@ -170,7 +170,12 @@
     
       //Draw lines:   with the node it interacts with (back-node) determining the color of the line
       function hostNodeIndex(host) {
-        X;
+        for (i = 0; i < dataset.length; i++) {
+          if (dataset[i][0][0] === host) {
+            return i;
+          };
+        };
+        return undefined;
       };
       for (i = 0; i < dataset.length; i++) {
         for (j = 1; j < dataset[i].length; j++) {
