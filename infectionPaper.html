@@ -174,9 +174,9 @@
     
       //Draw lines:   with the node it interacts with (back-node) determining the color of the line
       function hostNodeIndex(host) {
-        for (h = 0; h < dataset.length; h++) {
-          if (dataset[h][0][0] === host) {
-            return h;
+        for (k = 0; k < dataset.length; k++) {
+          if (dataset[k][0][0] === host) {
+            return k;
           };
         };
         return undefined;
