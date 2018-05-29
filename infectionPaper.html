@@ -181,7 +181,7 @@
         };
         return undefined;
       };
-      c.lineWidth = canvasWidth/128;
+      c.lineWidth = canvasWidth/256;
       for (i = 0; i < dataset.length; i++) {
         for (j = 1; j < dataset[i].length; j++) {
           var backNode = hostNodeIndex(dataset[i][j][0]);
@@ -202,6 +202,6 @@
     };
     
     drawGraph(initialDataset,document.getElementById("initialInfectionGraph"));
-    //drawGraph(completedDataset,document.getElementById("completedInfectionGraph"));
+    drawGraph(completedDataset,document.getElementById("completedInfectionGraph"));
   </script>
 </html>
