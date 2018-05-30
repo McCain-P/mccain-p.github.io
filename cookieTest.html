@@ -8,8 +8,8 @@
     <button onclick="addCookie()">
       addCookie
     </button>
-    <button onclick="">
-      X
+    <button onclick="deleteCookie()">
+      deleteCookie
     </button>
   </body>
   <script>
@@ -18,5 +18,9 @@
       document.cookie = "key0=value0";
       document.cookie = "key1=value1";
     };
+    function deleteCookie() {
+      document.cookie = "key0=";
+      document.cookie = "key1=";
+    }
   </script>
 </html>
