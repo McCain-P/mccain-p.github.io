@@ -223,8 +223,10 @@
               c.strokeStyle = "RGB(0,0,255)";
             };
           };
+          c.beginPath();
           c.moveTo((j*((canvasWidth-graphX)/4))+graphX,i*(canvasHeight/dataset.length));
           c.lineTo(((j-1)*((canvasWidth-graphX)/4))+graphX,backNode*(canvasHeight/dataset.length));
+          c.closePath();
           c.stroke();
         };
       };
