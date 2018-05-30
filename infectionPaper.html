@@ -212,14 +212,11 @@
         for (j = 1; j < dataset[i].length; j++) {
           var backNode = hostNodeIndex(dataset[i][j][0]);
           if (dataset[backNode][j-1][1] === 0) {
-            console.log("black");
             c.strokeStyle = "RGB(0,0,0)";
           } else {
             if (dataset[backNode][j-1][1] === 1) {
-              console.log("purple");
               c.strokeStyle = "RGB(255,0,255)";
             } else {
-              console.log("blue");
               c.strokeStyle = "RGB(0,0,255)";
             };
           };
