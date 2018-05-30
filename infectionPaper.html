@@ -123,10 +123,10 @@
       [["Caden",2],["Eli",2],["McCain",2],["Kristin",2],["Hermalina",0]],
       [["Eli",2],["Caden",2],["Kristin",2],["Ellie",2],["Alejandro",1]],
       [["Kristin",2],["Alejandro",2],["Eli",2],["Caden",2],["Cassie",1]],
-      [["Ellie",2],["Cody",2],["Morgen",2],["Avalyn",2],["Ellie",1]]
+      [["Ellie",2],["Cody",2],["Morgen",2],["Avalyn",2],["Eli",1]]
     ];
     var completedDataset = [
-      [["Katie",0],["Morgen",2],["Alexis",2],["Cassie",2],["Ashley",1]],
+      [["Katie",2],["Morgen",2],["Alexis",2],["Cassie",2],["Ashley",1]],
       [["Cassie",0],["AJ",0],["Alejandro",2],["Katie",2],["Kristin",1]],
       [["Claire",0],["Ksenia",0],["Cody",0],["Hermalina",2],["Morgen",1]],
       [["AJ",0],["Cassie",0],["Ashley",0],["Julia",2],["Alexis",1]],
@@ -147,13 +147,14 @@
       [["Layla",0],["McCain",2],["Morgen",2],["Ksenia",2],["James",1]],
       [["Avalyn",0],["James",0],["Ellie",0],["Aurora",0],["Isabella",0]],
       [["Caden",0],["Eli",0],["McCain",0],["Kristin",0],["Hermalina",0]],
-      [["Eli",0],["Caden",0],["Kristin",0],["Ellie",1],["Alejandro",1]],
+      [["Eli",0],["Caden",0],["Kristin",0],["Ellie",3],["Alejandro",1]],
       [["Kristin",0],["Alejandro",0],["Eli",0],["Caden",2],["Cassie",1]],
       [["Ellie",0],["Cody",0],["Morgen",2],["Avalyn",2],["Eli",1]]
     ];
     //0: Unaffected
     //1: Affected/Infected
     //2: Unknown
+    //3: Certain unknown due to invalid datapoints (temporary, change back to 2 when done)
    
     function drawGraph(dataset,graphCanvas) {
       var canvasWidth = graphCanvas.width;
