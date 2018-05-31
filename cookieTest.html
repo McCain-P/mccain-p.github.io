@@ -14,9 +14,9 @@
   </body>
   <script>
     function addCookie() {
-      //document.cookie = "key0=value0;key1=value1";
-      document.cookie = "key0=value0";
-      document.cookie = "key1=value1";
+      document.cookie = "key0=value0;key1=value1;expires=Tue, 19 Jan 2038 03:14:07 GMT";
+      //document.cookie = "key0=value0";
+      //document.cookie = "key1=value1";
     };
     function deleteCookie() {
       //document.cookie = "key0=";
@@ -24,5 +24,6 @@
       document.cookie = "key0=;key1=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
     //Expires at Unix Epoch time
+    //January 19, 2038 03:14:07 GMT
   </script>
 </html>
