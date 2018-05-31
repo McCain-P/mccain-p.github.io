@@ -11,6 +11,12 @@
     <button onclick="deleteCookie()">
       deleteCookie
     </button>
+    <button onclick="addFormattedCookie()">
+      addFormattedCookie
+    </button>
+    <button onclick="deleteFormattedCookie()">
+      deleteFormattedCookie
+    </button>
   </body>
   <script>
     function addCookie() {
@@ -24,10 +30,10 @@
       document.cookie = "key1=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     };
     function addFormattedCookie() {
-      document.cookie = "playerData={username="UsernameString"|score=5|items=["itemName"|["itemName"|itemCount]|"scope"|["watch"|5]]};expires=Tue, 19 Jan 2038 03:14:07 GMT";
+      document.cookie = 'playerData={username="UsernameString"|score=5|items=["itemName"|["itemName"|itemCount]|"scope"|["watch"|5]]};expires=Tue, 19 Jan 2038 03:14:07 GMT';
     };
     function deleteFormattedCookie() {
-      
+      document.cookie = "playerData=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     };
     //Expires at Unix Epoch time
     //January 19, 2038 03:14:07 GMT
