@@ -41,6 +41,7 @@
     function readCookie(name) {
 	    return document.cookie.match(RegExp("(; ?|^)" + name + "=.*(;|$)")).slice(name.length + 1,-1);
 	    //.* for content must be switched to any chars not ; or any chars that aren't the end of line identifying characters.
+	    //"(; ?|^)" + name + "=.*(;|$)"
     };
     //Expires at Unix Epoch time
     //January 19, 2038 03:14:07 GMT
