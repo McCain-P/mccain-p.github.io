@@ -40,7 +40,7 @@
     };
     function readCookie(name) {
 	    return document.cookie.match(RegExp(name + "=.*;")).slice(name.length + 1,-1);
-	    //Also check for ; before name?
+	    //Also check for ; and whitespace before name?
 	    //At the end, checks for ; or end of line
     };
     //Expires at Unix Epoch time
