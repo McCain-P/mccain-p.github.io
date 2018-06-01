@@ -39,7 +39,7 @@
       document.cookie = "playerData=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     };
     function readCookie(name) {
-	    return document.cookie.match(RegExp("(;\s*|^)" + name + "=.*(;|$)")).slice(name.length + 1,-1);
+	    return document.cookie.match(RegExp("(; ?|^)" + name + "=.*(;|$)")).slice(name.length + 1,-1);
 	    //Also check for ; and whitespace before name?
 	    //At the end, checks for ; or end of line
 	    
