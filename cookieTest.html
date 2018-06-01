@@ -17,6 +17,9 @@
     <button onclick="deleteFormattedCookie()">
       deleteFormattedCookie
     </button>
+    <button onclick="readCookie("key1")">
+      deleteFormattedCookie
+    </button>
   </body>
   <script>
     function addCookie() {
@@ -34,6 +37,9 @@
     };
     function deleteFormattedCookie() {
       document.cookie = "playerData=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    };
+    function readCookie(name) {
+	    return document.cookie.match(RegExp(name + "=.*;")).slice(name.length + 1,-1);
     };
     //Expires at Unix Epoch time
     //January 19, 2038 03:14:07 GMT
