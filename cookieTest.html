@@ -40,6 +40,7 @@
     };
     function readCookie(name) {
 	    return document.cookie.match(RegExp(name + "=.*;")).slice(name.length + 1,-1);
+	    //Also check for ; before name?
     };
     //Expires at Unix Epoch time
     //January 19, 2038 03:14:07 GMT
