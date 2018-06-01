@@ -40,10 +40,6 @@
     };
     function readCookie(name) {
 	    return document.cookie.match(RegExp("(; ?|^)" + name + "=.*(;|$)")).slice(name.length + 1,-1);
-	    //Also check for ; and whitespace before name?
-	    //At the end, checks for ; or end of line
-	    
-	    //name + "=.*;"
     };
     //Expires at Unix Epoch time
     //January 19, 2038 03:14:07 GMT
