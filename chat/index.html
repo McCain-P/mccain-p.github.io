@@ -22,6 +22,24 @@
         box-shadow: none;
         transform: translate(1vw,1vw);
       }
+      button.styleB {
+        background-color: RGB(255,0,255);
+        border: 1vw solid RGB(192,0,192);
+        box-shadow: 1vw 1vw 0 0 RGB(128,0,128);
+        border-radius: 12.5%;
+        color: RGB(255,255,255);
+        font-family: "Arial", sans-serif;
+        font-size: 2vw;
+        text-align: center;
+      }
+      button.styleB:hover {
+        background-color: RGB(192,0,192);
+      }
+      button.styleB:active {
+        background-color: RGB(192,0,192);
+        box-shadow: none;
+        transform: translate(1vw,1vw);
+      }
       #exampleButton {
         height: 10vh;
         width: 10vw;
@@ -29,10 +47,20 @@
         top: 20vh;
         right: 20vw;
       }
+      #exampleButton2 {
+        height: 10vh;
+        width: 10vw;
+        position: fixed;
+        top: 20vh;
+        left: 20vw;
+      }
     </style>
   </head>
   <body>
     <button id="exampleButton" class="styleA">
+      Button
+    </button>
+    <button id="exampleButton2" class="styleB">
       Button
     </button>
   </body>
