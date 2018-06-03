@@ -53,7 +53,7 @@
 	    //.* for content must be switched to any chars not ; or any chars that aren't the end of line identifying characters.
 	    //"(; ?|^)" + name + "=.*(;|$)"
     };
-	  function addLocalStorage(name,value) {
+	  function writeLocalStorage(name,value) {
 	  	window.localStorage.setItem(name,value);
 	  };
 	  function deleteLocalStorage(name) {
