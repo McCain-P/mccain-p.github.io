@@ -20,6 +20,15 @@
     <button onclick="readCookie("key1")">
       readCookie
     </button>
+    <button onclick="addLocalStorage()">
+    	addLocalStorage
+    </button>
+    <button onclick="deleteLocalStorage()">
+      deleteLocalStorage
+    </button>
+    <button onclick="readLocalStorage("key1")">
+      readLocalStorage
+    </button>
   </body>
   <script>
     function addCookie() {
@@ -44,8 +53,6 @@
 	    //.* for content must be switched to any chars not ; or any chars that aren't the end of line identifying characters.
 	    //"(; ?|^)" + name + "=.*(;|$)"
     };
-    //Expires at Unix Epoch time
-    //January 19, 2038 03:14:07 GMT
 	  
 	  //https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 	  //https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage
