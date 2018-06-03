@@ -84,5 +84,18 @@
 	  /*Regex for reading value in PlayerData:
 	  "(?:(;|\{)" + name + "=)[^(;|\})]*"
 	  */
+	  
+	  /*
+	  WRITE:
+	  	-----;name=value;-----
+		           |   |
+		           a   b
+		concat(slice(0,a) + newValue + slice(b,0));
+	  DELETE:
+	  	-----;name=value;-----
+		     |         |
+		     a         b
+		concat(slice(0,a) + slice(b,0));
+	  */
   </script>
 </html>
