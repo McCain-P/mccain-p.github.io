@@ -4,6 +4,9 @@
       Snap! Chat
     </title>
     <style>
+      body {
+        background-color: RGB(0,0,0); 
+      }
       button.styleA {
         background-color: RGB(230,230,0);
         border: 0.5vw solid RGB(192,192,0);
@@ -106,7 +109,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onclick="document.body.style='background-color:RGB(230,230,0)'">
     <button id="exampleButton" class="styleA">
       Button
     </button>
