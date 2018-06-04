@@ -232,11 +232,11 @@
               media.appendChild(mediaControls);
               var playButton = document.createElement("button");
               playButton.class = "playButton";
-              playButton.onclick = "X.getElementsByTagName('video')[0].play()";
+              playButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].play()";
               mediaControls.appendChild(playButton);
               var pauseButton = document.createElement("button");
               pauseButton.class = "pauseButton";
-              pauseButton.onclick = "";
+              pauseButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].pause()";
               mediaControls.appendChild(pauseButton);
               //Current-time text input
               var speedButton = document.createElement("button");
