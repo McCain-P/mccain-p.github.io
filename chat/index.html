@@ -190,13 +190,39 @@
             var mediaControls = document.createElement("div");
             mediaControls.class = "mediaControls";
             media.appendChild(mediaControls);
-            var imageDownloadButton = document.createElement("button");
-            imageDownloadButton.class = "imageDownloadButton";
-            imageDownloadButton.onclick = "";
-            mediaControls.appendChild(imageDownloadButton);
+            var downloadButton = document.createElement("button");
+            downloadButton.class = "downloadButton";
+            downloadButton.onclick = "";
+            mediaControls.appendChild(downloadButton);
           } else {
             if (contentType === "video") {
-          
+              var media = document.createElement("div");
+              media.class = "media";
+              chat.appendChild(media);
+              var mediaContent = document.createElement("video");
+              mediaContent.class = "mediaContent";
+              mediaContent.src = "data:" + contentType + ";base64," + contentData; 
+              media.appendChild(mediaContent);
+              var mediaControls = document.createElement("div");
+              mediaControls.class = "mediaControls";
+              media.appendChild(mediaControls);
+              var playButton = document.createElement("button");
+              playButton.class = "playButton";
+              playButton.onclick = "";
+              mediaControls.appendChild(playButton);
+              var pauseButton = document.createElement("button");
+              pauseButton.class = "pauseButton";
+              pauseButton.onclick = "";
+              mediaControls.appendChild(pauseButton);
+              //Current-time text input
+              var speedButton = document.createElement("button");
+              speedButton.class = "speedButton";
+              speedButton.onclick = "";
+              mediaControls.appendChild(speedButton);
+              var downloadButton = document.createElement("button");
+              downloadButton.class = "downloadButton";
+              downloadButton.onclick = "";
+              mediaControls.appendChild(downloadButton);
             } else {
               if (contentType === "audio") {
                 
