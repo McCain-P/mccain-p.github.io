@@ -172,8 +172,8 @@
   <script>
     var chat = document.getElementById("chat");
     
-    function createChatContent(contentType,contentData,mimeType) { //Possibly have the contentType be the mime type, and then would check the mime type instead of the content type?
-      if (contentType === "text") {
+    function createChatContent(contentType,contentData) { //contentType is MIME type (text may not be mime type)
+      if (contentType === "text") { //Check regex for if contentType starts with image, video, or audio
         
       } else {
         if (contentType === "file") {
@@ -185,7 +185,7 @@
             chat.appendChild(media);
             var mediaContent = document.createElement("img");
             mediaContent.class = "mediaContent";
-            mediaContent.src = "data:" + mimeType + ";base64," + contentData; 
+            mediaContent.src = "data:" + contentType + ";base64," + contentData; 
             media.appendChild(mediaContent);
             var mediaControls = document.createElement("div");
             mediaControls.class = "mediaControls";
@@ -208,5 +208,13 @@
         };
       };
     };
+    /*CSS NOTE:
+    *Control buttons that need more room expand a rectangle below the "content" div
+    -An example would be the "speed"/"playback rate" button, which would expand a rectangle below the "content" div asking users to input a speed via text input
+    *Expanding rectangles expand with a CSS animation
+    *Expanding rectangles expand when the button is clicked
+    *How would this drop-down menu be accomplished?
+    -Possibly have all the addition rectangles exist at once, except with display: none until they are used?
+    */
   </script>
 </html>
