@@ -93,8 +93,8 @@
 		concat(slice(0,a) + newValue + slice(b,0));
 	  DELETE:
 	  	-----;name=value;-----
-		     |         |
-		     a         b
+		      |         |
+		      a         b
 		concat(slice(0,a) + slice(b,0));
 		*Will have to specify non-capture groups differently for "{}" and ";" characters
 		
@@ -125,7 +125,7 @@
 	  //Read playerData: "(?:(;|\{)" + name + "=)([^(;|\})]*)"
 	  //Write playerData (if the value exists):
 	  //Write playerData (if the value does not exist):
-	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(;|\})]*)(.*$)"	MOVE CAPTURE AND NON-CAPTURE GROUPS
+	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(;|\})]*(;|\}))(.*$)"	MOVE CAPTURE AND NON-CAPTURE GROUPS
 	  
   </script>
 </html>
