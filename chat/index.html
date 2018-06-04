@@ -57,61 +57,6 @@
       button.black:active {
         background-color: RGB(64,64,64);
       }
-      p {
-        color: RGB(255,255,255);
-        font-family: "Arial", sans-serif;
-        font-size: 1vw;
-      }
-      #exampleButton {
-        height: 10vh;
-        width: 10vw;
-        position: fixed;
-        top: 20vh;
-        right: 20vw;
-        background-color: RGB(230,230,0);
-        border: 0.5vw solid RGB(192,192,0);
-        box-shadow: 0.5vw 0.5vw 0 0 RGB(150,150,0);
-      }
-      #exampleButton:hover {
-        background-color: RGB(192,192,0);
-      }
-      #exampleButton:active {
-        background-color: RGB(192,192,0);
-      }
-      #exampleButton2 {
-        height: 10vh;
-        width: 10vw;
-        position: fixed;
-        top: 20vh;
-        left: 20vw;
-      }
-      #exampleButton3 {
-        height: 10vh;
-        width: 10vw;
-        position: fixed;
-        bottom: 20vh;
-        left: 20vw;
-      }
-      #exampleButton4 {
-        height: 10vh;
-        width: 10vw;
-        position: fixed;
-        bottom: 20vh;
-        right: 20vw;
-      }
-      #chat {
-        height: 66vh;
-        width: 100vw;
-        position: fixed; 
-        top: 12vh;
-        left: 0;
-        padding: 10vw;
-      }
-      #chat * {
-        position: static;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
-      }
       #header {
         height: 10vh;
         width: 100vw;
@@ -183,21 +128,27 @@
         top: 37.5%;
         right: 5%;
       }
+      #chat {
+        height: 66vh;
+        width: 100vw;
+        position: fixed; 
+        top: 12vh;
+        left: 0;
+        padding: 10vw;
+      }
+      #chat * {
+        position: static;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+      }
+      #chat p {
+        color: RGB(255,255,255);
+        font-family: "Arial", sans-serif;
+        font-size: 1vw;
+      }
     </style>
   </head>
   <body>
-    <button id="exampleButton" class="styleA">
-      Button
-    </button>
-    <button id="exampleButton2" class="purple">
-      Button
-    </button>
-    <button id="exampleButton3" class="blue">
-      Button
-    </button>
-    <button id="exampleButton4" class="black">
-      Button
-    </button>
     <div id="header">
     </div>
     <div id="chat">
