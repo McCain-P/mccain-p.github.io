@@ -226,7 +226,9 @@
       
         } else {
           if (contentType === "image") {
-            
+            var media = document.createElement("div");
+            media.class = "media";
+            chat.appendChild(media);  
           } else {
             if (contentType === "video") {
           
@@ -240,10 +242,6 @@
           };
         };
       };
-    };
-    var media = document.createElement("div");
-    media.class = "media";
-    chat.appendChild(media);
     };
   </script>
 </html>
