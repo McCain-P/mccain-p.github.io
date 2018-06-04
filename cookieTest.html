@@ -111,5 +111,12 @@
 	  //string.match()[1] returns the captured matched string
 	  //*** string.indexOf(string.match()[1],string.match().index) returns the startIndex of the captured matched string
 	  //*** startIndex + string.length returns the endIndex of the captured matched string
+	  
+	  /*
+	  01234567
+	    | |
+	    a b
+	  slice(0,a) + slice(b,0) returns everything outside of a and b, excluding a and b
+	  */
   </script>
 </html>
