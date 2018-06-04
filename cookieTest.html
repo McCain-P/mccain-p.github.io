@@ -116,7 +116,7 @@
 	  01234567
 	    | |
 	    a b
-	  slice(0,a) + slice(b,0) returns everything outside of a and b, excluding a and b
+	  string.slice(0,a) + string.slice(-1 * (string.length - (b + 1))) returns everything outside of a and b, excluding a and b
 	  */
   </script>
 </html>
