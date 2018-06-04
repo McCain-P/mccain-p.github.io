@@ -105,9 +105,12 @@
         position: fixed; 
         top: 12vh;
         left: 0;
+        padding: 10vw;
       }
       #chat * {
         position: static;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
       }
       #header {
         height: 10vh;
@@ -228,7 +231,9 @@
           if (contentType === "image") {
             var media = document.createElement("div");
             media.class = "media";
-            chat.appendChild(media);  
+            chat.appendChild(media);
+            var mediaContent = document.createElement("img");
+            mediaContent.class = "mediaContent";
           } else {
             if (contentType === "video") {
           
