@@ -221,7 +221,7 @@
   <script>
     var chat = document.getElementById("chat");
     
-    function createChatContent(contentType,content) {
+    function createChatContent(contentType,contentData,mimeType) { //Possibly have the contentType be the mime type, and then would check the mime type instead of the content type?
       if (contentType === "text") {
         
       } else {
@@ -234,6 +234,14 @@
             chat.appendChild(media);
             var mediaContent = document.createElement("img");
             mediaContent.class = "mediaContent";
+            mediaContent.src = "data:" + mimeType + ";base64," + contentData; 
+            media.appendChild(mediaContent);
+            var mediaControls = document.createElement("div");
+            mediaControls.class = "mediaControls";
+            media.appendChild(mediaControls);
+            var imageDownloadButton = document.createElement("button");
+            imageDownloadButton.class = "imageDownloadButton";
+            mediaControls.appendChild(imageDownloadButton);
           } else {
             if (contentType === "video") {
           
