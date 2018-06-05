@@ -201,6 +201,19 @@
         left: 52.5%;
         background-image: URL(resources/speedIcon.svg);
       }
+      .mediaControls > .speedButtonDropdown {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        display: none;
+      }
+      .speedButton:active ~ .speedButtonDropdown {
+        display: block;
+      }
+      .mediaControls > .speedButtonDropdown:hover {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -271,6 +284,9 @@
             speedButton.className = "speedButton blue icon";
             speedButton.onclick = "";
             mediaControls.appendChild(speedButton);
+            var speedButtonDropdown = document.createElement("div");
+            speedButtonDropdown.className = "speedButtonDropdown";
+            mediaControls.appendChild(speedButtonDropdown);
             var downloadButton = document.createElement("button");
             downloadButton.className = "downloadButton blue icon";
             downloadButton.onclick = "window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src";
