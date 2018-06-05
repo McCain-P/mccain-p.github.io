@@ -231,60 +231,52 @@
       if (contentType === "text/plain") { //Check regex for if contentType starts with image, video, or audio
         
       } else {
-        if (contentType === "file") {
-      
+        if (RegExp("^image/.*").test(contentType) === true) {
+          var media = document.createElement("div");
+          media.className = "media";
+          chat.appendChild(media);
+          var mediaContent = document.createElement("img");
+          mediaContent.className = "mediaContent";
+          mediaContent.src = "data:" + contentType + ";base64," + contentData; 
+          media.appendChild(mediaContent);
+          var mediaControls = document.createElement("div");
+          mediaControls.className = "mediaControls";
+          media.appendChild(mediaControls);
+          var downloadButton = document.createElement("button");
+          downloadButton.className = "downloadButton icon";
+          downloadButton.onclick = "";
+          mediaControls.appendChild(downloadButton);
         } else {
-          if (contentType === "image") {
+          if (RegExp("^video/.*").test(contentType) === true) {
             var media = document.createElement("div");
             media.className = "media";
             chat.appendChild(media);
-            var mediaContent = document.createElement("img");
+            var mediaContent = document.createElement("video");
             mediaContent.className = "mediaContent";
             mediaContent.src = "data:" + contentType + ";base64," + contentData; 
             media.appendChild(mediaContent);
             var mediaControls = document.createElement("div");
             mediaControls.className = "mediaControls";
             media.appendChild(mediaControls);
+            var playButton = document.createElement("button");
+            playButton.className = "playButton purple icon";
+            playButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].play()";
+            mediaControls.appendChild(playButton);
+            var pauseButton = document.createElement("button");
+            pauseButton.className = "pauseButton purple icon";
+            pauseButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].pause()";
+            mediaControls.appendChild(pauseButton);
+            //Current-time text input
+            var speedButton = document.createElement("button");
+            speedButton.className = "speedButton blue icon";
+            speedButton.onclick = "";
+            mediaControls.appendChild(speedButton);
             var downloadButton = document.createElement("button");
-            downloadButton.className = "downloadButton icon";
+            downloadButton.className = "downloadButton blue icon";
             downloadButton.onclick = "";
             mediaControls.appendChild(downloadButton);
           } else {
-            if (contentType === "video") {
-              var media = document.createElement("div");
-              media.className = "media";
-              chat.appendChild(media);
-              var mediaContent = document.createElement("video");
-              mediaContent.className = "mediaContent";
-              mediaContent.src = "data:" + contentType + ";base64," + contentData; 
-              media.appendChild(mediaContent);
-              var mediaControls = document.createElement("div");
-              mediaControls.className = "mediaControls";
-              media.appendChild(mediaControls);
-              var playButton = document.createElement("button");
-              playButton.className = "playButton purple icon";
-              playButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].play()";
-              mediaControls.appendChild(playButton);
-              var pauseButton = document.createElement("button");
-              pauseButton.className = "pauseButton purple icon";
-              pauseButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].pause()";
-              mediaControls.appendChild(pauseButton);
-              //Current-time text input
-              var speedButton = document.createElement("button");
-              speedButton.className = "speedButton blue icon";
-              speedButton.onclick = "";
-              mediaControls.appendChild(speedButton);
-              var downloadButton = document.createElement("button");
-              downloadButton.className = "downloadButton blue icon";
-              downloadButton.onclick = "";
-              mediaControls.appendChild(downloadButton);
-            } else {
-              if (contentType === "audio") {
-                
-              } else {
-                return undefined;
-              };
-            };
+              //This is the download/general file contentType
           };
         };
       };
