@@ -213,13 +213,18 @@
       }
       @keyframes dropdown {
         from {
-          visibility: hidden;
           top: calc(0.5vw);
+          visibility: hidden;
+        }
+        1% {
+          visibility: visible;
+          
+        }
+        99% {
           
         }
         to {
-          visibility: visible;
-          top: calc(100% + 0.5vw); 
+          top: calc(100% + 0.5vw);
         }
       }
       .speedButton:active ~ .speedButtonDropdown {
