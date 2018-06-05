@@ -209,11 +209,21 @@
         background-color: RGB(0,0,255);
         display: none;
       }
+      @keyframes dropdown {
+        from {
+          display: none;
+          top: calc(100% + 0.5vw);
+        }
+        to {
+          display: block;
+          top: calc(200% + 0.5vw);
+        }
+      }
       .speedButton:active ~ .speedButtonDropdown {
-        display: block;
+        /*display: block;*/
       }
       .mediaControls > .speedButtonDropdown:hover {
-        display: block;
+        /*display: block;*/
       }
     </style>
   </head>
