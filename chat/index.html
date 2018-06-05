@@ -57,6 +57,12 @@
       button.black:active {
         background-color: RGB(64,64,64);
       }
+      .icon {
+        background-repeat: no-repeat;
+        background-size: auto 75%;
+        background-origin: content-box;
+        background-position: center;
+      }
       #header {
         height: 10vh;
         width: 100vw;
@@ -110,10 +116,10 @@
         top: 10%;
         left: 2%;
         background-image: URL(resources/fileIcon.svg);
-        background-repeat: no-repeat;
+        /*background-repeat: no-repeat;
         background-size: auto 75%;
         background-origin: content-box;
-        background-position: center;
+        background-position: center;*/
       }
       #fileNames {
         width: 85%;
@@ -176,7 +182,6 @@
       }
       .mediaControls > button {
         /*
-        size
         ?border?
         */
         height: 75%;
@@ -185,15 +190,22 @@
       .mediaControls > .downloadButton {
         top: 12.5%;
         right: 5%;
+        background-image: URL(resources/fileIcon.svg);
       }
       .mediaControls > .playButton {
-        
+        top: 12.5%;
+        left: 5%;
+        background-image: URL(resources/playIcon.svg);
       }
       .mediaControls > .pauseButton {
-        
+        top: 12.5%;
+        left: 28.75%;
+        background-image: URL(resources/pauseIcon.svg);
       }
       .mediaControls > .speedButton {
-        
+        top: 12.5%;
+        left: 52.5%;
+        background-image: URL(resources/speedIcon.svg);
       }
     </style>
   </head>
@@ -207,7 +219,7 @@
         <textarea id="textInput">
         </textarea>
         <div id="fileInput">
-          <button id="fileSelect" class="blue">
+          <button id="fileSelect" class="blue icon">
           </button>
           <p id="fileNames">
           </p>
@@ -240,7 +252,7 @@
             mediaControls.className = "mediaControls";
             media.appendChild(mediaControls);
             var downloadButton = document.createElement("button");
-            downloadButton.className = "downloadButton";
+            downloadButton.className = "downloadButton icon";
             downloadButton.onclick = "";
             mediaControls.appendChild(downloadButton);
           } else {
@@ -256,20 +268,20 @@
               mediaControls.className = "mediaControls";
               media.appendChild(mediaControls);
               var playButton = document.createElement("button");
-              playButton.className = "playButton blue";
+              playButton.className = "playButton blue icon";
               playButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].play()";
               mediaControls.appendChild(playButton);
               var pauseButton = document.createElement("button");
-              pauseButton.className = "pauseButton blue";
+              pauseButton.className = "pauseButton blue icon";
               pauseButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].pause()";
               mediaControls.appendChild(pauseButton);
               //Current-time text input
               var speedButton = document.createElement("button");
-              speedButton.className = "speedButton blue";
+              speedButton.className = "speedButton blue icon";
               speedButton.onclick = "";
               mediaControls.appendChild(speedButton);
               var downloadButton = document.createElement("button");
-              downloadButton.className = "downloadButton blue";
+              downloadButton.className = "downloadButton blue icon";
               downloadButton.onclick = "";
               mediaControls.appendChild(downloadButton);
             } else {
