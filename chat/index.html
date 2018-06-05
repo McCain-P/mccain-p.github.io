@@ -220,11 +220,10 @@
         }
       }
       .speedButton:active ~ .speedButtonDropdown {
-        /*display: block;*/
         animation: 1s linear 0 1 normal both running dropdown;
       }
-      .mediaControls > .speedButtonDropdown:hover {
-        /*display: block;*/
+      .speedButton:not(:active) ~ .speedButtonDropdown:not(:hover) {
+        animation: 1s linear 0 1 reverse both running dropdown;
       }
     </style>
   </head>
