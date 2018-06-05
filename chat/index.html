@@ -209,21 +209,21 @@
         left: -0.5vw;
         top: calc(100% + 0.5vw);
         background-color: RGB(0,0,255);
-        visibility: hidden;
+        /*visibility: hidden;*/
       }
       @keyframes dropdown {
-        from {
+        /*from {
           visibility: hidden;
-        }
+        }*/
         1% {
           top: calc(0.5vw);
         }
         99% {
           top: calc(100% + 0.5vw); 
         }
-        to {
+        /*to {
           visibility: visible;
-        }
+        }*/
       }
       .speedButton:active ~ .speedButtonDropdown {
         animation: 1s linear 0s 1 normal both running dropdown;
