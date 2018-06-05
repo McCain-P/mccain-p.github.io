@@ -276,7 +276,11 @@
             downloadButton.onclick = "";
             mediaControls.appendChild(downloadButton);
           } else {
-              //This is the download/general file contentType
+            if (RegExp("^audio/.*").test(contentType) === true) {
+                
+            } else {
+              //This is the download/general file contentType 
+            };
           };
         };
       };
