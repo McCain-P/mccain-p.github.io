@@ -244,7 +244,7 @@
           media.appendChild(mediaControls);
           var downloadButton = document.createElement("button");
           downloadButton.className = "downloadButton icon";
-          downloadButton.onclick = "";
+          downloadButton.onclick = "window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src";
           mediaControls.appendChild(downloadButton);
         } else {
           if (RegExp("^video/.*").test(contentType) === true) {
@@ -260,11 +260,11 @@
             media.appendChild(mediaControls);
             var playButton = document.createElement("button");
             playButton.className = "playButton purple icon";
-            playButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].play()";
+            playButton.onclick = "this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].play()";
             mediaControls.appendChild(playButton);
             var pauseButton = document.createElement("button");
             pauseButton.className = "pauseButton purple icon";
-            pauseButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].pause()";
+            pauseButton.onclick = "this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].pause()";
             mediaControls.appendChild(pauseButton);
             //Current-time text input
             var speedButton = document.createElement("button");
@@ -273,7 +273,7 @@
             mediaControls.appendChild(speedButton);
             var downloadButton = document.createElement("button");
             downloadButton.className = "downloadButton blue icon";
-            downloadButton.onclick = "";
+            downloadButton.onclick = "window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src";
             mediaControls.appendChild(downloadButton);
           } else {
             if (RegExp("^audio/.*").test(contentType) === true) {
