@@ -247,20 +247,20 @@
               mediaControls.className = "mediaControls";
               media.appendChild(mediaControls);
               var playButton = document.createElement("button");
-              playButton.className = "playButton";
+              playButton.className = "playButton blue";
               playButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].play()";
               mediaControls.appendChild(playButton);
               var pauseButton = document.createElement("button");
-              pauseButton.className = "pauseButton";
+              pauseButton.className = "pauseButton blue";
               pauseButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].pause()";
               mediaControls.appendChild(pauseButton);
               //Current-time text input
               var speedButton = document.createElement("button");
-              speedButton.className = "speedButton";
+              speedButton.className = "speedButton blue";
               speedButton.onclick = "";
               mediaControls.appendChild(speedButton);
               var downloadButton = document.createElement("button");
-              downloadButton.className = "downloadButton";
+              downloadButton.className = "downloadButton blue";
               downloadButton.onclick = "";
               mediaControls.appendChild(downloadButton);
             } else {
