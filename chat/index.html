@@ -216,46 +216,46 @@
         } else {
           if (contentType === "image") {
             var media = document.createElement("div");
-            media.class = "media";
+            media.className = "media";
             chat.appendChild(media);
             var mediaContent = document.createElement("img");
-            mediaContent.class = "mediaContent";
+            mediaContent.className = "mediaContent";
             mediaContent.src = "data:" + contentType + ";base64," + contentData; 
             media.appendChild(mediaContent);
             var mediaControls = document.createElement("div");
-            mediaControls.class = "mediaControls";
+            mediaControls.className = "mediaControls";
             media.appendChild(mediaControls);
             var downloadButton = document.createElement("button");
-            downloadButton.class = "downloadButton";
+            downloadButton.className = "downloadButton";
             downloadButton.onclick = "";
             mediaControls.appendChild(downloadButton);
           } else {
             if (contentType === "video") {
               var media = document.createElement("div");
-              media.class = "media";
+              media.className = "media";
               chat.appendChild(media);
               var mediaContent = document.createElement("video");
-              mediaContent.class = "mediaContent";
+              mediaContent.className = "mediaContent";
               mediaContent.src = "data:" + contentType + ";base64," + contentData; 
               media.appendChild(mediaContent);
               var mediaControls = document.createElement("div");
-              mediaControls.class = "mediaControls";
+              mediaControls.className = "mediaControls";
               media.appendChild(mediaControls);
               var playButton = document.createElement("button");
-              playButton.class = "playButton";
+              playButton.className = "playButton";
               playButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].play()";
               mediaControls.appendChild(playButton);
               var pauseButton = document.createElement("button");
-              pauseButton.class = "pauseButton";
+              pauseButton.className = "pauseButton";
               pauseButton.onclick = "this.parentElement.parentElement.getElementsByTagName('video')[0].pause()";
               mediaControls.appendChild(pauseButton);
               //Current-time text input
               var speedButton = document.createElement("button");
-              speedButton.class = "speedButton";
+              speedButton.className = "speedButton";
               speedButton.onclick = "";
               mediaControls.appendChild(speedButton);
               var downloadButton = document.createElement("button");
-              downloadButton.class = "downloadButton";
+              downloadButton.className = "downloadButton";
               downloadButton.onclick = "";
               mediaControls.appendChild(downloadButton);
             } else {
