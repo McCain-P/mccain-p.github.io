@@ -212,18 +212,15 @@
         visibility: hidden;
       }
       @keyframes dropdown {
-        from {
-          top: calc(0.5vw);
+        0% {
           visibility: hidden;
+          top: calc(0.5vw);
         }
         1% {
           visibility: visible;
-          
         }
-        99% {
-          
-        }
-        to {
+        100% {
+          visibility: visible;
           top: calc(100% + 0.5vw);
         }
       }
