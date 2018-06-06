@@ -105,10 +105,14 @@
         width: 100%;
         top: 0;
         left: 0;
-        background-color: RGBA(255,0,0,0);
+        background-color: RGBA(0,0,0,0);
         color: RGB(255,255,255);
         font-family: "Arial", sans-serif;
         font-size: 1vw;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        overflow-y: scroll;
+        resize: none;
       }
       #fileInput {
         height: calc(40% - 1vh);
@@ -148,6 +152,7 @@
         left: 0;
         padding-left: 10vw;
         padding-right: 10vw;
+        overflow-y: scroll;
       }
       #chat > * {
         position: relative;
