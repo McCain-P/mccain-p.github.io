@@ -111,8 +111,14 @@
         font-size: 1vw;
         overflow-wrap: break-word;
         word-break: break-word;
-        overflow-y: scroll;
+        overflow-y: auto;
         resize: none;
+      }
+      #textInput::-webkit-scrollbar-thumb {
+        background-color: RGB(255,0,255);
+      }
+      #textInput::-webkit-scrollbar-track {
+        background-color: RGBA(0,0,0,0);
       }
       #fileInput {
         height: calc(40% - 1vh);
