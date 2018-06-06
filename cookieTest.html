@@ -129,7 +129,7 @@
 	  
 	  /*
 	  function readPlayerData(name,username) {
-	  
+	  	return window.localStorage.getItem(name).match("(?:(;|\{)" + name + "=)([^(;|\})]*)")[1];
 	  };
 	  function writePlayerData(name,value,username) {
 	  
