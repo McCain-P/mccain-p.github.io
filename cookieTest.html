@@ -123,7 +123,7 @@
 	  
 	  //Possible idea: Instead of doing all these string functions, just use regex capturing groups to do all of the operations for you?
 	  //Read playerData: "(?:;|\{)(?:" + name + "=)([^(;|\})]*)"
-	  //Write playerData (if the value exists): "(;|\{)" + name + "=[^(;|\})]*"
+	  //Write playerData (if the value exists): "(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"
 	  //Write playerData (if the value does not exist): "(^.*)(?:\}$)"
 	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)" ********BROKEN, probably something to do with selecting the right capture group numbers
 	  
