@@ -132,7 +132,11 @@
 	  	return window.localStorage.getItem("playerData." + username).match(RegExp("(?:;|\{)(?:" + name + "=)([^(;|\})]*)"))[1];
 	  };
 	  function writePlayerData(name,value,username) {
-	  
+	  	if () {
+		
+		} else {
+		
+		};
 	  };
 	  function deletePlayerData(name,username) {
 	  	window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[1] + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[2]);
