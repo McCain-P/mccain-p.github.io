@@ -125,7 +125,7 @@
 	  //Read playerData: "(?:;|\{)(?:" + name + "=)([^(;|\})]*)"
 	  //Write playerData (if the value exists): XXX(splice, with new value added into middle) ********
 	  //Write playerData (if the value does not exist): XXX(add to end, before }) ********
-	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"
+	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)" ********BROKEN
 	  
 	  /*
 	  function readPlayerData(name,username) {
@@ -138,7 +138,7 @@
 		
 		};
 	  };
-	  function deletePlayerData(name,username) {
+	  function deletePlayerData(name,username) { ********BROKEN
 	  	window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[1] + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[2]);
 	  };
 	  */
