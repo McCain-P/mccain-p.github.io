@@ -304,13 +304,14 @@
             var speedButtonDropdown = document.createElement("div");
             speedButtonDropdown.className = "speedButtonDropdown";
             mediaControls.appendChild(speedButtonDropdown);
+            //********NOTE******** speedButtonDropdown contains the current playtime, then the playback rate as well
             var downloadButton = document.createElement("button");
             downloadButton.className = "downloadButton blue icon";
             downloadButton.onclick = "window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src";
             mediaControls.appendChild(downloadButton);
           } else {
             if (RegExp("^audio/.*").test(contentType) === true) {
-                
+                //mediaContent is a div. In the div is the audio element, as well as the audio visualizer element. The visualizer element is styled to fill the mediaContent div, while the audio element is styled to be invisible.
             } else {
               //This is the download/general file contentType 
             };
