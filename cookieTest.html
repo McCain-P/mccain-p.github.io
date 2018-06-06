@@ -133,7 +133,7 @@
 	  };
 	  function writePlayerData(name,value,username) { ********
 	  	if (regex that checks if the name/value pair is present; use "read playerData" regex) {
-			X;
+			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp())[1] + value + window.localStorage.getItem("playerData." + username).match(RegExp())[2]);
 		} else {
 			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(?:\}$)"))[1] + name + "=" + value + ";}");
 		};
