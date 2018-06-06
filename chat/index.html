@@ -302,8 +302,9 @@
     
     var chat = document.getElementById("chat");
     
-    function createChatContent(contentType,contentData) { //contentType is MIME type
-      if (contentType === "text/plain") { //Check regex for if contentType starts with image, video, or audio
+    //contentType is MIME type
+    function createChatContent(contentType,contentData) {
+      if (contentType === "text/plain") {
         
       } else {
         if (RegExp("^image/.*").test(contentType) === true) {
