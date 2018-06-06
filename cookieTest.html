@@ -124,7 +124,7 @@
 	  //Possible idea: Instead of doing all these string functions, just use regex capturing groups to do all of the operations for you?
 	  //Read playerData: "(?:;|\{)(?:" + name + "=)([^(;|\})]*)"
 	  //Write playerData (if the value exists): XXX(splice, with new value added into middle) ********
-	  //Write playerData (if the value does not exist): "(^.*)(\}$)"
+	  //Write playerData (if the value does not exist): "(^.*)(?:\}$)"
 	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)" ********BROKEN, probably something to do with selecting the right capture group numbers
 	  
 	  /*
@@ -136,7 +136,7 @@
 			//Add to middle:
 		} else {
 			//Add to end:
-			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(\}$)"))[1] + XXXXXXXX + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(\}$)"))[2]);
+			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(?:\}$)"))[1] + name + "=" + value + ";}");
 		};
 	  };
 	  function deletePlayerData(name,username) { ********BROKEN
