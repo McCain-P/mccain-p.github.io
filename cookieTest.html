@@ -135,7 +135,7 @@
 	  
 	  };
 	  function deletePlayerData(name,username) {
-	  	window.localStorage.setItem("playerData." + username,);
+	  	window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[1] + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[2]);
 	  };
 	  */
 	  
