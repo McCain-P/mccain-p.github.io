@@ -122,14 +122,14 @@
 	  
 	  
 	  //Possible idea: Instead of doing all these string functions, just use regex capturing groups to do all of the operations for you?
-	  //Read playerData: "(?:(;|\{)" + name + "=)([^(;|\})]*)"
+	  //Read playerData: "(?:;|\{)(?:" + name + "=)([^(;|\})]*)"
 	  //Write playerData (if the value exists): XXX(splice, with new value added into middle) ********
 	  //Write playerData (if the value does not exist): XXX(add to end, before }) ********
 	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(;|\})]*(;|\}))(.*$)"
 	  
 	  /*
 	  function readPlayerData(name,username) {
-	  	return window.localStorage.getItem("playerData." + username).match(RegExp("(?:(;|\{)" + name + "=)([^(;|\})]*)"))[1];
+	  	return window.localStorage.getItem("playerData." + username).match(RegExp("(?:;|\{)(?:" + name + "=)([^(;|\})]*)"))[1];
 	  };
 	  function writePlayerData(name,value,username) {
 	  
