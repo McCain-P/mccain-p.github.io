@@ -132,7 +132,7 @@
 	  	return window.localStorage.getItem("playerData." + username).match(RegExp("(?:;|\{)(?:" + name + "=)([^(;|\})]*)"))[1];
 	  };
 	  function writePlayerData(name,value,username) {
-	  	if (regex that checks if the name/value pair is present; use "read playerData" regex) {
+	  	if (RegExp("(;|\{)" + name + "=[^(;|\})]*").test(window.localStorage.getItem("playerData." + username))) {
 			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[1] + value + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[2]);
 		} else {
 			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(?:\}$)"))[1] + name + "=" + value + ";}");
