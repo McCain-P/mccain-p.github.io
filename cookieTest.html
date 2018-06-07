@@ -135,6 +135,9 @@
 	  	if (RegExp("(;|\{)" + name + "=[^(;|\})]*").test(window.localStorage.getItem("playerData." + username))) {
 			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[1] + value + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[2]);
 		} else {
+			if (RegExp().test(window.localStorage.getItem("playerData." + username))) {
+			
+			};
 			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(?:\}$)"))[1] + name + "=" + value + ";}");
 		};
 	  };
