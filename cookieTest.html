@@ -142,7 +142,7 @@
 			};
 		};
 	  };
-	  function deletePlayerData(name,username) { ********BROKEN
+	  function deletePlayerData(name,username) { *******BROKEN
 	  	window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[1] + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[2]);
 	  };
 	  
