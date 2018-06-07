@@ -143,7 +143,7 @@
 		};
 	  };
 	  function deletePlayerData(name,username) { *******BROKEN
-	  	window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[1] + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[2]);
+	  	window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[1] + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[3]);
 	  };
 	  
 	  //Note: Possibly use some variables to simplify the long combination of functions?
