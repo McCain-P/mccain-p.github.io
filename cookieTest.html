@@ -131,14 +131,15 @@
 	  function readPlayerData(name,username) {
 	  	return window.localStorage.getItem("playerData." + username).match(RegExp("(?:;|\{)(?:" + name + "=)([^(;|\})]*)"))[1];
 	  };
-	  function writePlayerData(name,value,username) { //check if playerData.username is even created at all in local storage?
+	  function writePlayerData(name,value,username) {
 	  	if (RegExp("(;|\{)" + name + "=[^(;|\})]*").test(window.localStorage.getItem("playerData." + username))) {
 			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[1] + value + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[2]);
 		} else {
-			if (RegExp().test(window.localStorage.getItem("playerData." + username))) {
-			
+			if (RegExp("^\{.*\}$").test(window.localStorage.getItem("playerData." + username))) {
+				window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(?:\}$)"))[1] + name + "=" + value + ";}");
+			} else {
+				window.localStorage.setItem("playerData." + username,"{" + name + "=" + value + ";}");
 			};
-			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(?:\}$)"))[1] + name + "=" + value + ";}");
 		};
 	  };
 	  function deletePlayerData(name,username) { ********BROKEN
