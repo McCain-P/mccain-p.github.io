@@ -125,7 +125,7 @@
 	  //Read playerData: "(?:;|\{)(?:" + name + "=)([^(;|\})]*)"
 	  //Write playerData (if the value exists): "(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"
 	  //Write playerData (if the value does not exist): "(^.*)(?:\}$)"
-	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)" ********BROKEN, probably something to do with selecting the right capture group numbers
+	  //Delete playerData: "(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"
 	  
 	  /*
 	  function readPlayerData(name,username) {
@@ -142,7 +142,7 @@
 			};
 		};
 	  };
-	  function deletePlayerData(name,username) { *******BROKEN
+	  function deletePlayerData(name,username) {
 	  	window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[1] + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{))(?:" + name + "=[^(?:;|\})]*(?:;|\}))(.*$)"))[3]);
 	  };
 	  
