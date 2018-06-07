@@ -133,7 +133,7 @@
 	  };
 	  function writePlayerData(name,value,username) { //Capture group 2 of editing existing value is broken
 	  	if (RegExp("(;|\{)" + name + "=[^(;|\})]*").test(window.localStorage.getItem("playerData." + username))) {
-			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[1] + value + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[2]);
+			window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[1] + value + window.localStorage.getItem("playerData." + username).match(RegExp("(^.*(;|\{)" + name + "=)(?:[^(?:;|\})]*)(.*$)"))[3]);
 		} else {
 			if (RegExp("^\{.*\}$").test(window.localStorage.getItem("playerData." + username))) {
 				window.localStorage.setItem("playerData." + username,window.localStorage.getItem("playerData." + username).match(RegExp("(^.*)(?:\}$)"))[1] + name + "=" + value + ";}");
@@ -149,5 +149,11 @@
 	  //Note: Possibly use some variables to simplify the long combination of functions?
 	  */
 	  
+	  /*Capture group within capture groups are individual capture groups as well:
+	  /(a(b))(?:c)(d)/
+	  [1] = ab
+	  [2] = b
+	  [3] = d
+	  */
   </script>
 </html>
