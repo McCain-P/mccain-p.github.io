@@ -7,7 +7,16 @@
       body {
         background-color: RGB(128,128,128); 
       }
-      #symbol:hover, body {
+      #background {
+        display: block;
+        background-color: RGB(128,128,128);
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      #symbol:hover > #background {
         background-color: RGB(128,0,255); 
       }
       #box {
@@ -113,6 +122,8 @@
       <code id="info">
       </code>
       <code id="symbol">
+        <code id="background">
+        </code>
       </code>
     </code>
   </body>
