@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>
+      Code‽: The Power and Importance of CSS
+    </title>
+    <style>
+      #box {
+        display: block;
+        background-color: RGB(255,255,0);
+        height: 50vh;
+        width: 25vw;
+        position: fixed;
+        top: 50vh;
+        left: 25vh;
+        transform: translateY(-50%);
+      }
+      #box * {
+        position: absolute;
+      }
+      #text {
+        color: RGB(255,0,0);
+        font-family: "Times New Roman", serif;
+        font-size: 5vw;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+      }
+      #text::before {
+        content: "Nonsensical webpage? \a Try looking at the";
+        white-space: pre;
+      }
+      #header {
+        color: RGB(255,0,255);
+        font-family: "Times New Roman", serif;
+        font-size: 12vw;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        display: none;
+      }
+      #header::before {
+        content: "CSS";
+      }
+      @keyframes horizontalSlide {
+        from {
+          left: 5%;
+        }
+        to {
+          left: 50%;
+        }
+      }
+      #text:hover ~ #header {
+        display: block;
+        animation: 2s linear 0s 1 forwards none running horizontalSlide;
+      }
+      #info {
+        color: RGB(255,0,255);
+        font-family: "Times New Roman", serif;
+        font-size: 5vw;
+        top: 50%;
+        left: 5%;
+        display: none;
+      }
+      #info::before {
+        content: "•No JavaScript \a •Minimal HTML \a •CSS";
+      }
+      @keyframes verticalSlide {
+        from {
+          top: 50%;
+        }
+        to {
+          top: 75%;
+        }
+      }
+      #text:active ~ #info {
+        display: block;
+        animation: 2s linear 0s 1 forwards none running verticalSlide;
+      }
+      #symbol {
+        color: RGB(255,0,0);
+        font-family: "Times New Roman", serif;
+        font-size: 10vw;
+        top: 50%;
+        right: 10%;
+        transform: translateY(-50%);
+      }
+      #symbol::before {
+        content: "‽";
+      }
+      #symbol:hover {
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <code id="box">
+      <code id="text">
+      </code>
+      <code id="header">
+      </code>
+      <code id="info">
+      </code>
+      <code id="symbol">
+      </code>
+    </code>
+  </body>
+  <!--Code‽: The Power and Importance of CSS-->
+</html>
