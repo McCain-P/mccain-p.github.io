@@ -200,7 +200,6 @@
     //0: Unaffected
     //1: Affected/Infected
     //2: Unknown
-    //3: Certain unknown due to invalid datapoints (temporary, change back to 2 when done)
    
     function drawGraph(dataset,graphCanvas) {
       var canvasWidth = graphCanvas.width;
@@ -279,17 +278,5 @@
     drawGraph(initialDataset,document.getElementById("initialInfectionGraph"));
     drawGraph(fixedDataset,document.getElementById("fixedInfectionGraph"));
     drawGraph(completedDataset,document.getElementById("completedInfectionGraph"));
-    //Invalid stuff
-    //Colums: 0, 1, 2, 3, 4
-    //Rows: 0-~20
-    //Column 2: "Avalyn" appears 0 times at x = 2, "Morgen" appears 2 times at x = 2
-    //Column 3: "Alejandro" appears 0 times at x = 3, "Morgen" appears 0 times at x = 3, "Eli" appears 0 times at x = 3, "Shyann" appears 2 times at x = 3, "Avalyn" appears 2 times at x = 3, "Ellie" appears 2 times at x = 3
-    //Column 4: "Alejandro" appears 2 times at x = 4, "Shyann" appears 0 times at x = 4, "Eli" appears 2 times at x = 4, "Ellie" appears 0 times at x = 4
-    
-    /*New rule in the ruleset:
-    If a node is unaffected at x = n-1,
-    and interacts with an unaffected node at x = n,
-    the node is unaffected at x = n.
-    */
   </script>
 </html>
