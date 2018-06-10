@@ -188,6 +188,37 @@
         </canvas>
       </div>
       <div class="page">
+	<h2>
+		Algorithm Proof-Ruleset
+	</h2>
+	<p>
+		Repeat the proofs/rules for the entire set, until no rules affect the set any more.
+	</p>
+	<p>
+		1. If a node is unaffected at x = n, then it is unaffected at x ≤ n
+		<br>
+		2. If a node is affected at x = n, then it is affected at x ≥ n
+		<br>
+		3. If a node interacts with an affected node, then it is affected
+		<br>
+		4. If an unaffected node interacts with a node, then the node it interacts with is unaffected
+		<br>
+		5. If a node is affected at x = n and unaffected at x = n - 1, then the node it interacts with at x = n is affected
+		<br>
+		6. If a node interacts with an unaffected node at x = n, and is unaffected at x = n - 1, then it is unaffected at x = n.
+	</p>
+	<p>
+		All of the rules originate from, and are proven by, the base rules:
+		<br>
+		1. If a node interacts with an affected node, then it is affected
+		<br>
+		2. If a node is affected at x = n, then it is affected at x ≥ n
+	</p>
+	<p>
+		If a proof of a rule cannot be made using the current rules (excluding the base rules), then it is a new rule.
+	</p>
+      </div>
+      <div class="page">
         <h2>
           Completed Graph
         </h2>
