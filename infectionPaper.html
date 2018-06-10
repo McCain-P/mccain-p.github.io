@@ -92,7 +92,39 @@
         </h1>
       </div>
       <div class="page">
-        <h1>h1</h1><h2>h2</h2><p>p</p><p>p</p><h2>h2</h2><p>p</p><p>p</p>
+        <h2>
+          Graph
+        </h2>
+        <p>
+          The dataset is shown as a graph, which is similar to a node network.
+        </p>
+        <p>
+          The graph contains 3 variables:
+          <br>
+          1. x: time, interaction
+          <br>
+          2. y: host
+          <br>
+          3. color: affected status
+          <br>
+	          &emsp;1. purple: affected
+            <br>
+	          &emsp;2. black: unaffected
+            <br>
+	          &emsp;3. blue: unknown
+        </p>
+        <p>
+          The color value of a node at certain x and y values is the affected status of the certain host after the certain interaction.
+        </p>
+        <p>
+          The first x value (x = 0) is the initial affected status. The last x value (x = 4) is the final affected status.
+        </p>
+        <p>
+          Nodes at x = n interact with nodes at x = n - 1, as a node's value after the previous interaction is interacted with in the next interaction.
+        </p>
+        <p>
+          Each pair of nodes in an interaction have connection/interaction symmetry, as they are interacting with each other.
+        </p>
       </div>
       <div class="page">
         <h2>
