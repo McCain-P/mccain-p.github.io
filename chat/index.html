@@ -280,15 +280,7 @@
       } else {
         return undefined;
       };
-      Purely mathematical function that takes a 1d color-value (spectrum) as input, and outputs a 3d color-value (RGB). A 4d function.
-      Instead of using a 4d function, you can make a 2d function: One 1d input, and three 1d outputs (R, G, and B)
-      
-        *After the function is calculated with multiples of S as input, the actual value of S (the length of the spectrum) can be found out
-        -S possibly equals 255 or 256 * 6?
-      
-        S = length of spectrum
-
-        Graph:
+    
         
      255|RRGGGGBBBBRR
      192| GR  BG  RB
@@ -302,11 +294,10 @@
          *Colors not at y 255 or 0 mark that there is a slope, instead of the usual constant value
       
     };
-    value ranges from 0 to 16777215 (256^3 values)*/
+    )*/
     
     var chat = document.getElementById("chat");
     
-    //contentType is MIME type
     function createChatContent(contentType,contentData) {
       if (contentType === "text/plain") {
         
@@ -372,6 +363,14 @@
     createChatContent("audio/X","x");
     createChatContent("image/X","x");
     createChatContent("text/plain","x");
+    
+    function readChat() {
+      
+    };
+    
+    function writeChat(text,file) {
+      
+    };
     /*CSS NOTE:
     *Control buttons that need more room expand a rectangle below the "content" div
     -An example would be the "speed"/"playback rate" button, which would expand a rectangle below the "content" div asking users to input a speed via text input
