@@ -134,6 +134,53 @@
         </canvas>
       </div>
       <div class="page">
+	<h2>
+		Dataset Validity
+	</h2>
+	<p>
+		Sudoku rule:
+		<br>
+		In the dataset,
+		<br>
+		1. Every host must appear 1 time for every value of x
+		<br>
+		2. Every host must appear 0 or 1 times for every value of y	
+	</p>
+	<p>
+		If the dataset follows these rules, it is a valid dataset. If the dataset does not follow these rules, it is an invalid dataset. The current dataset is invalid.
+	</p>
+	<p>
+		Invalid datapoints:
+		<br>
+		1. "Avalyn" appears 0 times at x = 2
+		<br>
+		2. "Morgen" appears 2 times at x = 2
+		<br>
+		3. "Alejandro" appears 0 times at x = 3
+		<br>
+		4. "Morgen" appears 0 times at x = 3
+		<br>
+		5. "Eli" appears 0 times at x = 3
+		<br>
+		6. "Shyann" appears 2 times at x = 3
+		<br>
+		7. "Avalyn" appears 2 times at x = 3
+		<br>
+		8. "Ellie" appears 2 times at x = 3
+		<br>
+		9. "Shyann" appears 0 times at x = 4
+		<br>
+		10. "Ellie" appears 0 times at x = 4
+		<br>
+		11. "Alejandro" appears 2 times at x = 4
+		<br>
+		12. "Eli" appears 2 times at x = 4
+	</p>
+	<p>
+		The invalid datapoints cause regions of unknown values (the blue value of the color variable) and paradoxical loops of the ruleset algorithm in the dataset. A fixed dataset was created by carefully changing the invalid datapoints relative to the rest of the dataset. The completed dataset used the fixed dataset as the initial dataset, and not the original initial dataset.
+	</p>
+      </div>
+      <div class="page">
         <h2>
           Fixed Graph
         </h2>
