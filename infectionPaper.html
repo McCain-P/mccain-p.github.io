@@ -34,7 +34,7 @@
       }
       @media print {
         .page {
-          break-after: page;
+          break-before: page;
           border: 0;
           margin: 0;
           padding: calc(100% / 17); /*0.5 (1/2) inches*/
@@ -44,10 +44,6 @@
         #printButton {
           display: none;
         }
-	body {
-	  paddig: 0;
-	  margin: 0;	
-	}
       }
       body * {
         position: static;
