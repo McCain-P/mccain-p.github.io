@@ -258,15 +258,15 @@
       <div id="messageInput">
         <textarea id="textInput"></textarea>
         <div id="fileInput">
-          <button id="fileSelect" class="blue icon">
+          <button id="fileSelect" class="blue icon" onclick="document.getElementById('fileInputElement').click()">
           </button>
           <p id="fileNames">
           </p>
-          <button id="fileInputElement">
-          </button>
+          <input type="file" id="fileInputElement" onchange="document.getElementById('fileNames').innerHTML = this.files[0].name">
+          </input>
         </div>
       </div>
-      <button id="messageSend" class="blue" onclick="writeChat(document.getElementById("textInput").value,X)">
+      <button id="messageSend" class="blue" onclick="writeChat(document.getElementById('textInput').value,document.getElementById('fileInputElement').files[0])">
           Send
       </button>
     </div>
