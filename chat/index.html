@@ -371,6 +371,10 @@
     function writeChat(text,file) {
       
     };
+    
+    //Chat is read and updated/refreshed every 10 milliseconds
+    window.setInterval(readChat,10);
+    
     /*CSS NOTE:
     *Control buttons that need more room expand a rectangle below the "content" div
     -An example would be the "speed"/"playback rate" button, which would expand a rectangle below the "content" div asking users to input a speed via text input
