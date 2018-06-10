@@ -268,6 +268,10 @@
   </body>
   <script>
     /*Username colors:
+    
+    //Colors can change, as the chat content is updated every time the XML document is read again
+    //(maximum RGB spectrum color value)/document.chat.users.getChildNodes().length (approximate)  -  This gets you the color value to increment the usernames by. Store this in a variable somewhere, and then reference it when content elements are being created
+    
     var users = ["a","b","c"];
     evenly distribute amongst the color spectrum
     function rgbSpectrumColorValue(value) {
