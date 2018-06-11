@@ -352,21 +352,8 @@
       } else {
         return undefined;
       };
-    
-        
-     255|RRGGGGBBBBRR
-     192| GR  BG  RB
-     128| GR  BG  RB
-      64|G  RB  GR  B
-         G--RB--GR--B
-         123456789012
-         *2x = S/6
-         
-         *If a color is placed at a value of X, it means that it is there for that whole length
-         *Colors not at y 255 or 0 mark that there is a slope, instead of the usual constant value
-      
     };
-    )*/
+    */
     
     var chat = document.getElementById("chat");
     
@@ -450,20 +437,5 @@
     
     //Chat is read and updated/refreshed every 10 milliseconds
     window.setInterval(readChat,10);
-    
-    /*
-    *Header (Left-to-right)
-    -Logo
-    -Chat key (current and edit) ("Chat Key:" + bordered text) - white?
-    --20? character limit
-    -Enter chat key button ("Connect") - purple
-    -Create chat button ("Create") - blue
-    --Dropdown
-    ---Chat key phrase
-    ---Chat key phrase enter button
-    ---Autoconnects you to your newly created chat
-    -Enter username button ("Set Username") - purple
-    -Username (current and edit) (bordered text) - white?
-    */
   </script>
 </html>
