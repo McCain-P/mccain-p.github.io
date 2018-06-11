@@ -34,13 +34,13 @@
       }
       @media print {
         .page {
-          break-after: page;
-	  break-inside: avoid;
-          border: 0;
-          margin: 0;
-          padding: calc(100% / 17); /*0.5 (1/2) inches*/
-          height: 100%; /*11 inches*/
-          width: 100%; /*8.5 inches*/
+          break-after: page !important;
+	  break-inside: avoid !important;
+          border: 0 !important;
+          margin: 0 !important;
+          padding: calc(100% / 17) !important; /*0.5 (1/2) inches*/
+          height: 100% !important; /*11 inches*/
+          width: 100% !important; /*8.5 inches*/
         }
         #printButton {
           display: none;
