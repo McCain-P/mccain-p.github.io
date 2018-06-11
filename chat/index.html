@@ -307,13 +307,13 @@
       </p>
       <input type="text" id="chatKeyInput">
       </input>
-      <button id="connectChat" class="purple">
+      <button id="connectChat" class="purple" onclick="chatKey = document.getElementById('chatKeyInput').value">
         Connect
       </button>
       <button id="createChat" class="purple">
         Create
       </button>
-      <button id="setUsername" class="blue">
+      <button id="setUsername" class="blue" onclick="username = document.getElementById('usernameInput').value">
         Set User
       </button>
       <input type="text" id="usernameInput">
@@ -339,6 +339,12 @@
     </div>
   </body>
   <script>
+    var chatKey = null; //chat key is referred to by the readChat and writeChat functions
+    var username = null; //same thing with username
+    /*
+    Header functionality to do:
+    *"Create chat" dropdown and functionality
+    */
     /*Username colors:
     
     //Colors can change, as the chat content is updated every time the XML document is read again
