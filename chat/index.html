@@ -386,9 +386,10 @@
     
     function createChatContent(contentType,contentData,sendingUser) {
       if (contentType === "text/plain") {
-        
+        //Text
       } else {
         if (RegExp("^image/.*").test(contentType) === true) {
+          //Image
           var media = document.createElement("div");
           media.className = "media";
           chat.appendChild(media);
@@ -405,6 +406,7 @@
           mediaControls.appendChild(downloadButton);
         } else {
           if (RegExp("^video/.*").test(contentType) === true) {
+            //Video
             var media = document.createElement("div");
             media.className = "media";
             chat.appendChild(media);
@@ -437,8 +439,10 @@
             mediaControls.appendChild(downloadButton);
           } else {
             if (RegExp("^audio/.*").test(contentType) === true) {
+              //Audio
                 //mediaContent is a div. In the div is the audio element, as well as the audio visualizer element. The visualizer element is styled to fill the mediaContent div, while the audio element is styled to be invisible.
             } else {
+              //File
               //This is the download/general file contentType 
             };
           };
