@@ -339,8 +339,8 @@
     </div>
   </body>
   <script>
-    var chatKey = window.localStorage.getItem("chatKey"); //chat key is referred to by the readChat and writeChat functions
-    var username = window.localStorage.getItem("username"); //same thing with username
+    var chatKey = null; //chat key is referred to by the readChat and writeChat functions
+    var username = null; //same thing with username
     function setChatKey(value) {
       chatKey = value;
       window.localStorage.setItem("chatKey",value);
@@ -351,6 +351,8 @@
       window.localStorage.setItem("username",value);
       document.getElementById("usernameInput").value = value;
     };
+    setChatKey(window.localStorage.getItem("chatKey"));
+    setUsername(window.localStorage.getItem("username"));
     /*
     Header functionality to do:
     *"Create chat" dropdown and functionality
