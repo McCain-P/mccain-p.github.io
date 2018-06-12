@@ -278,7 +278,7 @@
         /*visibility: hidden;*/
         z-index: -1;
       }
-      @keyframes dropdown {
+      @keyframes mediaDropdown {
         from {
           top: calc(0.5vw);
         }
@@ -286,7 +286,7 @@
           top: calc(100% + 0.5vw);
         }
       }
-      @keyframes riseup {
+      @keyframes mediaRiseup {
         from {
           top: calc(100% + 0.5vw);
         }
@@ -298,10 +298,10 @@
         }
       }
       .speedButton:active ~ .speedButtonDropdown, .speedButton ~ .speedButtonDropdown:hover {
-        animation: 0.5s linear 0s 1 normal forwards running dropdown;
+        animation: 0.5s linear 0s 1 normal forwards running mediaDropdown;
       }
       .speedButton:not(:active) ~ .speedButtonDropdown:not(:hover) {
-        animation: 1s linear 0s 1 normal forwards running riseup;
+        animation: 1s linear 0s 1 normal forwards running mediaRiseup;
       }
     </style>
   </head>
