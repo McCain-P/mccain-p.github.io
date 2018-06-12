@@ -341,6 +341,14 @@
   <script>
     var chatKey = null; //chat key is referred to by the readChat and writeChat functions
     var username = null; //same thing with username
+    function setChatKey(value) {
+      chatKey = value;
+      window.localStorage.setItem(chatKey,value);
+    };
+    function setUsername(value) {
+      username = value;
+      window.localStorage.setItem(username,value);
+    };
     /*
     Header functionality to do:
     *"Create chat" dropdown and functionality
