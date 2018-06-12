@@ -143,6 +143,31 @@
       #createChatDropdown {
         
       }
+      @keyframes createChatDropdown {
+        from {
+          top: calc(0.5vw);
+        }
+        to {
+          top: calc(100% + 0.5vw);
+        }
+      }
+      @keyframes createChatRiseup {
+        from {
+          top: calc(100% + 0.5vw);
+        }
+        50% {
+          top: calc(100% + 0.5vw);
+        }
+        to {
+          top: calc(0.5vw);
+        }
+      }
+      .speedButton:active ~ #createChatDropdown, .speedButton ~ #createChatDropdown:hover {
+        animation: 0.5s linear 0s 1 normal forwards running createChatDropdown;
+      }
+      .speedButton:not(:active) ~ #createChatDropdown:not(:hover) {
+        animation: 1s linear 0s 1 normal forwards running createChatRiseup;
+      }
       #keyPhrasePreface {
         
       }
