@@ -387,6 +387,7 @@
     Chat keys are in the format "1234$name", where 1234 is the chat number, name is the key phrase, and $ is the delimiter
     -Use regex to search for the first instance of $, so that you can extract the chat number from the filename.
     --You can extract all the numbers and then compare them (find the smallest/first number that isn't there), to figure out what number to append to a newly-created key phrase
+    ---The for loop checks if each integer starting from 0 is present, and repeats (number of files/chats)+1 times. This is guarenteed that it will find the first number that isn't there.
     */
     var chat = document.getElementById("chat");
     
