@@ -162,10 +162,10 @@
           top: calc(0.5vw);
         }
       }
-      .speedButton:active ~ #createChatDropdown, .speedButton ~ #createChatDropdown:hover {
+      #createChat:active ~ #createChatDropdown, #createChat ~ #createChatDropdown:hover {
         animation: 0.5s linear 0s 1 normal forwards running createChatDropdown;
       }
-      .speedButton:not(:active) ~ #createChatDropdown:not(:hover) {
+      #createChat:not(:active) ~ #createChatDropdown:not(:hover) {
         animation: 1s linear 0s 1 normal forwards running createChatRiseup;
       }
       #keyPhrasePreface {
