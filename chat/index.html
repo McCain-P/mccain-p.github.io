@@ -141,25 +141,31 @@
         font-size: 2vw;
       }
       #createChatDropdown {
-        
+        height: 100%;
+        width: 35%;
+        right: 10%;
+        top: 0;
+        background-color: RGB(0,0,0);
+        border: 0.5vw solid RGB(255,255,255);
+        z-index: -1;
       }
       @keyframes createChatDropdown {
         from {
-          top: calc(0.5vw);
+          top: 0;
         }
         to {
-          top: calc(100% + 0.5vw);
+          top: calc(100% + 2vh);
         }
       }
       @keyframes createChatRiseup {
         from {
-          top: calc(100% + 0.5vw);
+          top: calc(100% + 2vh);
         }
         50% {
-          top: calc(100% + 0.5vw);
+          top: calc(100% + 2vh);
         }
         to {
-          top: calc(0.5vw);
+          top: 0;
         }
       }
       #createChat:active ~ #createChatDropdown, #createChat ~ #createChatDropdown:hover {
@@ -316,7 +322,7 @@
       }
       @keyframes mediaDropdown {
         from {
-          top: calc(0.5vw);
+          top: 0.5vw;
         }
         to {
           top: calc(100% + 0.5vw);
@@ -330,7 +336,7 @@
           top: calc(100% + 0.5vw);
         }
         to {
-          top: calc(0.5vw);
+          top: 0.5vw;
         }
       }
       .speedButton:active ~ .speedButtonDropdown, .speedButton ~ .speedButtonDropdown:hover {
