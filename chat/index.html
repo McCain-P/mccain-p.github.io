@@ -344,8 +344,8 @@
     </div>
   </body>
   <script>
-    var chatKey = null; //chat key is referred to by the readChat and writeChat functions
-    var username = null; //same thing with username
+    var chatKey = null;
+    var username = null;
     function setChatKey(value) {
       chatKey = value;
       window.localStorage.setItem("chatKey",value);
@@ -366,10 +366,6 @@
     } else {
       setUsername("Username");
     };
-    /*
-    Header functionality to do:
-    *"Create chat" dropdown and functionality
-    */
     /*Username colors:
     
     //Colors can change, as the chat content is updated every time the XML document is read again
