@@ -316,7 +316,7 @@
       <button id="setUsername" class="blue" onclick="setUsername(document.getElementById('usernameInput').value)">
         Set User
       </button>
-      <input type="text" id="usernameInput" value="Username">
+      <input type="text" id="usernameInput">
       </input>
     </div>
     <div id="chat">
@@ -351,8 +351,16 @@
       window.localStorage.setItem("username",value);
       document.getElementById("usernameInput").value = value;
     };
-    setChatKey(window.localStorage.getItem("chatKey"));
-    setUsername(window.localStorage.getItem("username"));
+    if (window.localStorage.getItem("chatKey") != null) {
+      setChatKey(window.localStorage.getItem("chatKey"));  
+    } else {
+      setChatKey("");
+    };
+    if (window.localStorage.getItem("username") != null) {
+      setUsername(window.localStorage.getItem("username"));
+    } else {
+      setUsername("Username");
+    };
     /*
     Header functionality to do:
     *"Create chat" dropdown and functionality
