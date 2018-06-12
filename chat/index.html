@@ -466,12 +466,22 @@
       
       //End of HTTP communication
     };
-    
     function writeChat(text,file) {
       //HTTP communication (using GitHub API)
       
       //End of HTTP communication
     };
+    function createChat(keyPhrase) {
+      //HTTP communication (using GitHub API)
+      //get names of all chat files
+      //End of HTTP communication
+      //compare the numbers of the names of chat files, aquired through regex searching for the delimiter character; find out what number to give the chat key
+      //create the chat key, combining the number, delimiter, and key phrase
+      //HTTP communication (using GitHub API)
+      //Create the XML file in the GitHub server with the key as its name, and put in the XML elements of the basic chat XML structure ("<chat>", etc. Everything that wouldn't get added by writeChat())
+      //End of HTTP communication
+      //Call setChatKey() with the new chat key.
+    }
     
     //Chat is read and updated/refreshed every 10 milliseconds
     window.setInterval(readChat,10);
