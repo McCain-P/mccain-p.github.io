@@ -433,9 +433,13 @@
     var chatKey = null;
     var username = null;
     function setChatKey(value) {
+      removeUser();
+      
       chatKey = value;
       window.localStorage.setItem("chatKey",value);
       document.getElementById("chatKeyInput").value = value;
+      
+      addUser();
     };
     function setUsername(value) {
       removeUser();
