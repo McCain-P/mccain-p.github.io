@@ -622,7 +622,34 @@
     }
     function deleteChat() {
       //HTTP communication (using GitHub API)
-      
+      var httpRequest = XMLHttpRequest();
+      httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+      httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      var jsonRequestBody = {
+        path: "chats/" + chatKey + ".xml"
+      };
+      httpRequest.send(JSON.stringify(jsonRequestBody));
+      httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          var documentSha = httpRequest.response.sha;
+          //edit the XML document, changing the "chatXmlDocument" variable
+          //HTTP communication (using GitHub API)
+          var httpRequest = XMLHttpRequest();
+          httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+          httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+          httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+          var jsonRequestBody = {
+            path: "chats/" + chatKey + ".xml",
+            message: "Write chat XML document",
+            content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
+            sha: documentSha
+          };
+          httpRequest.send(JSON.stringify(jsonRequestBody));
+          //End of HTTP communication
+        };
+      };
       //End of HTTP communication
     };
     
@@ -634,6 +661,36 @@
       //XML DOM manipulation to add username to XML document
       //HTTP communication (using GitHub API)
       //set the new XML DOM as the updated XML document
+      //End of HTTP communication
+      //HTTP communication (using GitHub API)
+      var httpRequest = XMLHttpRequest();
+      httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+      httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      var jsonRequestBody = {
+        path: "chats/" + chatKey + ".xml"
+      };
+      httpRequest.send(JSON.stringify(jsonRequestBody));
+      httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          var documentSha = httpRequest.response.sha;
+          //edit the XML document, changing the "chatXmlDocument" variable
+          //HTTP communication (using GitHub API)
+          var httpRequest = XMLHttpRequest();
+          httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+          httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+          httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+          var jsonRequestBody = {
+            path: "chats/" + chatKey + ".xml",
+            message: "Write chat XML document",
+            content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
+            sha: documentSha
+          };
+          httpRequest.send(JSON.stringify(jsonRequestBody));
+          //End of HTTP communication
+        };
+      };
       //End of HTTP communication
     };
     function removeUser() {
@@ -648,6 +705,36 @@
         //XML DOM manipulation to remove username from XML document
         //HTTP communication (using GitHub API)
         //set the new XML DOM as the updated XML document
+        //End of HTTP communication
+        //HTTP communication (using GitHub API)
+        var httpRequest = XMLHttpRequest();
+        httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+        httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+        httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+        var jsonRequestBody = {
+          path: "chats/" + chatKey + ".xml"
+        };
+        httpRequest.send(JSON.stringify(jsonRequestBody));
+        httpRequest.onreadystatechange = function() {
+          if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+            chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+            var documentSha = httpRequest.response.sha;
+            //edit the XML document, changing the "chatXmlDocument" variable
+            //HTTP communication (using GitHub API)
+            var httpRequest = XMLHttpRequest();
+            httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+            httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+            httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+            var jsonRequestBody = {
+              path: "chats/" + chatKey + ".xml",
+              message: "Write chat XML document",
+              content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
+              sha: documentSha
+            };
+            httpRequest.send(JSON.stringify(jsonRequestBody));
+            //End of HTTP communication
+          };
+        };
         //End of HTTP communication
       };
     };
