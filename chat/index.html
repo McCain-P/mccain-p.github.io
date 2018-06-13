@@ -574,6 +574,20 @@
       //Read the chat XML document, and add the chat contents to the HTML document
     };
     function writeChat(text,file) {
+      var chatXmlDocument = null;
+      //HTTP communication (using GitHub API)
+      var httpRequest = XMLHttpRequest();
+      httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+      httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      httpRequest.send(null);
+      httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+        };
+      };
+      //End of HTTP communication
+      //edit the XML document
       //HTTP communication (using GitHub API)
       
       //End of HTTP communication
