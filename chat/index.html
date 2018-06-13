@@ -570,7 +570,7 @@
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           //Remove previous chat contents
           for (i = 0; i < chat.childNodes.length; i++) {
             chat.removeChild(chat.childNodes[i]);
@@ -611,7 +611,7 @@
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           var documentSha = httpRequest.response.sha;
           //Write to the chat XML document
           var chatContentXml = chatXmlDocument.getElementsByTagName("content")[0];
@@ -723,7 +723,7 @@
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           var documentSha = httpRequest.response.sha;
           //Write chat XML document to add user
           var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
@@ -764,7 +764,7 @@
         httpRequest.send(JSON.stringify(jsonRequestBody));
         httpRequest.onreadystatechange = function() {
           if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-            chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+            chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
             var documentSha = httpRequest.response.sha;
             //Write chat XML document to remove user
             var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
