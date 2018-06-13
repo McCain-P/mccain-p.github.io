@@ -653,10 +653,14 @@
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          //get names of all chat files
-          //compare the numbers of the names of chat files, aquired through regex searching for the delimiter character; find out what number to give the chat key
-          //create the chat key, combining the number, delimiter, and key phrase
-          var constructedChatKey = X;
+          //Get the key numbers of every chat
+          var keyNumbers = [];
+          for (i = 0; i < httpRequest.response.length; i++) {
+            keyNumbers[i] = httpRequest.response[i].name.match(RegExp("[^#]*"));
+          };
+          //Find first non-existant key-number, and use it to create the chat key
+          var keyNumber = X;
+          var constructedChatKey = keyNumber + "#" + keyPhrase;
           //create general chat XML document format/layout
           var chatXmlDocument = X;
           //HTTP communication (using GitHub API)
@@ -671,7 +675,7 @@
           };
           httpRequest.send(JSON.stringify(jsonRequestBody));
           //End of HTTP communication
-          //call setChatKey() with the new chat key.
+          setChatKey(constructedChatKey);
         };
       };
       //End of HTTP communication
