@@ -460,12 +460,14 @@
     } else {
       setUsername("Username");
     };
+    
+    var users = [];
+    
     /*Username colors:
     
     //Colors can change, as the chat content is updated every time the XML document is read again
     //(maximum RGB spectrum color value)/document.chat.users.getChildNodes().length (approximate)  -  This gets you the color value to increment the usernames by. Store this in a variable somewhere, and then reference it when content elements are being created
     
-    var users = ["a","b","c"];
     evenly distribute amongst the color spectrum
     function rgbSpectrumColorValue(value) {
       if () { 0 <= value <= 1536
@@ -570,8 +572,22 @@
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           //Remove previous chat contents
-          //for (i=0;i<chat.children.length;i++) {chat.deletenode(children[i])}
+          for (i = 0; i < chat.childNodes.length; i++) {
+            chat.removeChild(chat.childNodes[i]);
+          };
           //Read the chat XML document, and add the chat contents to the HTML document
+          var chatContentXml = chatXmlDocument.getElementsByTagName("content")[0];
+          for (i = 0; i < chatContentXml.childNodes.length; i++) {
+            if (chatContentXml.childNodes[i].tagName === "text") {
+              createChatContent("text/plain",data,user);
+            } else {
+              if (chatContentXml.childNodes[i].tagName === "file") {
+                createChatContent(chatContentXml.childNodes[i].getAttribute("mimeType"),data,user);
+              };
+            };
+          };
+          //Read the chat users
+          //users
         };
       };
       //End of HTTP communication
