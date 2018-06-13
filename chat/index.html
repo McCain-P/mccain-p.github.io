@@ -625,6 +625,8 @@
           //compare the numbers of the names of chat files, aquired through regex searching for the delimiter character; find out what number to give the chat key
           //create the chat key, combining the number, delimiter, and key phrase
           var constructedChatKey = X;
+          //create general chat XML document format/layout
+          var chatXmlDocument = X;
           //HTTP communication (using GitHub API)
           var httpRequest = XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
@@ -633,7 +635,7 @@
           var jsonRequestBody = {
             path: "chats/" + constructedChatKey + ".xml",
             message: "Create chat XML document",
-            content: X
+            content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument))
           };
           httpRequest.send(JSON.stringify(jsonRequestBody));
           //End of HTTP communication
