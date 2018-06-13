@@ -557,13 +557,15 @@
     createChatContent("image/X","x");
     createChatContent("text/plain","x");
     
+    var githubAuthorizationToken = "token 3a42073a4ffa6f3a445e5dbab8118c9d4f4a23c1";
+    
     function readChat() {
       var chatXmlDocument = null;
       //HTTP communication (using GitHub API)
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
       var jsonRequestBody = {
         path: "chats/" + chatKey + ".xml"
       };
@@ -604,7 +606,7 @@
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
       var jsonRequestBody = {
         path: "chats/" + chatKey + ".xml"
       };
@@ -628,7 +630,7 @@
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-          httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+          httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
             message: "Write chat XML document",
@@ -646,7 +648,7 @@
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
       var jsonRequestBody = {
         path: "chats/"
       };
@@ -673,7 +675,7 @@
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-          httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+          httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
           var jsonRequestBody = {
             path: "chats/" + constructedChatKey + ".xml",
             message: "Create chat XML document",
@@ -691,7 +693,7 @@
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
       var jsonRequestBody = {
         path: "chats/" + chatKey + ".xml"
       };
@@ -703,7 +705,7 @@
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("DELETE","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-          httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+          httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
             message: "Delete chat XML document",
@@ -722,7 +724,7 @@
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
       var jsonRequestBody = {
         path: "chats/" + chatKey + ".xml"
       };
@@ -740,7 +742,7 @@
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-          httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+          httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
             message: "Write chat XML document",
@@ -763,7 +765,7 @@
         var httpRequest = new XMLHttpRequest();
         httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
         httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-        httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+        httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
         var jsonRequestBody = {
           path: "chats/" + chatKey + ".xml"
         };
@@ -784,7 +786,7 @@
             var httpRequest = new XMLHttpRequest();
             httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
             httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-            httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+            httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
             var jsonRequestBody = {
               path: "chats/" + chatKey + ".xml",
               message: "Write chat XML document",
