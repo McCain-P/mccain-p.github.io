@@ -561,6 +561,9 @@
         };
       };
       //End of HTTP communication
+      //Remove previous chat contents
+      //for (i=0;i<chat.children.length;i++) {chat.deletenode(children[i])}
+      //Read the chat XML document, and add the chat contents to the HTML document
     };
     function writeChat(text,file) {
       //HTTP communication (using GitHub API)
