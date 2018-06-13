@@ -598,8 +598,8 @@
           httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
-            message: X,
-            content: X,
+            message: "Write chat XML document",
+            content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
             sha: X
           };
           httpRequest.send(JSON.stringify(jsonRequestBody));
