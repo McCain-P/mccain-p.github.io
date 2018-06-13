@@ -653,13 +653,7 @@
     function addUser() {
       //add name to users array
       //HTTP communication (using GitHub API)
-      //get XML document
-      //End of HTTP communication
-      //XML DOM manipulation to add username to XML document
-      //HTTP communication (using GitHub API)
-      //set the new XML DOM as the updated XML document
-      //End of HTTP communication
-      //HTTP communication (using GitHub API)
+      var chatXmlDocument = null;
       var httpRequest = XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
@@ -672,7 +666,7 @@
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           var documentSha = httpRequest.response.sha;
-          //edit the XML document, changing the "chatXmlDocument" variable
+          //XML DOM manipulation to add username to XML document
           //HTTP communication (using GitHub API)
           var httpRequest = XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
@@ -697,13 +691,7 @@
         deleteChat();
       } else {
         //HTTP communication (using GitHub API)
-        //get XML document
-        //End of HTTP communication
-        //XML DOM manipulation to remove username from XML document
-        //HTTP communication (using GitHub API)
-        //set the new XML DOM as the updated XML document
-        //End of HTTP communication
-        //HTTP communication (using GitHub API)
+        var chatXmlDocument = null;
         var httpRequest = XMLHttpRequest();
         httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
         httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
@@ -716,7 +704,7 @@
           if (httpRequest.readyState === 4 && httpRequest.status === 200) {
             chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
             var documentSha = httpRequest.response.sha;
-            //edit the XML document, changing the "chatXmlDocument" variable
+            //XML DOM manipulation to remove username from XML document
             //HTTP communication (using GitHub API)
             var httpRequest = XMLHttpRequest();
             httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
@@ -732,7 +720,7 @@
             //End of HTTP communication
           };
         };
-        //End of HTTP communication
+      //End of HTTP communication
       };
     };
     
