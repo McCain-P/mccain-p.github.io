@@ -646,21 +646,15 @@
     function createChat(keyPhrase) {  
       //HTTP communication (using GitHub API)
       var httpRequest = new XMLHttpRequest();
-      console.log(httpRequest);
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/");
-      console.log(httpRequest);
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-      console.log(httpRequest);
       httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
-      console.log(httpRequest);
       var jsonRequestBody = {
         path: "chats/"
       };
-      console.log(httpRequest);
       httpRequest.send(JSON.stringify(jsonRequestBody));
-      console.log(httpRequest);
       httpRequest.onreadystatechange = function() {
-        console.log(httpRequest);
+        console.log("thisTest: " + this);
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           //Get the key numbers of every chat
           var keyNumbers = [];
