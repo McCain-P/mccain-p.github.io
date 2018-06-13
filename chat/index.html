@@ -590,6 +590,7 @@
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          var documentSha = httpRequest.response.sha;
           //edit the XML document, changing the "chatXmlDocument" variable
           //HTTP communication (using GitHub API)
           var httpRequest = XMLHttpRequest();
@@ -600,7 +601,7 @@
             path: "chats/" + chatKey + ".xml",
             message: "Write chat XML document",
             content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
-            sha: X
+            sha: documentSha
           };
           httpRequest.send(JSON.stringify(jsonRequestBody));
           //End of HTTP communication
