@@ -560,7 +560,7 @@
     function readChat() {
       var chatXmlDocument = null;
       //HTTP communication (using GitHub API)
-      var httpRequest = XMLHttpRequest();
+      var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
       httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -601,7 +601,7 @@
     function writeChat(text,file) {
       var chatXmlDocument = null;
       //HTTP communication (using GitHub API)
-      var httpRequest = XMLHttpRequest();
+      var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
       httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -625,7 +625,7 @@
           fileElement.setAttribute("mimeType",file.type);
           chatContentXml.appendChild(fileElement);
           //HTTP communication (using GitHub API)
-          var httpRequest = XMLHttpRequest();
+          var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -643,7 +643,7 @@
     };
     function createChat(keyPhrase) {  
       //HTTP communication (using GitHub API)
-      var httpRequest = XMLHttpRequest();
+      var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
       httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -670,7 +670,7 @@
           //Create general chat XML document format
           var chatXmlDocument = new DOMParser().parseFromString("<xml><chat><users></users><content></content></chat></xml>","application/xml");
           //HTTP communication (using GitHub API)
-          var httpRequest = XMLHttpRequest();
+          var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -688,7 +688,7 @@
     };
     function deleteChat() {
       //HTTP communication (using GitHub API)
-      var httpRequest = XMLHttpRequest();
+      var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
       httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -700,7 +700,7 @@
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           var documentSha = httpRequest.response.sha;
           //HTTP communication (using GitHub API)
-          var httpRequest = XMLHttpRequest();
+          var httpRequest = new XMLHttpRequest();
           httpRequest.open("DELETE","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -719,7 +719,7 @@
     function addUser() {
       //HTTP communication (using GitHub API)
       var chatXmlDocument = null;
-      var httpRequest = XMLHttpRequest();
+      var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
       httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -737,7 +737,7 @@
           userElement.textContent = username;
           chatUsersXml.appendChild(userElement);
           //HTTP communication (using GitHub API)
-          var httpRequest = XMLHttpRequest();
+          var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -760,7 +760,7 @@
       } else {
         //HTTP communication (using GitHub API)
         var chatXmlDocument = null;
-        var httpRequest = XMLHttpRequest();
+        var httpRequest = new XMLHttpRequest();
         httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
         httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
         httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
@@ -781,7 +781,7 @@
               };
             };
             //HTTP communication (using GitHub API)
-            var httpRequest = XMLHttpRequest();
+            var httpRequest = new XMLHttpRequest();
             httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
             httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
             httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
