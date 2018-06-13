@@ -619,7 +619,23 @@
       //Create the XML file in the GitHub server with the key as its name, and put in the XML elements of the basic chat XML structure ("<chat>", etc. Everything that wouldn't get added by writeChat())
       //End of HTTP communication
       //Call setChatKey() with the new chat key.
-    }
+      
+      //HTTP communication (using GitHub API)
+      var httpRequest = XMLHttpRequest();
+      httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/");
+      httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      var jsonRequestBody = {
+        path: "chats/"
+      };
+      httpRequest.send(JSON.stringify(jsonRequestBody));
+      httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          
+        };
+      };
+      //End of HTTP communication
+    };
     function deleteChat() {
       //HTTP communication (using GitHub API)
       var httpRequest = XMLHttpRequest();
