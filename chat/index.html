@@ -661,6 +661,7 @@
           //Get the key numbers of every chat
           var keyNumbers = [];
           for (i = 0; i < httpRequest.response.length; i++) {
+            console.log(httpRequest.response);
             keyNumbers[i] = httpRequest.response[i].name.match(RegExp("[^#]*"));
           };
           //Find first non-existant key-number, and use it to create the chat key
