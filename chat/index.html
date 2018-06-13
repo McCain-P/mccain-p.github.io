@@ -609,13 +609,7 @@
       };
       //End of HTTP communication
     };
-    function createChat(keyPhrase) {
-      
-      //HTTP communication (using GitHub API)
-      //Create the XML file in the GitHub server with the key as its name, and put in the XML elements of the basic chat XML structure ("<chat>", etc. Everything that wouldn't get added by writeChat())
-      //End of HTTP communication
-      //Call setChatKey() with the new chat key.
-      
+    function createChat(keyPhrase) {  
       //HTTP communication (using GitHub API)
       var httpRequest = XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/");
@@ -630,6 +624,20 @@
           //get names of all chat files
           //compare the numbers of the names of chat files, aquired through regex searching for the delimiter character; find out what number to give the chat key
           //create the chat key, combining the number, delimiter, and key phrase
+          var constructedChatKey = X;
+          //HTTP communication (using GitHub API)
+          var httpRequest = XMLHttpRequest();
+          httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
+          httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+          httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+          var jsonRequestBody = {
+            path: "chats/" + constructedChatKey + ".xml",
+            message: "Create chat XML document",
+            content: X
+          };
+          httpRequest.send(JSON.stringify(jsonRequestBody));
+          //End of HTTP communication
+          //call setChatKey() with the new chat key.
         };
       };
       //End of HTTP communication
