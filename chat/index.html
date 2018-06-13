@@ -578,16 +578,21 @@
           //Read the chat XML document, and add the chat contents to the HTML document
           var chatContentXml = chatXmlDocument.getElementsByTagName("content")[0];
           for (i = 0; i < chatContentXml.childNodes.length; i++) {
-            if (chatContentXml.childNodes[i].tagName === "text") {
-              createChatContent("text/plain",data,user);
+            var contentElement = chatContentXml.childNodes[i];
+            if (contentElement.tagName === "text") {
+              createChatContent("text/plain",contentElement.textContent,contentElement.getAttribute("sender"));
             } else {
-              if (chatContentXml.childNodes[i].tagName === "file") {
-                createChatContent(chatContentXml.childNodes[i].getAttribute("mimeType"),data,user);
+              if (contentElement.tagName === "file") {
+                createChatContent(contentElement.getAttribute("mimeType"),contentElement.textContent,contentElement.getAttribute("sender"));
               };
             };
           };
-          //Read the chat users
-          //users
+          //Read and add the chat users
+          var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
+          for (i = 0; i < chatUsersXml.childNodes.length; i++) {
+            var userElement = chatUsersXml.childNodes[i];
+            users[i] = userElement.textContent;
+          };
         };
       };
       //End of HTTP communication
