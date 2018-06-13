@@ -661,8 +661,8 @@
           //Find first non-existant key-number, and use it to create the chat key
           var keyNumber = X;
           var constructedChatKey = keyNumber + "#" + keyPhrase;
-          //create general chat XML document format/layout
-          var chatXmlDocument = X;
+          //Create general chat XML document format
+          var chatXmlDocument = new DOMParser().parseFromString("<xml><chat><users></users><content></content></chat></xml>","application/xml");
           //HTTP communication (using GitHub API)
           var httpRequest = XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
