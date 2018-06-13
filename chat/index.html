@@ -549,7 +549,11 @@
     
     function readChat() {
       //HTTP communication (using GitHub API)
-      
+      var httpRequest = XMLHttpRequest();
+      httpRequest.open("GET","https://api.github.com/repos/<owner>/<repo>/contents/<path>");
+      httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+      httpRequest.send(null);
       //End of HTTP communication
     };
     function writeChat(text,file) {
