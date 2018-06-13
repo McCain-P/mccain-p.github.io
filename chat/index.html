@@ -569,12 +569,12 @@
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          //Remove previous chat contents
+          //for (i=0;i<chat.children.length;i++) {chat.deletenode(children[i])}
+          //Read the chat XML document, and add the chat contents to the HTML document
         };
       };
       //End of HTTP communication
-      //Remove previous chat contents
-      //for (i=0;i<chat.children.length;i++) {chat.deletenode(children[i])}
-      //Read the chat XML document, and add the chat contents to the HTML document
     };
     function writeChat(text,file) {
       var chatXmlDocument = null;
@@ -590,15 +590,22 @@
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          //edit the XML document, changing the "chatXmlDocument" variable
+          //HTTP communication (using GitHub API)
+          var httpRequest = XMLHttpRequest();
+          httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+          httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+          httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
+          var jsonRequestBody = {
+            path: "chats/" + chatKey + ".xml",
+            message: X,
+            content: X,
+            sha: X
+          };
+          httpRequest.send(JSON.stringify(jsonRequestBody));
+          //End of HTTP communication
         };
       };
-      //End of HTTP communication
-      //edit the XML document, changing the "chatXmlDocument" variable
-      //HTTP communication (using GitHub API)
-      var httpRequest = XMLHttpRequest();
-      httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
-      httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-      httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
       //End of HTTP communication
     };
     function createChat(keyPhrase) {
