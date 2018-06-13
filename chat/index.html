@@ -654,8 +654,7 @@
       };
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
-        //httpRequest.readyState === 4 && httpRequest.status === 200
-        if (httpRequest.status === 200) {
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           //Get the key numbers of every chat
           var keyNumbers = [];
           for (i = 0; i < httpRequest.response.length; i++) {
