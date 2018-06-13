@@ -610,11 +610,7 @@
       //End of HTTP communication
     };
     function createChat(keyPhrase) {
-      //HTTP communication (using GitHub API)
-      //get names of all chat files
-      //End of HTTP communication
-      //compare the numbers of the names of chat files, aquired through regex searching for the delimiter character; find out what number to give the chat key
-      //create the chat key, combining the number, delimiter, and key phrase
+      
       //HTTP communication (using GitHub API)
       //Create the XML file in the GitHub server with the key as its name, and put in the XML elements of the basic chat XML structure ("<chat>", etc. Everything that wouldn't get added by writeChat())
       //End of HTTP communication
@@ -631,7 +627,9 @@
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          
+          //get names of all chat files
+          //compare the numbers of the names of chat files, aquired through regex searching for the delimiter character; find out what number to give the chat key
+          //create the chat key, combining the number, delimiter, and key phrase
         };
       };
       //End of HTTP communication
