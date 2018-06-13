@@ -551,7 +551,7 @@
       var chatXmlDocument = null;
       //HTTP communication (using GitHub API)
       var httpRequest = XMLHttpRequest();
-      httpRequest.open("GET","https://api.github.com/repos/<owner>/<repo>/contents/<path>");
+      httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
       httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
       httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
       httpRequest.send(null);
