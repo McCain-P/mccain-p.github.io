@@ -659,7 +659,13 @@
             keyNumbers[i] = httpRequest.response[i].name.match(RegExp("[^#]*"));
           };
           //Find first non-existant key-number, and use it to create the chat key
-          var keyNumber = X;
+          var keyNumber = null;
+          for (i = 0; i < keyNumbers.length + 1; i++) {
+            if (keyNumbers.includes(i) === false) {
+              keyNumber = i;
+              return i;
+            };
+          };
           var constructedChatKey = keyNumber + "#" + keyPhrase;
           //Create general chat XML document format
           var chatXmlDocument = new DOMParser().parseFromString("<xml><chat><users></users><content></content></chat></xml>","application/xml");
