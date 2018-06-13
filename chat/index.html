@@ -666,6 +666,9 @@
             console.log(httpRequest.response[0][0]);
             console.log(httpRequest.response[0][0].name);
             console.log(httpRequest.response[0][0]["name"]);
+            console.log(httpRequest.response[0][0][0]);
+            console.log(httpRequest.response[0][0][0][0]);
+            console.log(httpRequest.response[0][0][0][0][0]);
             keyNumbers[i] = httpRequest.response[i].name.match(RegExp("[^#]*"));
           };
           //Find first non-existant key-number, and use it to create the chat key
