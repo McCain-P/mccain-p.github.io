@@ -632,18 +632,15 @@
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           var documentSha = httpRequest.response.sha;
-          //edit the XML document, changing the "chatXmlDocument" variable
           //HTTP communication (using GitHub API)
           var httpRequest = XMLHttpRequest();
-          httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+          httpRequest.open("DELETE","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization","token b4ede746599133cb74590517c20cfe237f513028");
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
-            message: "Write chat XML document",
-            content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
+            message: "Delete chat XML document",
             sha: documentSha
           };
           httpRequest.send(JSON.stringify(jsonRequestBody));
