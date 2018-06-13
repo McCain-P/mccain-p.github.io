@@ -581,8 +581,33 @@
       //End of HTTP communication
       //Call setChatKey() with the new chat key.
     }
+    function deleteChat() {
+      //HTTP communication (using GitHub API)
+      
+      //End of HTTP communication
+    };
+    
+    function addUser() {
+      //HTTP communication (using GitHub API)
+      
+      //End of HTTP communication
+    };
+    function removeUser() {
+      //remove name from users array
+      //Chat is deleted when the last user closes the window
+      if (users.length === 0) {
+        deleteChat();
+      } else {
+        //HTTP communication (using GitHub API)
+        //change xml document to remove username
+        //End of HTTP communication
+      };
+    };
     
     //Chat is read and updated/refreshed every 10 milliseconds
     window.setInterval(readChat,10);
+    
+    //User leaves the chat when they close the window
+    window.onunload = removeUser;
   </script>
 </html>
