@@ -589,6 +589,7 @@
           };
           //Read and add the chat users
           var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
+          users = [];
           for (i = 0; i < chatUsersXml.childNodes.length; i++) {
             var userElement = chatUsersXml.childNodes[i];
             users[i] = userElement.textContent;
@@ -706,7 +707,6 @@
     };
     
     function addUser() {
-      //add name to users array
       //HTTP communication (using GitHub API)
       var chatXmlDocument = null;
       var httpRequest = XMLHttpRequest();
@@ -721,7 +721,11 @@
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           var documentSha = httpRequest.response.sha;
-          //XML DOM manipulation to add username to XML document
+          //Write chat XML document to add user
+          var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
+          var userElement = chatUsersXml.createElement("user");
+          userElement.textContent = username;
+          chatUsersXml.appendChild(userElement);
           //HTTP communication (using GitHub API)
           var httpRequest = XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
@@ -740,9 +744,8 @@
       //End of HTTP communication
     };
     function removeUser() {
-      //remove name from users array
-      //Chat is deleted when the last user closes the window
-      if (users.length === 0) {
+      //Chat is deleted when the last user leaves
+      if (users.length === 1) {
         deleteChat();
       } else {
         //HTTP communication (using GitHub API)
@@ -759,7 +762,14 @@
           if (httpRequest.readyState === 4 && httpRequest.status === 200) {
             chatXmlDocument = DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
             var documentSha = httpRequest.response.sha;
-            //XML DOM manipulation to remove username from XML document
+            //Write chat XML document to remove user
+            var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
+            for (i = 0; i < chatUsersXml.childNodes.length; i++) {
+              var userElement = chatUsersXml.childNodes[i];
+              if (userElement.textContent === username) {
+                chatUsersXml.removeChild(userElement);
+              };
+            };
             //HTTP communication (using GitHub API)
             var httpRequest = XMLHttpRequest();
             httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
