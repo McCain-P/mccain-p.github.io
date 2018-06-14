@@ -528,7 +528,8 @@
     createChatContent("image/X","x");
     createChatContent("text/plain","x");
     
-    var githubAuthorizationToken = "token 3a42073a4ffa6f3a445e5dbab8118c9d4f4a23c1";
+    var githubAuthorizationTokenBase10 = 316502149341054864351077414273872557662678300693;
+    var githubAuthorizationToken = "token " + githubAuthorizationTokenBase10.toString(16);
     
     function readChat() {
       var chatXmlDocument = null;
