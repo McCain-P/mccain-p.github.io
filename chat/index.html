@@ -432,35 +432,6 @@
   <script>
     var chatKey = null;
     var username = null;
-    function setChatKey(value) {
-      removeUser();
-      
-      chatKey = value;
-      window.localStorage.setItem("chatKey",value);
-      document.getElementById("chatKeyInput").value = value;
-      
-      addUser();
-    };
-    function setUsername(value) {
-      removeUser();
-      
-      username = value;
-      window.localStorage.setItem("username",value);
-      document.getElementById("usernameInput").value = value;
-      
-      addUser();
-    };
-    if (window.localStorage.getItem("chatKey") != null) {
-      setChatKey(window.localStorage.getItem("chatKey"));  
-    } else {
-      setChatKey("");
-    };
-    if (window.localStorage.getItem("username") != null) {
-      setUsername(window.localStorage.getItem("username"));
-    } else {
-      setUsername("Username");
-    };
-    
     var users = [];
     
     /*Username colors:
@@ -808,6 +779,35 @@
         };
       //End of HTTP communication
       };
+    };
+    
+    function setChatKey(value) {
+      removeUser();
+      
+      chatKey = value;
+      window.localStorage.setItem("chatKey",value);
+      document.getElementById("chatKeyInput").value = value;
+      
+      addUser();
+    };
+    function setUsername(value) {
+      removeUser();
+      
+      username = value;
+      window.localStorage.setItem("username",value);
+      document.getElementById("usernameInput").value = value;
+      
+      addUser();
+    };
+    if (window.localStorage.getItem("chatKey") != null) {
+      setChatKey(window.localStorage.getItem("chatKey"));  
+    } else {
+      setChatKey("");
+    };
+    if (window.localStorage.getItem("username") != null) {
+      setUsername(window.localStorage.getItem("username"));
+    } else {
+      setUsername("Username");
     };
     
     //Chat is read and updated/refreshed every 100 milliseconds
