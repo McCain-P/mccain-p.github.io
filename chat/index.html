@@ -526,7 +526,7 @@
             var setCurrentTimeButton = document.createElement("button");
             setCurrentTimeButton.className = "setCurrentTimeButton blue icon";
             setCurrentTimeButton.onclick = function() {
-              
+              this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].currentTime = this.parentElement.getElementsByClassName("currentTimeInput")[0].value;
             };
             speedButtonDropdown.appendChild(setCurrentTimeButton);
             var currentTimeInput = document.createElement("input");
