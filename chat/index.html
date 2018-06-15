@@ -475,7 +475,7 @@
           var downloadButton = document.createElement("button");
           downloadButton.className = "downloadButton blue icon";
           downloadButton.onclick = function() {
-            window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
+            window.location.href = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
           };
           mediaControls.appendChild(downloadButton);
         } else {
