@@ -507,13 +507,13 @@
             var playButton = document.createElement("button");
             playButton.className = "playButton purple icon";
             playButton.onclick = function() {
-              this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].play();
+              this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].play();
             };
             mediaControls.appendChild(playButton);
             var pauseButton = document.createElement("button");
             pauseButton.className = "pauseButton purple icon";
             pauseButton.onclick = function() {
-              this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].pause();
+              this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].pause();
             };
             mediaControls.appendChild(pauseButton);
             //Current-time text input
@@ -523,6 +523,26 @@
             var speedButtonDropdown = document.createElement("div");
             speedButtonDropdown.className = "speedButtonDropdown";
             mediaControls.appendChild(speedButtonDropdown);
+            var setCurrentTimeButton = document.createElement("button");
+            setCurrentTimeButton.className = "setCurrentTimeButton blue icon";
+            setCurrentTimeButton.onclick = function() {
+              
+            };
+            speedButtonDropdown.appendChild(setCurrentTimeButton);
+            var currentTimeInput = document.createElement("input");
+            currentTimeInput.className = "currentTimeInput";
+            currentTimeInput.type = "text";
+            speedButtonDropdown.appendChild(currentTimeInput);
+            var setPlaybackSpeedButton = document.createElement("button");
+            setPlaybackSpeedButton.className = "setPlaybackSpeedButton purple icon";
+            setPlaybackSpeedButton.onclick = function() {
+              this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].playbackRate = this.parentElement.getElementsByClassName("playbackSpeedInput")[0].value;
+            };
+            speedButtonDropdown.appendChild(setPlaybackSpeedButton);
+            var playbackSpeedInput = document.createElement("input");
+            playbackSpeedInput.className = "playbackSpeedInput";
+            playbackSpeedInput.type = "text";
+            speedButtonDropdown.appendChild(playbackSpeedInput);
             var downloadButton = document.createElement("button");
             downloadButton.className = "downloadButton blue icon";
             downloadButton.onclick = function() {
@@ -532,7 +552,7 @@
           } else {
             if (RegExp("^audio/.*").test(contentType) === true) {
               //Audio
-                //mediaContent is a div. In the div is the audio element, as well as the audio visualizer element. The visualizer element is styled to fill the mediaContent div, while the audio element is styled to be invisible.
+              
             } else {
               //File
               var fileDownloadButton = document.createElement("button");
