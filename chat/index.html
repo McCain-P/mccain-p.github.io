@@ -569,7 +569,7 @@
             var setCurrentTimeButton = document.createElement("button");
             setCurrentTimeButton.className = "setCurrentTimeButton blue icon";
             setCurrentTimeButton.onclick = function() {
-              this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].currentTime = this.parentElement.getElementsByClassName("currentTimeInput")[0].value;
+              this.parentElement.parentElement.parentElement.getElementsByClassName("mediaContent")[0].currentTime = this.parentElement.getElementsByClassName("currentTimeInput")[0].value;
             };
             speedButtonDropdown.appendChild(setCurrentTimeButton);
             var currentTimeInput = document.createElement("input");
@@ -579,7 +579,7 @@
             var setPlaybackSpeedButton = document.createElement("button");
             setPlaybackSpeedButton.className = "setPlaybackSpeedButton purple icon";
             setPlaybackSpeedButton.onclick = function() {
-              this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].playbackRate = this.parentElement.getElementsByClassName("playbackSpeedInput")[0].value;
+              this.parentElement.parentElement.parentElement.getElementsByClassName("mediaContent")[0].playbackRate = this.parentElement.getElementsByClassName("playbackSpeedInput")[0].value;
             };
             speedButtonDropdown.appendChild(setPlaybackSpeedButton);
             var playbackSpeedInput = document.createElement("input");
