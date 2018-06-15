@@ -746,22 +746,28 @@
       console.log("removeUser");
       //Chat is deleted when the last user leaves
       if (users.length === 1) {
+        console.log("1 user");
         deleteChat();
       } else {
+        console.log("p0");
         //HTTP communication (using GitHub API)
         var chatXmlDocument = null;
         var httpRequest = new XMLHttpRequest();
         httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
         httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
         httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
+        console.log("p1");
         var jsonRequestBody = {
           path: "chats/" + chatKey + ".xml"
         };
+        console.log("p2");
         httpRequest.responseType = "json";
         httpRequest.send(JSON.stringify(jsonRequestBody));
         httpRequest.onreadystatechange = function() {
+          console.log("p3");
           var httpRequest = this;
           if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+            console.log("p4");
             chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
             var documentSha = httpRequest.response.sha;
             //Write chat XML document to remove user
@@ -772,18 +778,22 @@
                 chatUsersXml.removeChild(userElement);
               };
             };
+            console.log("p5");
             //HTTP communication (using GitHub API)
             var httpRequest = new XMLHttpRequest();
             httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
             httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
             httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
+            console.log("p6");
             var jsonRequestBody = {
               path: "chats/" + chatKey + ".xml",
               message: "Write chat XML document",
               content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)),
               sha: documentSha
             };
+            console.log("p7");
             httpRequest.send(JSON.stringify(jsonRequestBody));
+            console.log("p8");
             //End of HTTP communication
           };
         };
