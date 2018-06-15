@@ -660,12 +660,15 @@
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
+          console.log(chatXmlDocument);
           var jsonRequestBody = {
             path: "chats/" + constructedChatKey + ".xml",
             message: "Create chat XML document",
             content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument))
           };
+          console.log(chatXmlDocument);
           httpRequest.send(JSON.stringify(jsonRequestBody));
+          console.log(chatXmlDocument);
           //End of HTTP communication
           setChatKey(constructedChatKey);
         };
