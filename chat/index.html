@@ -611,13 +611,16 @@
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
+          console.log(chatXmlDocument);
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
             message: "Write chat XML document",
             content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)),
             sha: documentSha
           };
+          console.log(chatXmlDocument);
           httpRequest.send(JSON.stringify(jsonRequestBody));
+          console.log(chatXmlDocument);
           console.log(httpRequest);
           //End of HTTP communication
         };
@@ -660,15 +663,12 @@
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
-          console.log(chatXmlDocument);
           var jsonRequestBody = {
             path: "chats/" + constructedChatKey + ".xml",
             message: "Create chat XML document",
             content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument))
           };
-          console.log(chatXmlDocument);
           httpRequest.send(JSON.stringify(jsonRequestBody));
-          console.log(chatXmlDocument);
           //End of HTTP communication
           setChatKey(constructedChatKey);
         };
