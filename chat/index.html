@@ -471,7 +471,9 @@
           media.appendChild(mediaControls);
           var downloadButton = document.createElement("button");
           downloadButton.className = "downloadButton blue icon";
-          downloadButton.onclick = "window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src";
+          downloadButton.onclick = function() {
+            window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
+          };
           mediaControls.appendChild(downloadButton);
         } else {
           if (RegExp("^video/.*").test(contentType) === true) {
@@ -488,23 +490,28 @@
             media.appendChild(mediaControls);
             var playButton = document.createElement("button");
             playButton.className = "playButton purple icon";
-            playButton.onclick = "this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].play()";
+            playButton.onclick = function() {
+              this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].play();
+            };
             mediaControls.appendChild(playButton);
             var pauseButton = document.createElement("button");
             pauseButton.className = "pauseButton purple icon";
-            pauseButton.onclick = "this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].pause()";
+            pauseButton.onclick = function() {
+              this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].pause();
+            };
             mediaControls.appendChild(pauseButton);
             //Current-time text input
             var speedButton = document.createElement("button");
             speedButton.className = "speedButton blue icon";
-            speedButton.onclick = "";
             mediaControls.appendChild(speedButton);
             var speedButtonDropdown = document.createElement("div");
             speedButtonDropdown.className = "speedButtonDropdown";
             mediaControls.appendChild(speedButtonDropdown);
             var downloadButton = document.createElement("button");
             downloadButton.className = "downloadButton blue icon";
-            downloadButton.onclick = "window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src";
+            downloadButton.onclick = function() {
+              window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
+            };
             mediaControls.appendChild(downloadButton);
           } else {
             if (RegExp("^audio/.*").test(contentType) === true) {
