@@ -381,6 +381,7 @@
       .fileDownloadButton {
         height: 10vh;
         width: 10vh;
+        background-image: URL(resources/fileIcon.svg);
       }
     </style>
   </head>
@@ -535,7 +536,7 @@
             } else {
               //File
               var fileDownloadButton = document.createElement("button");
-              fileDownloadButton.className = "fileDownloadButton blue";
+              fileDownloadButton.className = "fileDownloadButton blue icon";
               fileDownloadButton.onclick = function() {
                 //download function
               };
