@@ -597,7 +597,7 @@
           chatContentXml.appendChild(textElement);
           if (file != undefined) {
             var fileReaderObject = new FileReader()
-            fileReaderObject.readAsText(file);
+            fileReaderObject.readAsText(file,"ascii");
             fileReaderObject.onload = function() {
               var fileElement = chatXmlDocument.createElement("file");
               fileElement.textContent = window.btoa(fileReaderObject.result);
