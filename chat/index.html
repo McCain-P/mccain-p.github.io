@@ -596,11 +596,15 @@
           textElement.setAttribute("sender",username);
           chatContentXml.appendChild(textElement);
           if (file != undefined) {
-            var fileElement = chatXmlDocument.createElement("file");
-            fileElement.textContent = window.btoa(new FileReader().readAsText(file).result);
-            fileElement.setAttribute("sender",username);
-            fileElement.setAttribute("mimeType",file.type);
-            chatContentXml.appendChild(fileElement);
+            var fileReaderObject = new FileReader()
+            fileReaderObject.readAsText(file);
+            fileReaderObject.onload = function() {
+              var fileElement = chatXmlDocument.createElement("file");
+              fileElement.textContent = window.btoa(fileReaderObject.result);
+              fileElement.setAttribute("sender",username);
+              fileElement.setAttribute("mimeType",file.type);
+              chatContentXml.appendChild(fileElement);
+            };
           };
           //HTTP communication (using GitHub API)
           var httpRequest = new XMLHttpRequest();
