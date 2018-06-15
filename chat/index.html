@@ -815,9 +815,9 @@
       setUsername("Username");
     };
     
-    //Chat is read and updated/refreshed every 100 milliseconds
-    //Note: GitHub API has a limit of 5000 requests/hour; this time (X ms) allows for X constant users
-    window.setInterval(readChat,100);
+    //Chat is read and updated/refreshed every 1000 milliseconds
+    //Note: GitHub API has a limit of 5000 requests/hour
+    window.setInterval(readChat,1000);
     //possibly HTTP query the number of users, and then divide the time amongst the users by making their request rate slower? This would give users the fastest possible time, as well as allowing for theoretically infinite users
     
     //User leaves the chat when they close the window
