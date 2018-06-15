@@ -644,8 +644,8 @@
           };
           */
           for (i = 0; i < httpRequest.response.length; i++) {
-            if (RegExp("^[^#]+#.*$").test(httpRequest.response[i].name)) {
-              keyNumbers[i] = httpRequest.response[i].name.match(RegExp("^[^#]+"));
+            if (RegExp("^[^\-]+\-.*$").test(httpRequest.response[i].name)) {
+              keyNumbers[i] = httpRequest.response[i].name.match(RegExp("^[^\-]+"));
             };
           };
           //Find first non-existant key-number, and use it to create the chat key
@@ -655,7 +655,7 @@
               keyNumber = i;
             };
           };
-          var constructedChatKey = keyNumber + "#" + keyPhrase;
+          var constructedChatKey = keyNumber + "-" + keyPhrase;
           //Create general chat XML document format
           var chatXmlDocument = new DOMParser().parseFromString("<xml><chat><users></users><content></content></chat></xml>","application/xml");
           //HTTP communication (using GitHub API)
