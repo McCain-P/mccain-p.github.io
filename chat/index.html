@@ -547,6 +547,7 @@
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          console.log(httpRequest.response.content);
           chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           //Remove previous chat contents
           for (i = 0; i < chat.childNodes.length; i++) {
@@ -620,7 +621,6 @@
       //End of HTTP communication
     };
     function createChat(keyPhrase) {  
-      console.log("createChat");
       //HTTP communication (using GitHub API)
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/");
@@ -633,7 +633,6 @@
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          console.log("readyState");
           //Get the key numbers of every chat
           var keyNumbers = [];
           var fileArrayJson = JSON.parse('{"fileArray":' + httpRequest.response + '}');
@@ -643,35 +642,27 @@
             };
           };
           //Find first non-existant key-number, and use it to create the chat key
-          console.log("p0");
           var keyNumber = null;
           for (i = 0; i < keyNumbers.length + 1; i++) {
             if (keyNumbers.includes(i) === false) {
               keyNumber = i;
             };
           };
-          console.log("p1");
           var constructedChatKey = keyNumber + "#" + keyPhrase;
           //Create general chat XML document format
-          console.log("p2");
           var chatXmlDocument = new DOMParser().parseFromString("<xml><chat><users></users><content></content></chat></xml>","application/xml");
           //HTTP communication (using GitHub API)
-          console.log("p3");
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
-          console.log("p4");
           var jsonRequestBody = {
             path: "chats/" + constructedChatKey + ".xml",
             message: "Create chat XML document",
             content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument))
           };
-          console.log("p5");
           httpRequest.send(JSON.stringify(jsonRequestBody));
-          console.log("p6");
           //End of HTTP communication
-          console.log("before");
           setChatKey(constructedChatKey);
         };
       };
@@ -794,7 +785,6 @@
     };
     
     function setChatKey(value) {
-      console.log("setChatKey");
       removeUser();
       
       chatKey = value;
