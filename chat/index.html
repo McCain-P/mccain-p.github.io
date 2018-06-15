@@ -595,10 +595,13 @@
           textElement.textContent = text;
           textElement.setAttribute("sender",username);
           chatContentXml.appendChild(textElement);
+          console.log("p0");
           if (file != undefined) {
+            console.log("p1");
             var fileReaderObject = new FileReader()
             fileReaderObject.readAsDataURL(file);
             fileReaderObject.onload = function() {
+              console.log("p2");
               var fileElement = chatXmlDocument.createElement("file");
               fileElement.textContent = fileReaderObject.result.match("(?:^data\:.*/.*;base64,)(.*$)")[1];
               fileElement.setAttribute("sender",username);
