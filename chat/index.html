@@ -633,6 +633,7 @@
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          console.log("readyState");
           //Get the key numbers of every chat
           var keyNumbers = [];
           var fileArrayJson = JSON.parse('{"fileArray":' + httpRequest.response + '}');
@@ -664,6 +665,7 @@
           };
           httpRequest.send(JSON.stringify(jsonRequestBody));
           //End of HTTP communication
+          console.log("before");
           setChatKey(constructedChatKey);
         };
       };
