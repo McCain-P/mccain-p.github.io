@@ -624,6 +624,9 @@
           console.log(jsonRequestBody);
           console.log(chatXmlDocument);
           console.log(httpRequest);
+          console.log(window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)));
+          console.log(new XMLSerializer().serializeToString(chatXmlDocument));
+          console.log(chatXmlDocument);
           //End of HTTP communication
         };
       };
