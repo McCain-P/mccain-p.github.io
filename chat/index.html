@@ -597,12 +597,13 @@
           textElement.textContent = text;
           textElement.setAttribute("sender",username);
           chatContentXml.appendChild(textElement);
-          var fileElement = chatXmlDocument.createElement("file");
-          console.log(file);
-          fileElement.textContent = window.btoa(new FileReader().readAsText(file));
-          fileElement.setAttribute("sender",username);
-          fileElement.setAttribute("mimeType",file.type);
-          chatContentXml.appendChild(fileElement);
+          if (file != undefined) {
+            var fileElement = chatXmlDocument.createElement("file");
+            fileElement.textContent = window.btoa(new FileReader().readAsText(file));
+            fileElement.setAttribute("sender",username);
+            fileElement.setAttribute("mimeType",file.type);
+            chatContentXml.appendChild(fileElement);
+          };
           //HTTP communication (using GitHub API)
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
