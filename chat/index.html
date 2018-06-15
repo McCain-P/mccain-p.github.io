@@ -543,14 +543,11 @@
       var jsonRequestBody = {
         path: "chats/" + chatKey + ".xml"
       };
+      httpRequest.responseType = "json";
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-          console.log(httpRequest);
-          console.log(httpRequest.response);
-          console.log(httpRequest.response.content);
-          console.log(typeof httpRequest.response);
           chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           //Remove previous chat contents
           for (i = 0; i < chat.childNodes.length; i++) {
@@ -589,6 +586,7 @@
       var jsonRequestBody = {
         path: "chats/" + chatKey + ".xml"
       };
+      httpRequest.responseType = "json";
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
@@ -688,6 +686,7 @@
       var jsonRequestBody = {
         path: "chats/" + chatKey + ".xml"
       };
+      httpRequest.responseType = "json";
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
@@ -720,6 +719,7 @@
       var jsonRequestBody = {
         path: "chats/" + chatKey + ".xml"
       };
+      httpRequest.responseType = "json";
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
@@ -762,6 +762,7 @@
         var jsonRequestBody = {
           path: "chats/" + chatKey + ".xml"
         };
+        httpRequest.responseType = "json";
         httpRequest.send(JSON.stringify(jsonRequestBody));
         httpRequest.onreadystatechange = function() {
           var httpRequest = this;
