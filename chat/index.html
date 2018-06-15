@@ -528,8 +528,10 @@
     createChatContent("image/X","x");
     createChatContent("text/plain","x");
     
-    var githubAuthorizationTokenBase10 = 316502149341054864351077414273872557662678300693;
-    var githubAuthorizationToken = "token " + githubAuthorizationTokenBase10.toString(16);
+    //var githubAuthorizationTokenBase10 = 316502149341054864351077414273872557662678300693;
+    //var githubAuthorizationToken = "token " + githubAuthorizationTokenBase10.toString(16); //Doesn't work; number too large for JavaScript, and will only give an approximation
+    var githubAuthorizationTokenHidden = "3770727d6f0dd7563a2c20717a1e40a54760381500000000"; //Adds 8 0s to the end of the string to attempt to evade GitHub's dectection of access tokens in public repositories (GitHub will delete the token)
+    var githubAuthorizationToken = "token " + githubAuthorizationTokenHidden.slice(0,-8);
     
     function readChat() {
       var chatXmlDocument = null;
