@@ -456,6 +456,9 @@
     function createChatContent(contentType,contentData,sendingUser) {
       if (contentType === "text/plain") {
         //Text
+        var textElement = document.createElement("p");
+        textElement.innerHTML = sendingUser + ": " + contentData;
+        chat.appendChild(textElement);
       } else {
         if (RegExp("^image/.*").test(contentType) === true) {
           //Image
