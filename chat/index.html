@@ -479,6 +479,7 @@
             //window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
             var downloadLink = document.createElement("a");
             //downloadLink.href = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
+            downloadLink.download = "download";
             downloadLink.href = "resources/fileIcon.svg";
             document.body.appendChild(downloadLink);
             downloadLink.click();
