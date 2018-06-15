@@ -610,7 +610,7 @@
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
             message: "Write chat XML document",
-            content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
+            content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)),
             sha: documentSha
           };
           httpRequest.send(JSON.stringify(jsonRequestBody));
@@ -665,7 +665,7 @@
           var jsonRequestBody = {
             path: "chats/" + constructedChatKey + ".xml",
             message: "Create chat XML document",
-            content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument))
+            content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument))
           };
           console.log("p5");
           httpRequest.send(JSON.stringify(jsonRequestBody));
@@ -737,7 +737,7 @@
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
             message: "Write chat XML document",
-            content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
+            content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)),
             sha: documentSha
           };
           httpRequest.send(JSON.stringify(jsonRequestBody));
@@ -782,7 +782,7 @@
             var jsonRequestBody = {
               path: "chats/" + chatKey + ".xml",
               message: "Write chat XML document",
-              content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument)),
+              content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)),
               sha: documentSha
             };
             httpRequest.send(JSON.stringify(jsonRequestBody));
