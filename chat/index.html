@@ -643,6 +643,7 @@
             };
           };
           //Find first non-existant key-number, and use it to create the chat key
+          console.log("p0");
           var keyNumber = null;
           for (i = 0; i < keyNumbers.length + 1; i++) {
             if (keyNumbers.includes(i) === false) {
@@ -650,20 +651,26 @@
               return i;
             };
           };
+          console.log("p1");
           var constructedChatKey = keyNumber + "#" + keyPhrase;
           //Create general chat XML document format
+          console.log("p2");
           var chatXmlDocument = new DOMParser().parseFromString("<xml><chat><users></users><content></content></chat></xml>","application/xml");
           //HTTP communication (using GitHub API)
+          console.log("p3");
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + constructedChatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
+          console.log("p4");
           var jsonRequestBody = {
             path: "chats/" + constructedChatKey + ".xml",
             message: "Create chat XML document",
             content: window.btoa(XMLSerializer().serializeToString(chatXmlDocument))
           };
+          console.log("p5");
           httpRequest.send(JSON.stringify(jsonRequestBody));
+          console.log("p6");
           //End of HTTP communication
           console.log("before");
           setChatKey(constructedChatKey);
