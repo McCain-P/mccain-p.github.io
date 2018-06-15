@@ -547,6 +547,8 @@
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          console.log(httpRequest);
+          console.log(httpRequest.response);
           console.log(httpRequest.response.content);
           chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           //Remove previous chat contents
