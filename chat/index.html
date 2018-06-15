@@ -620,6 +620,7 @@
       //End of HTTP communication
     };
     function createChat(keyPhrase) {  
+      console.log("createChat");
       //HTTP communication (using GitHub API)
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("GET","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/");
@@ -785,6 +786,7 @@
     };
     
     function setChatKey(value) {
+      console.log("setChatKey");
       removeUser();
       
       chatKey = value;
