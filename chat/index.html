@@ -522,6 +522,7 @@
     var githubAuthorizationTokenHidden = "3770727d6f0dd7563a2c20717a1e40a54760381500000000"; //Adds 8 0s to the end of the string to attempt to evade GitHub's dectection of access tokens in public repositories (GitHub will delete the token)
     var githubAuthorizationToken = "token " + githubAuthorizationTokenHidden.slice(0,-8);
     
+    var readChatXmlDocumentIndex = 0;
     function readChat() {
       var chatXmlDocument = null;
       //HTTP communication (using GitHub API)
@@ -540,12 +541,12 @@
           chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           var scrollPosition = document.getElementById("chat").scrollTop;
           //Remove previous chat contents
-          for (i = 0; i < chat.childNodes.length; i++) {
+          for (i = readChatXmlDocumentIndex; i < chat.childNodes.length; i++) {
             chat.removeChild(chat.childNodes[i]);
           };
           //Read the chat XML document, and add the chat contents to the HTML document
           var chatContentXml = chatXmlDocument.getElementsByTagName("content")[0];
-          for (i = 0; i < chatContentXml.childNodes.length; i++) {
+          for (i = readChatXmlDocumentIndex; i < chatContentXml.childNodes.length; i++) {
             var contentElement = chatContentXml.childNodes[i];
             if (contentElement.tagName === "text") {
               createChatContent("text/plain",contentElement.textContent,contentElement.getAttribute("sender"));
@@ -555,6 +556,7 @@
               };
             };
           };
+          readChatXmlDocumentIndex = chatContentXml.childNodes.length;
           document.getElementById("chat").scrollTop = scrollPosition;
           //Read and add the chat users
           var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
