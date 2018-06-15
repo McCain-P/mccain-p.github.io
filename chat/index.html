@@ -528,8 +528,6 @@
     createChatContent("image/X","x");
     createChatContent("text/plain","x");
     
-    //var githubAuthorizationTokenBase10 = 316502149341054864351077414273872557662678300693;
-    //var githubAuthorizationToken = "token " + githubAuthorizationTokenBase10.toString(16); //Doesn't work; number too large for JavaScript, and will only give an approximation
     var githubAuthorizationTokenHidden = "3770727d6f0dd7563a2c20717a1e40a54760381500000000"; //Adds 8 0s to the end of the string to attempt to evade GitHub's dectection of access tokens in public repositories (GitHub will delete the token)
     var githubAuthorizationToken = "token " + githubAuthorizationTokenHidden.slice(0,-8);
     
@@ -595,11 +593,11 @@
           var documentSha = httpRequest.response.sha;
           //Write to the chat XML document
           var chatContentXml = chatXmlDocument.getElementsByTagName("content")[0];
-          var textElement = chatContentXml.createElement("text");
+          var textElement = chatXmlDocument.createElement("text");
           textElement.textContent = text;
           textElement.setAttribute("sender",username);
           chatContentXml.appendChild(textElement);
-          var fileElement = chatContentXml.createElement("file");
+          var fileElement = chatXmlDocument.createElement("file");
           fileElement.textContent = window.btoa(FileReader().readAsText(file));
           fileElement.setAttribute("sender",username);
           fileElement.setAttribute("mimeType",file.type);
@@ -728,7 +726,7 @@
           var documentSha = httpRequest.response.sha;
           //Write chat XML document to add user
           var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
-          var userElement = chatUsersXml.createElement("user");
+          var userElement = chatXmlDocument.createElement("user");
           userElement.textContent = username;
           chatUsersXml.appendChild(userElement);
           //HTTP communication (using GitHub API)
