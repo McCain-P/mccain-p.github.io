@@ -591,6 +591,26 @@
           textElement.setAttribute("sender",username);
           chatContentXml.appendChild(textElement);
           console.log("p0");
+          function afterFileRead() {
+            console.log("p3");
+            //HTTP communication (using GitHub API)
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
+            httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
+            httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
+            console.log("p4");
+            var jsonRequestBody = {
+              path: "chats/" + chatKey + ".xml",
+              message: "Write chat XML document",
+              content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)),
+              sha: documentSha
+            };
+            console.log("p5");
+            httpRequest.send(JSON.stringify(jsonRequestBody));
+            console.log(new XMLSerializer().serializeToString(chatXmlDocument));
+            console.log(chatXmlDocument);
+            //End of HTTP communication
+          };
           if (file != undefined) {
             console.log("p1");
             var fileReaderObject = new FileReader()
@@ -602,26 +622,12 @@
               fileElement.setAttribute("sender",username);
               fileElement.setAttribute("mimeType",file.type);
               chatContentXml.appendChild(fileElement);
+              
+              afterFileRead();
             };
+          } else {
+            afterFileRead();
           };
-          console.log("p3");
-          //HTTP communication (using GitHub API)
-          var httpRequest = new XMLHttpRequest();
-          httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
-          httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
-          httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
-          console.log("p4");
-          var jsonRequestBody = {
-            path: "chats/" + chatKey + ".xml",
-            message: "Write chat XML document",
-            content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)),
-            sha: documentSha
-          };
-          console.log("p5");
-          httpRequest.send(JSON.stringify(jsonRequestBody));
-          console.log(new XMLSerializer().serializeToString(chatXmlDocument));
-          console.log(chatXmlDocument);
-          //End of HTTP communication
         };
       };
       //End of HTTP communication
