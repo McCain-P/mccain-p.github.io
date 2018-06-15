@@ -545,6 +545,7 @@
         var httpRequest = this;
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
+          var scrollPosition = document.getElementById("chat").scrollTop;
           //Remove previous chat contents
           for (i = 0; i < chat.childNodes.length; i++) {
             chat.removeChild(chat.childNodes[i]);
@@ -561,6 +562,7 @@
               };
             };
           };
+          document.getElementById("chat").scrollTop = scrollPosition;
           //Read and add the chat users
           var chatUsersXml = chatXmlDocument.getElementsByTagName("users")[0];
           users = [];
