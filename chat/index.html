@@ -639,15 +639,17 @@
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           //Get the key numbers of every chat
           var keyNumbers = [];
-          console.log(httpRequest.response);
-          console.log(httpRequest.response[0]);
-          console.log(httpRequest.response[0].name);
-          console.log('{"fileArray":' + httpRequest.response + '}');
-          console.log(JSON.parse('{"fileArray":' + httpRequest.response + '}'));
+          /*
           var fileArrayJson = JSON.parse('{"fileArray":' + httpRequest.response + '}');
           for (i = 0; i < fileArrayJson.fileArray.length; i++) {
             if (RegExp("^[^#]+#.*$").test(fileArrayJson.fileArray[i].name)) {
               keyNumbers[i] = fileArrayJson.fileArray[i].name.match(RegExp("^[^#]+"));
+            };
+          };
+          */
+          for (i = 0; i < httpRequest.response.length; i++) {
+            if (RegExp("^[^#]+#.*$").test(httpRequest.response[i].name)) {
+              keyNumbers[i] = httpRequest.response[i].name.match(RegExp("^[^#]+"));
             };
           };
           //Find first non-existant key-number, and use it to create the chat key
