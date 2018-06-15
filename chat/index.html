@@ -607,6 +607,8 @@
               fileElement.setAttribute("sender",username);
               fileElement.setAttribute("mimeType",file.type);
               chatContentXml.appendChild(fileElement);
+              console.log(fileElement);
+              console.log(chatXmlDocument);
             };
           };
           //HTTP communication (using GitHub API)
