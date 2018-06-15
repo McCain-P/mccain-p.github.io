@@ -597,11 +597,10 @@
           chatContentXml.appendChild(textElement);
           if (file != undefined) {
             var fileReaderObject = new FileReader()
-            fileReaderObject.readAsText(file);
+            fileReaderObject.readAsDataURL(file);
             fileReaderObject.onload = function() {
               var fileElement = chatXmlDocument.createElement("file");
-              console.log(fileReaderObject.result);
-              fileElement.textContent = window.btoa(fileReaderObject.result);
+              fileElement.textContent = fileReaderObject.result.match("(?:^data\:.*/.*;base64,)(.*$)")[1];
               fileElement.setAttribute("sender",username);
               fileElement.setAttribute("mimeType",file.type);
               chatContentXml.appendChild(fileElement);
