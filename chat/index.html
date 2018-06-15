@@ -598,6 +598,7 @@
           textElement.setAttribute("sender",username);
           chatContentXml.appendChild(textElement);
           var fileElement = chatXmlDocument.createElement("file");
+          console.log(file);
           fileElement.textContent = window.btoa(new FileReader().readAsText(file));
           fileElement.setAttribute("sender",username);
           fileElement.setAttribute("mimeType",file.type);
