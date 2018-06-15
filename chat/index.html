@@ -597,8 +597,7 @@
             var fileElement = chatXmlDocument.createElement("file");
             console.log(window.btoa(new FileReader().readAsText(file)));
             console.log(new FileReader().readAsText(file));
-            console.log(window.btoa(new FileReader().readAsText(file)));
-            console.log(new FileReader().readAsText(file));
+            console.log(file);
             fileElement.textContent = window.btoa(new FileReader().readAsText(file));
             fileElement.setAttribute("sender",username);
             fileElement.setAttribute("mimeType",file.type);
