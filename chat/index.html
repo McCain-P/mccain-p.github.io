@@ -530,7 +530,12 @@
                 //mediaContent is a div. In the div is the audio element, as well as the audio visualizer element. The visualizer element is styled to fill the mediaContent div, while the audio element is styled to be invisible.
             } else {
               //File
-              //This is the download/general file contentType 
+              var fileDownloadButton = document.createElement("button");
+              fileDownloadButton.className = "fileDownloadButton blue";
+              fileDownloadButton.onclick = function() {
+                //download function
+              };
+              chat.appendChild(fileDownloadButton);
             };
           };
         };
