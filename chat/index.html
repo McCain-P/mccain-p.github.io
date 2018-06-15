@@ -540,10 +540,6 @@
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
           chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           var scrollPosition = document.getElementById("chat").scrollTop;
-          //Remove previous chat contents
-          for (i = readChatXmlDocumentIndex; i < chat.childNodes.length; i++) {
-            chat.removeChild(chat.childNodes[i]);
-          };
           //Read the chat XML document, and add the chat contents to the HTML document
           var chatContentXml = chatXmlDocument.getElementsByTagName("content")[0];
           for (i = readChatXmlDocumentIndex; i < chatContentXml.childNodes.length; i++) {
