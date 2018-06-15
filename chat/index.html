@@ -550,6 +550,7 @@
           console.log(httpRequest);
           console.log(httpRequest.response);
           console.log(httpRequest.response.content);
+          console.log(typeof httpRequest.response);
           chatXmlDocument = new DOMParser().parseFromString(window.atob(httpRequest.response.content),"application/xml");
           //Remove previous chat contents
           for (i = 0; i < chat.childNodes.length; i++) {
