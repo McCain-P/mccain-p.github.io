@@ -602,37 +602,24 @@
               fileElement.setAttribute("sender",username);
               fileElement.setAttribute("mimeType",file.type);
               chatContentXml.appendChild(fileElement);
-              console.log(fileElement);
-              console.log(chatXmlDocument);
             };
           };
+          console.log("p3");
           //HTTP communication (using GitHub API)
           var httpRequest = new XMLHttpRequest();
           httpRequest.open("PUT","https://api.github.com/repos/NetComChat/NetComChat.github.io/contents/chats/" + chatKey + ".xml");
           httpRequest.setRequestHeader("Accept","application/vnd.github.v3+json");
           httpRequest.setRequestHeader("Authorization",githubAuthorizationToken);
-          console.log(chatXmlDocument);
+          console.log("p4");
           var jsonRequestBody = {
             path: "chats/" + chatKey + ".xml",
             message: "Write chat XML document",
             content: window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)),
             sha: documentSha
           };
-          console.log(chatXmlDocument);
+          console.log("p5");
           httpRequest.send(JSON.stringify(jsonRequestBody));
-          console.log("JSON.stringify(jsonRequestBody)");
-          console.log(JSON.stringify(jsonRequestBody));
-          console.log("jsonRequestBody");
-          console.log(jsonRequestBody);
-          console.log("chatXmlDocument");
-          console.log(chatXmlDocument);
-          console.log("httpRequest");
-          console.log(httpRequest);
-          console.log("window.btoa(new XMLSerializer().serializeToString(chatXmlDocument))");
-          console.log(window.btoa(new XMLSerializer().serializeToString(chatXmlDocument)));
-          console.log("new XMLSerializer().serializeToString(chatXmlDocument)");
           console.log(new XMLSerializer().serializeToString(chatXmlDocument));
-          console.log("chatXmlDocument");
           console.log(chatXmlDocument);
           //End of HTTP communication
         };
