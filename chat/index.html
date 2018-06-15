@@ -559,7 +559,6 @@
               this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].pause();
             };
             mediaControls.appendChild(pauseButton);
-            //Current-time text input
             var speedButton = document.createElement("button");
             speedButton.className = "speedButton blue icon";
             mediaControls.appendChild(speedButton);
@@ -595,7 +594,60 @@
           } else {
             if (RegExp("^audio/.*").test(contentType) === true) {
               //Audio
-              
+              var media = document.createElement("div");
+              media.className = "media";
+              chat.appendChild(media);
+              var mediaContent = document.createElement("audio");
+              mediaContent.className = "mediaContent";
+              mediaContent.src = "data:" + contentType + ";base64," + contentData; 
+              media.appendChild(mediaContent);
+              var mediaControls = document.createElement("div");
+              mediaControls.className = "mediaControls";
+              media.appendChild(mediaControls);
+              var playButton = document.createElement("button");
+              playButton.className = "playButton purple icon";
+              playButton.onclick = function() {
+                this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].play();
+              };
+              mediaControls.appendChild(playButton);
+              var pauseButton = document.createElement("button");
+              pauseButton.className = "pauseButton purple icon";
+              pauseButton.onclick = function() {
+                this.parentElement.parentElement.getElementsByClassName("mediaContent")[0].pause();
+              };
+              mediaControls.appendChild(pauseButton);
+              var speedButton = document.createElement("button");
+              speedButton.className = "speedButton blue icon";
+              mediaControls.appendChild(speedButton);
+              var speedButtonDropdown = document.createElement("div");
+              speedButtonDropdown.className = "speedButtonDropdown";
+              mediaControls.appendChild(speedButtonDropdown);
+              var setCurrentTimeButton = document.createElement("button");
+              setCurrentTimeButton.className = "setCurrentTimeButton blue icon";
+              setCurrentTimeButton.onclick = function() {
+                this.parentElement.parentElement.parentElement.getElementsByClassName("mediaContent")[0].currentTime = this.parentElement.getElementsByClassName("currentTimeInput")[0].value;
+              };
+              speedButtonDropdown.appendChild(setCurrentTimeButton);
+              var currentTimeInput = document.createElement("input");
+              currentTimeInput.className = "currentTimeInput";
+              currentTimeInput.type = "text";
+              speedButtonDropdown.appendChild(currentTimeInput);
+              var setPlaybackSpeedButton = document.createElement("button");
+              setPlaybackSpeedButton.className = "setPlaybackSpeedButton purple icon";
+              setPlaybackSpeedButton.onclick = function() {
+                this.parentElement.parentElement.parentElement.getElementsByClassName("mediaContent")[0].playbackRate = this.parentElement.getElementsByClassName("playbackSpeedInput")[0].value;
+              };
+              speedButtonDropdown.appendChild(setPlaybackSpeedButton);
+              var playbackSpeedInput = document.createElement("input");
+              playbackSpeedInput.className = "playbackSpeedInput";
+              playbackSpeedInput.type = "text";
+              speedButtonDropdown.appendChild(playbackSpeedInput);
+              var downloadButton = document.createElement("button");
+              downloadButton.className = "downloadButton blue icon";
+              downloadButton.onclick = function() {
+                window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
+              };
+              mediaControls.appendChild(downloadButton);
             } else {
               //File
               var fileDownloadButton = document.createElement("button");
