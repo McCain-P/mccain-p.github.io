@@ -632,6 +632,7 @@
       var jsonRequestBody = {
         path: "chats/"
       };
+      httpRequest.responseType = "json";
       httpRequest.send(JSON.stringify(jsonRequestBody));
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
