@@ -476,7 +476,11 @@
           downloadButton.className = "downloadButton blue icon";
           downloadButton.onclick = function() {
             //window.location = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
-            window.location = "https://www.google.com";
+            var downloadLink = document.createElement("a");
+            downloadLink.href = this.parentElement.parentElement.getElementsByClassName('mediaContent')[0].src;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
           };
           mediaControls.appendChild(downloadButton);
         } else {
