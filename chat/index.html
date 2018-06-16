@@ -710,6 +710,10 @@
       //End of HTTP communication
     };
     function writeChat(text,file) {
+      //Remove values from GUI input areas
+      document.getElementById("textInput").value = "";
+      document.getElementById("fileNames").innerHTML = "";
+      
       var chatXmlDocument = null;
       //HTTP communication (using GitHub API)
       var httpRequest = new XMLHttpRequest();
