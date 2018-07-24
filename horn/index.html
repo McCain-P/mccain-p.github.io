@@ -42,8 +42,10 @@
         bottom: 0;
         overflow-y: scroll;
         display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: 15%;
+        grid-template-columns: repeat(5,15%);
+        grid-gap: calc(25% / 6);
+        grid-auto-rows: 15%;
         grid-auto-flow: row;
       }
       .content {
