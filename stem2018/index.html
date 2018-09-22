@@ -68,6 +68,20 @@
 				bottom: 10vh;
 				background-color: RGB(128,128,192);
 			}
+			@keyframes slide {
+				from {
+					width: 25vw;	
+				}
+				to {
+					width: 50vw;
+				}
+			}
+			#box:hover {
+				animation: 0.5s linear 0s 1 normal both running slide;
+			}
+			#box:not(:hover) {
+				animation: 0.5s linear 0s 1 reverse both running slide;
+			}
 			#keyText {
 				color: RGB(0,0,0);
 				font-family: "Times New Roman", serif;
