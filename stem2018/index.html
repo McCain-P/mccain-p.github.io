@@ -4,29 +4,55 @@
 			Website Experimentation
 		</title>
 		<style>
+			/*
+			Color Scheme:
+				Dark Red:	RGB(128,0,0)
+				Blue-Grey:	RGB(128,128,192)
+				Purple:		RGB(128,0,255)
+				Black:		RGB(0,0,0)
+			*/
 			.textureBackground {
-				background-image: URL("websiteTexture.png");
+				background-image: URL("resources/websiteTexture.png");
 				background-blend-mode: multiply;
 			}
-			.key {
-				height: 4em;
-				width: 4em;
-				
+			.key {/**/
 				color: RGB(255,255,255);
 				font-family: "Arial", sans-serif;
+				height: 4em;
+				width: 4em;
+				background-color: RGB(128,128,128);
+				border: 0.5em solid RGB(0,0,0);
+				border-radius: 12.5%;
+				box-shadow: 0 0 0 2em RGB(128,128,128), 0 0 0 2.5em RGB(0,0,0);
+			}
+			body {
+				background-color: RGB(128,0,0);	
 			}
 			#banner {
-				
+				height: 10vh;
+				width: 100vw;
+				position: absolute;
+				top: 10vh;
+				left: 0;
+				background-color: RGB(128,0,255);
 			}
 			#mainHeader {
-				
+				width: 100vw;
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				color: RGB(0,0,0);
+				font-family: "Times New Roman", serif;
+				font-size: 2vw;
 			}
 			#box {
 				height: 25vw;
 				width: 25vw;
+				position: absolute;
 				right: 0;
 				bottom: 10vh;
-				background-color: RGB(255,0,0);
+				background-color: RGB(128,128,192);
 			}
 			#keyText {
 				color: RGB(0,0,0);
@@ -37,7 +63,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body class="textureBackground">
 		<div id="banner" class="textureBackground">
 			<h1 id="mainHeader">
 				Webpage
