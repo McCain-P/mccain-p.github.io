@@ -15,10 +15,11 @@
 				background-image: URL("resources/websiteTexture.png");
 				background-blend-mode: multiply;
 			}
-			.key {
+			.key, .keyDynamic {
 				color: RGB(255,255,255);
 				font-family: "Arial", sans-serif;
 				display: inline-block;
+				text-align: center;
 				height: 1.5em;
 				width: 1.5em;
 				background-color: RGB(128,128,128);
@@ -26,6 +27,13 @@
 				border-radius: 12.5%;
 				box-shadow: 0 0 0 0.125em RGB(128,128,128), 0 0 0 0.25em RGB(0,0,0);
 				margin: 0.5em;
+			}
+			/*The "key" class is used to create a key <span> element. The "keyDynamic" class is a configuration of the "key" class that has dynamic interactivity via pseudoclasses.*/
+			.keyDynamic:hover {
+				background-color: RGB(192,192,192);
+			}
+			.keyDynamic:active {
+				
 			}
 			body {
 				background-color: RGB(128,0,0);	
