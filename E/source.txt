@@ -4,7 +4,7 @@ var eKeyPress = function(e) {
 ");
   };
 };
-document.addEventListener(keydown, eKeyPress);
+document.addEventListener("keydown", eKeyPress);
 /*
 mmmmNNmmmmmmmmmmNmNmNmNmdmdmmmdmmdmddmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmdmdmmyo+syys/ohhdmNNNmymmddmmmNdhdNNNNNNNNNNNNNmmmmdddmmmmNmNmmNNmmmmmmNmmm
 mmmmNmNmmmmmmmmmNNmNNmmNmdmdmdddmdmmdmmmmmmmmmmmmmmmmmmmmmmmmmmmmdhdmhhhhyyhyhhhdmdddddddmdmmNNNmdNmmhddmddsomNNNNNNNNNNNNNmNmddmmmmmNNNmNNNNmmmNNNmmm
