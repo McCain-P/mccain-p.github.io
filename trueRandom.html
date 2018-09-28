@@ -12,6 +12,7 @@
   -->
   </body>
   <script>
+    var quantumProbabilityNumbers = [];
     //HTTP request to the server in the Australian National University to get the quantumly-random numbers
     var httpRequest = new XMLHttpRequest();
     httpRequest.open("GET","https://qrng.anu.edu.au/API/jsonI.php?length=1024&type=uint8");
@@ -21,7 +22,7 @@
       var httpRequest = this;
       if (httpRequest.readyState === 4 && httpRequest.status === 200) {
         //HTTP request was successfully responded to
-        //***do stuff
+        console.log(httpRequest.response.data);
       }
     }
   </script>
