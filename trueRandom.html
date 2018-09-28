@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>
+      True Randomness From Quantum Mechanics
+    </title>
+  </head>
+  <body>
+  <!--
+    String
+    Boolean
+    Hexagram
+  -->
+  </body>
+  <script>
+    //HTTP request to the server in the Australian National University to get the quantumly-random numbers
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open("GET","https://qrng.anu.edu.au/API/jsonI.php?length=1024&type=uint8");
+    httpRequest.responseType = "json";
+    httpRequest.send();
+    httpRequest.onreadystatechange = function() {
+      var httpRequest = this;
+      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+        //HTTP request was successfully responded to
+        //***do stuff
+      }
+    }
+  </script>
+</html>
