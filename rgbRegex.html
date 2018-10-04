@@ -11,6 +11,34 @@
     </textarea>
   </body>
   <script>
-  
+    var inputField = document.getElementById("input");
+    var outputField = document.getElementById("output");
+    
+    var regexes = [[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[1,0],[1,1],[1,2],[1,3],[1,4],[2,0],[2,1],[2,2]];
+    
+    function convertRgb() {
+      var output = inputField.value;
+      
+      for (i = 0; i < regexes.length; i++) {
+        var currentRegexString = "";
+        if (regexes[i][0] === 0) {
+          currentRegexString += regexes[i][1].toString();
+        } else {
+          currentRegexString += "\\d";
+          if (regexes[i][0] === 1) {
+            currentRegexString += regexes[i][1].toString();
+          } else {
+            currentRegexString += "\\d";
+            currentRegexString += regexes[i][1].toString();
+          };
+        };
+        var currentRegex = new RegExp(currentRegexString, "g");
+        
+        var replaceString = "";
+        
+        output = output.replace(currentRegex, replaceString);
+      };
+      outputField.value = output;
+    };
   </script>
 </html>
