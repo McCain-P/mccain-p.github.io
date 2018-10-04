@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>
+      Unicode Weirdness
+    </title>
+  </head>
+  <body>
+    <p id="text">
+    </p>
+  </body>
+  <script>
+  var textElement = document.body.getElementById("text");
+  textElement.innerHTML = "O";
+  for (i = 0; i < 64; i++) {
+    textElement.innerHTML += "&#x20dd;&#x030a;";
+  };
+  </script>
+</html>
