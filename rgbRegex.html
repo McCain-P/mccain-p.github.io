@@ -37,6 +37,15 @@
         var currentRegex = new RegExp(currentRegexString, "g");
         
         var replaceString = "";
+        if (regexes[i][0] === 0) {
+          replaceString = "(" + (regexes[i][1] * 32).toString() + ",";
+        } else {
+          if (regexes[i][0] === 1) {
+            replaceString = (regexes[i][1] * 64).toString() + ",";
+          } else {
+            replaceString = (regexes[i][1] * 128).toString() + ")";
+          };
+        };
         
         output = output.replace(currentRegex, replaceString);
       };
