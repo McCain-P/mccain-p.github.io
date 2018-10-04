@@ -20,7 +20,7 @@
       var output = inputField.value;
       
       for (i = 0; i < regexes.length; i++) {
-        var currentRegexString = "";
+        var currentRegexString = "\\s";
         if (regexes[i][0] === 0) {
           currentRegexString += regexes[i][1].toString();
         } else {
@@ -32,6 +32,8 @@
             currentRegexString += regexes[i][1].toString();
           };
         };
+        currentRegexString += "\\s";
+        
         var currentRegex = new RegExp(currentRegexString, "g");
         
         var replaceString = "";
