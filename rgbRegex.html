@@ -38,6 +38,7 @@
         
         var replaceString = "";
         if (regexes[i][0] === 0) {
+          //32 * n - 1 + (32 * n % 256)/(32 * n) evaluates to 32n if 32n != 256, and evaluates to 255 if 32n == 256
           replaceString = "(" + (32 * regexes[i][1] - 1 + (32 * regexes[i][1] % 256)/(32 * regexes[i][1])).toString() + ",";
         } else {
           if (regexes[i][0] === 1) {
