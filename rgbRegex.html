@@ -25,19 +25,19 @@
       var output = inputField.value;
       
       for (i = 0; i < regexes.length; i++) {
-        var currentRegexString = "\\s";
+        var currentRegexString = "(?:\\s";
         if (regexes[i][0] === 0) {
           currentRegexString += regexes[i][1].toString();
         } else {
           currentRegexString += "\\d";
-          if (regexes[i][0] === 1) {
-            currentRegexString += regexes[i][1].toString();
-          } else {
-            currentRegexString += "\\d";
-            currentRegexString += regexes[i][1].toString();
-          };
         };
-        currentRegexString += "\\s";
+        if (regexes[i][0] === 1) {
+          currentRegexString += ")" + regexes[i][1].toString() + "(?:";
+        } else {
+          currentRegexString += "\\d";
+          currentRegexString += regexes[i][1].toString();
+        };
+        currentRegexString += "\\s)";
         
         var currentRegex = new RegExp(currentRegexString, "g");
         
