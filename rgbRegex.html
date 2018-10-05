@@ -54,8 +54,14 @@
         };
         
         output = output.replace(currentRegex, replaceString);
+        //Debugging:
         var cons = document.getElementById("cons");
         cons.innerHTML += output + "<br>";
+        // /Debugging
+        /*
+        Debugging:
+        *Use non-capturing groups in the regexes
+        */
       };
       outputField.value = output;
     };
