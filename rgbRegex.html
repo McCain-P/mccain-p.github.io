@@ -38,12 +38,12 @@
         
         var replaceString = "";
         if (regexes[i][0] === 0) {
-          replaceString = "(" + (regexes[i][1] * 32).toString() + ",";
+          replaceString = "(" + (32 * regexes[i][1] - 1 + (32 * regexes[i][1] % 256)/(32 * regexes[i][1])).toString() + ",";
         } else {
           if (regexes[i][0] === 1) {
-            replaceString = (regexes[i][1] * 64).toString() + ",";
+            replaceString = (64 * regexes[i][1] - 1 + (64 * regexes[i][1] % 256)/(64 * regexes[i][1])).toString() + ",";
           } else {
-            replaceString = (regexes[i][1] * 128).toString() + ")";
+            replaceString = (128 * regexes[i][1] - 1 + (128 * regexes[i][1] % 256)/128 * regexes[i][1])).toString() + ")";
           };
         };
         
