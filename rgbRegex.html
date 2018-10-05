@@ -12,6 +12,8 @@
     <button onclick="convertRgb();">
       Regex Convert
     </button>
+    <p id="cons">
+    </p>
   </body>
   <script>
     var inputField = document.getElementById("input");
@@ -52,7 +54,8 @@
         };
         
         output = output.replace(currentRegex, replaceString);
-        console.log(output);
+        var cons = document.getElementById("cons");
+        cons.innerHTML += output + "<br>";
       };
       outputField.value = output;
     };
