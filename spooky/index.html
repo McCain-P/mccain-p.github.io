@@ -7,12 +7,36 @@
 			body {
 				background-color: RGB(0,0,0);	
 			}
+			@font-face {
+				font-family: "SketchBones";
+				src: url("resources/SketchBones.woff2") format("woff2");
+				font-display: swap;
+			}
 			p, h1 {
-				color: RGB(255,255,255);	
+				color: RGB(255,255,255);
+				font-family: "SketchBones", "Arial", sans-serif;
+			}
+			p:hover, h1:hover {
+				
+			}
+			img {
+				
+			}
+			#background {
+				height: 100vh;
+				width: 100vw;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+			img:hover ~ #background {
+				/*Make the image of the hovered image the background-image of the background*/
 			}
 		</style>
 	</head>
 	<body>
+		<div id="background">
+		</div>
 		<h1>
 			2spooky4me
 		</h1>
