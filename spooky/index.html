@@ -19,6 +19,7 @@
 				padding: 0;
 				margin: 0;
 				position: fixed;
+				z-index: 2;
 			}
 			@keyframes textSpin {
 				0% {
@@ -35,17 +36,35 @@
 				animation: 0.75s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal none running textSpin;
 			}
 			img {
-				
+				z-index: 1;
 			}
 			#background {
 				height: 100vh;
-				width: 100vw;
+				width: auto;
 				position: fixed;
 				top: 0;
-				left: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				visibility: hidden;
+				z-index: 0;
 			}
 			img:hover ~ #background {
-				/*Make the image of the hovered image the background-image of the background*/
+				visibility: visible;	
+			}
+			img[src="resources/skeletonTrumpet.gif"]:hover ~ #background {
+				background-image: url("resources/skeletonTrumpet.gif");
+			}
+			img[src="resources/skeletonDancing.gif"]:hover ~ #background {
+				background-image: url("resources/skeletonDancing.gif");
+			}
+			img[src="resources/skeletonRunning.gif"]:hover ~ #background {
+				background-image: url("resources/skeletonRunning.gif");
+			}
+			img[src="resources/spookyScarySkeletons.gif"]:hover ~ #background {
+				background-image: url("resources/spookyScarySkeletons.gif");
+			}
+			img[src="resources/mrBonesWildRide.png"]:hover ~ #background {
+				background-image: url("resources/mrBonesWildRide.png");
 			}
 			#header {
 				top: 5%;
@@ -71,10 +90,8 @@
 		</style>
 	</head>
 	<body>
-		<!--
-		<div id="background">
-		</div>
-		-->
+		<img id="background">
+		</img>
 		<h1 id="header">
 			2spooky4me
 		</h1>
