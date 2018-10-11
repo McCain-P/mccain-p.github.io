@@ -17,12 +17,25 @@
 				font-family: "SketchBones", "Arial", sans-serif;
 			}
 			@keyframes textSpin {
-				to {
-					transform: rotate(360deg);	
+				0% {
+					/**/
+					transform: rotate(0deg);
+					transform: scale(1);
+					/**/
+				}
+				50% {
+					/**/
+					transform: rotate(180deg);
+					/**/
+					transform: scale(1.25);
+				}
+				100% {
+					transform: rotate(360deg);
+					transform: scale(1);
 				}
 			}
 			p:hover, h1:hover {
-				animation: X;
+				animation: 1s linear 0s 1 normal none running textSpin;
 				/*Possibly spin AND get slightly bigger?
 				Possibly have it speed up near the middle and then slow down at the ends?
 				Possibly have it be slightly larger in the middle and transition to normal size at the ends?
