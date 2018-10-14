@@ -8,29 +8,59 @@
     pinkish red, sky blue, white, shiny/gradient/round/smooth/organic; not sure if red or blue should be primary
     *homepage has grid of organic-looking buttons using border-radius trick, white outline and white text - large; links to main pages of interest
     */
+    /*
+    Color scheme:
+    Pinkish Red RGB(255,128,128)
+    Sky blue RGB(64,192,255)
+    White RGB(255,255,255)
+    */
+    body {
+      background: linear-gradient(135deg, RGB(255,128,128), RGB(255,255,255));
+    }
+    #mainButtons {
+      height: 80vh;
+      width: 100vw;
+      position: fixed;
+      top: 20vh;
+      left: 0;
+    }
+    button.mainButton {
+      background: linear-gradient(135deg, RGB(64,192,255), RGB(255,255,255));
+      height: 31.25%;
+      width: 20%;
+      position: inherit;
+    }
+    button.mainButton:hover {
+
+    }
+    button.mainButton:active {
+      
+    }
     </style>
   </head>
   <body>
     <h1>
-    
+      example.com
     </h1>
-    <button>
-    
-    </button>
-        <button>
-    
-    </button>
-        <button>
-    
-    </button>
-        <button>
-    
-    </button>
-        <button>
-    
-    </button>
-        <button>
-    
-    </button>
+    <div id="mainButtons">
+      <button class="mainButton">
+        page1
+      </button>
+      <button class="mainButton">
+        page2
+      </button>
+      <button class="mainButton">
+        page3
+      </button>
+      <button class="mainButton">
+        page4
+      </button>
+      <button class="mainButton">
+        page5
+      </button>
+      <button class="mainButton">
+        page6
+      </button>
+    </div>
   </body>
 </html>
