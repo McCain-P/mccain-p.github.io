@@ -8,6 +8,26 @@
     </style>
   </head>
   <body>
-  
+    <button id="connect">
+      Connect
+    </button>
+    <dl>
+      <dt>
+        <input type="text" id="wordA">
+        </input>
+      </dt>
+      <dd id="descriptionA">
+      </dd>
+      <img id="imageA">
+      </img>
+      <dt>
+        <input type="text" id="wordB">
+        </input>
+      </dt>
+      <dd id="descriptionB">
+      </dd>
+      <img id="imageB">
+      </img>
+    </dl>
   </body>
 </html>
