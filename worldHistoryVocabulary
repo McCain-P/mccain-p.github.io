@@ -4,7 +4,7 @@
       The World in 1750
     </title>
     <style>
-    
+      //Possibly use CSS content property to change image (or background image)? Use JS to set data-image HTML property, as well as call the CSS animation (possibly by setting element.style, or possibly there is some JS function for it)?
     </style>
   </head>
   <body>
