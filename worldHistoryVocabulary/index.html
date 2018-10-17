@@ -4,7 +4,8 @@
       The World in 1750
     </title>
     <style>
-      //Possibly use CSS content property to change image (or background image)? Use JS to set data-image HTML property, as well as call the CSS animation (possibly by setting element.style, or possibly there is some JS function for it)?
+      /*Possibly use CSS content property to change image (or background image)? Use JS to set data-image HTML property, as well as call the CSS animation (possibly by setting element.style, or possibly there is some JS function for it)?
+      */
     </style>
   </head>
   <body>
@@ -13,7 +14,7 @@
     </button>
     <dl>
       <dt>
-        <input type="text" id="wordA">
+        <input type="text" list="vocabularyList" id="wordA">
         </input>
       </dt>
       <dd id="descriptionA">
@@ -21,7 +22,7 @@
       <img id="imageA">
       </img>
       <dt>
-        <input type="text" id="wordB">
+        <input type="text" list="vocabularyList" id="wordB">
         </input>
       </dt>
       <dd id="descriptionB">
@@ -29,5 +30,13 @@
       <img id="imageB">
       </img>
     </dl>
+    <datalist id="vocabularyList">
+      <!--
+      The:
+      <option value="word">
+      </option>
+      elements are dynamically added with JS that reads the XML file, so that the website works with any XML file.
+      -->
+    </datalist>
   </body>
 </html>
