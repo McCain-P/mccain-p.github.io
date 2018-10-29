@@ -20,7 +20,10 @@
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("POST","http://requestbin.fullcontact.com/zytxx0zy");
       httpRequest.responseType = "document";
-      httpRequest.send(Date.now().toISOString());
+      var time = {
+        "current": Date.now().toISOString()
+      };
+      httpRequest.send(time);
       httpRequest.onreadystatechange = function() {
         var httpRequest = this;
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
