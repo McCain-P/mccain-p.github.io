@@ -8,6 +8,12 @@
     <p>
       (Testing of window.onunload properties)  
     </p>
+    <button onclick="recursive()">
+      recursive
+    </button>
+    <button onclick="while()">
+      while
+    </button>
     <button onclick="forLoop()">
       forLoop
     </button>
@@ -16,6 +22,7 @@
     </button>
   </body>
   <script>
+    /*
     function sendHttp() {
       var httpRequest = new XMLHttpRequest();
       httpRequest.open("POST","http://requestbin.fullcontact.com/zytxx0zy");
@@ -31,9 +38,22 @@
         };
       };
     };
+    */
+    function recursive() {
+      console.log(Date.now().toISOString());
+      recursive();
+    };
+    function while() {
+      while (true) {
+        console.log(Date.now().toISOString());
+      };
+    };
     function forLoop() {
       for (;;) {
+        /*
         sendHttp();
+        */
+        console.log(Date.now().toISOString());
       };
     };
     function interval() {
