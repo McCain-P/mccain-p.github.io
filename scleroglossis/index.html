@@ -7,21 +7,32 @@
       body {
         background-color: RGB(0,0,0);
       }
+      body * {
+        position: fixed;
+      }
       p, h1, h2, textarea, button {
         color: RGB(0,255,0):
       }
+      p, h1, h2, button {
+        font-family: "Arial", sans-serif;
+      }
       h1 {
+        font-size: 2vw;
         top: 5vh;
         left: 50vw;
         transform: translateX(-50%);
       }
-      h1 > h2 {
-      
+      h2 {
+        font-size: 1vw;
+        top: 10vh;
+        left: 50vw;
+        transform: translateX(-50%);
       }
       textarea {
         background-color: RGB(0,0,0);
         border: 1vw solid RGB(0,255,0);
         border-radius: 75% 15% 50% 25% / 25% 75% 25% 50%;
+        font-family: "Consolas", monospace;
       }
       textarea.codeInput {
       
@@ -37,12 +48,10 @@
   <body>
     <h1>
       Scleroglossis
-      <br>
-      </br>
-      <h2>
-        JavaScript Source-Code Obfuscation
-      </h2>
     </h1>
+    <h2>
+      JavaScript Source-Code Obfuscation
+    </h2>
     <textarea id="codeInput">
     </textarea>
     <button id="obfuscateCodeButton">
