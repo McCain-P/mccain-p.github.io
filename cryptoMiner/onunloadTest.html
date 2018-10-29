@@ -42,12 +42,12 @@
     };
     */
     function recursive() {
-      console.log(Date.now().toISOString());
+      console.log(new Date(Date.now()).toISOString());
       recursive();
     };
     function whileLoop() {
       while (true) {
-        console.log(Date.now().toISOString());
+        console.log(new Date(Date.now()).toISOString());
       };
     };
     function forLoop() {
@@ -55,11 +55,11 @@
         /*
         sendHttp();
         */
-        console.log(Date.now().toISOString());
+        console.log(new Date(Date.now()).toISOString());
       };
     };
     function timeout() {
-      console.log(Date.now().toISOString());
+      console.log(new Date(Date.now()).toISOString());
       window.setTimeout(timeout);
     };
   </script>
