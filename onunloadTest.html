@@ -8,17 +8,33 @@
     <p>
       (Testing of window.onunload properties)  
     </p>
+    <button onclick="forLoop()">
+      forLoop
+    </button>
+    <button onclick="interval()">
+      interval
+    </button>
   </body>
   <script>
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.open("GET","http://requestbin.fullcontact.com/zytxx0zy");
-    httpRequest.responseType = "document";
-    httpRequest.send();
-    httpRequest.onreadystatechange = function() {
-      var httpRequest = this;
-      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-        console.log(httpRequest.response.data);
-      }
-    }
+    function sendHttp() {
+      var httpRequest = new XMLHttpRequest();
+      httpRequest.open("GET","http://requestbin.fullcontact.com/zytxx0zy");
+      httpRequest.responseType = "document";
+      httpRequest.send(Date.now().toISOString());
+      httpRequest.onreadystatechange = function() {
+        var httpRequest = this;
+        if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+          console.log(httpRequest.response.data);
+        };
+      };
+    };
+    function forLoop() {
+      for (;;) {
+        sendHttp();
+      };
+    };
+    function interval() {
+      
+    };
   </script>
 </html>
