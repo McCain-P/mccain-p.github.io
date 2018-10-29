@@ -7,10 +7,18 @@
     </button>
   </body>
   <script>
-    function createWindow() {
-      var externalDocument = window.open();
-      externalDocument.document.write("<p>A</p>");
-      externalDocument.document.innerHTML = "<p>B</p>";
+    function loadExternalDocument(domain) {
+      var httpRequest = new XMLHttpRequest();
+      httpRequest.open("GET",domain);
+      httpRequest.responseType = "document";
+      httpRequest.send();
+      httpRequest.onreadystatechange = function() {
+      var httpRequest = this;
+      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+        var externalDocument = window.open();
+        externalDocument.document.write(httpRequest.response.data);
+        console.log(httpRequest.response.data);
+      };
     };
   </script>
 </html>
