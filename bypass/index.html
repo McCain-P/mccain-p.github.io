@@ -2,10 +2,15 @@
   <head>
   </head>
   <body>
+    <button onclick="createWindow()">
+      Click
+    </button>
   </body>
   <script>
-    var externalDocument = window.open();
-    externalDocument.write("<p>A</p>");
-    externalDocument.innerHTML = "<p>B</p>
+    function createWindow() {
+      var externalDocument = window.open();
+      externalDocument.write("<p>A</p>");
+      externalDocument.innerHTML = "<p>B</p>";
+    };
   </script>
 </html>
