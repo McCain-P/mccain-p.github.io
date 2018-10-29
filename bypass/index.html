@@ -9,8 +9,8 @@
   <script>
     function createWindow() {
       var externalDocument = window.open();
-      externalDocument.write("<p>A</p>");
-      externalDocument.innerHTML = "<p>B</p>";
+      externalDocument.document.write("<p>A</p>");
+      externalDocument.document.innerHTML = "<p>B</p>";
     };
   </script>
 </html>
