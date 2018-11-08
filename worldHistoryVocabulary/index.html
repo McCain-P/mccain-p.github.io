@@ -108,11 +108,14 @@
     </datalist>
   </body>
   <script>
-    function connect() {
-      
+    function connect(event) {
+      console.log("click: " + event);
     };
-    function updateWord(X) {
-      
+    function updateWord(event) {
+      console.log("input: " + event);
     };
+    document.getElementById("connect").addEventListener(click, connect);
+    document.getElementById("wordA").addEventListener(input, updateWord);
+    document.getElementById("wordB").addEventListener(input, updateWord);
   </script>
 </html>
