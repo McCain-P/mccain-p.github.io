@@ -77,11 +77,14 @@
         right: 6.25%;
       }
       @keyframes updateTransition {
-        from {
-          filter: grayscale(0) brightness(1) blur(0),
+        0% {
+          filter: grayscale(0) brightness(1) blur(0);
         }
-        to {
+        50% {
           filter: grayscale(100%) brightness(20) blur(50px);
+        }
+        100% {
+          filter: grayscale(0) brightness(1) blur(0);
         }
       }
     </style>
