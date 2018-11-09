@@ -82,6 +82,8 @@
         }
         50% {
           filter: grayscale(100%) brightness(20) blur(50px);
+          /*v do this v*/
+          /*content: attr(data-updatedSrc url);*/
         }
         100% {
           filter: grayscale(0) brightness(1) blur(0);
@@ -101,7 +103,7 @@
         </dt>
         <dd id="descriptionA">
         </dd>
-        <img id="imageA" src="" data-updatedSrc="">
+        <img id="imageA" data-updatedSrc="">
         </img>
         <dt>
           <input type="text" list="vocabularyList" id="wordB">
@@ -109,7 +111,7 @@
         </dt>
         <dd id="descriptionB">
         </dd>
-        <img id="imageB" src="" data-updatedSrc="">
+        <img id="imageB" data-updatedSrc="">
         </img>
       </dl>
     </div>
@@ -125,9 +127,15 @@
   <script>
     function connect(event) {
       console.log(event.target);
+      //***must check if both words match valid words. If they don't, do nothing (everything within the if statement).
+      //***update connection sentence from JSON table
     };
     function updateWord(event) {
       console.log(event.target);
+      //***must check if the word matches a valid word. If it doesn't, do nothing (everything within the if statement).
+      //***update data-updatedSrc attribute of event.target
+      //***call CSS keyframe animation of event.target
+      //***update the definition text of the word
     };
     document.getElementById("connect").addEventListener("click", connect);
     document.getElementById("wordA").addEventListener("input", updateWord);
