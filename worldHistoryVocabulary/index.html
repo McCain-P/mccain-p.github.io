@@ -76,6 +76,14 @@
       #imageB {
         right: 6.25%;
       }
+      @keyframes updateTransition {
+        from {
+          filter: grayscale(0) brightness(1) blur(0),
+        }
+        to {
+          filter: grayscale(100%) brightness(20) blur(50px);
+        }
+      }
     </style>
   </head>
   <body>
