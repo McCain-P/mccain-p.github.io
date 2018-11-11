@@ -9,14 +9,16 @@
     
     </h1>
     <form>
-    <p>
+      <p>
     
-    </p>
-    <input type="text">
-    </input>
-    <button>
-      Analyze Serial-Number
-    </button>
+      </p>
+      <input type="text" id="input">
+      </input>
+      <button id="analyze">
+        Analyze Serial-Number
+      </button>
     </form>
+    <p id="output">
+    </p>
   </body>
 </html>
