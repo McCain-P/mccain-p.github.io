@@ -21,4 +21,15 @@
     <p id="output">
     </p>
   </body>
+  <script>
+    function analyze() {
+      var n = document.getElementById("input").value;
+      if (!/\d{8}/.test(n.toString())) {
+        //Invalid serial-number
+      } else {
+        //Valid serial-number
+      }
+    }
+    document.getElementById("analyze").addEventListener("click", analyze);
+  </script>
 </html>
