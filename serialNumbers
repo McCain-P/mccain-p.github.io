@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>
+      Special US-Dollar Serial-Numbers
+    </title>
+  </head>
+  <body>
+    <h1>
+    
+    </h1>
+    <form>
+    <p>
+    
+    </p>
+    <input type="text">
+    </input>
+    <button>
+      Analyze Serial-Number
+    </button>
+    </form>
+  </body>
+</html>
