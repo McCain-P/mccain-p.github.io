@@ -130,6 +130,14 @@
   <script>
     function connect(event) {
       console.log(event.target);
+      var words = document.getElementById("vocabularyList").children;
+      var wordA = document.getElementById("wordA").value;
+      var wordB = document.getElementById("wordB").value;
+      for (var i = 0, word = wordA; i < 2; i++, word = wordB) {
+        for (var j = 0; j < words.length; j++) {
+        
+        };
+      };
       //***must check if both words match valid words. If they don't, do nothing (everything within the if statement).
       //***update connection sentence from JSON table
     };
