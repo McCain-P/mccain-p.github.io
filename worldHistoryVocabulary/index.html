@@ -133,13 +133,29 @@
       var words = document.getElementById("vocabularyList").children;
       var wordA = document.getElementById("wordA").value;
       var wordB = document.getElementById("wordB").value;
-      for (var i = 0, word = wordA; i < 2; i++, word = wordB) {
+      var matrixPosition = [null, null];
+      for (var i = 0, var word = wordA; i < 2; i++, word = wordB) {
         for (var j = 0; j < words.length; j++) {
-        
+          if (word === words[j]) {
+            matrixPosition[i] = j;
+          };
         };
       };
-      //***must check if both words match valid words. If they don't, do nothing (everything within the if statement).
-      //***update connection sentence from JSON table
+      if (matrixPosition[0] !== null && matrixPosition[1] !== null) {
+        //Get JSON data file via HTTP request
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.open("GET","data.json");
+        httpRequest.responseType = "json";
+        httpRequest.send();
+        httpRequest.onreadystatechange = function() {
+          var httpRequest = this;
+          if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+            //Read the JSON data
+            var jsonData = httpRequest.response;
+            document.getElementById("connectionSentence").innerHTML = jsonData["connections"][matrixPosition[0]][matrixPosition[1]];
+          };
+        };
+      };
     };
     function updateWord(event) {
       console.log(event.target);
