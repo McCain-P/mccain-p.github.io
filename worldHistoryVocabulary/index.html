@@ -128,6 +128,18 @@
     </datalist>
   </body>
   <script>
+    //Get JSON data file via HTTP request
+    var jsonData = {};
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open("GET","data.json");
+    httpRequest.responseType = "json";
+    httpRequest.send();
+    httpRequest.onreadystatechange = function() {
+      var httpRequest = this;
+      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+        jsonData = httpRequest.response;
+      };
+    };
     function connect(event) {
       console.log(event.target);
       var words = document.getElementById("vocabularyList").children;
@@ -142,19 +154,7 @@
         };
       };
       if (matrixPosition[0] !== null && matrixPosition[1] !== null) {
-        //Get JSON data file via HTTP request
-        var httpRequest = new XMLHttpRequest();
-        httpRequest.open("GET","data.json");
-        httpRequest.responseType = "json";
-        httpRequest.send();
-        httpRequest.onreadystatechange = function() {
-          var httpRequest = this;
-          if (httpRequest.readyState === 4 && httpRequest.status === 200) {
-            //Read the JSON data
-            var jsonData = httpRequest.response;
-            document.getElementById("connectionSentence").innerHTML = jsonData["connections"][matrixPosition[0]][matrixPosition[1]];
-          };
-        };
+        document.getElementById("connectionSentence").innerHTML = jsonData["connections"][matrixPosition[0]][matrixPosition[1]];
       };
     };
     function updateWord(event) {
