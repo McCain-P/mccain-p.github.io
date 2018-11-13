@@ -167,9 +167,10 @@
         };
       };
       if (n !== null) {
-        //***update the definition text of the word
-        //***update data-updatedSrc attribute of event.target
-        //***call CSS keyframe animation of event.target
+        var suffix = updatedElement.id.slice(-1);
+        document.getElementById("description" + suffix).innerHTML = jsonData["connections"][n][n];
+        document.getElementById("image" + suffix).dataset.updatedSrc = "images/" + n + ".png";
+        document.getElementById("image" + suffix).style.animationPlayState = "running";
       };
     };
     document.getElementById("connect").addEventListener("click", connect);
