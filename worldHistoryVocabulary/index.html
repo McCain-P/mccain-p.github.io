@@ -67,19 +67,6 @@
       #descriptionB {
         right: 6.25%;
       }
-      img {
-        height: 21%;
-        width: 37.5%;
-        position: absolute;
-        top: 71.75%;
-        animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0 1 normal forwards paused;
-      }
-      #imageA {
-        left: 6.25%;
-      }
-      #imageB {
-        right: 6.25%;
-      }
       @keyframes updateTransition {
         0% {
           filter: grayscale(0) brightness(1) blur(0);
@@ -91,6 +78,19 @@
         100% {
           filter: grayscale(0) brightness(1) blur(0);
         }
+      }
+      img {
+        height: 21%;
+        width: 37.5%;
+        position: absolute;
+        top: 71.75%;
+        animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0 1 normal forwards paused updateTransition;
+      }
+      #imageA {
+        left: 6.25%;
+      }
+      #imageB {
+        right: 6.25%;
       }
     </style>
   </head>
