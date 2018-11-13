@@ -141,7 +141,6 @@
       };
     };
     function connect(event) {
-      console.log(event.target);
       var words = document.getElementById("vocabularyList").children;
       var wordA = document.getElementById("wordA").value;
       var wordB = document.getElementById("wordB").value;
@@ -158,11 +157,20 @@
       };
     };
     function updateWord(event) {
-      console.log(event.target);
-      //***must check if the word matches a valid word. If it doesn't, do nothing (everything within the if statement).
-      //***update the definition text of the word
-      //***update data-updatedSrc attribute of event.target
-      //***call CSS keyframe animation of event.target
+      var updatedElement = event.target;
+      var word = updatedElement.value;
+      var words = document.getElementById("vocabularyList").children;
+      var n = null;
+      for (var i = 0; i < words.length; i++) {
+        if (word === words[i]) {
+          n = i;
+        };
+      };
+      if (n !== null) {
+        //***update the definition text of the word
+        //***update data-updatedSrc attribute of event.target
+        //***call CSS keyframe animation of event.target
+      };
     };
     document.getElementById("connect").addEventListener("click", connect);
     document.getElementById("wordA").addEventListener("input", updateWord);
