@@ -152,12 +152,42 @@
       </p>
     </div>
     <datalist id="vocabularyList">
-      <!--
-      The:
-      <option value="word">
+      <option value="archipelago">
       </option>
-      elements are dynamically added with JS that reads the JSON file, so that the website works with any JSON file.
-      -->
+      <option value="daimyo">
+      </option>
+      <option value="Devshirme System">
+      </option>
+      <option value="edict">
+      </option>
+      <option value="empire">
+      </option>
+      <option value="feudalism">
+      </option>
+      <option value="foreign">
+      </option>
+      <option value="govern">
+      </option>
+      <option value="interconnectedness">
+      </option>
+      <option value="janissary">
+      </option>
+      <option value="millet">
+      </option>
+      <option value="missionary">
+      </option>
+      <option value="Mughal Empire">
+      </option>
+      <option value="Ottoman Empire">
+      </option>
+      <option value="shogun">
+      </option>
+      <option value="shogunate">
+      </option>
+      <option value="Tokugawa Shogunate">
+      </option>
+      <option value="trade route">
+      </option>
     </datalist>
   </body>
   <script>
@@ -180,7 +210,7 @@
       var matrixPosition = [null, null];
       for (var i = 0, var word = wordA; i < 2; i++, word = wordB) {
         for (var j = 0; j < words.length; j++) {
-          if (word === words[j]) {
+          if (word === words[j].value) {
             matrixPosition[i] = j;
           };
         };
@@ -195,7 +225,7 @@
       var words = document.getElementById("vocabularyList").children;
       var n = null;
       for (var i = 0; i < words.length; i++) {
-        if (word === words[i]) {
+        if (word === words[i].value) {
           n = i;
         };
       };
