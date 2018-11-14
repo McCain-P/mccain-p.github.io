@@ -4,8 +4,6 @@
       The World in 1750
     </title>
     <style>
-      /*Possibly use CSS content property to change image (or background image)? Use JS to set data-image HTML property, as well as call the CSS animation (possibly by setting element.style, or possibly there is some JS function for it)?
-      */
       /*
         Color-scheme:
           Red: RGB(192,0,0),
@@ -46,8 +44,12 @@
         height: 10%;
         width: 37.5%;
         position: absolute;
+        /*
         top: 26.25%;
+        */
+        top: 25%;
         font-size: 2vh;
+        border: 1vh solid RGB(255,255,150);
       }
       #wordA {
         left: 6.25%;
@@ -56,10 +58,17 @@
         right: 6.25%;
       }
       dd {
+        /*
         height: 21%;
+        */
+        height: 15%;
         width: 37.5%;
         position: absolute;
+        /*
         top: 43.5%;
+        */
+        top: 40%;
+        border: 1vh solid RGB(255,255,150);
       }
       #descriptionA {
         left: 6.25%;
@@ -80,10 +89,17 @@
         }
       }
       img {
+        /*
         height: 21%;
+        */
+        height: 15%;
         width: 37.5%;
         position: absolute;
+        /*
         top: 71.75%;
+        */
+        top: 60%;
+        border: 1vh solid RGB(255,255,150);
         animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0 1 normal forwards paused updateTransition;
       }
       #imageA {
@@ -93,7 +109,12 @@
         right: 6.25%;
       }
       #connectionSentence {
-        
+        height: 15%;
+        width: 87.5%;
+        position: absolute;
+        top: 80%;
+        left: 6.25%;
+        border: 1vh solid RGB(255,255,150);
       }
     </style>
   </head>
