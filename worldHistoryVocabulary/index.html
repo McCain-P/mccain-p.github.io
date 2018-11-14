@@ -60,11 +60,23 @@
       #wordB {
         right: 5%;
       }
-      #connect:hover, input:hover {
-        
+      #connect:hover::before, input:hover::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: RGBA(255,255,255,0.5);
       }
-      #connect:active, input:focus {
-        
+      #connect:active::before, input:focus::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: RGBA(0,0,0,0.5);
       }
       dd {
         height: 15%;
