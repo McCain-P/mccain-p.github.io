@@ -214,8 +214,8 @@
       var wordA = document.getElementById("wordA").value;
       var wordB = document.getElementById("wordB").value;
       var matrixPosition = [null, null];
-      for (var i = 0, var word = wordA; i < 2; i++, word = wordB) {
-        for (var j = 0; j < words.length; j++) {
+      for (i = 0, word = wordA; i < 2; i++, word = wordB) {
+        for (j = 0; j < words.length; j++) {
           if (word === words[j].value) {
             matrixPosition[i] = j;
           };
@@ -230,7 +230,7 @@
       var word = updatedElement.value;
       var words = document.getElementById("vocabularyList").children;
       var n = null;
-      for (var i = 0; i < words.length; i++) {
+      for (i = 0; i < words.length; i++) {
         if (word === words[i].value) {
           n = i;
         };
