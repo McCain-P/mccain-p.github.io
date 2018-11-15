@@ -60,7 +60,7 @@
       #wordB {
         right: 5%;
       }
-      #connect:hover::before, input:hover::before {
+      #connect:hover::before, input:hover: + .inputOverlay::before {
         content: "";
         height: 100%;
         width: 100%;
@@ -69,7 +69,7 @@
         left: 0;
         background-color: RGBA(255,255,255,0.2);
       }
-      #connect:active::before, input:focus::before {
+      #connect:active::before, input:focus + .inputOverlay::before {
         content: "";
         height: 100%;
         width: 100%;
