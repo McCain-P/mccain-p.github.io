@@ -242,7 +242,7 @@
       if (n !== null) {
         var suffix = updatedElement.id.slice(-1);
         document.getElementById("description" + suffix).innerHTML = jsonData["connections"][n][n];
-        document.getElementById("image" + suffix).dataset.updatedSrc = "images/" + n + ".png";
+        document.getElementById("image" + suffix).dataset.updatedSrc = "resources/images/" + n + ".png";
         document.getElementById("image" + suffix).style.animationPlayState = "running";
       };
     };
