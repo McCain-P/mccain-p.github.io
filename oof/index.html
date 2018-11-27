@@ -80,6 +80,7 @@
     sound.connect(oscillator).connect(context.destination);
     //Dictionary of key codes (layout-independent) and notes
     var notes = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
+    //https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
     function keyboardInput(event) {
       //event.code
       if (event.type === "keydown") {
