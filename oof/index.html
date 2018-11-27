@@ -76,9 +76,9 @@
     //Oof Keyboard via Web Audio API
     var context = new AudioContext();
     var sound = context.createMediaElementSource(document.getElementById("oofAudio"));
-    var oscillator = context.createOscillator();
-    sound.connect(oscillator).connect(context.destination);
-    //Dictionary of key codes (layout-independent) and notes
+    var biquadFilter = context.createBiquadFilter();
+    sound.connect(biquadFilter).connect(context.destination);
+    //Dictionary of key codes (layout-independent) and notes (frequencies)
     var notes = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
     //https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
     function keyboardInput(event) {
@@ -91,5 +91,12 @@
     };
     document.addEventListener("keydown", keyboardInput);
     document.addEventListener("keyup", keyboardInput);
+    /*
+    A# B# C# D# E# F# G#
+     A  B  C  D  E  F  G
+      Af Bf Cf Df Ef Ff Gf
+      
+    A# = "Q"
+    */
   </script>
 </html>
