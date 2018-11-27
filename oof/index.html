@@ -72,5 +72,23 @@
           machineGunEnabled = false;
       };
     };
+    
+    //Oof Keyboard via Web Audio API
+    var context = new AudioContext();
+    var sound = context.createMediaElementSource(document.getElementById("oofAudio"));
+    var oscillator = context.createOscillator();
+    sound.connect(oscillator).connect(context.destination);
+    //Dictionary of key codes (layout-independent) and notes
+    var notes = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
+    function keyboardInput(event) {
+      //event.code
+      if (event.type === "keydown") {
+        
+      } else if (event.type === "keyup") {
+        
+      };
+    };
+    document.addEventListener("keydown", keyboardInput);
+    document.addEventListener("keyup", keyboardInput);
   </script>
 </html>
