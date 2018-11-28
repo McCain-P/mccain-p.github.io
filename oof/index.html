@@ -81,13 +81,15 @@
     //Dictionary of key codes (layout-independent) and frequencies (notes in octave 4)
     //Frequencies are defined in terms of n, where n = X. This, paired with the way octaves are defined, results in all of the elements of the frequency set being defined relative to the A440 frequency (440 hertz), as is international standard.
     var notes = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
+    var octave = 4;
     //https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
     function keyboardInput(event) {
       //event.code
       if (event.type === "keydown") {
-        
+        //set filter frequency
+        //play context
       } else if (event.type === "keyup") {
-        
+        //stop context
       };
     };
     document.addEventListener("keydown", keyboardInput);
