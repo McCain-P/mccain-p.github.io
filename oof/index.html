@@ -85,7 +85,7 @@
     var octave = 4;
     function keyboardInput(event) {
       if (event.type === "keydown") {
-        //set filter frequency
+        biquadFilter.frequency.value = X;
         audioElement.play();
       } else if (event.type === "keyup") {
         audioElement.pause();
