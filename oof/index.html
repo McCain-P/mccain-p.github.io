@@ -80,7 +80,10 @@
     var biquadFilter = context.createBiquadFilter();
     sound.connect(biquadFilter).connect(context.destination);
     //Dictionary of key codes (layout-independent) and frequencies (notes in octave 4)
-    //Frequencies are defined in terms of n, where n = X. This, paired with the way octaves are defined, results in all of the elements of the frequency set being defined relative to the A440 frequency (440 hertz), as is international standard.
+    /*
+    Frequencies are defined in terms of n, where f = 440 * (2^(1/12))^n. This, paired with the way octaves are defined, results in all of the elements of the frequency set being defined relative to the A440 frequency (440 hertz), as is international standard.
+    The previous equation holds valid for frequencies in octave 4, which the reference notes are in. The complete equation that incorporates the octave value is f = 440 * (2^(1/12))^n * 2^(o - 4), where o is the octave.
+    */
     //The key-dictionary is divided into 2 sections: notes and octaves. The notes section defines the various notes, while the octaves section defines the octaves achieved through the modifier keys.
     var notes = [["KeyQ",], ["KeyW",], ["KeyE",], ["KeyR",], ["KeyT",], ["KeyY",], ["KeyU",], ["KeyA",], ["KeyS",], ["KeyD",], ["KeyF",], ["KeyG",], ["KeyH",], ["KeyJ",], ["KeyZ",], ["KeyX",], ["KeyC",], ["KeyV",], ["KeyB",], ["KeyN",], ["KeyM",]];
     //           <notes>                                                                                                                                                                                                                      </notes>  <octaves></octaves>
