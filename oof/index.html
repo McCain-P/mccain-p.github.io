@@ -75,7 +75,8 @@
     
     //Oof Keyboard via Web Audio API
     var context = new AudioContext();
-    var sound = context.createMediaElementSource(document.getElementById("oofAudio"));
+    var audioElement = document.getElementById("oofAudio");
+    var sound = context.createMediaElementSource(audioElement);
     var biquadFilter = context.createBiquadFilter();
     sound.connect(biquadFilter).connect(context.destination);
     //Dictionary of key codes (layout-independent) and frequencies (notes in octave 4)
@@ -87,23 +88,19 @@
       //event.code
       if (event.type === "keydown") {
         //set filter frequency
-        //play context
+        audioElement.play();
       } else if (event.type === "keyup") {
-        //stop context
+        audioElement.pause();
       };
     };
     document.addEventListener("keydown", keyboardInput);
     document.addEventListener("keyup", keyboardInput);
     /*
-    A# B# C# D# E# F# G#
+    A♯ B♯ C♯ D♯ E♯ F♯ G♯
      A  B  C  D  E  F  G
-      Af Bf Cf Df Ef Ff Gf
+      A♭ B♭ C♭ D♭ E♭ F♭ G♭
       
     A# = "Q"
-    
-    https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode/frequency
-    https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
-    https://en.wikipedia.org/wiki/Octave?scrlybrkr=34faac98#
     
     Each keyboard of keys has a standard octave of notes
     Vertical columns represent notes, horizontal columns represent sharp/flat versions of the notes
