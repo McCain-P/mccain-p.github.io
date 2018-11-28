@@ -83,9 +83,7 @@
     //Frequencies are defined in terms of n, where n = X. This, paired with the way octaves are defined, results in all of the elements of the frequency set being defined relative to the A440 frequency (440 hertz), as is international standard.
     var notes = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []];
     var octave = 4;
-    //https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
     function keyboardInput(event) {
-      //event.code
       if (event.type === "keydown") {
         //set filter frequency
         audioElement.play();
@@ -101,13 +99,11 @@
       Ab Bb Cb Db Eb Fb Gb   Z  X  C  V  B  N  M
       
     *The diagram uses the QWERTY keyboard-layout, though it is not layout-specific.
-      
-    A# = "Q"
     
-    Each keyboard of keys has a standard octave of notes
-    Vertical columns represent notes, horizontal columns represent sharp/flat versions of the notes
-    Holding down a modifier key (tab,shift,control,alt,meta,etc.) will set the octave to be of a different octave, using math.
-    The array just defined the pairings between the keys and the base notes with sharp and flat variants, and then the octave modifiers just use math (multiplying by 2)
+    The set of keys has a standard octave of notes and their semitones.
+    Vertical columns represent notes, and horizontal columns represent sharp/flat versions of the notes.
+    Holding down a modifier key (Shift, Control, Alt, Meta, etc.) will set the octave of the set to be of a different octave.
+    The frequency of a key in hertz is determined using an equation that is based relative to the A440 note (440 hertz).
     */
   </script>
 </html>
