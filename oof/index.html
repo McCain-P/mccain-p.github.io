@@ -121,7 +121,7 @@
         };
         biquadFilter.frequency.value = 440 * Math.pow(Math.pow(2, 1 / 12), semitone) * Math.pow(2, octave - 4);
         if (octaveModifierKey === false) {
-          audioElement.currentTime = 0;
+          //audioElement.currentTime = 0;
           audioElement.play();
         };
       } else if (event.type === "keyup") {
