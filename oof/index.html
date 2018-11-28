@@ -128,7 +128,10 @@
         audioElement.pause();
       };
       console.log(biquadFilter.frequency.value);
-      console.log(event.type);
+      console.log(biquadFilter.detune.value);
+      console.log(biquadFilter.Q.value);
+      console.log(biquadFilter.gain.value);
+      console.log(biquadFilter.type);
     };
     document.addEventListener("keydown", keyboardInput);
     document.addEventListener("keyup", keyboardInput);
