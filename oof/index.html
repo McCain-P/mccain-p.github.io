@@ -38,6 +38,8 @@
   <body>
     <audio id="oofAudio" src="oof2.mp3">
     </audio>
+    <audio id="oofAudioNote" src="oof3.mp3">
+    </audio>
     <button id="oofButton" onclick="oof()">
       O O F
     </button>
@@ -75,7 +77,7 @@
     
     //Oof Keyboard via Web Audio API
     var context = new AudioContext();
-    var audioElement = document.getElementById("oofAudio");
+    var audioElement = document.getElementById("oofAudioNote");
     var sound = context.createMediaElementSource(audioElement);
     var biquadFilter = context.createBiquadFilter();
     sound.connect(biquadFilter).connect(context.destination);
@@ -119,6 +121,7 @@
         };
         biquadFilter.frequency.value = 440 * Math.pow(Math.pow(2, 1 / 12), semitone) * Math.pow(2, octave - 4);
         if (octaveModifierKey === false) {
+          audioElement.currentTime = 0;
           audioElement.play();
         };
       } else if (event.type === "keyup") {
