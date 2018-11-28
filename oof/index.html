@@ -127,6 +127,7 @@
         //if it is not an octave key, pause the thing; if/else loop
         audioElement.pause();
       };
+      console.log(biquadFilter.frequency.value);
     };
     document.addEventListener("keydown", keyboardInput);
     document.addEventListener("keyup", keyboardInput);
