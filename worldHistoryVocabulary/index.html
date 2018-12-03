@@ -5,15 +5,6 @@
     </title>
     <style>
       /*
-      .inputOverlay {
-        display: none;
-      }
-      input:hover, .inputOverlay:hover {
-        //make inputOverlay show w/ display property
-      }
-      //Like the thing I did with the sliding box in NetCom
-      */
-      /*
         Color-scheme:
           Red: RGB(192,0,0),
           Yellow/Tan: RGB(255,255,150),
@@ -69,6 +60,35 @@
       #wordB {
         right: 5%;
       }
+      .overlay {
+        z-index: 2;
+        display: none;
+      }
+      input + .overlay {
+        height: 10%;
+        width: 40%;
+        position: absolute;
+        top: 20%;
+      }
+      #overlayA {
+        left: 5%;
+      }
+      #overlayB {
+        right: 5%;
+      }
+      #overlayC {
+        height: 10%;
+        width: 37.5%;
+        position: absolute;
+        top: 5%;
+        left: 31.25%;
+      }
+      /*Brightness on hover for button and input elements*/
+      #connect:hover + .overlay, input:hover + .overlay, .overlay:hover {
+        display: block;
+        background-color: RGBA(255,255,255,0.2);
+      }
+      /*
       #connect:hover::before, input:hover: + .inputOverlay::before {
         content: "";
         height: 100%;
@@ -78,6 +98,13 @@
         left: 0;
         background-color: RGBA(255,255,255,0.2);
       }
+      */
+      /*Darkness on click for button and input elements*/
+      #connect:active + .overlay, #connect + .overlay:active, input:focus + .overlay {
+        display: block;
+        background-color: RGBA(0,0,0,0.2);
+      }
+      /*
       #connect:active::before, input:focus + .inputOverlay::before {
         content: "";
         height: 100%;
@@ -87,6 +114,7 @@
         left: 0;
         background-color: RGBA(0,0,0,0.2);
       }
+      */
       dd {
         height: 15%;
         width: 37.5%;
@@ -145,11 +173,13 @@
       <button id="connect">
         Connect
       </button>
+      <div class="overlay" id="overlayC">
+      </div>
       <dl>
         <dt>
           <input type="text" list="vocabularyList" id="wordA">
           </input>
-          <div class="inputOverlay">
+          <div class="overlay" id="overlayA">
           </div>
         </dt>
         <dd id="descriptionA">
@@ -159,7 +189,7 @@
         <dt>
           <input type="text" list="vocabularyList" id="wordB">
           </input>
-          <div class="inputOverlay">
+          <div class="overlay" id="overlayB">
           </div>
         </dt>
         <dd id="descriptionB">
