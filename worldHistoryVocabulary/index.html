@@ -85,34 +85,24 @@
         left: 31.25%;
       }
       /*Brightness on hover for button and input elements*/
+      #connect:hover + .overlay, input:hover + .overlay {
+        display: block;
+        background-color: RGBA(255,255,255,0.2);
+      }
+      /*
       #connect:hover + .overlay, input:hover + .overlay, .overlay:hover {
         display: block;
         background-color: RGBA(255,255,255,0.2);
       }
-      /*
-      #connect:hover::before, input:hover: + .inputOverlay::before {
-        content: "";
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: RGBA(255,255,255,0.2);
-      }
       */
       /*Darkness on click for button and input elements*/
-      #connect:active + .overlay, #connect + .overlay:active, input:focus + .overlay {
+      #connect:active + .overlay, input:focus + .overlay {
         display: block;
         background-color: RGBA(0,0,0,0.2);
       }
       /*
-      #connect:active::before, input:focus + .inputOverlay::before {
-        content: "";
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+      #connect:active + .overlay, #connect + .overlay:active, input:focus + .overlay {
+        display: block;
         background-color: RGBA(0,0,0,0.2);
       }
       */
