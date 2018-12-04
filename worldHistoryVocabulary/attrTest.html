@@ -4,18 +4,34 @@
       attrTest
     </title>
     <style>
-      div {
+      .a {
         background-color: RGB(0,0,255);
         height: 50vh;
         width: 50vh;
       }
-      div[data-boolean="true"] {
+      .a[data-boolean="true"] {
         background-color: RGB(255,0,0);
+      }
+      @keyframes testAnimation {
+        0% {
+          background-color: RGB(0,255,0);
+        }
+        100% {
+          background-color: RGB(255,0,255);
+        }
+      }
+      .b {
+        
+      }
+      .b[data-boolean="true"] {
+        
       }
     </style>
   </head>
   <body>
-    <div>
+    <div class="a">
+    </div>
+    <div class="b">
     </div>
   </body>
 </html>
