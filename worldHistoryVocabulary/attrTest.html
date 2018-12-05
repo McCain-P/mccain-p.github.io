@@ -41,5 +41,21 @@
     </div>
     <div class="b">
     </div>
+    <button onlick="change(a)">
+      a
+    </button>
+    <button onclick="change(b)">
+      b
+    </button>
   </body>
+  <script>
+    function change(id) {
+      var element = document.getElementsByClassName(id)[0];
+      if (element.dataset.boolean === "true") {
+        element.dataset.boolean = "false";
+      } else {
+        element.dataset.boolean = "true";
+      };
+    };
+  </script>
 </html>
