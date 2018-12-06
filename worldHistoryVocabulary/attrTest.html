@@ -4,7 +4,7 @@
       attrTest
     </title>
     <style>
-      .a {
+      div.a {
         background-color: RGB(0,0,255);
         height: 50vh;
         width: 50vh;
@@ -12,7 +12,7 @@
         top: 0;
         left: 0;
       }
-      .a[data-boolean="true"] {
+      div.a[data-boolean="true"] {
         background-color: RGB(255,0,0);
       }
       @keyframes testAnimation {
@@ -23,7 +23,7 @@
           background-color: RGB(255,0,255);
         }
       }
-      .b {
+      div.b {
         background-color: RGB(255,128,0);
         height: 50vh;
         width: 50vh;
@@ -31,8 +31,22 @@
         bottom: 0;
         right: 0;
       }
-      .b[data-boolean="true"] {
+      div.b[data-boolean="true"] {
         animation: 1s linear 0 1 normal none running testAnimation;
+      }
+      button.a {
+        height: 10vh;
+        width: 10vh;
+        position: fixed;
+        bottom: 50%;
+        right: 50%;
+      }
+      button.b {
+        height: 10vh;
+        width: 10vh;
+        position: fixed;
+        top: 50%;
+        left: 50%;
       }
     </style>
   </head>
@@ -41,10 +55,10 @@
     </div>
     <div class="b">
     </div>
-    <button onlick="change(a)">
+    <button class="a" onlick="change(a)">
       a
     </button>
-    <button onclick="change(b)">
+    <button class="b" onclick="change(b)">
       b
     </button>
   </body>
