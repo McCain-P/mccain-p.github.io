@@ -55,15 +55,15 @@
     </div>
     <div class="b">
     </div>
-    <button class="a" onlick="change(this.className)">
+    <button class="a" onlick="changeAttr(this.className)">
       a
     </button>
-    <button class="b" onclick="change(this.className)">
+    <button class="b" onclick="changeAttr(this.className)">
       b
     </button>
   </body>
   <script>
-    function change(id) {
+    function changeAttr(id) {
       console.log("id: " + id);
       var element = document.getElementsByClassName(id)[0];
       console.log("element: " + element);
