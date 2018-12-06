@@ -64,10 +64,15 @@
   </body>
   <script>
     function change(id) {
+      console.log("id: " + id);
       var element = document.getElementsByClassName(id)[0];
+      console.log("element: " + element);
+      console.log("boolean: " + element.dataset.boolean);
       if (element.dataset.boolean === "true") {
+        console.log("evaluated to true");
         element.dataset.boolean = "false";
       } else {
+        console.log("evaluated to false");
         element.dataset.boolean = "true";
       };
     };
