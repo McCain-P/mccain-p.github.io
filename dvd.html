@@ -42,15 +42,16 @@
       var object = document.getElementById("dvd");
       window.setInterval(
         function() {
+          //Reflects the velocity vector if the current position is at the edge of the window
+          if (x <= 0 || x >= windowWidth || y <= 0 || y >= windowHeight) {
+            //Inverses the angle by adding pi to the current value
+            velocityVector[1] = (velocityVector[1] + Math.PI) % (2 * Math.PI);
+          };
           //Applies the velocity vector
           //[notes about values of x and y]
           //[set values of x and y]
           object.style.left = x.toString() + "px";
           object.style.bottom = y.toString() + "px";
-          //Reflects the velocity vector if the current position is at the edge of the window
-          if (x <= 0 || x >= windowWidth || y <= 0 || y >= windowHeight) {
-              
-          };
         },
         100
       );
