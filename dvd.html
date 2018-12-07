@@ -21,7 +21,7 @@
         position: fixed;
       }
       #dvd:before {
-        
+        content: "DVD"
       }
     </style>
   </head>
@@ -43,7 +43,7 @@
       window.setInterval(
         function() {
           //Reflects the velocity vector if the current position is at the edge of the window
-          if (x <= 0 || x >= windowWidth || y <= 0 || y >= windowHeight) {
+          if (x <= 0 || x >= windowWidth - (0.4 * windowHeight) || y <= 0 || y >= windowHeight - (0.4 * windowHeight)) {
             //Inverses the angle by adding π/2 to the current value
             //The reflection also adds a random angle, where {ϴ ∈ ℝ | 0 ≤ ϴ ≤ π/6}
             velocityVector[1] = ((velocityVector[1] + (Math.PI / 2)) + (Math.random() * (Math.PI / 6))) % (2 * Math.PI);
