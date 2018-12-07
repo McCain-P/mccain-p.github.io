@@ -48,8 +48,18 @@
             velocityVector[1] = (velocityVector[1] + Math.PI) % (2 * Math.PI);
           };
           //Applies the velocity vector
-          //[notes about values of x and y]
-          //[set values of x and y]
+          /*
+                /|   x = ncos(ϴ)
+               / |   y = nsin(ϴ)
+              /  |
+           n /   | y
+            /    |
+           /     |
+          /ϴ_____|
+             x
+          */
+          x = vectorMagnitude * Math.cos(velocityVector[1]);
+          y = vectorMagnitude * Math.sin(velocityVector[1]);
           object.style.left = x.toString() + "px";
           object.style.bottom = y.toString() + "px";
         },
