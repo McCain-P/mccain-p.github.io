@@ -58,8 +58,8 @@
           /ϴ_____|
              x
           */
-          x = vectorMagnitude * Math.cos(velocityVector[1]);
-          y = vectorMagnitude * Math.sin(velocityVector[1]);
+          x += vectorMagnitude * Math.cos(velocityVector[1]);
+          y += vectorMagnitude * Math.sin(velocityVector[1]);
           object.style.left = x.toString() + "px";
           object.style.bottom = y.toString() + "px";
         },
