@@ -33,19 +33,22 @@
     function dvdMovement() {
       var windowHeight = document.body.clientHeight;
       var windowWidth = document.body.clientWidth;
-      //Units for velocity vector: [(percentage of height)/second, degrees]
-      var velocityVector = [0.2, Math.round(Math.random() * 359)];
+      //Units for velocity vector: [(percentage of height)/second, radians]
+      var velocityVector = [0.2, Math.random() * (2 * Math.PI)];
       var vectorMagnitude = windowHeight * velocityVector[0];
       //Sets the initial position
       var x = windowWidth / 2;
       var y = windowHeight / 2;
+      var object = document.getElementById("dvd");
       window.setInterval(
         function() {
           //Applies the velocity vector
           //[notes about values of x and y]
-          
+          //[set values of x and y]
+          object.style.left = x.toString() + "px";
+          object.style.bottom = y.toString() + "px";
           //Reflects the velocity vector if the current position is at the edge of the window
-          if () {
+          if (x <= 0 || x >= windowWidth || y <= 0 || y >= windowHeight) {
               
           };
         },
