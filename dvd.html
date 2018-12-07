@@ -36,6 +36,21 @@
       //Units for velocity vector: [(percentage of height)/second, degrees]
       var velocityVector = [0.2, Math.round(Math.random() * 359)];
       var vectorMagnitude = windowHeight * velocityVector[0];
+      //Sets the initial position
+      var x = windowWidth / 2;
+      var y = windowHeight / 2;
+      window.setInterval(
+        function() {
+          //Applies the velocity vector
+          //[notes about values of x and y]
+          
+          //Reflects the velocity vector if the current position is at the edge of the window
+          if () {
+              
+          };
+        },
+        100
+      );
     };
     dvdMovement();
   </script>
