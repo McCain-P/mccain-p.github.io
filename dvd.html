@@ -4,11 +4,24 @@
       BVB by Bierce
     </title>
     <style>
+      body * {
+        padding: 0;
+        margin: 0;
+      }
       body {
         background-color: RGB(0,0,0);
       }
       #dvd {
-        background-color: RGB(192,192,192);
+        background-color: RGBA(0,0,0,0);
+        border: 7.5vh solid RGB(192,192,192);
+        border-radius: 50%;
+        /*h = 20vh, w = 40vh*/
+        height: 5vh;
+        width: 25vh;
+        position: fixed;
+      }
+      #dvd:before {
+        
       }
     </style>
   </head>
@@ -16,4 +29,12 @@
     <div id="dvd">
     </div>
   </body>
+  <script>
+    function dvdMovement() {
+      
+      //Units for velocity vector: [(percentage of height)/second, degrees]
+      var velocityVector = [20, Math.round(Math.random() * 359)];
+    };
+    dvdMovement();
+  </script>
 </html>
