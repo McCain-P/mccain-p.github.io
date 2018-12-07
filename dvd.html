@@ -31,7 +31,8 @@
   </body>
   <script>
     function dvdMovement() {
-      
+      var windowHeight = document.body.clientHeight;
+      var windowWidth = document.body.clientWidth;
       //Units for velocity vector: [(percentage of height)/second, degrees]
       var velocityVector = [20, Math.round(Math.random() * 359)];
     };
