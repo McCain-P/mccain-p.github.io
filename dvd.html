@@ -12,19 +12,23 @@
         background-color: RGB(0,0,0);
       }
       #dvd {
-        /*
-        background-color: RGBA(0,0,0,0);
-        border: 15vh solid;
-        border-image: linear-gradient(135deg, RGB(192,192,192), RGB(255,255,255), RGB(192,192,192));
+        background: linear-gradient(135deg, RGB(192,192,192), RGB(255,255,255), RGB(192,192,192));
         border-radius: 50%;
-        /*h = 40vh, w = 40vh*/
-        /*
-        height: 10vh;
-        width: 10vh;
-        */
+        border: 4vh solid RGB(128,128,128);
+        height: 40vh;
+        width: 40vh;
         position: fixed;
       }
       #dvd:before {
+        background-color: RGB(0,0,0);
+        border-radius: 50%;
+        position: absolute;
+        top: 15vh;
+        left: 15vh;
+        height: 10vh;
+        width: 10vh;
+      }
+      #dvd:after {
         content: "DVD";
         color: RGB(128,128,128);
         font-family: "Impact", sans-serif;
