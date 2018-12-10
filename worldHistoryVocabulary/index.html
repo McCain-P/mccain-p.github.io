@@ -120,6 +120,7 @@
         }
         100% {
           filter: grayscale(0) brightness(1) blur(0);
+          background-image: url(attr(data-updatedSrc));
         }
       }
       img {
@@ -167,8 +168,8 @@
         </dt>
         <dd id="descriptionA">
         </dd>
-        <div id="imageA">
-        </div>
+        <img id="imageA">
+        </img>
         <dt>
           <input type="text" list="vocabularyList" id="wordB">
           </input>
@@ -177,8 +178,8 @@
         </dt>
         <dd id="descriptionB">
         </dd>
-        <div id="imageB">
-        </div>
+        <img id="imageB">
+        </img>
       </dl>
       <p id="connectionSentence">
       </p>
