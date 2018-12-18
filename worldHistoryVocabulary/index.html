@@ -279,11 +279,7 @@
         imgParentNode.removeChild(document.getElementById("image" + suffix));
         var recreatedImg = document.createElement("img");
         recreatedImg.id = "image" + suffix;
-        console.log(imgParentNode);
-        console.log(recreatedImg);
         imgParentNode.appendChild(recreatedImg);
-        console.log(imgParentNode);
-        console.log(recreatedImg);
         document.getElementById("image" + suffix).dataset.updatedSrc = "resources/images/" + n + ".png";
         var dataUpdatedSrc = document.getElementById("image" + suffix).dataset.updatedSrc;
         document.getElementById("image" + suffix).style.setProperty("--updatedSrc", "url(\"" + dataUpdatedSrc + "\")");
