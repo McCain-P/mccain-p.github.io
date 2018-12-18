@@ -277,7 +277,7 @@
         //Remove and re-add image element:
         var imgParentNode = document.getElementById("image" + suffix).parentNode;
         imgParentNode.removeChild(document.getElementById("image" + suffix));
-        var recreatedImg = imgParentNode.createElement("img");
+        var recreatedImg = document.createElement("img");
         recreatedImg.id = "image" + suffix;
         console.log(imgParentNode);
         console.log(recreatedImg);
