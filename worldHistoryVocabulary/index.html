@@ -138,10 +138,7 @@
         background-repeat: no-repeat;
         background-origin: content-box;
         background-clip: content-box;
-        animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards paused updateTransition;
-      }
-      img.updateTransitionPlaying {
-        animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards running updateTransition;
+        /*animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards paused updateTransition;*/
       }
       #imageA {
         left: 5%;
@@ -281,8 +278,9 @@
         var dataUpdatedSrc = document.getElementById("image" + suffix).dataset.updatedSrc;
         document.getElementById("image" + suffix).style.setProperty("--updatedSrc", "url(\"" + dataUpdatedSrc + "\")");
         //document.getElementById("image" + suffix).style.animationPlayState = "running";
-        document.getElementById("image" + suffix).classList.remove("updateTransitionPlaying");
-        document.getElementById("image" + suffix).classList.add("updateTransitionPlaying");
+        document.getElementById("image" + suffix).style.animation = "1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards running updateTransition";
+        //document.getElementById("image" + suffix).classList.remove("updateTransitionPlaying");
+        //document.getElementById("image" + suffix).classList.add("updateTransitionPlaying");
       };
     };
     document.getElementById("connect").addEventListener("click", connect);
