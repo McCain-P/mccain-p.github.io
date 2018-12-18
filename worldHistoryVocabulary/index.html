@@ -116,11 +116,13 @@
         }
         50% {
           filter: grayscale(100%) brightness(20) blur(50px);
-          background-image: url(attr(data-updatedSrc));
+          //background-image: url(attr(data-updatedSrc));
+          background-image: attr(data-updatedSrc url);
         }
         100% {
           filter: grayscale(0) brightness(1) blur(0);
-          background-image: url(attr(data-updatedSrc));
+          //background-image: url(attr(data-updatedSrc));
+          background-image: attr(data-updatedSrc url);
         }
       }
       img {
