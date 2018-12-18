@@ -270,6 +270,8 @@
         var suffix = updatedElement.id.slice(-1);
         document.getElementById("description" + suffix).innerHTML = jsonData["connections"][n][n];
         document.getElementById("image" + suffix).dataset.updatedSrc = "resources/images/" + n + ".png";
+        var dataUpdatedSrc = document.getElementById("image" + suffix).dataset.updatedSrc;
+        document.getElementById("image" + suffix).style.setProperty("--updatedSrc", "url(\"" + dataUpdatedSrc + "\")");
         document.getElementById("image" + suffix).style.animationPlayState = "running";
       };
     };
