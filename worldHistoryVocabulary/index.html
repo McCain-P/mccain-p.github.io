@@ -277,6 +277,7 @@
         document.getElementById("image" + suffix).dataset.updatedSrc = "resources/images/" + n + ".png";
         var dataUpdatedSrc = document.getElementById("image" + suffix).dataset.updatedSrc;
         document.getElementById("image" + suffix).style.setProperty("--updatedSrc", "url(\"" + dataUpdatedSrc + "\")");
+        document.getElementById("image" + suffix).style.animationPlayState = "paused";
         document.getElementById("image" + suffix).style.animationPlayState = "running";
       };
     };
