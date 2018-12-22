@@ -19,14 +19,14 @@
     }
     #mainButtons {
       height: 80vh;
-      width: 80vw;
+      width: 90vw;
       position: absolute;
       top: 10vh;
       left: 10vw;
       display: grid;
-      grid-template-columns: repeat(3, 20vw);
+      grid-template-columns: repeat(3, calc(80vw / 3));
       grid-template-rows: repeat(2, calc((80vh - 10vw) / 2));
-      grid-gap: 10vw;
+      grid-gap: 5vw;
     }
     button.mainButton {
       background: linear-gradient(135deg, RGB(64,192,255), RGB(255,255,255));
