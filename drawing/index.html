@@ -23,6 +23,10 @@
       position: fixed;
       top: 20vh;
       left: 0;
+      display: grid;
+      grid-template-columns: repeat(3, calc(80vw / 3));
+      grid-template-rows: repeat(2, calc((80vh - 10vw) / 2));
+      grid-gap: 10vw;
     }
     button.mainButton {
       background: linear-gradient(135deg, RGB(64,192,255), RGB(255,255,255));
