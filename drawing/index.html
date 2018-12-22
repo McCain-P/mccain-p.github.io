@@ -45,13 +45,13 @@
       position: inherit;
     }
     @keyframes organicMovement {
-      /*Grow larger, and has the border-radius positions move around*/
+      to {
+        transform: scale(1.5);
+        border-radius: 25% 40% 40% 60% / 65% 20% 65% 35%;
+      }
     }
     button.mainButton:hover {
       animation: 1s linear 0 1 normal none running organicMovement;
-    }
-    button.mainButton:hover {
-
     }
     button.mainButton:active {
       
