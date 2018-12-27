@@ -12,8 +12,13 @@
         top: 0;
         left: 0;
       }
+      @keyframes updateTransition {
+        to {
+          background-color: RGB(0,0,255);
+        }
+      }
       div[data-animated="true"] {
-        background-color: RGB(0,0,255);
+        animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards running updateTransition;
       }
     </style>
   </head>
