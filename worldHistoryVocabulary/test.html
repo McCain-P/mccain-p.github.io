@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>
+      Test
+    </title>
+    <style>
+      div {
+        background-color: RGB(255,0,0);
+        height: 25vh;
+        width: 25vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      div[data-animated="true"] {
+        background-color: RGB(0,0,255);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+    </div>
+    <button onclick="animate()">
+      Animate
+    </button>
+  </body>
+  <script>
+    var target = document.getElementsByTagName("div")[0];
+    function animate() {
+      if (target.dataset.animated === "true") {
+        target.dataset.animated = "false";
+      } else {
+        target.dataset.animated = "true";
+      };
+    };
+  </script>
+</html>
