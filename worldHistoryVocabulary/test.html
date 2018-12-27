@@ -37,12 +37,12 @@
     </button>
   </body>
   <script>
-    var target = document.getElementsByTagName("div")[0];
+    var divElement = document.getElementsByTagName("div")[0];
     function animate() {
-      if (target.dataset.animated === "true") {
-        target.dataset.animated = "false";
+      if (divElement.dataset.animated === "true") {
+        divElement.dataset.animated = "false";
       } else {
-        target.dataset.animated = "true";
+        divElement.dataset.animated = "true";
       };
     };
   </script>
