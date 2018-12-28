@@ -32,13 +32,13 @@
   <body>
     <div>
     </div>
-    <button onclick="animate()">
+    <button onclick="playAnimation()">
       Animate
     </button>
   </body>
   <script>
     var divElement = document.getElementsByTagName("div")[0];
-    function animate() {
+    function playAnimation() {
       if (divElement.dataset.animated === "true") {
         divElement.dataset.animated = "false";
       } else {
