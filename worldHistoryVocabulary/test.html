@@ -46,10 +46,19 @@
         divElement.dataset.animated = "true";
       };
       */
+      /*
       if (divElement.dataset.animated === "true") {
         divElement.dataset.animated = "false";
       }
       divElement.dataset.animated = "true";
+      */
+      divElement.dataset.animated = "false";
+      window.setTimeout(
+        function() {
+          divElement.dataset.animated = "true";
+        },
+        100
+      );
     };
   </script>
 </html>
