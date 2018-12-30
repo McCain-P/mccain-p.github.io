@@ -39,11 +39,17 @@
   <script>
     var divElement = document.getElementsByTagName("div")[0];
     function playAnimation() {
+      /*
       if (divElement.dataset.animated === "true") {
         divElement.dataset.animated = "false";
       } else {
         divElement.dataset.animated = "true";
       };
+      */
+      if (divElement.dataset.animated === "true") {
+        divElement.dataset.animated = "false";
+      }
+      divElement.dataset.animated = "true";
     };
   </script>
 </html>
