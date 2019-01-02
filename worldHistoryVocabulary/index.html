@@ -289,10 +289,10 @@
         /*
         document.getElementById("image" + suffix).style.animationPlayState = "running";
         */
-        divElement.dataset.animated = "false";
+        document.getElementById("image" + suffix).dataset.animated = "false";
         window.setTimeout(
           function() {
-            divElement.dataset.animated = "true";
+            document.getElementById("image" + suffix).dataset.animated = "true";
           },
           100
         );
