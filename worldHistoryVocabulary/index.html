@@ -284,9 +284,15 @@
         );
       };
     };
+    function clearInputField(event) {
+      var inputField = event.target;
+      inputField.value = "";
+    };
     document.getElementById("connect").addEventListener("click", connect);
     document.getElementById("wordA").addEventListener("input", updateWord);
     document.getElementById("wordB").addEventListener("input", updateWord);
+    document.getElementById("wordA").addEventListener("click", clearInputField);
+    document.getElementById("wordB").addEventListener("click", clearInputField);
     
     /*
     Data-matrix positions (indexes):
