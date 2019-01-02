@@ -270,16 +270,27 @@
       if (n !== null) {
         var suffix = updatedElement.id.slice(-1);
         document.getElementById("description" + suffix).innerHTML = jsonData["connections"][n][n];
+        /*
         //Remove and re-add image element:
         var imgParentNode = document.getElementById("image" + suffix).parentNode;
         imgParentNode.removeChild(document.getElementById("image" + suffix));
         var recreatedImg = document.createElement("img");
         recreatedImg.id = "image" + suffix;
         imgParentNode.appendChild(recreatedImg);
+        */
         document.getElementById("image" + suffix).dataset.updatedSrc = "resources/images/" + n + ".png";
         var dataUpdatedSrc = document.getElementById("image" + suffix).dataset.updatedSrc;
         document.getElementById("image" + suffix).style.setProperty("--updatedSrc", "url(\"" + dataUpdatedSrc + "\")");
+        /*
         document.getElementById("image" + suffix).style.animationPlayState = "running";
+        */
+        document.getElementById("image" + suffix).style.animationPlayState = "paused";
+        window.setTimeout(
+        function() {
+          document.getElementById("image" + suffix).style.animationPlayState = "running";
+        },
+        100
+      );
       };
     };
     document.getElementById("connect").addEventListener("click", connect);
