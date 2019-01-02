@@ -134,7 +134,12 @@
         background-repeat: no-repeat;
         background-origin: content-box;
         background-clip: content-box;
+        /*
         animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards paused updateTransition;
+        */
+      }
+      img[data-animated="true"] {
+        animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards running updateTransition;
       }
       #imageA {
         left: 5%;
@@ -284,13 +289,13 @@
         /*
         document.getElementById("image" + suffix).style.animationPlayState = "running";
         */
-        document.getElementById("image" + suffix).style.animationPlayState = "paused";
+        divElement.dataset.animated = "false";
         window.setTimeout(
-        function() {
-          document.getElementById("image" + suffix).style.animationPlayState = "running";
-        },
-        100
-      );
+          function() {
+            divElement.dataset.animated = "true";
+          },
+          100
+        );
       };
     };
     document.getElementById("connect").addEventListener("click", connect);
