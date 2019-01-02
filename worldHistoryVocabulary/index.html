@@ -134,9 +134,6 @@
         background-repeat: no-repeat;
         background-origin: content-box;
         background-clip: content-box;
-        /*
-        animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards paused updateTransition;
-        */
       }
       img[data-animated="true"] {
         animation: 1s cubic-bezier(0.5, 0, 0.5, 1) 0s 1 normal forwards running updateTransition;
@@ -275,20 +272,9 @@
       if (n !== null) {
         var suffix = updatedElement.id.slice(-1);
         document.getElementById("description" + suffix).innerHTML = jsonData["connections"][n][n];
-        /*
-        //Remove and re-add image element:
-        var imgParentNode = document.getElementById("image" + suffix).parentNode;
-        imgParentNode.removeChild(document.getElementById("image" + suffix));
-        var recreatedImg = document.createElement("img");
-        recreatedImg.id = "image" + suffix;
-        imgParentNode.appendChild(recreatedImg);
-        */
         document.getElementById("image" + suffix).dataset.updatedSrc = "resources/images/" + n + ".png";
         var dataUpdatedSrc = document.getElementById("image" + suffix).dataset.updatedSrc;
         document.getElementById("image" + suffix).style.setProperty("--updatedSrc", "url(\"" + dataUpdatedSrc + "\")");
-        /*
-        document.getElementById("image" + suffix).style.animationPlayState = "running";
-        */
         document.getElementById("image" + suffix).dataset.animated = "false";
         window.setTimeout(
           function() {
