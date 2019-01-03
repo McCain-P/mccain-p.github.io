@@ -1,7 +1,7 @@
 {
   "connections": [
-    ["A chain of islands.", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-    ["", "Powerful landowning nobles in Japan who were loyal to the shogun.", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["A chain of islands.", "The geography of Japan's archipelago allowed the daimyos to stay in power, seperated and isolated in the regions they controlled.", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+    ["The geography of Japan's archipelago allowed the daimyos to stay in power, seperated and isolated in the regions they controlled.", "Powerful landowning nobles in Japan who were loyal to the shogun.", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
     ["", "", "A system that required conquered Christian communities to give their sons to the Ottoman government as a form of tax.", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
     ["", "", "", "A command from a government.", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
     ["", "", "", "", "A group of once separate areas ruled by a single person or government.", "", "", "", "", "", "", "", "", "", "", "", "", ""],
