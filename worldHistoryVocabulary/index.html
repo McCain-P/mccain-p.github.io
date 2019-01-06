@@ -258,6 +258,9 @@
       };
       if (matrixPosition[0] !== null && matrixPosition[1] !== null) {
         document.getElementById("connectionSentence").innerHTML = jsonData["connections"][matrixPosition[0]][matrixPosition[1]];
+        console.log(document.getElementById("connectionSentence").innerHTML);
+      } else {
+        console.log("null");
       };
     };
     function updateWord(event) {
