@@ -6,7 +6,7 @@
   <script>
     //var url = window.location.href.replace(/psd4o1.net/i, "psd401.net").replace(/^[^https:\/\/]/i, "https://");
     var url = window.prompt("URL:");
-    url = url.replace(/psd4o1.net/i, "psd401.net");
+    url = url.replace(/psd4o1.net/i, "psd401.net").replace(/^[^https:\/\/]/i, "https://");
     var httpRequest = new XMLHttpRequest();
     httpRequest.open("GET", url);
     httpRequest.responseType = "document";
