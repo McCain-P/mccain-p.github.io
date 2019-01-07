@@ -4,7 +4,7 @@
   <body>
   </body>
   <script>
-    //var url = window.location.href.replace(/psd4o1.net/i, "psd401.net");
+    //var url = window.location.href.replace(/psd4o1.net/i, "psd401.net").replace(/^[^https:\/\/]/i, "https://");
     var url = window.prompt("URL:");
     url = url.replace(/psd4o1.net/i, "psd401.net");
     var httpRequest = new XMLHttpRequest();
