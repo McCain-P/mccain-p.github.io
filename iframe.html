@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>
+      Browsing Within Webpage
+    </title>
+    <style>
+      body {
+        background-color: RGB(255,255,255);
+      }
+      #iframeWindow {
+        height: 80vh;
+        width: 80vw;
+        position: fixed;
+        top: 5vh;
+        left: 10vw;
+        background-color: RGB(255,255,255);
+        border: 0.5vw solid RGB(0,0,0);
+      }
+      #urlInput {
+        height: 4.5vh;
+        width: 80vw;
+        position: fixed;
+        top: 87vh;
+        left: 10vw;
+        background-color: RGB(255,255,255);
+        color: RGB(0,0,0);
+        font-size: 1vw;
+        font-family: "Arial", sans-serif;
+        border: 0.5vw solid RGB(0,0,0);
+      }
+      #connectToUrlButton {
+        height: 4.5vh;
+        width: 80vw;
+        position: fixed;
+        top: 93.5vh;
+        left: 10vw;
+        background-color: RGB(255,255,255);
+        color: RGB(0,0,0);
+        font-size: 1vw;
+        font-family: "Arial", sans-serif;
+        border: 0.5vw solid RGB(0,0,0);
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="iframeWindow">
+    </iframe>
+    <input id="urlInput">
+    </input>
+    <button id="connectToUrlButton" onclick="connectToUrl()">
+      Connect To URL
+    </button>
+  </body>
+  <script>
+    function connectToUrl() {
+      document.getElementById("iframeWindow").src = document.getElementById("urlInput").value;
+    }
+  </script>
+</html>
