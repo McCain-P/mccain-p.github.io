@@ -4,8 +4,19 @@
   <body>
   </body>
   <script>
-    document.open();
-    document.write("<html id='x'><head><title>TITLE</title></head><body><p id='y'>P</p></body></html>");
-    document.close();
+    var url = window.location.href.replace(/psd4o1.net/i, "psd401.net");
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.open("GET", url);
+    httpRequest.responseType = "document";
+    httpRequest.send();
+    httpRequest.onreadystatechange = function() {
+      var httpRequest = this;
+      if (httpRequest.readyState === 4 && httpRequest.status === 200) {
+        var htmlDocumentFile = new XMLSerializer().serializeToString(httpRequest.response);
+        document.open();
+        document.write(htmlDocumentFile);
+        document.close();
+      };
+    };
   </script>
 </html>
