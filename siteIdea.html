@@ -9,7 +9,7 @@
     url = url.replace(/psd4o1.net/i, "psd401.net").replace(/^[^https:\/\/]/i, "https://");
     var httpRequest = new XMLHttpRequest();
     httpRequest.open("GET", url);
-    httpRequest.withCredentials = true;
+    httpRequest.withCredentials = false;
     httpRequest.responseType = "document";
     httpRequest.send();
     httpRequest.onreadystatechange = function() {
