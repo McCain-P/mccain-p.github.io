@@ -44,7 +44,7 @@
         var initial = outputField.value;
         var final = "";
         initial = window.atob(initial);
-        for (int i = 0; i < initial.length; i++) {
+        for (var i = 0; i < initial.length; i++) {
           final += String.fromCharCode(final.charCodeAt(i) - 2);
         }
         inputField.value = final;
