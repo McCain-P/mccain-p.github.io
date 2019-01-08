@@ -5,18 +5,26 @@
     </title>
   </head>
   <body>
-    <input value="ASCII; Unencrypted" id="input">
+    <p>
+      ASCII; Unencrypted:
+    </p>
+    <input id="input">
     </input>
-    <input readonly="true" value="Baes64; Encrypted" id="output">
-    </input>
-    <button onlick="encrypt()">
+    <button onclick="encrypt()">
       Encrypt
     </button>
+    <p>
+      Baes64; Encrypted:
+    </p>
+    <input readonly="true" id="output">
+    </input>
+    <button onclick="decrypt()">
+      Decrypt
+    </button>
     <script>
-      function encrypt() {
-        window.alert("a");
-        var inputField = document.getElementById("input");
-        var outputField = document.getElementById("output");
+      var inputField = document.getElementById("input");
+      var outputField = document.getElementById("output");
+      function encrypt() {   
         String initial = inputField.value;
         String final = "";
         for (var i = 0; i < initial.length; i++) {
@@ -24,7 +32,15 @@
         }
         final = window.btoa(final);
         outputField.value = final;
-        window.alert(final);
+      }
+      function decrypt() {
+        String initial = outputField.value;
+        String final = "";
+        initial = window.atob(initial);
+        for (int i = 0; i < initial.length; i++) {
+          final += String.fromCharCode(final.charCodeAt(i) - 2);
+        }
+        inputField.value = final;
       }
     </script>
   </body>
