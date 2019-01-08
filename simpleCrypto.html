@@ -32,8 +32,8 @@
       var outputField = document.getElementById("output");
       function encryptInput() {
         window.alert("a");
-        String initial = inputField.value;
-        String final = "";
+        var initial = inputField.value;
+        var final = "";
         for (var i = 0; i < initial.length; i++) {
           final += String.fromCharCode(initial.charCodeAt(i) + 2);
         }
@@ -41,8 +41,8 @@
         outputField.value = final;
       }
       function decryptOutput() {
-        String initial = outputField.value;
-        String final = "";
+        var initial = outputField.value;
+        var final = "";
         initial = window.atob(initial);
         for (int i = 0; i < initial.length; i++) {
           final += String.fromCharCode(final.charCodeAt(i) - 2);
