@@ -10,7 +10,7 @@
     </p>
     <input id="input">
     </input>
-    <button onclick="encrypt();">
+    <button onclick="encryptInput();">
       Encrypt
     </button>
     <p>
@@ -18,7 +18,7 @@
     </p>
     <input readonly="true" id="output">
     </input>
-    <button onclick="decrypt();">
+    <button onclick="decryptOutput();">
       Decrypt
     </button>
     <script>
@@ -29,7 +29,7 @@
       */
       var inputField = document.getElementById("input");
       var outputField = document.getElementById("output");
-      function encrypt() {
+      function encryptInput() {
         window.alert("a");
         String initial = inputField.value;
         String final = "";
@@ -39,7 +39,7 @@
         final = window.btoa(final);
         outputField.value = final;
       }
-      function decrypt() {
+      function decryptOutput() {
         String initial = outputField.value;
         String final = "";
         initial = window.atob(initial);
