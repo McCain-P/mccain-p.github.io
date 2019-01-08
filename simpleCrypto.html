@@ -62,15 +62,12 @@
         outputField.value = final;
       }
       function decryptOutput() {
-        window.alert("decryptOutput() successfully called");
         var initial = outputField.value;
         var final = "";
         initial = window.atob(initial);
         for (var i = 0; i < initial.length; i++) {
-          final += String.fromCharCode(final.charCodeAt(i) - 2);
-          window.alert(i + " = " + final);
+          final += String.fromCharCode(initial.charCodeAt(i) - 2);
         }
-        window.alert("final = " + final);
         inputField.value = final;
       }
     </script>
