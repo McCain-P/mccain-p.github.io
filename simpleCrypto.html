@@ -22,6 +22,11 @@
       Decrypt
     </button>
     <script>
+      /*
+      Cryptography method:
+      1. Encryption via a Caesar cypher that converts the ASCII characters to their decimal values and shifts them by +2
+      2. Encoding via ASCII to base64
+      */
       var inputField = document.getElementById("input");
       var outputField = document.getElementById("output");
       function encrypt() {
