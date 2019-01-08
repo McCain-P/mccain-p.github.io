@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>
+      Simple Crypto
+    </title>
+  </head>
+  <body>
+    <input id="input">
+    </input>
+    <input readonly="true" id="output">
+    </input>
+    <button onlick="encrypt()">
+      Encrypt
+    </button>
+    <script>
+      function encrypt() {
+        var inputField = document.getElementById("input");
+        var outputField = document.getElementById("output");
+        String initial = inputField.value;
+        String final = "";
+        for (var i = 0; i < initial.length; i++) {
+          final += String.fromCharCode(initial.charCodeAt(i) + 2);
+        }
+        final = window.btoa(final);
+        outputField.value = final;
+      }
+    </script>
+  </body>
