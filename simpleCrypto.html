@@ -14,6 +14,7 @@
     </button>
     <script>
       function encrypt() {
+        window.alert("a");
         var inputField = document.getElementById("input");
         var outputField = document.getElementById("output");
         String initial = inputField.value;
@@ -23,6 +24,7 @@
         }
         final = window.btoa(final);
         outputField.value = final;
+        window.alert(final);
       }
     </script>
   </body>
