@@ -31,9 +31,11 @@
     function encodeStuff() {
       var file = document.getElementById("fileInput").files[0];
       var fileReader = new FileReader();
-      var base64EncodedFiledata = fileReader.readAsDataURL(file);
-      window.alert(base64EncodedFiledata);
-      document.getElementById("base64FileData").value = base64EncodedFiledata;
+      fileReader.readAsDataURL(file);
+      fileReader.addEventListener("load", function() {
+        document.getElementById("base64FileData").value = fileReader.result;
+      });
+      
     };
     function downloadBase64File() {
       window.open(document.getElementById("base64FileData").value);
