@@ -8,7 +8,7 @@
     <p>
       File to encode as base64 data:
     </p>
-    <input type="file">
+    <input type="file" id="fileInput">
     </input>
     <button id="encode" onclick="encodeStuff();">
       Encode File as Base64
@@ -18,14 +18,26 @@
     </p>
     <textarea id="base64FileData">
     </textarea>
-    <button id="decode" onclick="decodeStuff();">
-      Decode Base64 as File
-    </button>
     <button id="downloadBase64File" onclick="downloadBase64File();">
       Download File
     </button>
+    <button id="viewFiledataAsImage" onclick="viewFiledataAsImage();">
+      View File-Data As Image
+    </button>
+    <img id="filedataImage">
+    </img>
   </body>
   <script>
-  
+    function encodeStuff() {
+      var file = document.getElementById("fileInput").files[0];
+      var base64EncodedFiledata = new FileReader().readAsDataURL(file);
+      document.getElementById("base64FileData").value = base64EncodedFiledata;
+    };
+    function downloadBase64File() {
+      window.open(document.getElementById("base64FileData").value);
+    };
+    function viewFiledataAsImage() {
+      document.getElementById("filedataImage").src = document.getElementById("base64FileData").value;
+    };
   </script>
 </html>
