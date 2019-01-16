@@ -10,12 +10,19 @@
     </p>
     <input type="file">
     </input>
+    <button id="encode" onclick="encodeStuff();">
+      Encode File as Base64
+    </button>
     <p>
       Base64-encoded file-data:
     </p>
     <textarea id="base64FileData">
     </textarea>
-    <button id="downloadBase64File">
+    <button id="decode" onclick="decodeStuff();">
+      Decode Base64 as File
+    </button>
+    <button id="downloadBase64File" onclick="downloadBase64File();">
+      Download File
     </button>
   </body>
   <script>
