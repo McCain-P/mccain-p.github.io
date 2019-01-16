@@ -30,7 +30,9 @@
   <script>
     function encodeStuff() {
       var file = document.getElementById("fileInput").files[0];
+      window.alert(file);
       var base64EncodedFiledata = new FileReader().readAsDataURL(file);
+      window.alert(base64EncodedFiledata);
       document.getElementById("base64FileData").value = base64EncodedFiledata;
     };
     function downloadBase64File() {
