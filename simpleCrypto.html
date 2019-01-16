@@ -7,7 +7,7 @@
       body {
         background-color: RGB(0,0,0);
       }
-      body p, body textarea, body button, body h1, body h2 {
+      body label, body textarea, body button, body h1, body h2 {
         color: RGB(255,255,255);
         font-family: "Consolas", monospace;
       }
@@ -18,27 +18,41 @@
       body *::selection {
         background-color: RGB(128,128,128);
       }
+      body * {
+        margin: 0;
+        padding: 0;
+      }
+      #title {
+        font-size: 5vh;
+        top: 5vh;
+        left: 5vh;
+      }
+      #subtitle {
+        font-size: 2.5vh;
+        top: 8vh;
+        left: 5vh;
+      }
     </style>
   </head>
   <body>
-    <h1>
+    <h1 id="title">
       Simple Encryption Method
     </h1>
-    <h2>
+    <h2 id="subtitle">
       Using Caesar Cipher encryption and Base64 encoding
     </h2>
-    <p>
+    <label for="input" id="inputCaption">
       ASCII; Unencrypted:
-    </p>
+    </label>
     <textarea id="input"></textarea>
-    <button onclick="encryptInput();">
+    <button onclick="encryptInput();" id="encryptButton">
       Encrypt
     </button>
-    <p>
+    <label for="output" id="outputCaption">
       Base64; Encrypted:
-    </p>
+    </label>
     <textarea id="output"></textarea>
-    <button onclick="decryptOutput();">
+    <button onclick="decryptOutput();" id="decryptButton">
       Decrypt
     </button>
   </body>
