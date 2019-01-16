@@ -18,11 +18,8 @@
     </p>
     <textarea id="base64FileData"></textarea>
     <button id="downloadBase64File" onclick="downloadBase64File();">
-      Set Up File-Download
-    </button>
-    <a id="fileHref">
       Download File
-    </a>
+    </button>
     <button id="viewFiledataAsImage" onclick="viewFiledataAsImage();">
       View File-Data As Image
     </button>
@@ -39,8 +36,7 @@
       fileReader.readAsDataURL(file);
     };
     function downloadBase64File() {
-      //window.open(document.getElementById("base64FileData").value);
-      document.getElementById("fileHref").href = document.getElementById("base64FileData").value;
+      window.open(document.getElementById("base64FileData").value);
     };
     function viewFiledataAsImage() {
       document.getElementById("filedataImage").src = document.getElementById("base64FileData").value;
