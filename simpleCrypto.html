@@ -7,11 +7,11 @@
       body {
         background-color: RGB(0,0,0);
       }
-      body p, body input, body button, body h1, body h2 {
+      body p, body textarea, body button, body h1, body h2 {
         color: RGB(255,255,255);
         font-family: "Consolas", monospace;
       }
-      input, button {
+      textarea, button {
         background-color: RGB(0,0,0);
         border: 0.5vh solid RGB(255,255,255);
       }
@@ -30,16 +30,14 @@
     <p>
       ASCII; Unencrypted:
     </p>
-    <textarea id="input">
-    </textarea>
+    <textarea id="input"></textarea>
     <button onclick="encryptInput();">
       Encrypt
     </button>
     <p>
       Base64; Encrypted:
     </p>
-    <textarea id="output">
-    </textarea>
+    <textarea id="output"></textarea>
     <button onclick="decryptOutput();">
       Decrypt
     </button>
