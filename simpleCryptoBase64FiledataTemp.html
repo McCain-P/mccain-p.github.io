@@ -31,11 +31,10 @@
     function encodeStuff() {
       var file = document.getElementById("fileInput").files[0];
       var fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
       fileReader.addEventListener("load", function() {
         document.getElementById("base64FileData").value = fileReader.result;
       });
-      
+      fileReader.readAsDataURL(file);
     };
     function downloadBase64File() {
       window.open(document.getElementById("base64FileData").value);
