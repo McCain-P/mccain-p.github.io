@@ -27,6 +27,9 @@
   </body>
   <script>
     var time = new Date(Date.now()).toISOString() - new Date("2019-02-14T00:00:00");
+    console.log(new Date(Date.now()).toISOString());
+    console.log(new Date("2019-02-14T00:00:00"));
+    console.log(time);
     document.getElementById("time").innerHTML = time;
   </script>
 </html>
