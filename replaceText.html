@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>
+      Replace Text
+    </title>
+  </head>
+  <body>
+    <textarea id="input"></textarea>
+    <textarea id="output"></textarea>
+    <label for="inputString">
+      Replace
+    </label>
+    <input id="inputString">
+    </input>
+    <label for="outputString">
+      With
+    </label>
+    <input id="outputString">
+    </input>
+    <button id="replaceTextButton">
+      Replace Text
+    </button>
+  </body>
+  <script>
+    function replaceText() {
+      var input = document.getElementById("input").value;
+      var inputString = document.getElementById("inputString").value;
+      var outputString = document.getElementById("outputString").value;
+      var replacementRegex = new RegExp(inputString, "g");
+      var output = input.replace(replacementRegex, outputString);
+      document.getElementById("output").value = output;
+    };
+    document.getElementById("replaceTextButton").addEventListener("click", replaceText);
+  </script>
+</html>
