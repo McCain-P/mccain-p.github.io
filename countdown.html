@@ -26,6 +26,7 @@
     </h1>
   </body>
   <script>
-    document.getElementById("time").innerHTML = new Date(Date.now()).toISOString();
+    var time = new Date(Date.now()).toISOString() - new Date("2019-02-14T00:00:00");
+    document.getElementById("time").innerHTML = time;
   </script>
 </html>
