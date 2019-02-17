@@ -23,6 +23,17 @@
     </audio>
   </body>
   <script>
-    
+    var voiceline0 = document.getElementById("voiceline0");
+    var voiceline1 = document.getElementById("voiceline1");
+    var n = 0;
+    function voiceline() {
+      n = Math.random();
+      if (n < 0.5) {
+        voiceline0.play();
+      } else {
+        voiceline1.play();
+      }
+    };
+    window.setInterval(voiceline, 2000);
   </script>
 </html>
