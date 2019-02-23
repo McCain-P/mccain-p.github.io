@@ -13,7 +13,7 @@
         position: fixed;
         top: 50vh;
         left: 50vw;
-        transform: translateX(-50%, -50%);
+        transform: translate(-50%, -50%);
       }
     </style>
   </head>
@@ -25,7 +25,7 @@
     var dominoExample = document.getElementById("dominoExample");
     var n = [0, 0];
     var dominoExampleInterval = window.setInterval(function() {
-      dominoExample.src = "domino" + n[0] + n[1];
+      dominoExample.src = "domino" + n[0] + n[1] + ".svg";
       if (n[0] !== 6 || n[1] !== 6) {
         if (n[1] !== 6) {
             n[1]++;
