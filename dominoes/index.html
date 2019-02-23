@@ -7,6 +7,13 @@
       body {
         background-color: RGB(128,128,128);
       }
+      body * {
+        margin: 0;
+        padding: 0;
+      }
+      body *:focus {
+        outline: none;
+      }
       #dominoExample {
         height: 75vh;
         width: auto;
@@ -22,6 +29,12 @@
         border-radius: 12.5% 12.5% 12.5% 12.5% / 25% 25% 25% 25%;
         color: RGB(0,0,0);
         font-family: "Arial", sans-serif;
+      }
+      .dominoButton:hover {
+        background-color: RGB(192,192,192);
+      }
+      .dominoButton:active {
+        background-color: RGB(128,128,128);
       }
       #dominoExampleAnimationButton {
         width: 20vw;
