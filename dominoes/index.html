@@ -4,11 +4,37 @@
       Dominoes
     </title>
     <style>
-    
+      #dominoExample {
+        height: 75vh;
+        width: auto;
+        position: fixed;
+        top: 50vh;
+        left: 50vw;
+        transform: translateX(-50%, -50%);
+      }
     </style>
   </head>
   <body>
-    <img class="domino">
+    <img class="domino" id="dominoExample">
     </img>
   </body>
+  <script>
+    var dominoExample = document.getElementById("dominoExample");
+    var n = [0, 0];
+    var dominoExampleInterval = window.setInterval(function() {
+      dominoExample.src = "domino" + n[0] + n[1];
+      if (n[0] !== 6 || n[1] !== 6) {
+        if (n[1] !== 6) {
+            n[1]++;
+        } else {
+            n[0]++;
+            n[1] = 0;
+        };
+      } else {
+        n[0] = 0;
+        n[1] = 0;
+        window.clearInterval(dominoExampleInterval);
+      };
+    }, 500);
+  </script>
 </html>
