@@ -15,11 +15,31 @@
         left: 50vw;
         transform: translate(-50%, -50%);
       }
+      .dominoButton {
+        background-color: RGB(255,255,255);
+        border-style: solid;
+        border-color: RGB(0,0,0);
+        border-radius: ???;
+        color: RGB(0,0,0);
+        font-family: "Arial", sans-serif;
+      }
+      #dominoExampleAnimationButton {
+        width: 20vw;
+        height: 10vw;
+        position: fixed;
+        bottom: 5vw;
+        right: 5vw;
+        border-width: 0.5vw;
+        font-size: 0.5vw;
+      }
     </style>
   </head>
   <body>
     <img class="domino" id="dominoExample">
     </img>
+    <button class="dominoButton" id="dominoExampleAnimationButton">
+      Animation
+    </button>
   </body>
   <script>
     var dominoExample = document.getElementById("dominoExample");
@@ -39,5 +59,7 @@
         //window.clearInterval(dominoExampleInterval);
       };
     }, 500);
+    var dominoExampleAnimationButton = document.getElementById("dominoExampleAnimationButton");
+    dominoExampleAnimationButton.addEventListener
   </script>
 </html>
