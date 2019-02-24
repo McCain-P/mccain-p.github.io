@@ -45,7 +45,18 @@
         font-size: 3vw;
       }
       @keyframes dominoAnimation {
-        
+        0% {
+          transform: rotate(0deg), scale(1);
+        }
+        calc(100% / 3) {
+          transform: rotate(120deg), scale(calc(2 / 3));
+        }
+        calc(200% / 3) {
+          transform: rotate(240deg), scale(1.5);
+        }
+        100% {
+          transform: rotate(0deg), scale(1);
+        }
       }
     </style>
   </head>
