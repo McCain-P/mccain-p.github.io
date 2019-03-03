@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>
+      Prime Number Sequence
+    </title>
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    <p id="primes">
+    </p>
+  </body>
+  <script>
+    var primes = document.getElementById("primes");
+    var n = 0;
+    var primality = false;
+    function primeGeneration() {
+      primality = false;
+      while (!primality) {
+        n++;
+        primality = true;
+        for (var i = 2; i < Math.round(Math.sqrt(n)); i++) {
+          if (n % i === 0) {
+            primality = false;
+            break;
+          };
+        };
+      };
+      primes.innerHTML += "<br>" + n.toString();
+    };
+  </script>
+</html>
