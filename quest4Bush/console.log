@@ -1,0 +1,213 @@
+//-------------------------- 1/11/2019 -- 07:23:00 -----
+Processor Init:
+   Intel (unknown, Pentium Pro/II/III family), ~1.60 Ghz
+     (timed at roughly 1.61 Ghz)
+   FPU detected
+   MMX detected
+   SSE detected
+ 
+Math Init:
+   Installing Standard C extensions
+   Installing Assembly extensions
+   Installing FPU extensions
+   Installing MMX extensions
+   Installing SSE extensions
+ 
+Input Init:
+   keyboard0 input device created.
+   mouse0 input device created.
+   DirectInput enabled.
+
+--------- Loading MODS ---------
+Missing file: common/defaults.cs!
+
+--------- Parsing Arguments ---------
+
+--------- Initializing MOD: Common ---------
+
+--------- Initializing MOD: FPS ---------
+Missing file: fps/data/init.cs!
+
+--------- Initializing FPS: Server ---------
+
+--------- Initializing FPS: Client ---------
+Missing file: common/editor/editor.cs!
+Video Init:
+   Accelerated OpenGL display device detected.
+   Accelerated D3D device not detected.
+   Voodoo 2 display device not detected.
+
+Activating the OpenGL display device...
+Activating the OpenGL display device...
+Setting screen mode to 640x480x32 (w)...
+Creating a new window...
+Acquiring a new device context...
+Pixel format set:
+  32 color bits, 24 depth bits, 8 stencil bits
+Creating a new rendering context...
+Making the new rendering context current...
+Setting screen mode to 1280x720x32 (fs)...
+Killing the texture manager...
+Making the rendering context not current...
+Deleting the rendering context...
+Releasing the device context...
+Destroying the window...
+Changing the display settings to 1280x720x32...
+Creating a new full-screen window...
+Acquiring a new device context...
+Pixel format set:
+  32 color bits, 24 depth bits, 8 stencil bits
+Creating a new rendering context...
+Making the new rendering context current...
+Resurrecting the texture manager...
+OpenGL driver information:
+  Vendor: Intel Open Source Technology Center
+  Renderer: Mesa DRI Intel(R) HD Graphics 510 (Skylake GT1) x86/MMX/SSE2
+  Version: 3.0 Mesa 18.2.2
+OpenGL Init: Enabled Extensions
+  ARB_multitexture (Max Texture Units: 8)
+  EXT_compiled_vertex_array
+  EXT_texture_env_combine
+  EXT_packed_pixels
+  EXT_fog_coord
+  ARB_texture_compression
+  EXT_texture_compression_s3tc
+  3DFX_texture_compression_FXT1
+  (ARB|EXT)_texture_env_add
+  EXT_texture_filter_anisotropic (Max anisotropy: 16.000000)
+  WGL_EXT_swap_control
+OpenGL Init: Disabled Extensions
+  EXT_paletted_texture
+  NV_vertex_array_range
+  NPatch tessellation
+
+Missing file: common/ui/GuiEditorGui.gui!
+
+OpenAL Driver Init:
+OpenAL
+   Vendor: Creative Labs Inc.
+   Version: OpenAL 1.0
+   Renderer: Software
+   Extensions: EAX 2.0, EAX 3.0, EAX Unified, and EAX-AC3
+
+Missing file: fps/client/ui/devSplash2Gui.gui!
+Missing file: fps/client/ui/aboutDlg.gui!
+Missing file: fps/client/scripts/devSplash2Gui.cs!
+Engine initialized...
+Playing avi intro
+**** Destroying server
+Exporting server prefs...
+... Shape with old version.
+ParticleData(ChaingunFireParticle) times[3] < times[2]
+ParticleData(ChaingunExplosionParticle) times[3] < times[2]
+ParticleData(ShotgunExplosionParticle) times[3] < times[2]
+Validation required for shape: fps/data/shapes/player/player.dts
+Validation required for shape: fps/data/shapes/player/iraqiSoldier.dts
+Validation required for shape: fps/data/shapes/player/saddam.dts
+Warning: shape fps/data/shapes/door/poleDoor.dts collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape fps/data/shapes/door/slidedoor.dts collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape fps/data/shapes/misc/drum4.dts collision detail 0 (Collision-8) bounds exceed that of shape.
+fps/server/scripts/camel.cs (0): preload failed for SaddamStatue: ShapeBaseData: Couldn't load shape "fps/data/shapes/misc/saddamstatue.dts".
+*** LOADING MISSION: fps/data/missions/qfhl6.mis
+*** Stage 1 load
+*** Stage 2 load
+Object 'xSaddamExitTrigger' is not a member of the 'GameBaseData' data block class
+fps/data/missions/qfhl6.mis (0): Register object failed for object exitMapTrigger.
+Object 'xToiletDoor' is not a member of the 'GameBaseData' data block class
+fps/data/missions/qfhl6.mis (0): Register object failed for object (null).
+*** Mission loaded
+Connect request from: IPX:2F000000:30000000DC33:296
+Connection established 1539
+CADD: 1540 local
+*** Sending mission load to client: fps/data/missions/qfhl6.mis
+*** New Mission: fps/data/missions/qfhl6.mis
+*** Phase 1: Download Datablocks & Targets
+Could not locate texture: fps/data/shapes/player/base.lmale
+Could not locate texture: fps/data/shapes/player/base.lmale
+Validation required for shape: fps/data/shapes/player/player.dts
+Could not locate texture: fps/data/shapes/player/base.lmale
+Could not locate texture: fps/data/shapes/player/base.lmale
+Validation required for shape: fps/data/shapes/player/iraqiSoldier.dts
+Could not locate texture: fps/data/shapes/player/base.lmale
+Could not locate texture: fps/data/shapes/player/base.lmale
+Validation required for shape: fps/data/shapes/player/saddam.dts
+Warning: shape fps/data/shapes/door/poleDoor.dts collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape fps/data/shapes/door/slidedoor.dts collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape fps/data/shapes/misc/drum4.dts collision detail 0 (Collision-8) bounds exceed that of shape.
+*** Phase 2: Download Ghost Objects
+*** Phase 3: Mission Lighting
+Mission lighting done
+cSetIsBetweenLevels Not between levels
+*** Initial Control Object
+fps/client/scripts/serverConnection.cs (37): Unable to find function Editor::checkActiveLoadDone
+Activating DirectInput...
+keyboard0 input device acquired.
+mouse0 input device acquired.
+**** Destroying server
+*** ENDING MISSION
+CDROP: 1540 IPX:2F000000:30000000DC33:296
+Exporting server prefs...
+Starting a new game...
+**** Destroying server
+Exporting server prefs...
+... Shape with old version.
+ParticleData(ChaingunFireParticle) times[3] < times[2]
+ParticleData(ChaingunExplosionParticle) times[3] < times[2]
+ParticleData(ShotgunExplosionParticle) times[3] < times[2]
+Validation required for shape: fps/data/shapes/player/player.dts
+Validation required for shape: fps/data/shapes/player/iraqiSoldier.dts
+Validation required for shape: fps/data/shapes/player/saddam.dts
+Warning: shape fps/data/shapes/door/poleDoor.dts collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape fps/data/shapes/door/slidedoor.dts collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape fps/data/shapes/misc/drum4.dts collision detail 0 (Collision-8) bounds exceed that of shape.
+fps/server/scripts/camel.cs (0): preload failed for SaddamStatue: ShapeBaseData: Couldn't load shape "fps/data/shapes/misc/saddamstatue.dts".
+*** LOADING MISSION: fps/data/missions/qfhl1.mis
+*** Stage 1 load
+*** Stage 2 load
+Object 'SaddamStatue' is not a member of the 'GameBaseData' data block class
+fps/data/missions/qfhl1.mis (0): Register object failed for object statue.
+TSStatic::onAdd: unable to load shape: fps/data/shapes/misc/mosquedome.dts
+fps/data/missions/qfhl1.mis (0): Register object failed for object (null).
+*** Mission loaded
+Connect request from: IPX:1D1D271F:1F2921212B20:10784
+Connection established 2224
+CADD: 2225 local
+*** Sending mission load to client: fps/data/missions/qfhl1.mis
+*** New Mission: fps/data/missions/qfhl1.mis
+*** Phase 1: Download Datablocks & Targets
+Could not locate texture: fps/data/shapes/player/base.lmale
+Could not locate texture: fps/data/shapes/player/base.lmale
+Validation required for shape: fps/data/shapes/player/player.dts
+Could not locate texture: fps/data/shapes/player/base.lmale
+Could not locate texture: fps/data/shapes/player/base.lmale
+Validation required for shape: fps/data/shapes/player/iraqiSoldier.dts
+Could not locate texture: fps/data/shapes/player/base.lmale
+Could not locate texture: fps/data/shapes/player/base.lmale
+Validation required for shape: fps/data/shapes/player/saddam.dts
+Warning: shape fps/data/shapes/door/poleDoor.dts collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape fps/data/shapes/door/slidedoor.dts collision detail 0 (Collision-1) bounds exceed that of shape.
+Warning: shape fps/data/shapes/misc/drum4.dts collision detail 0 (Collision-8) bounds exceed that of shape.
+*** Phase 2: Download Ghost Objects
+*** Phase 3: Mission Lighting
+Mission lighting done
+cIsBetweenLevels Not between levels
+*** Initial Control Object
+fps/client/scripts/serverConnection.cs (37): Unable to find function Editor::checkActiveLoadDone
+GuiMessageVectorCtrl::attach: overriding attachment
+GuiMessageVectorCtrl::attach: overriding attachment
+GuiMessageVectorCtrl::attach: overriding attachment
+**** Destroying server
+*** ENDING MISSION
+CDROP: 2225 IPX:1D1D271F:1F2921212B20:10784
+Exporting server prefs...
+Exporting client prefs
+Exporting server prefs
+Exporting client prefs
+Exporting server prefs
+Shutting down the OpenGL display device...
+Making the GL rendering context not current...
+Deleting the GL rendering context...
+Releasing the device context...
+Restoring the desktop display settings (1366x768x32)...
+keyboard0 input device unacquired.
+mouse0 input device unacquired.
