@@ -27,22 +27,22 @@
 				font-family: "AndaleMonoServer", "Andale Mono", "Arial", sans-serif;
 			}
 			.blueText {
-				
+				color: RGB(64,128,255);
 			}
 			.purpleText {
-				
+				color: RGB(96,0,192);
 			}
 			.whiteText {
-				
+				color: RGB(255,255,255);
 			}
 			.blueText::selection {
-				
+				background-color: RGB(96,0,192);
 			}
 			.purpleText::selection {
-				
+				background-color: RGB(64,128,255);
 			}
 			.whiteText::selection {
-				
+				background-color: RGB(64,128,255);
 			}
 			.banner {
 				width: 100vw;
@@ -74,7 +74,6 @@
 				left: calc(50vw - 30vh);
 			}
 			#organizationName {
-				color: RGB(96,0,192);
 				font-size: 2vh;
 				white-space: nowrap;
 				word-break: keep-all;
@@ -122,7 +121,7 @@
 		</div>
 		<img src="resources/stemClubLogo.svg" id="centralLogo">
 		</img>
-		<h1 id="organizationName">
+		<h1 class="purpleText" id="organizationName">
 			The Science, Technology, Engineering, and Mathematics Organization of Peninsula High School
 		</h1>
 		<div id="warholSilkscreen">
@@ -140,15 +139,7 @@
 	</body>
 	<script>
 		/*
-		grey -> white
-		.blueText
-		.purpleText
-		.whiteTest
-		:hover
-		purple
-		blue
-		blue
-		
+		white > grey
 		Encryption algorithm:
 		
 		Let value0 be the encrypted data, value be the decrypted data, key be the decryption key, key0 be the decryption key of possibly invalid length, b(n) be the bitlength of n, a XOR b be the bitwise exclusive-or operation between a and b, a PAD b be the bitwise padding of a to be of bitlength b, and all numbers be binary.
