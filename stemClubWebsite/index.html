@@ -94,26 +94,33 @@
 				top: 35vh;
 				left: calc(50vw - 27.5vh);
 			}
-			.silkScreenImage {
+			.silkscreenSection {
 				height: 50%;
 				width: 50%;
 				position: absolute;
 			}
-			#silkscreenImage0 {
+			#silkscreenSection0 {
 				top: 0;
 				left: 0;
 			}
-			#silkscreenImage1 {
+			#silkscreenSection1 {
 				top: 0;
 				right: 0;
 			}
-			#silkscreenImage2 {
+			#silkscreenSection2 {
 				bottom: 0;
 				left: 0;
 			}
-			#silkscreenImage3 {
+			#silkscreenSection3 {
 				bottom: 0;
 				right: 0;
+			}
+			.silkscreenImage {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
 		</style>
 	</head>
@@ -128,14 +135,22 @@
 			The Science, Technology, Engineering, and Mathematics Organization of Peninsula High School
 		</h1>
 		<div id="warholSilkscreen">
-			<img src="resources/silkscreen0.svg" class="silkscreenImage" id="silkscreenImage0">
-			</img>
-			<img src="resources/silkscreen1.svg" class="silkscreenImage" id="silkscreenImage1">
-			</img>
-			<img src="resources/silkscreen2.svg" class="silkscreenImage" id="silkscreenImage2">
-			</img>
-			<img src="resources/silkscreen3.svg" class="silkscreenImage" id="silkscreenImage3">
-			</img>
+			<div class="silkscreenSection" id="silkscreenSection0">
+				<img src="resources/silkscreen0.svg" class="silkscreenImage" id="silkscreenImage0">
+				</img>
+			</div>
+			<div class="silkscreenSection" id="silkscreenSection1">
+				<img src="resources/silkscreen1.svg" class="silkscreenImage" id="silkscreenImage1">
+				</img>
+			</div>
+			<div class="silkscreenSection" id="silkscreenSection2">
+				<img src="resources/silkscreen2.svg" class="silkscreenImage" id="silkscreenImage2">
+				</img>
+			</div>			
+			<div class="silkscreenSection" id="silkscreenSection3">
+				<img src="resources/silkscreen3.svg" class="silkscreenImage" id="silkscreenImage3">
+				</img>
+			</div>
 		</div>
 		<div class="banner" id="footer">
 		</div>
