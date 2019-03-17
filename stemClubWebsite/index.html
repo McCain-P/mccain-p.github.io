@@ -133,7 +133,7 @@
 		
 		Encryption algorithm:
 		
-		Let value0 be the unencrypted data, value be the encrypted data, key be the decryption key, key0 be the decryption key of possibly invalid length, b(n) be the bitlength of n, a XOR b be the bitwise exclusive-or operation between a and b, a PAD b be the bitwise padding of a to be of bitlength b, and all numbers be binary.
+		Let value0 be the encrypted data, value be the decrypted data, key be the decryption key, key0 be the decryption key of possibly invalid length, b(n) be the bitlength of n, a XOR b be the bitwise exclusive-or operation between a and b, a PAD b be the bitwise padding of a to be of bitlength b, and all numbers be binary.
 		If key0 has a lesser bitlength than key, key0 is padded with 0s to the left of it. If key0 has a greater bitlength than key, a modulus operation is used. This unsures that key and value have the same bitlength.
 		Given that
 		⎧ b(key0) < b(key) → key = pad(key0, b(key))
@@ -143,6 +143,9 @@
 		key = (key0 % (2 ^ b(key))) PAD b(key)
 		
 		The encryption algorithm works for values of any bitlength.
+		The encryption algorithm after the conversion of key0 to key is defined as follows:
+		value = value0 XOR key
+		
 		*/
 	</script>
 </html>
