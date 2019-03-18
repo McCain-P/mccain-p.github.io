@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<style>
+			body {
+				background-color: RGB(0,0,0);
+			}
+			#txt {
+				color: RGB(0,255,0);
+				font-family: "Consolas", "Menlo", monospace;
+				font-size: 4vh;
+				height: 100vh;
+				width: 100vw;
+				font-align: left;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+		</p>
+	</body>
+	<script>
+		var txt = document.getElementById("txt");
+		var n = 0;
+		function binary() {
+			n = Math.round(Math.random())
+			txt.innerHTML += n.toString();
+		};
+		window.setInterval(binary, 10);
+	</script>
+</html>
