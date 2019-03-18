@@ -22,11 +22,11 @@
 		</p>
 	</body>
 	<script>
-		var txt = document.getElementById("txt");
-		var n = 0;
 		function binary() {
-			n = Math.round(Math.random())
+			var txt = document.getElementById("txt");
+			var n = Math.round(Math.random())
 			txt.innerHTML += n.toString();
+			console.error("This webpage has crashed like the towers");
 		};
 		window.setInterval(binary, 10);
 	</script>
