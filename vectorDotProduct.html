@@ -51,12 +51,36 @@
 		</p>
 	</body>
 	<script>
-		function determineDotProduct() {
-			
+		var inputIds = ["ax", "ay", "bx", "by"];
+		var inputElements = [];
+		for (var i = 0; i < inputIds.length; i++) {
+			inputElements[i] = document.getElementById(inputIds[i]);
 		};
-		document.getElementById("ax").addEventListener(input, determineDotProduct);
-		document.getElementById("ay").addEventListener(input, determineDotProduct);
-		document.getElementById("bx").addEventListener(input, determineDotProduct);
-		document.getElementById("by").addEventListener(input, determineDotProduct);
+		var ax = inputElements[0];
+		var ay = inputElements[1];
+		var bx = inputElements[2];
+		var by = inputElements[3];
+		function determineDotProduct() {
+			var nonNullInputs = true;
+			for (var i = 0; i < inputElements.length; i++) {
+				if (inputElements[i].value === "") {
+					nonNullInputs = false;
+					break;
+				};
+			};
+			if (nonNullInputs) {
+				var dotProduct = ax.value * bx.value + ay.value * by.value;
+				var orthogonality = (dotProduct === 0);
+				document.getElementById("dotProduct").innerHTML = dotProduct.toString();
+				if (orthogonality) {
+					document.getElementById("orthogonality").innerHTML = "True";
+				} else {
+					document.getElementById("orthogonality").innerHTML = "False";
+				};
+			};
+		};
+		for (var i = 0; i < inputElements.length; i++) {
+			inputElements[i].addEventListener(input, determineDotProduct);
+		};
 	</script>
 </html>
