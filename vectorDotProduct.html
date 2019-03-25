@@ -7,6 +7,13 @@
 			body {
 				background-color: RGB(0,0,0);
 			}
+			body *::selection {
+				background-color: RGB(255,255,255);
+				color: RGB(0,0,0);
+			}
+			body *:focus {
+				outline: none;
+			}
 			p, input, h1 {
 				color: RGB(255,255,255);
 				font-family: Consolas, monospace;
