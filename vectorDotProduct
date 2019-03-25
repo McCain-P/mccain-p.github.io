@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>
+			Vector Dot Product
+		</title>
+		<style>
+			body {
+				background-color: RGB(0,0,0);
+			}
+			p, input, h1 {
+				color: RGB(255,255,255);
+				font-family: Consolas, monospace;
+			}
+			input {
+				background-color: RGB(0,0,0);
+				border: 1vw solid RGB(255,255,255);
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			Vector Dot Product
+		</h1>
+		<p>
+			a&#x20d7;: \<
+			<input id="ax">
+			</input>
+			,
+			<input id="ay">
+			</input>
+			\>
+		</p>
+		<p>
+			b&#x20d7;: \<
+			<input id="bx">
+			</input>
+			,
+			<input id="by">
+			</input>
+			\>
+		</p>
+	</body>
+</html>
