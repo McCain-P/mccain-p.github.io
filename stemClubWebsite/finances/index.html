@@ -7,10 +7,25 @@
 		</link>
 		<style>
 			#financesHeader {
-			
+				font-size: 4vh;
+				white-space: nowrap;
+				word-break: keep-all;
+				overflow-wrap: normal;
+				position: fixed;
+				top: 10vh;
+				left: 50vw;
+				transform: translateX(-50%);
 			}
 			#data {
-			
+				font-size: 1vh;
+				text-align: left;
+				white-space: pre-wrap;
+				word-break: break-all;
+				overflow-wrap: break-word;
+				position: fixed;
+				top: 15vh;
+				left: 5vh;
+				transform: translateX(-50%);
 			}
 			#keyRegion {
 				
@@ -28,14 +43,16 @@
 			<img src="../resources/stemClubLogo.svg" class="interaction" id="headerLogo">
 			</img>
 		</div>
-		<h1 id="financesheader">
+		<h1 class="purpleText" id="financesheader">
+			Finances
 		</h1>
-		<p id="data">
+		<p class="blueText" id="data">
+			
 		</p>
 		<div id="keyRegion">
-			<input id="keyInput">
+			<input class="purpleText" id="keyInput">
 			</input>
-			<button id="keySubmit">
+			<button class="purpleText" id="keySubmit">
 			</button>
 		</div>
 		<div class="banner" id="footer">
