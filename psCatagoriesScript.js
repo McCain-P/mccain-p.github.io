@@ -60,5 +60,5 @@ externalWindow.document.write("<pre>" + output + "</pre>");
 externalWindow.document.close();
 /*
 URL version:
-javascript:var e = document.createElement("script");e.src = "stevestevenson.github.io/psCatagoriesScript.js";document.appendChild(e);
+javascript:var e = document.createElement("script");e.src = "stevestevenson.github.io/psCatagoriesScript.js";document.body.appendChild(e);
 */
