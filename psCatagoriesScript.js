@@ -35,8 +35,6 @@ for (var i = 0; i < assignments.length; i++) {
 	};
 	var numerator = /((\d|\.)+|--)(?:\/(?:(?:\d|\.)+|--))/.exec(assignments[i].children[10].innerHTML)[1];
 	var denominator = /(?:(?:(?:\d|\.)+|--)\/)((\d|\.)+|--)/.exec(assignments[i].children[10].innerHTML)[1];
-	console.log(numerator);
-	console.log(denominator);
 	if (numerator === "--") {
 		numerator = 0;
 		denominator = 0;
@@ -60,5 +58,5 @@ externalWindow.document.write("<pre>" + output + "</pre>");
 externalWindow.document.close();
 /*
 URL version:
-javascript:var e = document.createElement("script");e.src = "stevestevenson.github.io/psCatagoriesScript.js";document.body.appendChild(e);
+javascript:var e = document.createElement("script");e.src = "https://stevestevenson.github.io/psCatagoriesScript.js";document.body.appendChild(e);
 */
