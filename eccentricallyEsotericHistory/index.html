@@ -6,17 +6,44 @@
 		<link href="resources/mainStylesheet.css" rel="stylesheet" type="text/css">
 		</link>
 		<style>
-			
+			#header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 10vh;
+				width: 100vw;
+			}
+			#title {
+				position: absolute;
+				top: 5%;
+				left: 5%;
+				font-size: 2.5vw;
+			}
+			#curators {
+				position: absolute;
+				top: 15%;
+				left: 5%;
+				font-size: 1.5vw;
+			}
+			#headerLine {
+				position: absolute;
+				top: 80%;
+				left: 0;
+				height: 20%;
+				width: 100%;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="header">
-			<h1>
+			<h1 id="title">
 				Eccentrically-Esoteric History
 			</h1>
-			<h2>
+			<h2 id="curators">
 				Curated by &#x2605;Blackstar and Josef
 			</h2>
+			<div class="line" id="headerLine">
+			</div>
 		</div>
 	</body>
 </html>
