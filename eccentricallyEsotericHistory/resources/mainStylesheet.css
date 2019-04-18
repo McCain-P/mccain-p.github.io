@@ -1,6 +1,14 @@
 body {
 	background-color: RGB(128,128,128);
 }
+body * {
+	margin: 0;
+	padding: 0;
+}
+body *::selection {
+	background-color: RGB(0,0,0);
+	color: RGB(255,255,255);
+}
 p, h1, h2, h3, h4, h5, h6, button, input, textarea {
 	color: RGB(255,255,255);
 	font-family: "Arial", sans-serif;
