@@ -5,3 +5,7 @@ p, h1, h2, h3, h4, h5, h6, button, input, textarea {
 	color: RGB(255,255,255);
 	font-family: "Arial", sans-serif;
 }
+.line {
+	display: block;
+	background-color: RGB(255,255,255);	
+}
