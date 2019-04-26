@@ -45,6 +45,28 @@ p, h1, h2, h3, h4, h5, h6, button, input, textarea {
 .interaction {
 	cursor: url("cursorInteraction.png") 0 0, pointer;
 }
+.toggleButton {
+	background-color: RGB(255,255,255);
+	border-radius: 0;
+	border-style: solid;
+	border-color: RGB(64,128,255);
+}
+.toggleButton::before {
+	height: 100%;
+	width: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: RGB(64,128,255);
+}
+.toggleButton[data-toggle="0"]::before {
+	left: 0;
+	background-color: RGB(64,128,255);
+}
+.toggleButton[data-toggle="1"]::before {
+	right: 0;
+	background-color: RGB(96,0,192);
+}
 .banner {
 	width: 100vw;
 	position: fixed;
