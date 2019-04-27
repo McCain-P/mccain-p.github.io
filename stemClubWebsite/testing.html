@@ -6,7 +6,14 @@
 		<link href="resources/mainStylesheet.css" rel="stylesheet" type="text/css">
 		</link>
 		<style>
-		
+			#checkbox0 {
+				height: 10vh;
+				width: 40vh;
+				border-width: 1.25vh;
+				position: fixed;
+				top: 50vh;
+				left: 25vw;
+			}
 		</style>
 	</head>
 	<body>
@@ -14,7 +21,7 @@
 			<img src="resources/stemClubLogo.svg" class="interaction" id="headerLogo">
 			</img>
 		</div>
-		<input type="checkbox" class="toggleButton interaction" data-toggle="false" onclick="this.dataset.toggle = !this.dataset.toggle">
+		<input type="checkbox" class="toggleButton interaction" id="checkbox0" data-toggle="false" onclick="this.dataset.toggle = !this.dataset.toggle">
 		</input>
 		<div class="banner" id="footer">
 		</div>
