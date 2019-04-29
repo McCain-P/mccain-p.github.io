@@ -52,6 +52,7 @@ p, h1, h2, h3, h4, h5, h6, button, input, textarea {
 	border-color: RGB(64,128,255);
 }
 .toggleButton::before {
+	display: block;
 	height: 100%;
 	width: 50%;
 	position: absolute;
