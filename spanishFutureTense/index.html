@@ -105,7 +105,7 @@
 			<div id="conjugationProblems">
 				Conjugation
 			</div>
-			<div id="testProblems">
+			<div id="testProblems" class="disabled">
 				Test
 			</div>
 		</div>
@@ -121,11 +121,20 @@
 	<script>
 		function selectProblemType(e) {
 			var enabledProblem = e.target.dataset.problemType + "Problems";
+			//
+			console.log("enabledProblem = " + enabledProblem);
+			//
 			var problems = document.getElementById("problems").children;
 			for (var i = 0; i < problems.length; i++) {
 				if (problems[i].id !== enabledProblem) {
+					//
+					console.log("True");
+					//
 					problems[i].classList.add("disabled");
 				} else {
+					//
+					console.log("False");
+					//
 					problems[i].classList.remove("disabled");
 				};
 			};
