@@ -33,13 +33,19 @@
 	</body>
 	<script>
 		function selectProblemType(e) {
-			var problems = document.getElementById("problems").children;
 			var enabledProblem = e.target.dataset.problemType + "Problems";
+			var problems = document.getElementById("problems").children;
 			for (var i = 0; i < problems.length; i++) {
 				if (problems[i].id !== enabledProblem) {
-					//disable
+					problems[i].classList.add("disabled");
+				} else {
+					problems[i].classList.remove("disabled");
 				};
+			};
 		};
-		document.getElementById("selectConjugationProblems").addEventListener("click", selectProblemType(e));
+		var buttons = document.getElementById("configuration").children;
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].addEventListener("click", selectProblemType(e));
+		};
 	</script>
 </html>
