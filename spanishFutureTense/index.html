@@ -33,7 +33,12 @@
 	</body>
 	<script>
 		function selectProblemType(e) {
-			document.getElementById(e.target.dataset.problemType + "Problems")
+			var problems = document.getElementById("problems").children;
+			var enabledProblem = e.target.dataset.problemType + "Problems";
+			for (var i = 0; i < problems.length; i++) {
+				if (problems[i].id !== enabledProblem) {
+					//disable
+				};
 		};
 		document.getElementById("selectConjugationProblems").addEventListener("click", selectProblemType(e));
 	</script>
