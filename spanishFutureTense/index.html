@@ -26,12 +26,15 @@
 			</div>
 		</div>
 		<div id="configuration">
-			<button id="selectConjugationProblems">
+			<button id="selectConjugationProblems" data-problemType="conjugation">
 				Select Conjugation Problems
 			</button>
 		</div>
 	</body>
 	<script>
-		document.getElementById("selectConjugationProblems").addEventListener();
+		function selectProblemType(e) {
+			document.getElementById(e.target.dataset.problemType + "Problems")
+		};
+		document.getElementById("selectConjugationProblems").addEventListener("click", selectProblemType(e));
 	</script>
 </html>
