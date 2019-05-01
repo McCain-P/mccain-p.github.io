@@ -110,23 +110,17 @@
 			</div>
 		</div>
 		<div id="configuration">
-			<button id="selectConjugationProblems" data-problemType="conjugation">
+			<button id="selectConjugationProblems" data-problemtype="conjugation">
 				Select Conjugation Problems
 			</button>
-			<button id="selectTestProblems" data-problemType="test">
+			<button id="selectTestProblems" data-problemtype="test">
 				Select Test Problems
 			</button>
 		</div>
 	</body>
 	<script>
 		function selectProblemType(e) {
-			var enabledProblem = e.target.dataset.problemType + "Problems";
-			//
-			console.log("e = " + e);
-			console.log("e.target = " + e.target);
-			console.log("e.target.dataset.problemType = " + e.target.dataset.problemType);
-			console.log("enabledProblem = " + enabledProblem);
-			//
+			var enabledProblem = e.target.dataset.problemtype + "Problems";
 			var problems = document.getElementById("problems").children;
 			for (var i = 0; i < problems.length; i++) {
 				if (problems[i].id !== enabledProblem) {
