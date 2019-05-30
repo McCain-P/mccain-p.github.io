@@ -43,14 +43,33 @@
 		<h1 id="time">
 			0000-01-13T11:22:33
 		</h1>
-		<h2 id="days">
-			13 Days
+		<h2 id="daysParent">
+			<span id="days">13</span> Days
 		</h2>
-		<h2 id="weeks">
-			2.5 Weeks
+		<h2 id="weeksParent">
+			<span id="weeks">2.5</span> Weeks
 		</h2>
 	</body>
 	<script>
-		2019-06-21
+		var timeElement = document.getElementById("time");
+		var daysElement = document.getElementById("days");
+		var weeksElement = document.getElementById("weeks");
+		var end = new Date("2019-06-21T00:00:00");
+		var start = new Date(Date.now());
+		var difference = new Date();
+		var iso8601 = "";
+		var nDays = "";
+		var nWeeks = "";
+		function updateTime() {
+			start = new Date(Date.now());
+			difference = end - start;
+			iso8601 = difference.toISOString();
+			nDays = iso8601.substring(8, 10);
+			nWeeks = Math.round(100 * nDays / 7) / 100;
+			timeElement.innerHTML = iso8601;
+			daysElement.innerHTML = nDays;
+			weeksElement.innerHTML = nWeeks;
+		};
+		window.setInterval(updateTime, 100);
 	</script>
 </html>
