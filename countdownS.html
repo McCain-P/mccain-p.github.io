@@ -21,34 +21,24 @@
 			h2 {
 				font-size: 3vw;
 			}
-			#time {
+			#timeElement {
 				position: fixed;
 				top: 10vh;
 				left: 50vw;
 				transform: translate(-50%, -50%);
 			}
-			#days {
-				position: fixed;
-				top: 20vh;
-				left: 20vw;
-			}
-			#weeks {
-				position: fixed;
-				top: 20vh;
-				right: 20vw;
-			}
 		</style>
 	</head>
 	<body>
-		<h1 id="time">
-			0000-01-13T11:22:33
-		</h1>
-		<h2 id="daysParent">
+		<h1 id="timeElement">
+			<span id="time">0000-01-13T11:22:33</span>
+			<br>
+			</br>
 			<span id="days">13</span> Days
-		</h2>
-		<h2 id="weeksParent">
+			<br>
+			</br>
 			<span id="weeks">2.5</span> Weeks
-		</h2>
+		</h1>
 	</body>
 	<script>
 		var timeElement = document.getElementById("time");
