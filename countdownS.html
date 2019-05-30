@@ -48,6 +48,7 @@
 		var nDays = "";
 		var nWeeks = "";
 		function updateTime() {
+			window.alert("updateTime()");
 			start = new Date(Date.now());
 			difference = end - start;
 			iso8601 = difference.toISOString();
