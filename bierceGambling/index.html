@@ -4,7 +4,97 @@
 			Verified CS:GO Gambling Site - GabeN Approved
 		</title
 	</head>
+	<style>
+		body {
+			background-color: RGB(64,64,64);
+		}
+		p, input, button, h1 {
+			color: RGB(255,255,255);
+			font-family: "Comic Sans MS", "Comic Sans", sans-serif;
+			font-size: 1vw;
+		}
+		h1 {
+			font-size: 4vw;
+		}
+		input {
+			border: thin, solid, RGB(255,255,255);
+			background-color: RGBA(0,0,0,0);
+		}
+		#accountDetails {
+			display: block;
+			height: 80vh;
+			width: 40vh;
+			position: fixed;
+			top: 15vh;
+			left: calc(50vw - 20vh);
+			background-color: RGBA(0,0,0,0);
+		}
+		#accountDetails > p, #accountDetails > button {
+			position: absolute;
+			margin: 10vh 0 10vh 5vh;
+		}
+		#header {
+			position: fixed;
+			width: 100vw;
+			height: 10vh;
+			top: 0;
+			left: 0;
+		}
+		#title {
+			position: absolute;
+			top: 20%;
+			left: 10%;
+		}
+		#steamLogo {
+			position: absolute;
+			height: 40%;
+			width: auto;
+			top: 20%;
+			right: 5%;
+			background-color: RGB(255,0,0);
+		}
+		#steamLogin {
+			position: absolute;
+			height: 40%;
+			width: auto;
+			bottom: 20%;
+			right: 5%;
+			background-color: RGB(255,0,0);
+		}
+	</style>
 	<body>
-	
+		<div id="header">
+			<h1 id="title">
+				Verified CS:GO Gambling Site - GabeN Approved
+			</h1>
+			<img id="steamLogo" src="steamLogo.png">
+			</img>
+			<img id="steamLogin" src="steamLogin.png">
+			</img>
+		</div>
+		<form id="accountDetails">
+			<p>
+				Username: 
+				<input id="username">
+				</input>
+			</p>
+			<p>
+				Password:
+				<input id="password">
+				</input>
+			</p>
+			<p>
+				E-Mail:
+				<input id="email">
+				</input>
+			</p>
+			<p>
+				Mobile Authenticator Code:
+				<input id="authenticatorCode">
+				</input>
+			</p>
+			<button id="submitForm">
+				Submit
+			</button>
 	</body>
 </html>
