@@ -1,0 +1,18 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<p id="p">
+		</p>
+	</body>
+	<script>
+		var x = 0;
+		function f(n) {
+			return 9 / Math.pow(5, n);
+		};
+		var p = document.getElementById("p");
+		for (var i = 0; i < 101; i++) {
+			x += f(i);
+			p.innerHTML = x;
+		};
+	</script>
