@@ -14,8 +14,15 @@
 			p, h1, h2, h3, h4, h5, h6, button, input {
 				font-family: "Arial", sans-serif;
 			}
+			textarea:focus, select:focus, input:focus, button:focus {
+				/*Disables the default outline styling applied by some browsers on elements with the "focus" pseudoclass enabled*/
+				outline: none;
+			}
 			button:hover {
 				background-color: RGB(230,230,230);
+			}
+			button:active {
+				background-color: RGB(200,200,200);
 			}
 			body {
 				background-color: RGB(255,255,255);
