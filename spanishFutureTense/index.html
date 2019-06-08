@@ -18,10 +18,12 @@
 				/*Disables the default outline styling applied by some browsers on elements with the "focus" pseudoclass enabled*/
 				outline: none;
 			}
-			button:hover, input:hover, textarea:hover {
+			button:hover, #configuration > button:hover, input:hover, textarea:hover {
+				/*#configuration > button:hover is used to account for the other reference of #configuration > button having a higher precedence due to being a more specific selection*/
 				background-color: RGB(230,230,230);
 			}
-			button:active, input:focus, textarea:focus {
+			button:active, #configuration > button:hover, input:focus, textarea:focus {
+				/*#configuration > button:active is used to account for the other reference of #configuration > button having a higher precedence due to being a more specific selection*/
 				background-color: RGB(200,200,200);
 			}
 			body {
