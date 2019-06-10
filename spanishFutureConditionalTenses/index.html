@@ -182,8 +182,8 @@
 			return sanitized;
 		};
 		function verbTest() {
-			window.alert("Future: " + randomVerb(0));
-			window.alert("Conditional: " + randomVerb(1));
+			document.getElementById("futureConjugationProblems").innerHTML = "Future: " + randomVerb(0);
+			document.getElementById("futureConjugationProblems").innerHTML = "Conditional: " + randomVerb(1);
 		};
 		window.setInterval(verbTest, 2000);
 	</script>
