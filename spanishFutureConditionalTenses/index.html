@@ -182,8 +182,7 @@
 			return sanitized;
 		};
 		function verbTest() {
-			document.getElementById("futureConjugationProblems").innerHTML = "Future: " + randomVerb(0);
-			document.getElementById("futureConjugationProblems").innerHTML = "Conditional: " + randomVerb(1);
+			document.getElementById("futureConjugationProblems").innerHTML = randomVerb(Math.round(Math.random()));
 		};
 		window.setInterval(verbTest, 2000);
 	</script>
