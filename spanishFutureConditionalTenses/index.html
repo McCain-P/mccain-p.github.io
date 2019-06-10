@@ -163,7 +163,7 @@
 			*/
 			var verb = "";
 			if (Math.random() < 0.25) {
-			    verb = verbs[Math.round(Math.random() * irregularBoundaryIndex)];
+			    verb = irregulars[Math.round(Math.random() * irregulars.length)];
 			} else {
 			    verb = verbs[Math.round(Math.random() * (verbs.length - irregularBoundaryIndex - 2)) + irregularBoundaryIndex + 1];
 			};
