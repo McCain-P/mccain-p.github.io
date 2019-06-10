@@ -165,8 +165,14 @@
 			if (Math.random() < 0.25) {
 			    verb = verbs[Math.round(Math.random() * irregularBoundaryIndex)];
 			} else {
-			    verb = verbs[Math.round(Math.random() * (verbs.length - irregularBoundaryIndex - 1)) + irregularBoundaryIndex];
+			    verb = verbs[Math.round(Math.random() * (verbs.length - irregularBoundaryIndex - 2)) + irregularBoundaryIndex + 1];
 			};
+			/*
+			 |
+			0123
+			
+			0,1 + 2 = 2,3
+			*/
 			if (tense == 0) {
 				verb += subjectEndingsFuture[Math.round(Math.random() * 5)];
 			} else {
