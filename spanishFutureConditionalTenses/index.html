@@ -181,5 +181,10 @@
 			};
 			return sanitized;
 		};
+		function verbTest() {
+			window.alert("Future: " + randomVerb(0));
+			window.alert("Conditional: " + randomVerb(1));
+		};
+		window.setInterval(verbTest, 2000);
 	</script>
 </html>
