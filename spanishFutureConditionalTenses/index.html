@@ -54,16 +54,29 @@
 				top: 0;
 				left: 0;
 			}
-			#ratioCorrect {
-				color: RGB(255,255,255);
+			#ratioDiv {
 				background-color: RGB(255,128,0);
-				font-size: 5vh;
 				height: 10vh;
 				width: 25vw;
-				text-align: right;
 				position: absolute;
 				top: 10vh;
 				right: 25vw;
+			}
+			#ratioCorrect {
+				color: RGB(255,255,255);
+				/*background-color: RGB(255,128,0);*/
+				font-size: 5vh;
+				/*height: 10vh;*/
+				width: 25vw;
+				text-align: center;
+				position: absolute;
+				/*
+				top: 10vh;
+				right: 25vw;
+				*/
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
 			}
 			#problems {
 				background-color: RGB(255,255,255);
@@ -114,9 +127,11 @@
 			</h1>
 		</div>
 		<div id="data">
-			<p id="ratioCorrect">
-				<span id="numberCorrect"></span>/<span id="numberTotal"></span> = <span id="percentageCorrect"></span>%
-			</p>
+			<div id="ratioDiv">
+				<p id="ratioCorrect">
+					<span id="numberCorrect"></span>/<span id="numberTotal"></span> = <span id="percentageCorrect"></span>%
+				</p>
+			</div>
 		</div>
 		<div id="problems">
 			<div id="futureConjugationProblems">
