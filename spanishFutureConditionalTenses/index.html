@@ -132,11 +132,14 @@
 			</div>
 		</div>
 		<div id="problems">
-			<div id="futureConjugationProblems">
+			<div id="futureConjugationProblems" class="disabled">
 				futureConjugationProblems
 			</div>
 			<div id="conditionalConjugationProblems" class="disabled">
 				conditionalConjugationProblems
+			</div>
+			<div id="guide">
+				guide
 			</div>
 		</div>
 		<div id="configuration">
@@ -146,11 +149,17 @@
 			<button id="selectConditionalConjugationProblems" data-problemtype="conditionalConjugation">
 				Select Conditional-Tense Conjugation Problems
 			</button>
+			<button id="viewGuide" data-problemtype="guide">
+				View Guide
+			</button>
 		</div>
 	</body>
 	<script>
 		function selectProblemType(e) {
-			var enabledProblem = e.target.dataset.problemtype + "Problems";
+			var enabledProblem = e.target.dataset.problemtype;
+			if (e.target.dataset.problemtype !== "guide") {
+				enabledProblem += "Problems";
+			};
 			var problems = document.getElementById("problems").children;
 			for (var i = 0; i < problems.length; i++) {
 				if (problems[i].id !== enabledProblem) {
