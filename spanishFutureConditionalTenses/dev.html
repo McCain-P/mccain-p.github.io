@@ -33,8 +33,10 @@ d = f(c, n, w)
 	</body>
 	<script>
 		var p = document.getElementById("calculatedWidth");
+		var d = 0;
 		function calculateWidth() {
-			p.innerHTML = "d = " + ((c - n * w)/(n + 1));
+			d = (c - n * w) / (n + 1);
+			p.innerHTML = "d = " + d;
 		};
 	</script>
 </html>
