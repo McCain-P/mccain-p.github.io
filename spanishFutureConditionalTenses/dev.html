@@ -49,14 +49,14 @@ d = f(c, n, w)
 		};
 		var colorsState = false;
 		function colors() {
-			var pElements = document.getElementsByTagName("p");
 			var preElements = document.getElementsByTagName("pre");
+			var buttonElements = document.getElementsByTagName("button");
 			var elements = {};
-			for (var i = 0; i < pElements.length; i++) {
-				elements[i] = pElements[i];
-			};
-			for (var i = pElements.length; i < preElements.length + pElements.length; i++) {
+			for (var i = 0; i < preElements.length; i++) {
 				elements[i] = preElements[i];
+			};
+			for (var i = preElements.length; i < buttonElements.length + preElements.length; i++) {
+				elements[i] = buttonElements[i];
 			};
 			for (var i = 0; i < elements.length; i++) {
 				var text = elements[i].innerHTML;
