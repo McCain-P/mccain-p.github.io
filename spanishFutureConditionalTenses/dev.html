@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>
+			Developer Page
+		</title>
+	</head>
+	<body>
+<pre>
+n: Number of elements
+w: width of 1 element
+c: Width of container
+d: Distance between each element and between an edge-element and the container-edge
+
+nw + (n + 1)d = c ->
+d = (c - nw)
+    (n + 1)
+w = c - (n + 1)d
+         n
+</pre>
+		<input id="c">
+		</input>
+		<input id="n">
+		</input>
+		<input id="w">
+		</input>
+		<button onclick="calculateWidth()">
+			Calculate Width
+		</button>
+		<p id="calculatedWidth">
+		</p>
+	</body>
+	<script>
+		var p = document.getElementById("calculatedWidth");
+		function calculateWidth() {
+			p.innerHTML = "d = " + ((c - n * w)/(n + 1));
+		};
+	</script>
+</html>
