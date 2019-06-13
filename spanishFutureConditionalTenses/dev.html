@@ -37,9 +37,9 @@ d = f(c, n, w)
 		var nE = document.getElementById("n");
 		var wE = document.getElementById("w");
 		var d = 0;
-		var c = 0;
-		var n = 0;
-		var w = 0;
+		var c = cE.value;
+		var n = nE.value;
+		var w = wE.value;
 		function calculateWidth() {
 			d = (c - n * w) / (n + 1);
 			dE.innerHTML = "d = " + d;
