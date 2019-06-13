@@ -29,6 +29,12 @@
 				/*#configuration > button:active is used to account for the other reference of #configuration > button having a higher precedence due to being a more specific selection*/
 				background-color: RGB(200,200,200);
 			}
+			.speakable:hover {
+				background-color: RGBA(0,128,255,0.75);
+			}
+			.speakable:active {
+				background-color: RGB(0,128,255);
+			}
 			body {
 				background-color: RGB(255,255,255);
 			}
@@ -140,10 +146,14 @@
 		</div>
 		<div id="problems">
 			<div id="futureConjugationProblems" class="disabled">
-				futureConjugationProblems
+				<p class="speakable">
+					futureConjugationProblems
+				</p>
 			</div>
 			<div id="conditionalConjugationProblems" class="disabled">
-				conditionalConjugationProblems
+				<p class="speakable">
+					conditionalConjugationProblems
+				</p>
 			</div>
 			<div id="guide">
 				guide
