@@ -30,13 +30,11 @@
 				background-color: RGB(200,200,200);
 			}
 			.speakable {
-				background-color: RGBA(0,128,255,0.25);
+				background-color: RGBA(0,128,255,0.75);
 				display: inline-block;
 			}
-			.speakable:hover {
-				background-color: RGBA(0,128,255,0.75);
-			}
-			.speakable:active {
+			.speakable.spoken {
+				/*"spoken" class is applied when the element is currently being spoken*/
 				background-color: RGB(0,128,255);
 			}
 			body {
