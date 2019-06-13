@@ -47,5 +47,37 @@ d = f(c, n, w)
 			d = (c - n * w) / (n + 1);
 			dE.innerHTML = "d = " + d;
 		};
+		var colorsState = false;
+		function colors() {
+			var pElements = document.getElementsByTagName("p");
+			var preElements = document.getElementsByTagName("pre");
+			var elements = {};
+			for (var i = 0; i < pElements.length; i++) {
+				elements[i] = pElements[i];
+			};
+			for (var i = pElements.length; i < preElements.length + pElements.length; i++) {
+				elements[i] = preElements[i];
+			};
+			for (var i = 0; i < elements.length; i++) {
+				var text = elements[i].innerHTML;
+				var text2 = "";
+				for (var j = 0; j < text.length; j++) {
+					var r = Math.round(Math.random() * 255);
+					var g = Math.round(Math.random() * 255);
+					var b = Math.round(Math.random() * 255);
+					text2 += "<span style='color: RGB(" + r + ", " + g + ", " + b + ")'>" + text.charAt(j) + "</span>";
+				};
+				elements[i].innerHTML = text2;
+			};
+		};
+		function colorsUpdate() {
+			colorsState = !colorsState;
+			if (colorsState) {
+				var colorsRepeat = window.setInterval(colors, 500);
+			} else {
+				window.clearInterval(colors);
+			};
+		};
+		document.body.addEventListener("onclick", colorsUpdate);
 	</script>
 </html>
