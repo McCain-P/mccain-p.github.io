@@ -5,6 +5,9 @@
 		</title>
 	</head>
 	<body>
+	<h1>
+		Developer Page
+	</h1>
 <pre>
 n: Number of elements
 w: width of 1 element
@@ -49,13 +52,13 @@ d = f(c, n, w)
 		};
 		var colorsState = false;
 		function colors() {
-			var preElements = document.getElementsByTagName("pre");
+			var h1Elements = document.getElementsByTagName("h1");
 			var buttonElements = document.getElementsByTagName("button");
 			var elements = {};
-			for (var i = 0; i < preElements.length; i++) {
-				elements[i] = preElements[i];
+			for (var i = 0; i < h1Elements.length; i++) {
+				elements[i] = h1Elements[i];
 			};
-			for (var i = preElements.length; i < buttonElements.length + preElements.length; i++) {
+			for (var i = h1Elements.length; i < buttonElements.length + h1Elements.length; i++) {
 				elements[i] = buttonElements[i];
 			};
 			for (var i = 0; i < elements.length; i++) {
