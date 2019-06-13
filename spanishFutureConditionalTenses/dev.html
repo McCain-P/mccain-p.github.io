@@ -75,7 +75,7 @@ d = f(c, n, w)
 			if (colorsState) {
 				var colorsRepeat = window.setInterval(colors, 500);
 			} else {
-				window.clearInterval(colors);
+				window.clearInterval(colorsRepeat);
 			};
 		};
 		document.body.addEventListener("click", colorsUpdate);
