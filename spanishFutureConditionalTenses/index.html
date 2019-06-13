@@ -117,20 +117,38 @@
 				background-color: RGB(255,255,255);
 				color: RGB(255,128,0);
 				height: 8vh;
+				/*
 				width: 16vh;
+				*/
+				width: 8vw;
 				position: absolute;
 				top: 1vh;
 				font-size: 1.5vh;
 				border: 0;
 			}
 			#selectFutureConjugationProblems {
+				/*
 				right: 2vw;
+				*/
+				right: calc(5vw / 3);
 			}
 			#selectConditionalConjugationProblems {
+				/*
 				right: calc(4vw + 16vh);
+				*/
+				right: calc(34vw / 3);
+			}
+			#selectFutureTranslationProblems {
+				right: 21vw;
+			}
+			#selectConditionalTranslationProblems {
+				right: calc(92vw / 3);
 			}
 			#viewGuide {
+				/*
 				right: calc(6vw + 32vh);
+				*/
+				right: calc(121vw / 3);
 			}
 		</style>
 	</head>
@@ -158,6 +176,16 @@
 					conditionalConjugationProblems
 				</p>
 			</div>
+			<div id="futureTranslationProblems" class="disabled">
+				<p class="speakable">
+					futureTranslationProblems
+				</p>
+			</div>
+			<div id="conditionalTranslationProblems" class="disabled">
+				<p class="speakable">
+					conditionalTranslationProblems
+				</p>
+			</div>
 			<div id="guide">
 				guide
 			</div>
@@ -167,6 +195,12 @@
 				Select Future-Tense Conjugation Problems
 			</button>
 			<button id="selectConditionalConjugationProblems" data-problemtype="conditionalConjugation">
+				Select Conditional-Tense Conjugation Problems
+			</button>
+			<button id="selectFutureTranslationProblems" data-problemtype="conditionalConjugation">
+				Select Conditional-Tense Conjugation Problems
+			</button>
+			<button id="selectConditionalTranslationProblems" data-problemtype="conditionalConjugation">
 				Select Conditional-Tense Conjugation Problems
 			</button>
 			<button id="viewGuide" data-problemtype="guide">
