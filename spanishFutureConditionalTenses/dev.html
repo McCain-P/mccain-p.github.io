@@ -32,11 +32,17 @@ d = f(c, n, w)
 		</p>
 	</body>
 	<script>
-		var p = document.getElementById("calculatedWidth");
+		var dE = document.getElementById("calculatedWidth");
+		var cE = document.getElementById("c");
+		var nE = document.getElementById("n");
+		var wE = document.getElementById("w");
 		var d = 0;
+		var c = 0;
+		var n = 0;
+		var w = 0;
 		function calculateWidth() {
 			d = (c - n * w) / (n + 1);
-			p.innerHTML = "d = " + d;
+			dE.innerHTML = "d = " + d;
 		};
 	</script>
 </html>
