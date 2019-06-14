@@ -416,7 +416,7 @@
 				var audioFileElement = audioContainer.children[i];
 				window.alert("audoFileElement.src = " + audioFileElement.src);
 				//if (audioFileElement.src === element.dataset.audio) {
-				if (new RegExp("(*\/)?" + element.dataset.audio).test(audioFileElement.src)) {
+				if (new RegExp("(*\\/)?" + element.dataset.audio).test(audioFileElement.src)) {
 					window.alert("audioFileElement found - " + audioFileElement.src);
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
