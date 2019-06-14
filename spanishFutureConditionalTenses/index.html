@@ -411,13 +411,10 @@
 		function speak(e) {
 			var element = e.target;
 			element.classList.add("spoken");
-			window.alert("element.dataset.audio = " + element.dataset.audio);
 			for (var i = 0; i < audioContainer.children.length; i++) {
 				var audioFileElement = audioContainer.children[i];
-				window.alert("audoFileElement.src = " + audioFileElement.src);
 				//if (audioFileElement.src === element.dataset.audio) {
 				if (new RegExp("(.*\\/)?" + element.dataset.audio.slice(0, -1 * (audioFileType.length + 1)) + "\\." + audioFileType).test(audioFileElement.src)) {
-					window.alert("audioFileElement found - " + audioFileElement.src);
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
 					});
@@ -425,7 +422,6 @@
 					break;
 				};
 			};
-			window.alert("All audioFileElements have been searched");
 		};
 		var speakableElements = document.getElementsByClassName("speakable");
 		for (var i = 0; i < speakableElements.length; i++) {
