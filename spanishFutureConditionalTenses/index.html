@@ -390,7 +390,7 @@
 		var audioContainer = document.getElementById("audioContainer");
 		var audioFileType = "wav";
 		for (var i = 0; i < verbs.length; i++) {
-			var audioElement = document.body.createElement("audio");
+			var audioElement = document.createElement("audio");
 			audioElement.src = verbs[i];
 			audioContainer.appendChild(audioElement);
 			for (var j = 0; j < 6; j++) {
@@ -399,10 +399,10 @@
 				for (var k = 0; k < characterSubstitutions.length; k++) {
 					subject = subject.replace(new RegExp(characterSubstitutions[k][0], "g"), characterSubstitutions[k][1]);
 				};
-				var audioElement = document.body.createElement("audio");
+				var audioElement = document.createElement("audio");
 				audioElement.src = verbs[i] + "-futuro-" + subject + "." + audioFileType;
 				audioContainer.appendChild(audioElement);
-				var audioElement = document.body.createElement("audio");
+				var audioElement = document.createElement("audio");
 				audioElement.src = verbs[i] + "-condicional-" + subject + "." + audioFileType;
 				audioContainer.appendChild(audioElement);
 			};
