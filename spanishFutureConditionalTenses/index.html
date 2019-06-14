@@ -418,6 +418,7 @@
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
 					});
+					window.alert("audioFileElement = " + audioFileElement + ", audioFileElement.src = " + audioFileElement.src);
 					audioFileElement.play();
 					break;
 				};
