@@ -411,6 +411,7 @@
 		function speak(e) {
 			var element = e.target;
 			element.classList.add("spoken");
+			window.alert("element.dataset.audio = " + element.dataset.audio);
 			for (var i = 0; i < audioContainer.children.length; i++) {
 				var audioFileElement = audioContainer.children[i];
 				window.alert("audoFileElement.src = " + audioFileElement.src);
