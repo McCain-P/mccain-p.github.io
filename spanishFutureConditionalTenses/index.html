@@ -332,6 +332,9 @@
 		</div>
 	</body>
 	<script>
+		window.onerror = function(message, source, lineN, columnN, error) {
+			window.alert("Error: " + message + " - " + source + ", line " + lineN + ", column " + columnN);
+		};
 		function selectProblemType(e) {
 			var enabledProblem = e.target.dataset.problemtype;
 			if (e.target.dataset.problemtype !== "guide") {
