@@ -391,7 +391,7 @@
 		var audioFileType = "wav";
 		for (var i = 0; i < verbs.length; i++) {
 			var audioElement = document.createElement("audio");
-			audioElement.src = verbs[i];
+			audioElement.src = "audio/" + verbs[i];
 			audioContainer.appendChild(audioElement);
 			for (var j = 0; j < 6; j++) {
 				var subject = subjects[j];
@@ -400,10 +400,10 @@
 					subject = subject.replace(new RegExp(characterSubstitutions[k][0], "g"), characterSubstitutions[k][1]);
 				};
 				var audioElement = document.createElement("audio");
-				audioElement.src = verbs[i] + "-futuro-" + subject + "." + audioFileType;
+				audioElement.src = "audio/" + verbs[i] + "-futuro-" + subject + "." + audioFileType;
 				audioContainer.appendChild(audioElement);
 				var audioElement = document.createElement("audio");
-				audioElement.src = verbs[i] + "-condicional-" + subject + "." + audioFileType;
+				audioElement.src = "audio/" + verbs[i] + "-condicional-" + subject + "." + audioFileType;
 				audioContainer.appendChild(audioElement);
 			};
 		};
@@ -418,7 +418,6 @@
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
 					});
-					window.alert("audioFileElement = " + audioFileElement + ", audioFileElement.src = " + audioFileElement.src);
 					audioFileElement.play();
 					break;
 				};
