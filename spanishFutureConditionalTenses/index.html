@@ -415,10 +415,13 @@
 				var audioFileElement = audioContainer.children[i];
 				//if (audioFileElement.src === element.dataset.audio) {
 				if (new RegExp("(.*\\/)?" + element.dataset.audio.slice(0, -1 * (audioFileType.length + 1)) + "\\." + audioFileType).test(audioFileElement.src)) {
+					window.alert("audioFileElement.src = " + audioFileElement.src);
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
 					});
+					window.alert("point B");
 					audioFileElement.play();
+					window.alert("point C");
 					break;
 				};
 			};
