@@ -335,7 +335,6 @@
 		</div>
 	</body>
 	<script>
-		//also, put the function that runs when a "speakable" element is clicked that just looks through the list of audio elements for the one whos src matches with the element's data-audio value, and also add the for loop that applies "click" event listeners to that function on all the "speakable" elements. Put this somewhere in the script.
 		function selectProblemType(e) {
 			var enabledProblem = e.target.dataset.problemtype;
 			if (e.target.dataset.problemtype !== "guide") {
@@ -408,6 +407,6 @@
 				audioContainer.appendChild(audioElement);
 			};
 		};
-		
+		//Defining the function that occurs when an element with a class of "speakable" is clicked, and adding a "click" event listener that refers to that function on all elements with a class of "speakable"
 	</script>
 </html>
