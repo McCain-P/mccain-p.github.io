@@ -413,6 +413,7 @@
 			element.classList.add("spoken");
 			for (var i = 0; i < audioContainer.children.length; i++) {
 				var audioFileElement = audioContainer.children[i];
+				window.alert("audoFileElement.src = " + audioFileElement.src);
 				if (audioFileElement.src === element.dataset.audio) {
 					window.alert("audioFileElement found - " + audioFileElement.src);
 					audioFileElement.addEventListener("ended", function() {
