@@ -33,6 +33,8 @@ d = f(c, n, w)
 		</button>
 		<p id="calculatedWidth">
 		</p>
+		<audio src="audio/tener-condicional-e#l-ella-usted.wav" id="audioTest">
+		</audio>
 	</body>
 	<script>
 		var dE = document.getElementById("calculatedWidth");
@@ -50,6 +52,7 @@ d = f(c, n, w)
 			d = (c - n * w) / (n + 1);
 			dE.innerHTML = "d = " + d;
 		};
+		/*
 		var colorsState = false;
 		function colors() {
 			var h1Elements = document.getElementsByTagName("h1");
@@ -82,5 +85,7 @@ d = f(c, n, w)
 			};
 		};
 		document.body.addEventListener("click", colorsUpdate);
+		*/
+		document.getElementById("audioTest").play();
 	</script>
 </html>
