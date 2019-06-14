@@ -335,7 +335,6 @@
 		</div>
 	</body>
 	<script>
-		//adding audio elements for infinitives and conjugation permutations
 		//also, put the function that runs when a "speakable" element is clicked that just looks through the list of audio elements for the one whos src matches with the element's data-audio value, and also add the for loop that applies "click" event listeners to that function on all the "speakable" elements. Put this somewhere in the script.
 		function selectProblemType(e) {
 			var enabledProblem = e.target.dataset.problemtype;
@@ -388,5 +387,27 @@
 			};
 			return sanitized;
 		};
+		//Adding <audio> elements for the infinitives and conjugation permutations of the verbs
+		var audioContainer = document.getElementById("audioContainer");
+		var audioFileType = "wav";
+		for (var i = 0; i < verbs.length; i++) {
+			var audioElement = document.body.createElement("audio");
+			audioElement.src = verbs[i];
+			audioContainer.appendChild(audioElement);
+			for (var j = 0; j < 6; j++) {
+				var subject = subjects[j];
+				var characterSubstitutions = [["\/","-"],["&#xe1;","a#"],["&#xe9;","e#"],["&#xed;","i#"],["&#xf3;","o#"],["&#xfa;","u#"]];
+				for (var k = 0; k < characterSubstitutions.length; k++) {
+					subject = subject.replace(new RegExp(characterSubstitutions[k][0], "g"), characterSubstitutions[k][1]);
+				};
+				var audioElement = document.body.createElement("audio");
+				audioElement.src = verbs[i] + "-futuro-" + subject + "." + audioFileType;
+				audioContainer.appendChild(audioElement);
+				var audioElement = document.body.createElement("audio");
+				audioElement.src = verbs[i] + "-condicional-" + subject + "." + audioFileType;
+				audioContainer.appendChild(audioElement);
+			};
+		};
+		
 	</script>
 </html>
