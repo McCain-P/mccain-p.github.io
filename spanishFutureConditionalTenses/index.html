@@ -414,12 +414,14 @@
 			for (var i = 0; i < audioContainer.children.length; i++) {
 				var audioFileElement = audioContainer.children[i];
 				if (audioFileElement.src === element.dataset.audio) {
+					window.alert("audioFileElement found - " + audioFileElement.src);
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
 					});
 					audioFileElement.play();
 					break;
 				};
+				window.alert("audioFileElement not found");
 			};
 		};
 		var speakableElements = document.getElementsByClassName("speakable");
