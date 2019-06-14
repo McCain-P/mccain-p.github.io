@@ -411,8 +411,16 @@
 		function speak(e) {
 			var element = e.target;
 			element.classList.add("spoken");
-			//
-			element.classList.remove("spoken");
+			for (var i = 0; i < audioContainer.children.length; i++) {
+				var audioFileElement = audioContainer.children[i];
+				if (audioFileElement.src === element.dataset.audio) {
+					audioFileElement.addEventListener("ended", function() {
+						element.classList.remove("spoken");
+					});
+					audioFileElement.play();
+					break;
+				};
+			};
 		};
 		var speakableElements = document.getElementsByClassName("speakable");
 		for (var i = 0; i < speakableElements.length; i++) {
