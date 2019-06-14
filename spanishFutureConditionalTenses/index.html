@@ -408,5 +408,12 @@
 			};
 		};
 		//Defining the function that occurs when an element with a class of "speakable" is clicked, and adding a "click" event listener that refers to that function on all elements with a class of "speakable"
+		function speak(e) {
+			
+		};
+		var speakableElements = document.getElementsByClassName("speakable");
+		for (var i = 0; i < speakableElements.length; i++) {
+			speakableElements[i].addEventListener("click", speak);
+		};
 	</script>
 </html>
