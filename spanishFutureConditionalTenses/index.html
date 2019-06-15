@@ -418,7 +418,11 @@
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
 					});
-					console.log(audioFileElement.play());
+					var promise = audioFileElement.play();
+					console.log(promise);
+					console.log(promise.code);
+					console.log(promise.message);
+					console.log(promise.name);
 					break;
 				};
 			};
