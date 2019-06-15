@@ -395,7 +395,7 @@
 			audioContainer.appendChild(audioElement);
 			for (var j = 0; j < 6; j++) {
 				var subject = subjects[j];
-				var characterSubstitutions = [["\/","-"],["&#xe1;","a#"],["&#xe9;","e#"],["&#xed;","i#"],["&#xf3;","o#"],["&#xfa;","u#"]];
+				var characterSubstitutions = [["\/","-"],["&#xe1;","a_"],["&#xe9;","e_"],["&#xed;","i_"],["&#xf3;","o_"],["&#xfa;","u_"],["&#xf1;","n_"]];
 				for (var k = 0; k < characterSubstitutions.length; k++) {
 					subject = subject.replace(new RegExp(characterSubstitutions[k][0], "g"), characterSubstitutions[k][1]);
 				};
