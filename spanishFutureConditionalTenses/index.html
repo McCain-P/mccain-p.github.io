@@ -389,18 +389,20 @@
 					If input = false, an empty string is returned
 			*/
 			var data = {tense, "", "", "", "", ""};
-			var verb = "";
-			if (Math.random() < 0.25) {
-			    verb = irregulars[Math.round(Math.random() * irregulars.length)];
-			} else {
-			    verb = verbs[Math.round(Math.random() * (verbs.length - irregularBoundaryIndex - 2)) + irregularBoundaryIndex + 1];
+			if (infinitive || subject || conjugation || englishTranslation || infinitiveEnglishTranslation) {
+				var verb = "";
+				if (Math.random() < 0.25) {
+			 	   verb = irregulars[Math.round(Math.random() * irregulars.length)];
+				} else {
+				    verb = verbs[Math.round(Math.random() * (verbs.length - irregularBoundaryIndex - 2)) + irregularBoundaryIndex + 1];
+				};
+				if (tense == 0) {
+					verb += subjectEndingsFuture[Math.round(Math.random() * 5)];
+				} else {
+					verb += subjectEndingsConditional[Math.round(Math.random() * 5)];
+				};
+				return verb;
 			};
-			if (tense == 0) {
-				verb += subjectEndingsFuture[Math.round(Math.random() * 5)];
-			} else {
-				verb += subjectEndingsConditional[Math.round(Math.random() * 5)];
-			};
-			return verb;
 		};
 		function inputSanitization(input) {
 			var sanitized = input;
