@@ -354,6 +354,7 @@
 		var irregularBoundaryIndex = 11;
 		var irregulars = ["tendr","pondr","valdr","saldr","vendr","podr","cabr","habr","sabr","querr","dir","har"];
 		var subjects = ["yo","t&#xfa;","&#xe9;l/ella/usted","nosotros","vosotros","ellos/ellas/ustedes"];
+		var subjectsEnglish = ["I","you","he/she/it","we","you all","they"];
 		var subjectEndingsFuture = ["&#xe9;","&#xe1;s","&#xe1;","emos","&#xe9;is","&#xe1;n"];
 		var subjectEndingsConditional = ["&#xed;a","&#xed;as","&#xed;a","&#xed;amos","&#xed;ais","&#xed;an"];
 		var englishVerbTranslations = ["have","put","be worth","leave","come","be able to","fit","have","know","want","say","do","open","run","give","play","arrive","call","read","go","speak","live","see","take","work","be","begin","pay","watch","take","believe","owe"];
@@ -389,6 +390,45 @@
 					If input = false, an empty string is returned
 			*/
 			var data = {tense, "", "", "", "", ""};
+			var subjectNumber = Math.round(Math.random() * 5);
+			if (subject) {
+				data[2] = subjects[subjectNumber];	
+			};
+			if (infinitive || conjugation || englishTranslation || infinitiveEnglishTranslation) {
+				var verbNumber = 0;
+				var regular = true;
+				if (Math.random() < 0.25) {
+					verbNumber = Math.round(Math.random() * irregulars.length);
+					regular = false;
+				} else {
+					verbNumber = Math.round(Math.random() * (verbs.length - irregularBoundaryIndex - 2)) + irregularBoundaryIndex + 1
+				};
+				if (infinitive) {
+					data[1] = verbs[verbNumber];
+				};
+				if (infinitiveEnglishTranslation) {
+					data[5] = englishVerbTranslations[verbNumber];
+				};
+				if (conjugation) {
+					var verb = "";
+					if (regular) {
+						verb = data[1];
+					} else {
+						verb = irregulars[verbNumber];
+					};
+					if (tense === 0) {
+						verb += subjectEndingsFuture[subjectNumber];
+					} else {
+						verb += subjectEndingsConditional[subjectNumber];
+					};
+					data[3] = verb;
+				};
+				if (englishTranslation) {
+					
+				};
+			};
+			return data;
+			/*
 			if (infinitive || subject || conjugation || englishTranslation || infinitiveEnglishTranslation) {
 				var verb = "";
 				if (Math.random() < 0.25) {
@@ -396,13 +436,17 @@
 				} else {
 				    verb = verbs[Math.round(Math.random() * (verbs.length - irregularBoundaryIndex - 2)) + irregularBoundaryIndex + 1];
 				};
+				var subjectEndingNumber = Math.round(Math.random() * 5);
+				var subjectEnding = "";
 				if (tense == 0) {
-					verb += subjectEndingsFuture[Math.round(Math.random() * 5)];
+					subjectEnding = subjectEndingsFuture[subjectEndingNumber];
 				} else {
-					verb += subjectEndingsConditional[Math.round(Math.random() * 5)];
+					subjectEnding = subjectEndingsConditional[subjectEndingNumber];
 				};
+				verb += subjectEnding
 				return verb;
 			};
+			*/
 		};
 		function inputSanitization(input) {
 			var sanitized = input;
