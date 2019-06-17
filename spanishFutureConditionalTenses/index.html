@@ -17,8 +17,8 @@
 			p, h1, h2, h3, h4, h5, h6, button, input {
 				font-family: "Arial", sans-serif;
 			}
-			textarea:focus, select:focus, input:focus, button:focus {
-				/*Disables the default outline styling applied by some browsers on elements with the "focus" pseudoclass enabled*/
+			button:hover, input:hover, textarea:hover, button:focus, input:focus, textarea:focus, button:active {
+				/*Disables the default styling applied by some browsers on elements with the "hover," "active," and "focus" pseudoclass enabled*/
 				outline: none;
 			}
 			button:hover, #configuration > button:hover, input:hover, textarea:hover {
@@ -171,9 +171,18 @@
 			#viewGuide {
 				right: calc(121vw / 3);
 			}
-			#problems p, #problems input, #problems button, #problems h1, #problems h2, #problems h3, #problems h4, #problems h5, #problems #6 {
+			#problems p, #problems input, #problems button, #problems h1, #problems h2, #problems h3, #problems h4, #problems h5, #problems h6 {
 				color: RGB(255,128,0);
 			}
+			#problems button, #problems input {
+				background-color: RGB(255,255,255);
+				/*width*/
+				border: thin solid RGB(255,128,0);
+			}
+			#problems button {
+				
+			}
+			#problems input
 			.problemsTitle {
 				font-size: 3vw;
 			}
