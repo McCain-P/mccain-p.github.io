@@ -387,7 +387,7 @@
 				Output: String; the English translations of the verb infinitive, without the "to" prefix
 					If input = false, an empty string is returned
 			*/
-			var data = {tense, "", "", "", "", ""};
+			var data = [tense, "", "", "", "", ""];
 			var subjectNumber = Math.round(Math.random() * 5);
 			if (subject) {
 				data[2] = subjects[subjectNumber];	
