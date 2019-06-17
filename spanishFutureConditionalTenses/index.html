@@ -235,22 +235,22 @@
 				</button>
 				<div class="problemsCharacterSheet" id=""problemsCharacterSheetFutureConjugation">
 					<button class="characterButton cBA">
-						a
+						&#xe1;
 					</button>
 					<button class="characterButton cBE">
-						e
+						&#xe9;
 					</button>
 					<button class="characterButton cBI">
-						i
+						&#xed;
 					</button>
 					<button class="characterButton cBO">
-						o
+						&#xf3;
 					</button>
 					<button class="characterButton cBU">
-						u
+						&#xfa;
 					</button>
 					<button class="characterButton cBN">
-						n
+						&#xf1;
 					</button>
 				</div>
 			</div>
@@ -494,25 +494,6 @@
 				};
 			};
 			return data;
-			/*
-			if (infinitive || subject || conjugation || englishTranslation || infinitiveEnglishTranslation) {
-				var verb = "";
-				if (Math.random() < 0.25) {
-			 	   verb = irregulars[Math.round(Math.random() * irregulars.length)];
-				} else {
-				    verb = verbs[Math.round(Math.random() * (verbs.length - irregularBoundaryIndex - 2)) + irregularBoundaryIndex + 1];
-				};
-				var subjectEndingNumber = Math.round(Math.random() * 5);
-				var subjectEnding = "";
-				if (tense == 0) {
-					subjectEnding = subjectEndingsFuture[subjectEndingNumber];
-				} else {
-					subjectEnding = subjectEndingsConditional[subjectEndingNumber];
-				};
-				verb += subjectEnding
-				return verb;
-			};
-			*/
 		};
 		function inputSanitization(input) {
 			var sanitized = input;
