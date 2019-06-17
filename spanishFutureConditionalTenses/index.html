@@ -16,7 +16,7 @@
 				background-color: RGB(0,128,255);
 			}
 			p, h1, h2, h3, h4, h5, h6, button, input {
-				font-family: "Arial", sans-serif;
+				font-family: "Arial", sans-serif !important;
 			}
 			button:hover, input:hover, textarea:hover, button:focus, input:focus, textarea:focus, button:active {
 				/*Disables the default styling applied by some browsers on elements with the "hover," "active," and "focus" pseudoclass enabled*/
@@ -24,11 +24,11 @@
 			}
 			button:hover, #configuration > button:hover, #problems[id$=Problems] button:hover, input:hover, #problems[id$=Problems] input:hover, textarea:hover {
 				/*#configuration > button:hover is used to account for the other reference of #configuration > button having a higher precedence due to being a more specific selection*/
-				background-color: RGB(230,230,230);
+				background-color: RGB(230,230,230) !important;
 			}
 			button:active, #configuration > button:active, #problems[id$=Problems] button:active, input:focus, #problems[id$=Problems] input:focus, textarea:focus {
 				/*#configuration > button:active is used to account for the other reference of #configuration > button having a higher precedence due to being a more specific selection*/
-				background-color: RGB(200,200,200);
+				background-color: RGB(200,200,200) !important;
 			}
 			.speakable {
 				background-color: RGBA(0,128,255,0.75);
@@ -176,12 +176,12 @@
 				position: absolute;
 			}
 			#problems[id$=Problems] p, #problems[id$=Problems] input, #problems[id$=Problems] button, #problems[id$=Problems] h1, #problems[id$=Problems] h2, #problems[id$=Problems] h3, #problems[id$=Problems] h4, #problems[id$=Problems] h5, #problems[id$=Problems] h6 {
-				color: RGB(255,128,0);
+				color: RGB(255,128,0) !important;
 			}
 			#problems[id$=Problems] button, #problems[id$=Problems] input {
-				background-color: RGB(255,255,255);
+				background-color: RGB(255,255,255) !important;
 				/*width*/
-				border: thin solid RGB(255,128,0);
+				border: thin solid RGB(255,128,0) !important;
 			}
 			.problemsTitle {
 				font-size: 3vw;
