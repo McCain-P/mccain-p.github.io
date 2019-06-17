@@ -53,10 +53,6 @@
 				font-size: 4vh;
 				width: 100%;
 				position: absolute;
-				/*
-				top: 2vh;
-				left: 2vh;
-				*/
 				top: 50%;
 				transform: translateY(-50%);
 				left: 2vw;
@@ -154,9 +150,6 @@
 				background-color: RGB(255,255,255);
 				color: RGB(255,128,0);
 				height: 8vh;
-				/*
-				width: 16vh;
-				*/
 				width: 8vw;
 				position: absolute;
 				top: 1vh;
@@ -164,15 +157,9 @@
 				border: 0;
 			}
 			#selectFutureConjugationProblems {
-				/*
-				right: 2vw;
-				*/
 				right: calc(5vw / 3);
 			}
 			#selectConditionalConjugationProblems {
-				/*
-				right: calc(4vw + 16vh);
-				*/
 				right: calc(34vw / 3);
 			}
 			#selectFutureTranslationProblems {
@@ -182,9 +169,6 @@
 				right: calc(92vw / 3);
 			}
 			#viewGuide {
-				/*
-				right: calc(6vw + 32vh);
-				*/
 				right: calc(121vw / 3);
 			}
 		</style>
@@ -430,7 +414,13 @@
 					data[3] = verb;
 				};
 				if (englishTranslation) {
-					
+					var tensePhrase = "";
+					if (tense === 0) {
+						tensePhrase = "will";
+					} else {
+						tensePhrase = "would/could";
+					};
+					data[4] = subjectsEnglish[subjectNumber] + " " + tensePhrase + " " + englishVerbTranslations[verbNumber];
 				};
 			};
 			return data;
@@ -488,7 +478,6 @@
 			element.classList.add("spoken");
 			for (var i = 0; i < audioContainer.children.length; i++) {
 				var audioFileElement = audioContainer.children[i];
-				//if (audioFileElement.src === element.dataset.audio) {
 				if (new RegExp("(.*\\/)?" + element.dataset.audio.slice(0, -1 * (audioFileType.length + 1)) + "\\." + audioFileType).test(audioFileElement.src)) {
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
