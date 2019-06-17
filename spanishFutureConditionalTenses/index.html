@@ -361,10 +361,35 @@
 		var subjectEndingsConditional = ["&#xed;a","&#xed;as","&#xed;a","&#xed;amos","&#xed;ais","&#xed;an"];
 		var englishVerbTranslations = ["have","put","be worth","leave","come","be able to","fit","have","know","want","say","do","open","run","give","play","arrive","call","read","go","speak","live","see","take","work","be","begin","pay","watch","take","believe","owe"];
 		var sanitizedCharacters = [["a&#x301;","&#xe1;"],["e&#x301;","&#xe9;"],["i&#x301;","&#xed;"],["o&#x301;","&#xf3;"],["u&#x301;","&#xfa;"],["A&#x301;","&#xe1;"],["E&#x301;","&#xe9;"],["I&#x301;","&#xed;"],["O&#x301;","&#xf3;"],["U&#x301;","&#xfa;"],["&#xc1;","&#xe1;"],["&#xc9;","&#xe9;"],["&#xcd;","&#xed;"],["&#xd3;","&#xf3;"],["&#xda;","&#xfa;"],["A","a"],["B","b"],["C","c"],["D","d"],["E","e"],["F","f"],["G","g"],["H","h"],["I","i"],["J","j"],["K","k"],["L","l"],["M","m"],["N","n"],["O","o"],["P","p"],["Q","q"],["R","r"],["S","s"],["T","t"],["U","u"],["V","v"],["W","w"],["X","x"],["Y","y"],["Z","z"]];
-		function randomVerb(tense) {
+		function randomVerb(tense, infinitive, subject, conjugation, englishTranslation, infinitiveEnglishTranslation) {
 			/*
-			tense = 0 -> future
-			tense = 1 -> conditional
+			Input/Output = {tense*0, infinitive*1, subject*2, conjugation*3, englishTranslation*4, infinitiveEnglishTranslation*5}
+			
+			*0:
+				Input: Number; tense to be used
+				Output: Number; tense used
+				tense = 0 -> future
+				tense = 1 -> conditional
+			*1:
+				Input: Boolean; if the infinitive should be returned
+				Output: String; verb infinitive
+					If input = false, an empty string is returned
+			*2:
+				Input: Boolean; if the subject should be returned
+				Output: String; subject
+					If input = false, an empty string is returned
+			*3:
+				Input: Boolean; if the conjugated verb should be returned
+				Output: String; the conjugated verb
+					If input = false, an empty string is returned
+			*4:
+				Input: Boolean; if the English translation of the conjugated verb should be returned
+				Output: String; the English translation of the conjugated verb
+					If input = false, an empty string is returned
+			*5:
+				Input: Boolean; if the English translation of the verb infinitive should be returned
+				Output: String; the English translations of the verb infinitive, without the "to" prefix
+					If input = false, an empty string is returned
 			*/
 			var verb = "";
 			if (Math.random() < 0.25) {
