@@ -332,9 +332,6 @@
 		</div>
 	</body>
 	<script>
-		window.onerror = function(message, source, lineN, columnN, error) {
-			window.alert("Error: " + message + " - " + source + ", line " + lineN + ", column " + columnN);
-		};
 		function selectProblemType(e) {
 			var enabledProblem = e.target.dataset.problemtype;
 			if (e.target.dataset.problemtype !== "guide") {
@@ -391,6 +388,7 @@
 				Output: String; the English translations of the verb infinitive, without the "to" prefix
 					If input = false, an empty string is returned
 			*/
+			var data = {tense, "", "", "", "", ""};
 			var verb = "";
 			if (Math.random() < 0.25) {
 			    verb = irregulars[Math.round(Math.random() * irregulars.length)];
