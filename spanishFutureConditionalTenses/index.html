@@ -836,10 +836,10 @@
 			var problemsPromptPhraseFutureTranslation = document.getElementById("problemsPromptPhraseFutureTranslation");
 			if (direction === 0) {
 				problemsPromptPhraseFutureTranslation.innerHTML = verbData[3];
-				problemsPromptPhraseFutureTranslation.className.add("speakable");
+				problemsPromptPhraseFutureTranslation.classList.add("speakable");
 			} else {
 				problemsPromptPhraseFutureTranslation.innerHTML = verbData[4];
-				problemsPromptPhraseFutureTranslation.className.remove("speakable");
+				problemsPromptPhraseFutureTranslation.classList.remove("speakable");
 			};
 		};
 		document.getElementById("problemsSubmitButtonFutureTranslation").addEventListener("click", function() {
