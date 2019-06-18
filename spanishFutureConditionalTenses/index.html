@@ -755,6 +755,9 @@
 			document.getElementById("problemsPromptSubjectFutureConjugation").innerHTML = verbData[2];
 		};
 		document.getElementById("problemsSubmitButtonFutureConjugation").addEventListener("click", function() {
+			console.log(document.getElementById("problemsResponseFutureConjugation").value);
+			console.log(inputSanitization(document.getElementById("problemsResponseFutureConjugation").value));
+			console.log(futureConjugationSolution);
 			if (submitable && inputSanitization(document.getElementById("problemsResponseFutureConjugation").value) === futureConjugationSolution) {
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
