@@ -786,9 +786,6 @@
 			document.getElementById("problemsPromptSubjectFutureConjugation").innerHTML = verbData[2];
 		};
 		document.getElementById("problemsSubmitButtonFutureConjugation").addEventListener("click", function() {
-			console.log(document.getElementById("problemsResponseFutureConjugation").value);
-			console.log(inputSanitization(document.getElementById("problemsResponseFutureConjugation").value));
-			console.log(futureConjugationSolution);
 			if (submitable && inputSanitization(document.getElementById("problemsResponseFutureConjugation").value) === futureConjugationSolution) {
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
@@ -836,7 +833,8 @@
 			direction = 0 -> Spanish to English
 			direction = 1 -> English to Spanish
 			*/
-			var verbData = randomVerb(0, false, false, true, true, false);
+			//var verbData = randomVerb(0, false, false, true, true, false);
+			var verbData = randomVerb(0, true, true, true, true, true);
 			if (direction === 0) {
 				futureTranslationSolution = verbData[4];
 			} else {
@@ -855,9 +853,6 @@
 			};
 		};
 		document.getElementById("problemsSubmitButtonFutureTranslation").addEventListener("click", function() {
-			console.log(document.getElementById("problemsResponseFutureTranslation").value);
-			console.log(inputSanitization(document.getElementById("problemsResponseFutureTranslation").value));
-			console.log(futureTranslationSolution);
 			if (submitable && inputSanitization(document.getElementById("problemsResponseFutureTranslation").value) === futureTranslationSolution) {
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
