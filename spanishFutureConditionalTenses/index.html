@@ -277,7 +277,7 @@
 					Future-Tense Conjugation Problems
 				</h1>
 				<p class="problemsPrompt" id="problemsPromptFutureConjugation">
-					Conjugate "<span class="speakable problemsPromptInfinitive" id="problemsPromptInfinitiveFutureConjugation"></span>" for "<span class="speakable problemsPromptSubject" id="problemsPromptSubjectFutureConjugation"></span>" in the future ("<span class="speakable" data-audio="futuro.mp3">futuro</span>") tense
+					Conjugate "<span class="speakable problemsPromptInfinitive" id="problemsPromptInfinitiveFutureConjugation"></span>" for "<span class="speakable problemsPromptSubject" id="problemsPromptSubjectFutureConjugation"></span>" in the future ("<span class="speakable" data-audio="futuro.m4a">futuro</span>") tense
 				</p>
 				<input class="problemsResponse" id="problemsResponseFutureConjugation">
 				</input>
@@ -313,7 +313,7 @@
 					Conditional-Tense Conjugation Problems
 				</h1>
 				<p class="problemsPrompt" id="problemsPromptConditionalConjugation">
-					Conjugate "<span class="speakable problemsPromptInfinitive" id="problemsPromptInfinitiveConditionalConjugation"></span>" for "<span class="speakable problemsPromptSubject" id="problemsPromptSubjectConditionalConjugation"></span>" in the conditional ("<span class="speakable" data-audio="condicional.mp3">condicional</span>") tense
+					Conjugate "<span class="speakable problemsPromptInfinitive" id="problemsPromptInfinitiveConditionalConjugation"></span>" for "<span class="speakable problemsPromptSubject" id="problemsPromptSubjectConditionalConjugation"></span>" in the conditional ("<span class="speakable" data-audio="condicional.m4a">condicional</span>") tense
 				</p>
 				<input class="problemsResponse" id="problemsResponseConditionalConjugation">
 				</input>
@@ -460,7 +460,7 @@
 					An example:
 					<br>
 					</br>
-					<span class="speakable" data-audio="tener-condicional-e_l-ella-usted.mp3">tendr&#xed;a</span>
+					<span class="speakable" data-audio="tener-condicional-e_l-ella-usted.m4a">tendr&#xed;a</span>
 				</p>
 				<h4>
 					Accented characters
@@ -512,21 +512,21 @@
 			</button>
 		</div>
 		<div id="audioContainer">
-			<audio src="audio/futuro.mp3">
+			<audio src="audio/futuro.m4a">
 			</audio>
-			<audio src="audio/condicional.mp3">
+			<audio src="audio/condicional.m4a">
 			</audio>
-			<audio src="audio/yo.mp3">
+			<audio src="audio/yo.m4a">
 			</audio>
-			<audio src="audio/e#l-ella-usted.mp3">
+			<audio src="audio/e#l-ella-usted.m4a">
 			</audio>
-			<audio src="audio/ellos-ellas-ustedes.mp3">
+			<audio src="audio/ellos-ellas-ustedes.m4a">
 			</audio>
-			<audio src="audio/tu#.mp3">
+			<audio src="audio/tu#.m4a">
 			</audio>
-			<audio src="audio/nosotros.mp3">
+			<audio src="audio/nosotros.m4a">
 			</audio>
-			<audio src="audio/vosotros.mp3">
+			<audio src="audio/vosotros.m4a">
 			</audio>
 		</div>
 	</body>
@@ -647,7 +647,7 @@
 		};
 		//Adding <audio> elements for the infinitives and conjugation permutations of the verbs
 		var audioContainer = document.getElementById("audioContainer");
-		var audioFileType = "mp3";
+		var audioFileType = "m4a";
 		for (var i = 0; i < verbs.length; i++) {
 			var audioElement = document.createElement("audio");
 			audioElement.src = "audio/" + verbs[i];
