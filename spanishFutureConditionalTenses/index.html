@@ -256,6 +256,9 @@
 				top: 10.4375vh;
 				left: 8.75vh;
 			}
+			#clipboardIntermediary {
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -529,11 +532,13 @@
 			<audio src="audio/vosotros.m4a">
 			</audio>
 		</div>
+		<textarea readonly="true" id="clipboardIntermediary">
+		</textarea>
 	</body>
 	<script>
 		//Error handling
 		window.onerror = function(message, src, lineN, columnN, error) {
-			window.alert("Error: " + message + " - " + src + ", Line " + lineN + ", Column " + columnN);
+			console.log("Error: " + message + " - " + src + ", Line " + lineN + ", Column " + columnN);
 		};
 		function selectProblemType(e) {
 			var enabledProblem = e.target.dataset.problemtype;
@@ -554,9 +559,11 @@
 			buttons[i].addEventListener("click", selectProblemType);
 		};
 		var characterButtons = document.getElementsByClassName("characterButton");
+		var clipboardIntermediary = document.getElementById("clipboardIntermediary");
 		for (var i = 0; i < characterButtons.length; i++) {
 			characterButtons[i].addEventListener("click", function(e) {
-				e.target.select();
+				clipboardIntermediary.value = e.target.innerHTML;
+				clipboardIntermediary.select();
 				document.execCommand("copy");
 			});
 		};
