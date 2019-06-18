@@ -577,6 +577,7 @@
 				window.getSelection().removeAllRanges();
 				clipboardIntermediary.select();
 				document.execCommand("copy");
+				console.log("selection = " + window.getSelection().toString());
 			});
 		};
 		var verbs = ["tener","poner","valer","salir","venir","poder","caber","haber","saber","querer","decir","hacer","abrir","correr","dar","jugar","llegar","llamar","leer","ir","hablar","vivir","ver","tomar","trabajar","ser","empezar","pagar","mirar","llevar","creer","deber"];
