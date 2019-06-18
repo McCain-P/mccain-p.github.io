@@ -853,11 +853,8 @@
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
 				updateScore(0, 1, null, null);
-				document.getElementById("problemsIncorrectVerbFutureTranslation").innerHTML = conditionalConjugationSolution;
+				document.getElementById("problemsIncorrectVerbFutureTranslation").innerHTML = futureTranslationSolution;
 				document.getElementById("problemsIncorrectFutureTranslation").classList.remove("disabled");
-				console.log(document.getElementById("problemsIncorrectVerbFutureTranslation"));
-				console.log(document.getElementById("problemsIncorrectFutureTranslation"));
-				console.log(conditionalConjugationSolution);
 			};
 			submitable = false;
 		});
