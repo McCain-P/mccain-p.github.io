@@ -564,6 +564,15 @@
 					problems[i].classList.remove("disabled");
 				};
 			};
+			if (enabledProblem === "futureConjugationProblems") {
+				futureConjugation();
+			} else if (enabledProblem === "conditionalConjugationProblems") {
+				conditionalConjugation();
+			} else if (enabledProblem === "futureTranslationProblems") {
+				futureTranslation();
+			} else if (enabledProblem === "conditionalTranslationProblems") {
+				conditionalTranslation();
+			};
 		};
 		var buttons = document.getElementById("configuration").children;
 		for (var i = 0; i < buttons.length; i++) {
@@ -731,11 +740,27 @@
 			numberTotal.innerHTML = score[1];
 			percentageCorrect.innerHTML = Math.round(100 * score[0] / score[1]);
 		};
+		var submitable = true;
 		var futureConjugationSolution = "";
 		function futureConjugation() {
+			document.getElementById("problemsResponseFutureConjugation").value = "";
+			submitable = true;
 			var verbData = randomVerb(0, true, true, true, false, false);
 			futureConjugationSolution = verbData[3];
 			document.getElementById("problemsPromptInfinitiveFutureConjugation").innerHTML = verbData[1];
+			document.getElementById("problemsPromptSubjectFutureConjugation").innerHTML = verbData[2];
 		};
+		document.getElementById("problemsSubmitButtonFutureConjugation").addEventListener("click", function() {
+			if (submitable && inputSanitization(document.getElementById("problemsResponseFutureConjugation").value) === futureConjugationSolution) {
+				updateScore(1, 1, null, null);
+			} else if (submitable) {
+				updateScore(0, 1, null, null);
+				document.getElementById("problemsPromptFutureConjugation").innerHTML += " - Answer: " + futureConjugationSolution;
+			};
+			submitable = false;
+		});
+		document.getElementById("problemsNextButtonFutureConjugation").addEventListener("click", function() {
+			futureConjugation();
+		});
 	</script>
 </html>
