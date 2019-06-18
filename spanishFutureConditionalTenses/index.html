@@ -747,7 +747,6 @@
 						element.classList.remove("spoken");
 					});
 					var promise = audioFileElement.play();
-					console.log(promise);
 					break;
 				};
 			};
@@ -845,6 +844,7 @@
 			};
 			console.log("verbData[3] = " + verbData[3]);
 			console.log("verbData[4] = " + verbData[4]);
+			console.log(verbData);
 			var problemsPromptPhraseFutureTranslation = document.getElementById("problemsPromptPhraseFutureTranslation");
 			if (direction === 0) {
 				problemsPromptPhraseFutureTranslation.innerHTML = verbData[3];
