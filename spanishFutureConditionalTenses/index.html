@@ -843,6 +843,9 @@
 			};
 		};
 		document.getElementById("problemsSubmitButtonFutureTranslation").addEventListener("click", function() {
+			console.log(document.getElementById("problemsResponseFutureTranslation").value);
+			console.log(inputSanitization(document.getElementById("problemsResponseFutureTranslation").value));
+			console.log(futureTranslationSolution);
 			if (submitable && inputSanitization(document.getElementById("problemsResponseFutureTranslation").value) === futureTranslationSolution) {
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
