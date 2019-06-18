@@ -713,5 +713,20 @@
 		for (var i = 0; i < speakableElements.length; i++) {
 			speakableElements[i].addEventListener("click", speak);
 		};
+		var score = [0, 0];
+		//
+		function updateScore(numeratorIncrease, denominatorIncrease, numeratorDefinition, denominatorDefinition) {
+			if (numeratorDefinition === null) {
+				score[0] += numeratorIncrease;
+			} else {
+				score[0] = numeratorDefinition;
+			};
+			if (denominatorDefinition === null) {
+				score[1] += denominatorIncrease;
+			} else {
+				score[1] = denominatorDefinition;
+			};
+			//updateHTML
+		};
 	</script>
 </html>
