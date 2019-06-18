@@ -710,7 +710,7 @@
 		var audioFileType = "m4a";
 		for (var i = 0; i < verbs.length; i++) {
 			var audioElement = document.createElement("audio");
-			audioElement.src = "audio/" + verbs[i];
+			audioElement.src = "audio/" + verbs[i] + "." + audioFileType;
 			audioContainer.appendChild(audioElement);
 			for (var j = 0; j < 6; j++) {
 				var subject = subjects[j];
