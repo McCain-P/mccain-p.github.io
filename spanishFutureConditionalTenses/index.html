@@ -714,7 +714,9 @@
 			speakableElements[i].addEventListener("click", speak);
 		};
 		var score = [0, 0];
-		//
+		var numberCorrect = document.getElementById("numberCorrect");
+		var numberTotal = document.getElementById("numberTotal");
+		var percentageCorrect = document.getElementById("percentageCorrect");
 		function updateScore(numeratorIncrease, denominatorIncrease, numeratorDefinition, denominatorDefinition) {
 			if (numeratorDefinition === null) {
 				score[0] += numeratorIncrease;
@@ -726,7 +728,9 @@
 			} else {
 				score[1] = denominatorDefinition;
 			};
-			//updateHTML
+			numberCorrect.innerHTML = score[0];
+			numberTotal.innerHTML = score[1];
+			percentageCorrect.innerHTML = Math.round(score[0] / score[1]);
 		};
 	</script>
 </html>
