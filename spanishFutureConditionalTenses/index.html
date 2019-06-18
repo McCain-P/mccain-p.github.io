@@ -792,5 +792,28 @@
 		document.getElementById("problemsNextButtonFutureConjugation").addEventListener("click", function() {
 			futureConjugation();
 		});
+		var conditionalConjugationSolution = "";
+		function conditionalConjugation() {
+			document.getElementById("problemsIncorrectConditionalConjugation").classList.add("disabled");
+			document.getElementById("problemsResponseConditionalConjugation").value = "";
+			submitable = true;
+			var verbData = randomVerb(1, true, true, true, false, false);
+			conditionalConjugationSolution = verbData[3];
+			document.getElementById("problemsPromptInfinitiveConditionalConjugation").innerHTML = verbData[1];
+			document.getElementById("problemsPromptSubjectConditionalConjugation").innerHTML = verbData[2];
+		};
+		document.getElementById("problemsSubmitButtonConditionalConjugation").addEventListener("click", function() {
+			if (submitable && inputSanitization(document.getElementById("problemsResponseConditionalConjugation").value) === conditionalConjugationSolution) {
+				updateScore(1, 1, null, null);
+			} else if (submitable) {
+				updateScore(0, 1, null, null);
+				document.getElementById("problemsIncorrectVerbConditionalConjugation").innerHTML = conditionalConjugationSolution;
+				document.getElementById("problemsIncorrectConditionalConjugation").classList.remove("disabled");
+			};
+			submitable = false;
+		});
+		document.getElementById("problemsNextButtonConditionalConjugation").addEventListener("click", function() {
+			conditionalConjugation();
+		});
 	</script>
 </html>
