@@ -553,6 +553,13 @@
 		for (var i = 0; i < buttons.length; i++) {
 			buttons[i].addEventListener("click", selectProblemType);
 		};
+		var characterButtons = document.getElementsByClassName("characterButton");
+		for (var i = 0; i < characterButtons.length; i++) {
+			characterButtons[i].addEventListener("click", function(e) {
+				e.target.select();
+				document.execCommand("copy");
+			});
+		};
 		var verbs = ["tener","poner","valer","salir","venir","poder","caber","haber","saber","querer","decir","hacer","abrir","correr","dar","jugar","llegar","llamar","leer","ir","hablar","vivir","ver","tomar","trabajar","ser","empezar","pagar","mirar","llevar","creer","deber"];
 		var irregularBoundaryIndex = 11;
 		var irregulars = ["tendr","pondr","valdr","saldr","vendr","podr","cabr","habr","sabr","querr","dir","har"];
