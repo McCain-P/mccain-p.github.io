@@ -714,15 +714,25 @@
 			audioContainer.appendChild(audioElement);
 			for (var j = 0; j < 6; j++) {
 				var subject = subjects[j];
-				var characterSubstitutions = [["\/","-"],["&#xe1;","a_"],["&#xe9;","e_"],["&#xed;","i_"],["&#xf3;","o_"],["&#xfa;","u_"],["&#xf1;","n_"]];
-				for (var k = 0; k < characterSubstitutions.length; k++) {
-					subject = subject.replace(new RegExp(characterSubstitutions[k][0], "g"), characterSubstitutions[k][1]);
+				var characterSubstitutionsSubjects = [["\/","-"],["\xe1","a_"],["\xe9","e_"],["\xed","i_"],["\xf3","o_"],["\xfa","u_"],["\xf1","n_"]];
+				for (var k = 0; k < characterSubstitutionsSubjects.length; k++) {
+					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[k][0], "g"), characterSubstitutionsSubjects[k][1]);
 				};
+				var characterSubstitutionsPost = [["\xe1","a_"],["\xe9","e_"],["\xed","i_"],["\xf3","o_"],["\xfa","u_"],["\xf1","n_"]];
+				var srcString = "";
 				var audioElement = document.createElement("audio");
-				audioElement.src = "audio/" + verbs[i] + "-futuro-" + subject + "." + audioFileType;
+				srcString = "audio/" + verbs[i] + "-futuro-" + subject + "." + audioFileType;
+				for (var k = 0; k < characterSubstitutionsPost.length; k++) {
+					srcString = srcString.replace(new RegExp(characterSubstitutionsPost[k][0], "g"), characterSubstitutionsPost[k][1]);
+				};
+				audioElement.src = srcString;
 				audioContainer.appendChild(audioElement);
 				var audioElement = document.createElement("audio");
-				audioElement.src = "audio/" + verbs[i] + "-condicional-" + subject + "." + audioFileType;
+				srcString = "audio/" + verbs[i] + "-condicional-" + subject + "." + audioFileType;
+				for (var k = 0; k < characterSubstitutionsPost.length; k++) {
+					srcString = srcString.replace(new RegExp(characterSubstitutionsPost[k][0], "g"), characterSubstitutionsPost[k][1]);
+				};
+				audioElement.src = srcString;
 				audioContainer.appendChild(audioElement);
 			};
 		};
