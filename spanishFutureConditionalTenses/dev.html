@@ -33,8 +33,11 @@ d = f(c, n, w)
 		</button>
 		<p id="calculatedWidth">
 		</p>
-		<audio src="audio/tener-condicional-e#l-ella-usted.wav" id="audioTest">
+		<audio src="audio/tener.m4a" id="audioTest">
 		</audio>
+		<button id="playAudio">
+			playAudio
+		</button>
 	</body>
 	<script>
 		var dE = document.getElementById("calculatedWidth");
@@ -86,6 +89,8 @@ d = f(c, n, w)
 		};
 		document.body.addEventListener("click", colorsUpdate);
 		*/
-		document.getElementById("audioTest").play();
+		document.getElementById("playAudio").addEventListener("click", function() {
+			document.getElementById("audioTest").play();
+		});
 	</script>
 </html>
