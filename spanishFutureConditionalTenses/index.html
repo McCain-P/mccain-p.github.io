@@ -764,6 +764,7 @@
 		var submitable = true;
 		var futureConjugationSolution = "";
 		function futureConjugation() {
+			document.getElementById("problemsIncorrectFutureConjugation").classList.add("disabled");
 			document.getElementById("problemsResponseFutureConjugation").value = "";
 			submitable = true;
 			var verbData = randomVerb(0, true, true, true, false, false);
@@ -779,7 +780,8 @@
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
 				updateScore(0, 1, null, null);
-				document.getElementById("problemsPromptFutureConjugation").innerHTML += " - Answer: " + futureConjugationSolution;
+				document.getElementById("problemsIncorrectVerbFutureConjugation").innerHTML = futureConjugationSolution;
+				document.getElementById("problemsIncorrectFutureConjugation").classList.remove("disabled");
 			};
 			submitable = false;
 		});
