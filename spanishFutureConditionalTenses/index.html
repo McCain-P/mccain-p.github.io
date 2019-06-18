@@ -815,5 +815,42 @@
 		document.getElementById("problemsNextButtonConditionalConjugation").addEventListener("click", function() {
 			conditionalConjugation();
 		});
+		
+		
+		var futureTranslationSolution = "";
+		function conditionalConjugation() {
+			document.getElementById("problemsIncorrectFutureTranslation").classList.add("disabled");
+			document.getElementById("problemsResponseFutureTranslation").value = "";
+			submitable = true;
+			var direction = Math.round(Math.random());
+			/*
+			direction = 0 -> Spanish to English
+			direction = 1 -> English to Spanish
+			*/
+			var verbData = randomVerb(0, false, false, true, true, false);
+			if (direction === 0) {
+				futureTranslationSolution = verbData[4];
+			} else {
+				futureTranslationSolution = verbData[3];
+			};
+			if (direction === 0) {
+				document.getElementById("problemsPromptPhraseFutureTranslation").innerHTML = verbData[3];
+			} else {
+				document.getElementById("problemsPromptPhraseFutureTranslation").innerHTML = verbData[4];
+			};
+		};
+		document.getElementById("problemsSubmitButtonConditionalConjugation").addEventListener("click", function() {
+			if (submitable && inputSanitization(document.getElementById("problemsResponseConditionalConjugation").value) === conditionalConjugationSolution) {
+				updateScore(1, 1, null, null);
+			} else if (submitable) {
+				updateScore(0, 1, null, null);
+				document.getElementById("problemsIncorrectVerbConditionalConjugation").innerHTML = conditionalConjugationSolution;
+				document.getElementById("problemsIncorrectConditionalConjugation").classList.remove("disabled");
+			};
+			submitable = false;
+		});
+		document.getElementById("problemsNextButtonConditionalConjugation").addEventListener("click", function() {
+			conditionalConjugation();
+		});
 	</script>
 </html>
