@@ -833,10 +833,13 @@
 			} else {
 				futureTranslationSolution = verbData[3];
 			};
+			var problemsPromptPhraseFutureTranslation = document.getElementById("problemsPromptPhraseFutureTranslation");
 			if (direction === 0) {
-				document.getElementById("problemsPromptPhraseFutureTranslation").innerHTML = verbData[3];
+				problemsPromptPhraseFutureTranslation.innerHTML = verbData[3];
+				problemsPromptPhraseFutureTranslation.className.add("speakable");
 			} else {
-				document.getElementById("problemsPromptPhraseFutureTranslation").innerHTML = verbData[4];
+				problemsPromptPhraseFutureTranslation.innerHTML = verbData[4];
+				problemsPromptPhraseFutureTranslation.className.remove("speakable");
 			};
 		};
 		document.getElementById("problemsSubmitButtonConditionalConjugation").addEventListener("click", function() {
