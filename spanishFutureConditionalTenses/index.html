@@ -573,7 +573,7 @@
 		var clipboardIntermediary = document.getElementById("clipboardIntermediary");
 		for (var i = 0; i < characterButtons.length; i++) {
 			characterButtons[i].addEventListener("click", function(e) {
-				clipboardIntermediary.value = e.target.innerHTML;
+				clipboardIntermediary.value = /\S+/.exec(e.target.innerHTML)[0];
 				window.getSelection().removeAllRanges();
 				clipboardIntermediary.select();
 				document.execCommand("copy");
