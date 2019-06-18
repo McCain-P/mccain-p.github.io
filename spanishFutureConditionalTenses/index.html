@@ -842,13 +842,13 @@
 				problemsPromptPhraseFutureTranslation.className.remove("speakable");
 			};
 		};
-		document.getElementById("problemsSubmitButtonConditionalConjugation").addEventListener("click", function() {
-			if (submitable && inputSanitization(document.getElementById("problemsResponseConditionalConjugation").value) === conditionalConjugationSolution) {
+		document.getElementById("problemsSubmitButtonFutureTranslation").addEventListener("click", function() {
+			if (submitable && inputSanitization(document.getElementById("problemsResponseFutureTranslation").value) === futureTranslationSolution) {
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
 				updateScore(0, 1, null, null);
-				document.getElementById("problemsIncorrectVerbConditionalConjugation").innerHTML = conditionalConjugationSolution;
-				document.getElementById("problemsIncorrectConditionalConjugation").classList.remove("disabled");
+				document.getElementById("problemsIncorrectVerbFutureTranslation").innerHTML = conditionalConjugationSolution;
+				document.getElementById("problemsIncorrectFutureTranslation").classList.remove("disabled");
 			};
 			submitable = false;
 		});
