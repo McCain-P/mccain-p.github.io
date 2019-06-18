@@ -574,6 +574,7 @@
 		for (var i = 0; i < characterButtons.length; i++) {
 			characterButtons[i].addEventListener("click", function(e) {
 				clipboardIntermediary.value = /\S+/.exec(e.target.innerHTML)[0];
+				console.log("clipboardIntermediary.value = " + clipboardIntermediary.value);
 				window.getSelection().removeAllRanges();
 				clipboardIntermediary.select();
 				document.execCommand("copy");
