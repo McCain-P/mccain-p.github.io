@@ -731,5 +731,11 @@
 			numberTotal.innerHTML = score[1];
 			percentageCorrect.innerHTML = Math.round(100 * score[0] / score[1]);
 		};
+		var futureConjugationSolution = "";
+		function futureConjugation() {
+			var verbData = randomVerb(0, true, true, true, false, false);
+			futureConjugationSolution = verbData[3];
+			document.getElementById("problemsPromptInfinitiveFutureConjugation").innerHTML = verbData[1];
+		};
 	</script>
 </html>
