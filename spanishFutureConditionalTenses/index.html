@@ -854,6 +854,11 @@
 			} else if (submitable) {
 				updateScore(0, 1, null, null);
 				document.getElementById("problemsIncorrectVerbFutureTranslation").innerHTML = futureTranslationSolution;
+				if (direction === 0) {
+					document.getElementById("problemsIncorrectVerbFutureTranslation").classList.remove("speakable");
+				} else {
+					document.getElementById("problemsIncorrectVerbFutureTranslation").classList.add("speakable");
+				};
 				document.getElementById("problemsIncorrectFutureTranslation").classList.remove("disabled");
 			};
 			submitable = false;
