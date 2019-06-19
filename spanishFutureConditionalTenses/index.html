@@ -940,7 +940,7 @@
 			var problemsPromptPhraseConditionalTranslation = document.getElementById("problemsPromptPhraseConditionalTranslation");
 			if (direction === 0) {
 				problemsPromptPhraseConditionalTranslation.innerHTML = verbData[3];
-				problemsPromptPhraseConditionalTranslation.dataset.audio = convertToAudioFilename(1, verbData[1], verbData[0], verbData[2]);
+				problemsPromptPhraseConditionalTranslation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
 				problemsPromptPhraseConditionalTranslation.classList.add("speakable");
 			} else {
 				problemsPromptPhraseConditionalTranslation.innerHTML = verbData[4];
@@ -959,7 +959,7 @@
 					problemsIncorrectVerbConditionalTranslation.dataset.audio = "";
 					problemsIncorrectVerbConditionalTranslation.classList.remove("speakable");
 				} else {
-					problemsIncorrectVerbConditionalTranslation.dataset.audio = convertToAudioFilename(1, verbData[1], verbData[0], verbData[2]);
+					problemsIncorrectVerbConditionalTranslation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
 					problemsIncorrectVerbConditionalTranslation.classList.add("speakable");
 				};
 				document.getElementById("problemsIncorrectConditionalTranslation").classList.remove("disabled");
