@@ -920,5 +920,54 @@
 		document.getElementById("problemsNextButtonFutureTranslation").addEventListener("click", function() {
 			futureTranslation();
 		});
+		
+		var conditionalTranslationSolution = "";
+		function conditionalTranslation() {
+			document.getElementById("problemsIncorrectConditionalTranslation").classList.add("disabled");
+			document.getElementById("problemsResponseConditionalTranslation").value = "";
+			submitable = true;
+			direction = Math.round(Math.random());
+			/*
+			direction = 0 -> Spanish to English
+			direction = 1 -> English to Spanish
+			*/
+			verbData = randomVerb(0, true, true, true, true, false);
+			if (direction === 0) {
+				conditionalTranslationSolution = verbData[4];
+			} else {
+				conditionalTranslationSolution = verbData[3];
+			};
+			var problemsPromptPhraseConditionalTranslation = document.getElementById("problemsPromptPhraseConditionalTranslation");
+			if (direction === 0) {
+				problemsPromptPhraseConditionalTranslation.innerHTML = verbData[3];
+				problemsPromptPhraseConditionalTranslation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
+				problemsPromptPhraseConditionalTranslation.classList.add("speakable");
+			} else {
+				problemsPromptPhraseConditionalTranslation.innerHTML = verbData[4];
+				problemsPromptPhraseConditionalTranslation.dataset.audio = "";
+				problemsPromptPhraseConditionalTranslation.classList.remove("speakable");
+			};
+		};
+		document.getElementById("problemsSubmitButtonConditionalTranslation").addEventListener("click", function() {
+			if (submitable && inputSanitization(document.getElementById("problemsResponseConditionalTranslation").value) === conditionalTranslationSolution) {
+				updateScore(1, 1, null, null);
+			} else if (submitable) {
+				updateScore(0, 1, null, null);
+				var problemsIncorrectVerbConditionalTranslation = document.getElementById("problemsIncorrectVerbConditionalTranslation");
+				problemsIncorrectVerbConditionalTranslation.innerHTML = conditionalTranslationSolution;
+				if (direction === 0) {
+					problemsIncorrectVerbConditionalTranslation.dataset.audio = "";
+					problemsIncorrectVerbConditionalTranslation.classList.remove("speakable");
+				} else {
+					problemsIncorrectVerbConditionalTranslation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
+					problemsIncorrectVerbConditionalTranslation.classList.add("speakable");
+				};
+				document.getElementById("problemsIncorrectConditionalTranslation").classList.remove("disabled");
+			};
+			submitable = false;
+		});
+		document.getElementById("problemsNextButtonConditionalTranslation").addEventListener("click", function() {
+			conditionalTranslation();
+		});
 	</script>
 </html>
