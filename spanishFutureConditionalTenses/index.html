@@ -787,12 +787,13 @@
 			percentageCorrect.innerHTML = Math.round(100 * score[0] / score[1]);
 		};
 		var submitable = true;
+		var verbData = [];
 		var futureConjugationSolution = "";
 		function futureConjugation() {
 			document.getElementById("problemsIncorrectFutureConjugation").classList.add("disabled");
 			document.getElementById("problemsResponseFutureConjugation").value = "";
 			submitable = true;
-			var verbData = randomVerb(0, true, true, true, false, false);
+			verbData = randomVerb(0, true, true, true, false, false);
 			futureConjugationSolution = verbData[3];
 			var problemsPromptInfinitiveFutureConjugation = document.getElementById("problemsPromptInfinitiveFutureConjugation");
 			var problemsPromptSubjectFutureConjugation = document.getElementById("problemsPromptSubjectFutureConjugation");
@@ -821,7 +822,7 @@
 			document.getElementById("problemsIncorrectConditionalConjugation").classList.add("disabled");
 			document.getElementById("problemsResponseConditionalConjugation").value = "";
 			submitable = true;
-			var verbData = randomVerb(1, true, true, true, false, false);
+			verbData = randomVerb(1, true, true, true, false, false);
 			conditionalConjugationSolution = verbData[3];
 			var problemsPromptInfinitiveConditionalConjugation = document.getElementById("problemsPromptInfinitiveConditionalConjugation");
 			var problemsPromptSubjectConditionalConjugation = document.getElementById("problemsPromptSubjectConditionalConjugation");
@@ -856,7 +857,7 @@
 			direction = 0 -> Spanish to English
 			direction = 1 -> English to Spanish
 			*/
-			var verbData = randomVerb(0, false, false, true, true, false);
+			verbData = randomVerb(0, false, false, true, true, false);
 			if (direction === 0) {
 				futureTranslationSolution = verbData[4];
 			} else {
