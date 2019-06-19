@@ -774,15 +774,17 @@
 		//Defining the function that occurs when an element with a class of "speakable" is clicked, and adding a "click" event listener that refers to that function on all elements with a class of "speakable"
 		function speak(e) {
 			var element = e.target;
-			element.classList.add("spoken");
-			for (var i = 0; i < audioContainer.children.length; i++) {
-				var audioFileElement = audioContainer.children[i];
-				if (new RegExp("audio\\/" + element.dataset.audio.slice(0, -1 * (audioFileType.length + 1)) + "\\." + audioFileType).test(audioFileElement.src)) {
-					audioFileElement.addEventListener("ended", function() {
-						element.classList.remove("spoken");
-					});
-					var promise = audioFileElement.play();
-					break;
+			if (element.classList.contains("speakable")) {
+				element.classList.add("spoken");
+				for (var i = 0; i < audioContainer.children.length; i++) {
+					var audioFileElement = audioContainer.children[i];
+					if (new RegExp("audio\\/" + element.dataset.audio.slice(0, -1 * (audioFileType.length + 1)) + "\\." + audioFileType).test(audioFileElement.src)) {
+						audioFileElement.addEventListener("ended", function() {
+							element.classList.remove("spoken");
+						});
+						var promise = audioFileElement.play();
+						break;
+					};
 				};
 			};
 		};
@@ -893,6 +895,7 @@
 				problemsPromptPhraseFutureTranslation.classList.add("speakable");
 			} else {
 				problemsPromptPhraseFutureTranslation.innerHTML = verbData[4];
+				problemsPromptPhraseFutureTranslation.dataset.audio = "";
 				problemsPromptPhraseFutureTranslation.classList.remove("speakable");
 			};
 		};
@@ -904,6 +907,7 @@
 				var problemsIncorrectVerbFutureTranslation = document.getElementById("problemsIncorrectVerbFutureTranslation");
 				problemsIncorrectVerbFutureTranslation.innerHTML = futureTranslationSolution;
 				if (direction === 0) {
+					problemsIncorrectVerbFutureTranslation.dataset.audio = "";
 					problemsIncorrectVerbFutureTranslation.classList.remove("speakable");
 				} else {
 					problemsIncorrectVerbFutureTranslation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
