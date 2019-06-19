@@ -708,17 +708,17 @@
 		//Adding <audio> elements for the infinitives and conjugation permutations of the verbs
 		var audioContainer = document.getElementById("audioContainer");
 		var audioFileType = "m4a";
+		var characterSubstitutionsSubjects = [["\/","-"],["\xe1","a_"],["\xe9","e_"],["\xed","i_"],["\xf3","o_"],["\xfa","u_"],["\xf1","n_"]];
+		var characterSubstitutionsPost = [["\xe1","a_"],["\xe9","e_"],["\xed","i_"],["\xf3","o_"],["\xfa","u_"],["\xf1","n_"]];
 		for (var i = 0; i < verbs.length; i++) {
 			var audioElement = document.createElement("audio");
 			audioElement.src = "audio/" + verbs[i] + "." + audioFileType;
 			audioContainer.appendChild(audioElement);
 			for (var j = 0; j < 6; j++) {
 				var subject = subjects[j];
-				var characterSubstitutionsSubjects = [["\/","-"],["\xe1","a_"],["\xe9","e_"],["\xed","i_"],["\xf3","o_"],["\xfa","u_"],["\xf1","n_"]];
 				for (var k = 0; k < characterSubstitutionsSubjects.length; k++) {
 					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[k][0], "g"), characterSubstitutionsSubjects[k][1]);
 				};
-				var characterSubstitutionsPost = [["\xe1","a_"],["\xe9","e_"],["\xed","i_"],["\xf3","o_"],["\xfa","u_"],["\xf1","n_"]];
 				var srcString = "";
 				var audioElement = document.createElement("audio");
 				srcString = "audio/" + verbs[i] + "-futuro-" + subject + "." + audioFileType;
@@ -735,6 +735,18 @@
 				audioElement.src = srcString;
 				audioContainer.appendChild(audioElement);
 			};
+		};
+		function convertToAudioFilename(verb, tense, subject) {
+			var tenseString = "";
+			if (tense === 0) {
+				tenseString = "futuro";
+			} else {
+				tenseString = "condicional";
+			};
+			for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
+					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
+			};
+			return verb + "-" + tense + "-" + subject;
 		};
 		//Defining the function that occurs when an element with a class of "speakable" is clicked, and adding a "click" event listener that refers to that function on all elements with a class of "speakable"
 		function speak(e) {
