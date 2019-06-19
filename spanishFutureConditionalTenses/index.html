@@ -741,16 +741,27 @@
 			*/
 			var fileString = "";
 			if (config === 0) {
+				for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
+					verb = verb.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
+				};
+				for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
+					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
+				};
+			} else if (config === 1) {
+				for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
+					verb = verb.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
+				};
+			} else {
+				for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
+					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
+				};
+			};
+			if (config === 0) {
 				var tenseString = "";
 				if (tense === 0) {
 					tenseString = "futuro";
 				} else {
 					tenseString = "condicional";
-				};
-				console.log(characterSubstitutionsSubjects);
-				for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
-					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
-					console.log(subject);
 				};
 				fileString = verb + "-" + tenseString + "-" + subject;
 			} else if (config === 1) {
