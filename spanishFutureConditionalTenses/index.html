@@ -806,7 +806,9 @@
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
 				updateScore(0, 1, null, null);
-				document.getElementById("problemsIncorrectVerbFutureConjugation").innerHTML = futureConjugationSolution;
+				var problemsIncorrectVerbFutureConjugation = document.getElementById("problemsIncorrectVerbFutureConjugation");
+				problemsIncorrectVerbFutureConjugation.innerHTML = futureConjugationSolution;
+				problemsIncorrectVerbFutureConjugation.dataset.audio = convertToAudioFilename(verbData[1], verbData[0], verbData[2]);
 				document.getElementById("problemsIncorrectFutureConjugation").classList.remove("disabled");
 			};
 			submitable = false;
@@ -833,7 +835,9 @@
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
 				updateScore(0, 1, null, null);
-				document.getElementById("problemsIncorrectVerbConditionalConjugation").innerHTML = conditionalConjugationSolution;
+				var problemsIncorrectVerbConditionalConjugation = document.getElementById("problemsIncorrectVerbConditionalConjugation");
+				problemsIncorrectVerbConditionalConjugation.innerHTML = conditionalConjugationSolution;
+				problemsIncorrectVerbConditionalConjugation.dataset.audio = convertToAudioFilename(verbData[1], verbData[0], verbData[2]);
 				document.getElementById("problemsIncorrectConditionalConjugation").classList.remove("disabled");
 			};
 			submitable = false;
