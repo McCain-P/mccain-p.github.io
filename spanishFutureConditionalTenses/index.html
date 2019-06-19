@@ -746,10 +746,6 @@
 			for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
 					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
 			};
-			console.log(verb + "-" + tenseString + "-" + subject + "." + audioFileType);
-			console.log(verb);
-			console.log(tenseString);
-			console.log(subject);
 			return verb + "-" + tenseString + "-" + subject + "." + audioFileType;
 		};
 		//Defining the function that occurs when an element with a class of "speakable" is clicked, and adding a "click" event listener that refers to that function on all elements with a class of "speakable"
@@ -758,7 +754,7 @@
 			element.classList.add("spoken");
 			for (var i = 0; i < audioContainer.children.length; i++) {
 				var audioFileElement = audioContainer.children[i];
-				if (new RegExp("(.*\\/)?" + element.dataset.audio.slice(0, -1 * (audioFileType.length + 1)) + "\\." + audioFileType).test(audioFileElement.src)) {
+				if (new RegExp("audio\\/" + element.dataset.audio.slice(0, -1 * (audioFileType.length + 1)) + "\\." + audioFileType).test(audioFileElement.src)) {
 					audioFileElement.addEventListener("ended", function() {
 						element.classList.remove("spoken");
 					});
