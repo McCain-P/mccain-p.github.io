@@ -736,17 +736,30 @@
 				audioContainer.appendChild(audioElement);
 			};
 		};
-		function convertToAudioFilename(verb, tense, subject) {
-			var tenseString = "";
-			if (tense === 0) {
-				tenseString = "futuro";
-			} else {
-				tenseString = "condicional";
-			};
-			for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
+		function convertToAudioFilename(config, verb, tense, subject) {
+			/*
+			config = 0 -> conjugated verb
+			config = 1 -> infinitive verb
+			config = 2 -> subject
+			*/
+			var fileString = "";
+			if (config === 0) {
+				var tenseString = "";
+				if (tense === 0) {
+					tenseString = "futuro";
+				} else {
+					tenseString = "condicional";
+				};
+				for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
 					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
+				};
+				fileString = verb + "-" + tenseString + "-" + subject;
+			} else if (config === 1) {
+				fileString = verb;
+			} else {
+				fileString = subject;
 			};
-			return verb + "-" + tenseString + "-" + subject + "." + audioFileType;
+			return fileString + "." + audioFileType;
 		};
 		//Defining the function that occurs when an element with a class of "speakable" is clicked, and adding a "click" event listener that refers to that function on all elements with a class of "speakable"
 		function speak(e) {
@@ -799,8 +812,8 @@
 			var problemsPromptSubjectFutureConjugation = document.getElementById("problemsPromptSubjectFutureConjugation");
 			problemsPromptInfinitiveFutureConjugation.innerHTML = verbData[1];
 			problemsPromptSubjectFutureConjugation.innerHTML = verbData[2];
-			problemsPromptInfinitiveFutureConjugation.dataset.audio = verbData[1] + "." + audioFileType;
-			problemsPromptSubjectFutureConjugation.dataset.audio = verbData[2] + "." + audioFileType;
+			problemsPromptInfinitiveFutureConjugation.dataset.audio = convertToAudioFilename(1, verbData[1], verbData[0], verbData[2]);
+			problemsPromptSubjectFutureConjugation.dataset.audio = convertToAudioFilename(2, verbData[1], verbData[0], verbData[2]);
 		};
 		document.getElementById("problemsSubmitButtonFutureConjugation").addEventListener("click", function() {
 			if (submitable && inputSanitization(document.getElementById("problemsResponseFutureConjugation").value) === futureConjugationSolution) {
@@ -809,7 +822,7 @@
 				updateScore(0, 1, null, null);
 				var problemsIncorrectVerbFutureConjugation = document.getElementById("problemsIncorrectVerbFutureConjugation");
 				problemsIncorrectVerbFutureConjugation.innerHTML = futureConjugationSolution;
-				problemsIncorrectVerbFutureConjugation.dataset.audio = convertToAudioFilename(verbData[1], verbData[0], verbData[2]);
+				problemsIncorrectVerbFutureConjugation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
 				document.getElementById("problemsIncorrectFutureConjugation").classList.remove("disabled");
 			};
 			submitable = false;
@@ -828,8 +841,8 @@
 			var problemsPromptSubjectConditionalConjugation = document.getElementById("problemsPromptSubjectConditionalConjugation");
 			problemsPromptInfinitiveConditionalConjugation.innerHTML = verbData[1];
 			problemsPromptSubjectConditionalConjugation.innerHTML = verbData[2];
-			problemsPromptInfinitiveConditionalConjugation.dataset.audio = verbData[1] + "." + audioFileType;
-			problemsPromptSubjectConditionalConjugation.dataset.audio = verbData[2] + "." + audioFileType;
+			problemsPromptInfinitiveConditionalConjugation.dataset.audio = convertToAudioFilename(1, verbData[1], verbData[0], verbData[2]);
+			problemsPromptSubjectConditionalConjugation.dataset.audio = convertToAudioFilename(2, verbData[1], verbData[0], verbData[2]);
 		};
 		document.getElementById("problemsSubmitButtonConditionalConjugation").addEventListener("click", function() {
 			if (submitable && inputSanitization(document.getElementById("problemsResponseConditionalConjugation").value) === conditionalConjugationSolution) {
@@ -838,7 +851,7 @@
 				updateScore(0, 1, null, null);
 				var problemsIncorrectVerbConditionalConjugation = document.getElementById("problemsIncorrectVerbConditionalConjugation");
 				problemsIncorrectVerbConditionalConjugation.innerHTML = conditionalConjugationSolution;
-				problemsIncorrectVerbConditionalConjugation.dataset.audio = convertToAudioFilename(verbData[1], verbData[0], verbData[2]);
+				problemsIncorrectVerbConditionalConjugation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
 				document.getElementById("problemsIncorrectConditionalConjugation").classList.remove("disabled");
 			};
 			submitable = false;
