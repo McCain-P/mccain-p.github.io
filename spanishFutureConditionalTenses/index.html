@@ -821,14 +821,13 @@
 		document.getElementById("problemsNextButtonConditionalConjugation").addEventListener("click", function() {
 			conditionalConjugation();
 		});
-		
-		
+		var direction = 0;
 		var futureTranslationSolution = "";
 		function futureTranslation() {
 			document.getElementById("problemsIncorrectFutureTranslation").classList.add("disabled");
 			document.getElementById("problemsResponseFutureTranslation").value = "";
 			submitable = true;
-			var direction = Math.round(Math.random());
+			direction = Math.round(Math.random());
 			/*
 			direction = 0 -> Spanish to English
 			direction = 1 -> English to Spanish
