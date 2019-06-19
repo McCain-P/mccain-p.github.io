@@ -889,6 +889,7 @@
 			var problemsPromptPhraseFutureTranslation = document.getElementById("problemsPromptPhraseFutureTranslation");
 			if (direction === 0) {
 				problemsPromptPhraseFutureTranslation.innerHTML = verbData[3];
+				problemsPromptPhraseFutureTranslation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
 				problemsPromptPhraseFutureTranslation.classList.add("speakable");
 			} else {
 				problemsPromptPhraseFutureTranslation.innerHTML = verbData[4];
@@ -900,11 +901,13 @@
 				updateScore(1, 1, null, null);
 			} else if (submitable) {
 				updateScore(0, 1, null, null);
-				document.getElementById("problemsIncorrectVerbFutureTranslation").innerHTML = futureTranslationSolution;
+				var problemsIncorrectVerbFutureTranslation = document.getElementById("problemsIncorrectVerbFutureTranslation");
+				problemsIncorrectVerbFutureTranslation.innerHTML = futureTranslationSolution;
 				if (direction === 0) {
-					document.getElementById("problemsIncorrectVerbFutureTranslation").classList.remove("speakable");
+					problemsIncorrectVerbFutureTranslation.classList.remove("speakable");
 				} else {
-					document.getElementById("problemsIncorrectVerbFutureTranslation").classList.add("speakable");
+					problemsIncorrectVerbFutureTranslation.dataset.audio = convertToAudioFilename(0, verbData[1], verbData[0], verbData[2]);
+					problemsIncorrectVerbFutureTranslation.classList.add("speakable");
 				};
 				document.getElementById("problemsIncorrectFutureTranslation").classList.remove("disabled");
 			};
