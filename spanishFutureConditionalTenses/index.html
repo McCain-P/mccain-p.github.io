@@ -746,7 +746,7 @@
 			for (var i = 0; i < characterSubstitutionsSubjects.length; i++) {
 					subject = subject.replace(new RegExp(characterSubstitutionsSubjects[i][0], "g"), characterSubstitutionsSubjects[i][1]);
 			};
-			return verb + "-" + tense + "-" + subject;
+			return verb + "-" + tense + "-" + subject + "." + audioFileType;
 		};
 		//Defining the function that occurs when an element with a class of "speakable" is clicked, and adding a "click" event listener that refers to that function on all elements with a class of "speakable"
 		function speak(e) {
@@ -794,8 +794,12 @@
 			submitable = true;
 			var verbData = randomVerb(0, true, true, true, false, false);
 			futureConjugationSolution = verbData[3];
-			document.getElementById("problemsPromptInfinitiveFutureConjugation").innerHTML = verbData[1];
-			document.getElementById("problemsPromptSubjectFutureConjugation").innerHTML = verbData[2];
+			var problemsPromptInfinitiveFutureConjugation = document.getElementById("problemsPromptInfinitiveFutureConjugation");
+			var problemsPromptSubjectFutureConjugation = document.getElementById("problemsPromptSubjectFutureConjugation");
+			problemsPromptInfinitiveFutureConjugation.innerHTML = verbData[1];
+			problemsPromptSubjectFutureConjugation.innerHTML = verbData[2];
+			problemsPromptInfinitiveFutureConjugation.dataset.audio = verbData[1] + "." + audioFileType;
+			problemsPromptSubjectFutureConjugation.dataset.audio = verbData[2] + "." + audioFileType;
 		};
 		document.getElementById("problemsSubmitButtonFutureConjugation").addEventListener("click", function() {
 			if (submitable && inputSanitization(document.getElementById("problemsResponseFutureConjugation").value) === futureConjugationSolution) {
@@ -817,8 +821,12 @@
 			submitable = true;
 			var verbData = randomVerb(1, true, true, true, false, false);
 			conditionalConjugationSolution = verbData[3];
-			document.getElementById("problemsPromptInfinitiveConditionalConjugation").innerHTML = verbData[1];
-			document.getElementById("problemsPromptSubjectConditionalConjugation").innerHTML = verbData[2];
+			var problemsPromptInfinitiveConditionalConjugation = document.getElementById("problemsPromptInfinitiveConditionalConjugation");
+			var problemsPromptSubjectConditionalConjugation = document.getElementById("problemsPromptSubjectConditionalConjugation");
+			problemsPromptInfinitiveConditionalConjugation.innerHTML = verbData[1];
+			problemsPromptSubjectConditionalConjugation.innerHTML = verbData[2];
+			problemsPromptInfinitiveConditionalConjugation.dataset.audio = verbData[1] + "." + audioFileType;
+			problemsPromptSubjectConditionalConjugation.dataset.audio = verbData[2] + "." + audioFileType;
 		};
 		document.getElementById("problemsSubmitButtonConditionalConjugation").addEventListener("click", function() {
 			if (submitable && inputSanitization(document.getElementById("problemsResponseConditionalConjugation").value) === conditionalConjugationSolution) {
