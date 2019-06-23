@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>
+			Link Creator
+		</title>
+	</head>
+	<body>
+		<a id="link">
+		</a>
+		<input id="linkValueInput">
+		</input>
+		<button id="createLinkButton">
+			Create Link
+		</button>
+	</body>
+	<script>
+		var link = document.getElementById("link");
+		var linkValueInput = document.getElementById("linkValueInput");
+		var createLinkButton = document.getElementById("createLinkButton");
+		var linkValue = "";
+		function createLink() {
+			linkValue = linkValueInput.value;
+			link.href = linkValue;
+			link.innerHTML = linkValue;
+		};
+		createLinkButton.addEventListener("click", createLink);
+	</script>
