@@ -7,14 +7,25 @@
 			body {
 				background-color:
 			}
-			h1 {
-				
+			body * {
+				position: fixed;
+				margin: 0;
+				padding: 0;
 			}
-			img {
-				
+			#title {
+				color: RGB(0,0,0);
+				font-family: "Arial Black", "Arial Bold", sans-serif;
+				font-size: 5vw;
+				top: 35vh;
+				left: 50vw;
+				transform: translateX(-50%);
 			}
 			#img0 {
-				
+				height: 20vh;
+				width: auto;
+				top: 40vh;
+				left: 50vw;
+				transform: translateX(-50%);
 			}
 			#img1 {
 				
@@ -37,7 +48,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>
+		<h1 id="title">
 			Monokuma Fanclub!
 		</h1>
 		<img src="resources/monokumaStandingFullbody.png" id="img0">
