@@ -16,13 +16,13 @@
 		function randomRectangle() {
 			rectangle = document.createElement("div");
 			rectangle.className = "randomRectangle";
-			rectangle.position = "fixed";
+			rectangle.style.position = "fixed";
 			rectangle.style.height = r(100) + "vh";
 			rectangle.style.width = r(100) + "vw";
 			rectangle.style.top = r(99) + "vh";
 			rectangle.style.left = r(99) + "vw";
 			rectangle.style.backgroundColor = "rgb(" + r(255) + "," + r(255) + "," + r(255) + ")";
-			rectangle.zIndex = zIndex.toString();
+			rectangle.style.zIndex = zIndex.toString();
 			zIndex++;
 			document.body.appendChild(rectangle);
 		};
