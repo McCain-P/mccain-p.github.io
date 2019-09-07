@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>
+			Random Rectangles
+		</title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//Random rectangles
+		var zIndex = 0;
+		var rectangle;
+		function r(n) {
+			return Math.floor(Math.random() * (n + 1));
+		};
+		function randomRectangle() {
+			rectangle = document.createElement("div");
+			rectangle.style.height = r(100) + "vh";
+			rectangle.style.width = r(100) + "vw";
+			rectangle.style.top = r(99) + "vh";
+			rectangle.style.left = r(99) + "vw";
+			rectangle.style.backgroundColor = "rgb(" + r(255) + "," + r(255) + "," + r(255) + ")";
+			document.body.appendChild(rectangle);
+		};
+		window.setInterval(randomRectangle, 500);
+	</script>
+</html>
