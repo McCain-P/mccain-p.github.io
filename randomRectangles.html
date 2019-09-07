@@ -3,11 +3,6 @@
 		<title>
 			Random Rectangles
 		</title>
-		<style>
-			.randomRectangle {
-				position: fixed;
-			}
-		</style>
 	</head>
 	<body>
 	</body>
@@ -21,6 +16,7 @@
 		function randomRectangle() {
 			rectangle = document.createElement("div");
 			rectangle.className = "randomRectangle";
+			rectangle.position = "fixed";
 			rectangle.style.height = r(100) + "vh";
 			rectangle.style.width = r(100) + "vw";
 			rectangle.style.top = r(99) + "vh";
