@@ -4,7 +4,7 @@
 			Random Rectangles
 		</title>
 		<style>
-			body > div {
+			.randomRectangle {
 				position: fixed;
 			}
 		</style>
@@ -20,6 +20,7 @@
 		};
 		function randomRectangle() {
 			rectangle = document.createElement("div");
+			rectangle.class = "randomRectangle";
 			rectangle.style.height = r(100) + "vh";
 			rectangle.style.width = r(100) + "vw";
 			rectangle.style.top = r(99) + "vh";
