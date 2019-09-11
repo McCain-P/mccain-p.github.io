@@ -33,8 +33,8 @@
 				
 			};
 			var controlKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
-			console.log("keyDown " + e.key);
 			function keyDownEvent(e) {
+				console.log("keyDown " + e.key);
 				var key = e.key;
 				for (var i = 0; i < 4; i++) {
 					if (key === controlKeys[i]) {
