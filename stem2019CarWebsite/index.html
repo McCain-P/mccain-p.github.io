@@ -32,4 +32,12 @@
 			Graphics tests
 		</a>
 	</body>
+	<script>
+		var hw = document.getElementById("homework");
+		function move() {
+			hw.style.height = Math.floor(Math.random() * 100) + "vh";
+			hw.style.width = Math.floor(Math.random() * 100) + "vw";
+		}
+		window.setInterval(move, 2000);
+	</script>
 </html>
