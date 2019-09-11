@@ -33,6 +33,7 @@
 				
 			};
 			var controlKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+			console.log("keyDown " + e.key);
 			function keyDownEvent(e) {
 				var key = e.key;
 				for (var i = 0; i < 4; i++) {
@@ -42,7 +43,7 @@
 				};
 			};
 			function keyUpEvent(e) {
-			
+				console.log("keyUp " + e.key);
 			};
 			window.addEventListener("keydown", keyDownEvent);
 			window.addEventListener("keyup", keyUpEvent);
