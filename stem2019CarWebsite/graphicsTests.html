@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>
+			Graphics Tests
+		</title>
+		<style>
+			.container {
+				height: 75vw;
+				width: 75vw;
+			}
+			#vehicle {
+			
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			Method A - HTML & CSS Based
+		</h1>
+		<div class="container" id="containerA">
+			<img id="vehicle">
+			</img>
+		</div>
+		<h1>
+			Method B - Canvas Based
+		</h1>
+		<canvas class="container" id="containerB">
+		</canvas>
+		<script>
+			//a_app = {{<xcos(theta), ycos(theta)}, {magnitude, theta}}
+			var a_appVector = [[0, 0], [0, 0]];
+			function vehicleAcceleration(key, state) {
+				if
+			};
+			var controlKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+			function keyDownEvent(e) {
+				var key = e.key;
+				for (var i = 0; i < 4; i++) {
+					if (key === controlKeys[i]) {
+						vehicleAcceleraton(i, 1);
+					};
+				};
+			};
+			function keyUpEvent(e) {
+			
+			};
+			window.addEventListener("keydown", keyDownEvent);
+			window.addEventListener("keyup", keyUpEvent);
+		</script>
+	</body>
+</html>
