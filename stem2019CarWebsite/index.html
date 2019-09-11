@@ -3,8 +3,31 @@
 		<title>
 			Index
 		</title>
+		<style>
+			@keyframes rotate {
+				0% {
+					transform: rotate(0deg);
+				}
+				50% {
+					transform: rotate(180deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			#homework {
+				width: 75vw;
+				height: auto;
+				position: fixed;
+				height: 25vh;
+				width: 25vw;
+				animation: 1s linear 0s infinite normal none running rotate;
+			}
+		</style>
 	</head>
 	<body>
+		<img scr="homework.jpg" id="homework">
+		</img>
 		<a href="graphicsTests.html">
 			Graphics tests
 		</a>
