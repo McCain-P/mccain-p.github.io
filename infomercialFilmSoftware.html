@@ -46,115 +46,121 @@
 	<body>
 		<div id=calculator">
 			<div id="buttons">
-				<button id="0">
+				<button data-character="0" id="0">
 					0
 				</button>
-				<button id="1">
+				<button data-character="1" id="1">
 					1
 				</button>
-				<button id="2">
+				<button data-character="2" id="2">
 					2
 				</button>
-				<button id="3">
+				<button data-character="3" id="3">
 					3
 				</button>
-				<button id="4">
+				<button data-character="4" id="4">
 					4
 				</button>
-				<button id="5">
+				<button data-character="5" id="5">
 					5
 				</button>
-				<button id="6">
+				<button data-character="6" id="6">
 					6
 				</button>
-				<button id="7">
+				<button data-character="7" id="7">
 					7
 				</button>
-				<button id="8">
+				<button data-character="8" id="8">
 					8
 				</button>
-				<button id="9">
+				<button data-character="9" id="9">
 					9
 				</button>
-				<button id="i">
+				<button data-character="i" id="i">
 					i
 				</button>
-				<button id="e">
+				<button data-character="e" id="e">
 					e
 				</button>
-				<button id="pi">
-					π
+				<button data-character="&#x3c0;" id="pi">
+					&#x3c0;
 				</button>
-				<button id="n">
+				<button data-character="n" id="n">
 					n
 				</button>
-				<button id="equality">
+				<button data-character="" id="equals">
 					=
 				</button>
-				<button id="addition">
+				<button data-character="(" id="openParenthesis">
+					(
+				</button>
+				<button data-character=")" id="closedParenthesis">
+					)
+				</button>
+				<button data-character="+" id="addition">
 					+
 				</button>
-				<button id="subtraction">
+				<button data-character="-" id="subtraction">
 					-
 				</button>
-				<button id="multiplication">
+				<button data-character="*" id="multiplication">
 					&#x2022;
 				</button>
-				<button id="division">
+				<button data-character="/" id="division">
 					/
 				</button>
-				<button id="exponentiation">
+				<button data-character="^" id="exponentiation">
 					^
 				</button>
-				<button id="sqrt">
+				<button data-character="&#x221a;" id="sqrt">
 					&#x221a;
 				</button>
-				<button id="log">
+				<button data-character="log(" id="log">
 					log()
 				</button>
-				<button id="summation">
+				<button data-character="&#x3a3;" id="summation">
 					&#x3a3;
 				</button>
-				<button id="product">
+				<button data-character="&#x3a0;" id="product">
 					&#x3a0;
 				</button>
-				<button id="sin">
+				<button data-character="sin(" id="sin">
 					sin()
 				</button>
-				<button id="cos">
+				<button data-character="cos(" id="cos">
 					cos()
 				</button>
-				<button id="tan">
+				<button data-character="tan(" id="tan">
 					tan()
 				</button>
-				<button id="sec">
+				<button data-character="sec(" id="sec">
 					sec()
 				</button>
-				<button id="csc">
+				<button data-character="csc(" id="csc">
 					csc()
 				</button>
-				<button id="cot">
+				<button data-character="cot(" id="cot">
 					cot()
 				</button>
-				<button id="sinInv">
+				<button data-character="sin&#x207b;&#xb9;(" id="sinInv">
 					sin&#x207b;&#xb9;()
 				</button>
-				<button id="cosInv">
+				<button data-character="cos&#x207b;&#xb9;(" id="cosInv">
 					cos&#x207b;&#xb9;()
 				</button>
-				<button id="tanInv">
+				<button data-character="tan&#x207b;&#xb9;(" id="tanInv">
 					tan&#x207b;&#xb9;()
 				</button>
-				<button id="secInv">
+				<button data-character="sec&#x207b;&#xb9;(" id="secInv">
 					sec&#x207b;&#xb9;()
 				</button>
-				<button id="cscInv">
+				<button data-character="csc&#x207b;&#xb9;(" id="cscInv">
 					csc&#x207b;&#xb9;()
 				</button>
-				<button id="cotInv">
+				<button data-character="cot&#x207b;&#xb9;(" id="cotInv">
 					cot&#x207b;&#xb9;()
 				</button>
-				<button id="lim">
+				<button data-character="lim" id="lim">
 					lim
 				</button>
 			</div>
@@ -165,4 +171,24 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		function buttonElement(n) {
+			var buttonElements = document.getElementById("buttons").children;
+			if (n === -1) {
+				return buttonElements.length;
+			} else {
+				return buttonElements[n];
+			};
+		};
+		var output = document.getElementById("displayText");
+		function inputCharacters(string) {
+			output.innerHTML += string;
+		};
+		for (var i = 0; i < buttonElement(-1); i++) {
+			buttonElement(i).addEventListener("click", function() {
+				console.log(this);
+				inputCharacters(this.dataset.character);
+			});
+		};
+	</script>
 </html>
