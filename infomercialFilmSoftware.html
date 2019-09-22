@@ -195,7 +195,7 @@
 				<button data-character="lim" id="lim">
 					lim
 				</button>
-				<button data-character="\\clr" id="clr">
+				<button data-character="_CLR" id="clr">
 					CLR
 				</button>
 			</div>
@@ -212,7 +212,7 @@
 		};
 		var output = document.getElementById("displayText");
 		function inputCharacters(string) {
-			if (string !== "\\clr") {
+			if (string !== "_CLR") {
 				output.innerHTML += string;
 			} else {
 				output.innerHTML = "";
@@ -225,7 +225,7 @@
 				});
 			} else {
 				buttonElement(i).addEventListener("click", function() {
-					inputCharacters("\\clr");
+					inputCharacters("_CLR");
 					inputCharacters("A solution can be found.");
 				});
 			};
