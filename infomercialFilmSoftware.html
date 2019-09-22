@@ -60,6 +60,20 @@
 				left: 6vh;
 				background-color: RGB(255,0,0);
 			}
+			button {
+				height: 10%;
+				width: 2.5%;
+				background-color: RGB(192, 192, 192);
+				color: RGB(0,0,0);
+				font-family: "Consolas", monospace;
+				/**/
+				font-size: 4vh;
+				z-index: 1;
+			}
+			button.broken {
+				transform: rotate(45deg);
+				z-index: 2;
+			}
 		</style>
 	</head>
 	<body>
@@ -84,7 +98,7 @@
 				<button data-character="4" id="4">
 					4
 				</button>
-				<button data-character="" id="5">
+				<button data-character="" class="broken" id="5">
 					5
 				</button>
 				<button data-character="6" id="6">
