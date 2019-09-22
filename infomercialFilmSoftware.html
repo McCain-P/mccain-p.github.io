@@ -205,16 +205,23 @@
 		};
 		var output = document.getElementById("displayText");
 		function inputCharacters(string) {
-			output.innerHTML += string;
+			if (string !== "\\clr") {
+				output.innerHTML += string;
+			} else {
+				output.innerHTML = "";
+			};
 		};
 		for (var i = 0; i < buttonElement(-1); i++) {
-			buttonElement(i).addEventListener("click", function() {
-				console.log(this);
-				inputCharacters(this.dataset.character);
-			});
+			if (buttonElement(i).id !== "equals") {
+				buttonElement(i).addEventListener("click", function() {
+					inputCharacters(this.dataset.character);
+				});
+			} else {
+				buttonElement(i).addEventListener("click", function() {
+					inputCharacters("\\clr");
+					inputCharacters("A solution can be found.");
+				});
+			};
 		};
-		/*
-		A solution can be found.
-		*/
 	</script>
 </html>
