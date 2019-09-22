@@ -65,15 +65,19 @@
 				z-index: 1;
 			}
 			button:hover {
-				background-color: RGB(128,128,128);
+				background-color: RGB(160,160,160);
 			}
 			button:active {
 				background-color: RGB(64,64,64);
 				transform: translate(0.5vh, 0.5vh);
 			}
 			button.broken {
+				background-color: RGB(64,64,64);
 				transform: rotate(45deg);
 				z-index: 2;
+			}
+			button.broken:hover {
+				background-color: RGB(64,64,64);
 			}
 			button.broken:active {
 				background-color: RGB(64,64,64);
