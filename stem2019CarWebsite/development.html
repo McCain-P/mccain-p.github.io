@@ -31,10 +31,11 @@
 				popup.style.width = "calc(160vh / 3)";
 				popup.style.position = "fixed";
 				popup.style.top = "30vh";
-				popup.style.left = "calc(50vw + (80vh / 3))";
+				popup.style.left = "50vw";
+				popup.style.transform = "translateX(-50%)";
 				popup.style.zIndex = "9999";
 				popup.style.backgroundColor = "#ffff00";
-				popup.style.animation = "1s linear 0s infinite alternate none running colorTransition";
+				popup.style.animation = "0.5s linear 0s infinite alternate none running colorTransition";
 				var popupText = document.createElement("p");
 				popupText.style.fontFamily = '"Comic Sans MS", "Comic Sans", sans-serif';
 				popupText.style.fontSize = "2vh";
@@ -46,7 +47,7 @@
 				var message = "FUCK TSA";
 				for (var i = 0; i < message.length; i++) {
 					var span = document.createElement("span");
-					span.style.color = "RGB(" + Math.floor(Math.random(256)) + "," + Math.floor(Math.random(256)) + "," + Math.floor(Math.random(256)) + ")";
+					span.style.color = "RGB(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
 					span.innerHTML = message.charAt(i);
 					popupText.appendChild(span);
 				};
