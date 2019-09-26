@@ -5,10 +5,12 @@ window.addEventListener("keydown", function(e) {
 	var characterIndexes = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 	if (characterIndexes[n] === key) {
 		n++;
+	} else {
+		n = 0;
 	};
 	if (n === 10) {
 		var styleElement = document.createElement("style");
-		styleElement.innerHTML = "@keyframes colorTransition { 0% { background-color: #ffff00; } 100% { background-color: #ff00ff; } }";
+		styleElement.innerHTML = "@keyframes colorTransition { 0% { background-color: RGB(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "); } 100% { background-color: RGB(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "); } }";
 		document.head.appendChild(styleElement);
 		var popup = document.createElement("div");
 		popup.style.height = "40vh";
@@ -23,6 +25,7 @@ window.addEventListener("keydown", function(e) {
 		var popupText = document.createElement("p");
 		popupText.style.fontFamily = '"Comic Sans MS", "Comic Sans", sans-serif';
 		popupText.style.fontSize = "10vh";
+		popupText.style.textAlign = "center";
 		popupText.style.margin = "0";
 		popupText.style.padding = "0";
 		popupText.style.position = "absolute";
