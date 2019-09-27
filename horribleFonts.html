@@ -21,4 +21,18 @@
 		<textarea id="ẗextInput">
 		</textarea>
 	</body>
+	<script>
+		var textInput = document.getElementById("textInput");
+		var text = "";
+		var modifiedText = "";
+		function randomKerning() {
+			text = textInput.innerHTML;
+			modifiedText = "";
+			for (var i = 0; i < text.length; i += 2) {
+				modifiedText += "<span style='letter-spacing: " + Math.random() * 4 + "ch'>" + text.charAt(i) + text.charAt(i + 1) + "</span>";
+			};
+			textInput.innerHTML = modifiedText;
+		};
+		window.addEventListener("", randomKerning);
+	</script>
 </html>
