@@ -20,6 +20,9 @@
 	<body>
 		<textarea id="ẗextInput">
 		</textarea>
+		<button id="printButton">
+			Print
+		</button>
 	</body>
 	<script>
 		var textInput = document.getElementById("textInput");
@@ -33,6 +36,9 @@
 			};
 			textInput.innerHTML = modifiedText;
 		};
-		window.addEventListener("", randomKerning);
+		window.addEventListener("input", randomKerning);
+		document.getElementById("printButton").addEventListener("click", function() {
+			window.print();
+		});
 	</script>
 </html>
