@@ -47,7 +47,8 @@
 		</style>
 	</head>
 	<body>
-		<textarea id="textInput"></textarea>
+		<p contenteditable="true" id="textInput">
+		</p>
 		<button id="printButton">
 			Print
 		</button>
@@ -57,12 +58,12 @@
 		var text = "";
 		var modifiedText = "";
 		function randomKerning() {
-			text = textInput.value;
+			text = textInput.innerHTML;
 			modifiedText = "";
 			for (var i = 0; i < text.length; i += 2) {
 				modifiedText += "<span style='letter-spacing: " + Math.random() * 4 + "ch'>" + text.charAt(i) + text.charAt(i + 1) + "</span>";
 			};
-			textInput.value = modifiedText;
+			textInput.innerHTML = modifiedText;
 		};
 		window.addEventListener("input", randomKerning);
 		document.getElementById("printButton").addEventListener("click", function() {
