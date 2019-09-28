@@ -57,12 +57,12 @@
 		var text = "";
 		var modifiedText = "";
 		function randomKerning() {
-			text = textInput.innerHTML;
+			text = textInput.value;
 			modifiedText = "";
 			for (var i = 0; i < text.length; i += 2) {
 				modifiedText += "<span style='letter-spacing: " + Math.random() * 4 + "ch'>" + text.charAt(i) + text.charAt(i + 1) + "</span>";
 			};
-			textInput.innerHTML = modifiedText;
+			textInput.value = modifiedText;
 		};
 		window.addEventListener("input", randomKerning);
 		document.getElementById("printButton").addEventListener("click", function() {
