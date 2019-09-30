@@ -13,10 +13,10 @@
 		var n = 2;
 		var x = 0;
 		for (var i = 0; i < 50; i++) {
-			while (x < 2) {
+			while (f(x) < n) {
 				x += Math.pow(10, -i);
 			};
-			if (x !== 2) {
+			if (f(x) !== n) {
 				x -= Math.pow(10, -i);
 			};
 			p.innerHTML += x + "<br>";
