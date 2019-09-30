@@ -1,0 +1,25 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<p id="p">
+		</p>
+	</body>
+	<script>
+		var p = document.getElementById("p");
+		function f(x) {
+			return 4 * x * x * x + 6 * x;
+		};
+		var n = 2;
+		var x = 0;
+		for (var i = 0; i < 50; i++) {
+			while (x < 2) {
+				x += Math.pow(10, -i);
+			};
+			if (x !== 2) {
+				x -= Math.pow(10, -i);
+			};
+			p.innerHTML += x + "<br>";
+		};
+	</script>
+</html>
