@@ -11,37 +11,37 @@
 		<label for="input">
 			Input value
 		</label>
-		<input type="text" id="input">
+		<input type="text" pattern="[0-9A-Za-z\+\/]" id="input">
 		</input>
 		<label for="inputBase">
 			Input base
 		</label>
-		<input type="number" id="inputBase">
+		<input type="number" min="0" id="inputBase">
 		</input>
 		<label for="output">
 			Output value
 		</label>
-		<input type="text" readonly="true" id="output">
+		<input type="text" readonly="true" pattern="[0-9A-Za-z\+\/]" id="output">
 		</input>
 		<label for="outputBase">
 			Output base
 		</label>
-		<input type="number" id="OutputBase">
+		<input type="number" min="0" id="OutputBase">
 		</input>
 		<label for="forceDigitCharacterSequence">
 			Force 0-based digit character sequence
 		</label>
-		<input type="checkbox" id="forceDigitCharacterSequence">
+		<input type="checkbox" checked="checked" id="forceDigitCharacterSequence">
 		</input>
 		<label for="paddingN">
 			Padding multiple
 		</label>
-		<input type="number" id="paddingN">
+		<input type="number" min="1" value="1" id="paddingN">
 		</input>
 		<label for="paddingChar">
 			Padding character
 		</label>
-		<input type="text" id="paddingChar">
+		<input type="text" pattern="[ -~]" value="0" id="paddingChar">
 		</input>
 		<label for="paddingPosition">
 			Padding position
@@ -50,7 +50,7 @@
 			<label for="paddingPositionBefore">
 				Before
 			</label>
-			<input type="radio" name="paddingPosition" id="paddingPositionBefore">
+			<input type="radio" name="paddingPosition" checked="checked" id="paddingPositionBefore">
 			</input>
 			<label for="paddingPositionAfter">
 				After
