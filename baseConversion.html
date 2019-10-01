@@ -14,6 +14,48 @@
 		</input>
 		<input readonly="true" id="output">
 		</input>
+		<label for="forceDigitCharacterSequence">
+			Force 0-based digit character sequence
+		</label>
+		<input type="checkbox" id="forceDigitCharacterSequence">
+		</input>
+		<p>
+			*All bases except 32 and 64 use the digit character sequence beginning with "0," while base 64 uses the digit character sequence beginning with "A" and ending with "=," and base 32 uses the digit character sequence ending with "7." The former sequence can be forced with the option preceeding this note.
+		</p>
+		<table>
+			<tr>
+				<th>
+					Base
+				</th>
+				<th>
+					Digit Character Sequence
+				</th>
+			</tr>
+			<tr>
+				<td>
+					n \u2260 32, n \u2260 64
+				</td>
+				<td>
+					0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+				</td>
+			</tr>
+			<tr>
+				<td>
+					32
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<td>
+					64
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+		</table>
 	</body>
 	<script>
 		var digitCharacters = ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",];
