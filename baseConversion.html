@@ -265,15 +265,16 @@
 						};
 					};
 				};
-				var nEncoded = "";
-				for (var i = Math.floor(Math.log(n) / Math.log(outputBaseValue)); i > -1; i--) {
-					var degree = Math.pow(outputBaseValue, i);
-					var coefficient = Math.floor(n / degree);
-					n -= coefficient * degree;
-					nEncoded += outputDigitCharacterSequence[coefficient];
-				};
-				if (n === 0) {
-					nEncoded = outputDigitCharacterSequence[0];
+				if (n !== 0) {
+					var nEncoded = "";
+					for (var i = Math.floor(Math.log(n) / Math.log(outputBaseValue)); i > -1; i--) {
+						var degree = Math.pow(outputBaseValue, i);
+						var coefficient = Math.floor(n / degree);
+						n -= coefficient * degree;
+						nEncoded += outputDigitCharacterSequence[coefficient];
+					};
+				} else {
+					var nEncoded = outputDigitCharacterSequence[0];
 				};
 				var nPadded = "";
 				if (!paddingPositionBeforeChecked) {
