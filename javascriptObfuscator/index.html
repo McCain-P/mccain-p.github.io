@@ -67,6 +67,12 @@
 			</label>
 			<textarea class="programData outputIntermediary" id="outputIntermediary2"></textarea>
 		</div>
+		<div>
+			<label for="outputIntermediary3">
+				Intermediary Output (Obfuscation Round) 3
+			</label>
+			<textarea class="programData outputIntermediary" id="outputIntermediary3"></textarea>
+		</div>
 		<button id="enterButton">
 			Obfuscate
 		</button>
@@ -78,15 +84,21 @@
 		1                  Output
 		n, where n > 1     Intermediary Output n - 2
 		*/
-		var programData = [document.getElementByid("input"), document.getElementById("output"), document.getElementById("intermediaryOutput0"), document.getElementById("intermediaryOutput1"), document.getElementById("intermediaryOutput2")];
+		var programData = [document.getElementByid("input"), document.getElementById("output"), document.getElementById("intermediaryOutput0"), document.getElementById("intermediaryOutput1"), document.getElementById("intermediaryOutput2"), document.getElementById("intermediaryOutput3")];
 		var enterButton = document.getElementById("enterButton");
+		var identifier = "";
+		function incrementIdentifier() {
+			
+		};
 		function obfuscate() {
 			var programDataCurrent = programData[0].value;
 			//Obfuscation round 0 - whitespace-character removal and neutral identifiers
 			programDataCurrent = programDataCurrent.replace(/\s/g, "");
-			//Obfuscation round 1 - identifier alteration / aliases
+			//Obfuscation round 1 - structure modification
 			
-			//Obfuscation round 2 - reduced character-set
+			//Obfuscation round 2 - identifier alteration / aliases
+			
+			//Obfuscation round 3 - reduced character-set
 		};
 		enterButton.addEventListener("click", obfuscate);
 	</script>
