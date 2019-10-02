@@ -247,7 +247,7 @@
 					for (var i = 0; i < inputValueInitial.length; i++) {
 						var asciiValue = inputValueInitial.charCodeAt(i);
 						if (asciiValue > 96 && asciiValue < 123) {
-							inputValue += String.fromCharCode(asciiValue);
+							inputValue += String.fromCharCode(asciiValue - 32);
 						} else {
 							inputValue += inputValueInitial.charAt(i);
 						};
