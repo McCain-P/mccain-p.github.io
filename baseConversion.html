@@ -242,20 +242,16 @@
 					};
 				};
 				if (inputBaseValue < 37) {
-					var inputBaseValueInitial = inputBaseValue;
-					inputBaseValue = "";
-					for (var i = 0; i < inputBaseValueInitial.length; i++) {
-						var asciiValue = inputBaseValueInitial.charCodeAt(i);
+					var inputValueInitial = inputValue;
+					inputValue = "";
+					for (var i = 0; i < inputValueInitial.length; i++) {
+						var asciiValue = inputValueInitial.charCodeAt(i);
 						if (asciiValue > 96 && asciiValue < 123) {
-							inputBaseValue += String.fromCharCode(asciiValue);
-							console.log("String.fromCharCode(asciiValue) = " + String.fromCharCode(asciiValue));
+							inputValue += String.fromCharCode(asciiValue);
 						} else {
-							inputBaseValue += inputBaseValueInitial.charAt(i);
-							console.log("inputBaseValueInitial.charAt(i) = " + inputBaseValueInitial.charAt(i));
+							inputValue += inputValueInitial.charAt(i);
 						};
-						console.log("inputBaseValue = " + inputBaseValue);
 					};
-					console.log("inputBaseValue = " + inputBaseValue);
 				};
 				var n = 0;
 				for (var i = 0; i < inputValue.length; i++) {
