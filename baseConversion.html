@@ -241,6 +241,18 @@
 						var outputDigitCharacterSequence = digitCharacterSequence;
 					};
 				};
+				if (inputBaseValue < 37) {
+					var inputBaseValueInitial = inputBaseValue;
+					inputBaseValue = "";
+					for (var i = 0; i < inputBaseValueInitial.length; i++) {
+						var asciiValue = inputBaseValueInitial.charCodeAt(i);
+						if (asciiValue > 96 && asciiValue < 123) {
+							inputBaseValue += String.fromCharCode(asciiValue);
+						} else {
+							inputBaseValue += inputBaseValueInitial.charAt(i);
+						};
+					};
+				};
 				var n = 0;
 				for (var i = 0; i < inputValue.length; i++) {
 					for (var j = 0; j < inputDigitCharacterSequence.length; j++) {
