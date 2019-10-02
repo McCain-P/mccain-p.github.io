@@ -98,7 +98,7 @@
 			<label for="forceDigitCharacterSequence">
 				Force 0-based digit character sequence:
 			</label>
-			<input type="checkbox" checked="checked" id="forceDigitCharacterSequence">
+			<input type="checkbox" id="forceDigitCharacterSequence">
 			</input>
 		</div>
 		<div>
@@ -241,10 +241,6 @@
 						var outputDigitCharacterSequence = digitCharacterSequence;
 					};
 				};
-				console.log("inputDigitCharacterSequence = " + inputDigitCharacterSequence);
-				console.log("outputDigitCharacterSequence = " + outputDigitCharacterSequence);
-				console.log("inputBaseValue = " + inputBaseValue);
-				console.log("outputBaseValue = " + outputBaseValue);
 				var n = 0;
 				for (var i = 0; i < inputValue.length; i++) {
 					for (var j = 0; j < inputDigitCharacterSequence.length; j++) {
@@ -265,7 +261,7 @@
 				if (!paddingPositionBeforeChecked) {
 					nPadded = nEncoded;
 				};
-				for (var i = 0; i < nEncoded.length % paddingNValue; i++) {
+				for (var i = 0; i < paddingNValue - (nEncoded.length % paddingNValue); i++) {
 					nPadded += paddingCharValue;
 				};
 				if (paddingPositionBeforeChecked) {
