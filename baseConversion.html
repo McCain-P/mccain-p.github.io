@@ -171,7 +171,10 @@
 	</body>
 	<script>
 		var textareaPatternElements = document.querySelectorAll("textarea[data-pattern]");
+		console.log("textareaPatternElements = " + textareaPatternElements);
 		for (var i = 0; i < textareaPatternElements; i++) {
+			console.log("i = " + i);
+			console.log("textareaPatternElements[i] = " + textareaPatternElements[i]);
 			textareaPatternElements[i].addEventListener("input", function() {
 				console.log("function called");
 				var pattern = new RegExp(this.dataset.pattern);
