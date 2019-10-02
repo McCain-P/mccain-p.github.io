@@ -54,11 +54,13 @@
 		</style>
 	</head>
 	<body>
-		<label for="input">
-			Input value:
-		</label>
-		<input type="text" class="large" pattern="[0-9A-Za-z\+\/]" id="input">
-		</input>
+		<div>
+			<label for="input">
+				Input value:
+			</label>
+			<input type="text" class="large" pattern="[0-9A-Za-z\+\/]*" id="input">
+			</input>
+		</div>
 		<div>
 			<label for="inputBase">
 				Input base:
@@ -66,11 +68,13 @@
 			<input type="number" min="0" step="1" id="inputBase">
 			</input>
 		</div>
-		<label for="output">
-			Output value:
-		</label>
-		<input type="text" class="large" readonly="true" pattern="[0-9A-Za-z\+\/]" id="output">
-		</input>
+		<div>
+			<label for="output">
+				Output value:
+			</label>
+			<input type="text" class="large" readonly="true" pattern="[0-9A-Za-z\+\/]*" id="output">
+			</input>
+		</div>
 		<div>
 			<label for="outputBase">
 				Output base:
