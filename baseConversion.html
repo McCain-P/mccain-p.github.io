@@ -137,8 +137,19 @@
 			};
 			return true;
 		};
+		var input = document.getElementById("input");
+		var output = document.getElementById("output");
+		var inputBase = document.getElementById("inputBase");
+		var outputBase = document.getElementById("outputBase");
+		var forceDigitCharacterSequence = document.getElementById("forceDigitCharacterSequence");
+		var paddingN = document.getElementById("paddingN");
+		var paddingChar = document.getElementById("paddingChar");
+		var paddingPositionBefore = document.getElementById("paddingPositionBefore");
+		var paddingPositionAfter = document.getElementById("paddingPositionAfter");
 		function convertBase() {
-			
+			if (determineFormValidity()) {
+				;
+			};
 		};
 		document.getElementById("submitButton").addEventListener("click", convertBase);
 	</script>
