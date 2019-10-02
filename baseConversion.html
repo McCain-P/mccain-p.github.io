@@ -280,7 +280,7 @@
 				if (!paddingPositionBeforeChecked) {
 					nPadded = nEncoded;
 				};
-				for (var i = 0; i < -nEncoded.length % paddingNValue; i++) {
+				for (var i = 0; i < ((-nEncoded.length % paddingNValue) + paddingNValue) % paddingNValue; i++) {
 					nPadded += paddingCharValue;
 				};
 				if (paddingPositionBeforeChecked) {
