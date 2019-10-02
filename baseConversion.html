@@ -38,8 +38,8 @@
 				white-space: pre-wrap;
 			}
 			input[type="text"].large {
-				height: 50em;
-				width: 50em;
+				height: 20em;
+				width: 80em;
 			}
 			*::selection {
 				background-color: RGB(255,255,255);
@@ -54,13 +54,11 @@
 		</style>
 	</head>
 	<body>
-		<div>
-			<label for="input">
-				Input value:
-			</label>
-			<input type="text" class="large" pattern="[0-9A-Za-z\+\/]" id="input">
-			</input>
-		</div>
+		<label for="input">
+			Input value:
+		</label>
+		<input type="text" class="large" pattern="[0-9A-Za-z\+\/]" id="input">
+		</input>
 		<div>
 			<label for="inputBase">
 				Input base:
@@ -68,13 +66,11 @@
 			<input type="number" min="0" step="1" id="inputBase">
 			</input>
 		</div>
-		<div>
-			<label for="output">
-				Output value:
-			</label>
-			<input type="text" class="large" readonly="true" pattern="[0-9A-Za-z\+\/]" id="output">
-			</input>
-		</div>
+		<label for="output">
+			Output value:
+		</label>
+		<input type="text" class="large" readonly="true" pattern="[0-9A-Za-z\+\/]" id="output">
+		</input>
 		<div>
 			<label for="outputBase">
 				Output base:
