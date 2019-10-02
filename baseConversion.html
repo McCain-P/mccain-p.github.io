@@ -8,20 +8,20 @@
 				background-color: RGB(55,90,145);
 			}
 			label,
-			p, label, th, td, input, button {
+			p, label, th, td, input, textarea, button {
 				color: RGB(255,255,255);
 				font-family: "Arial", "Helvetica", sans-serif;
 			}
-			input, button, table, tr, th, td {
+			input, textarea, button, table, tr, th, td {
 				border-width: medium;
 				border-style: solid;
 				border-color: RGB(255,255,255) RGB(192,192,192) RGB(192,192,192) RGB(255,255,255);
 				background-color: RGB(55,90,145);
 			}
-			button:hover, input:hover {
+			button:hover, input:hover, textarea:hover {
 				border-color: RGB(255,255,255);
 			}
-			button:active, input:focus {
+			button:active, input:focus, textarea:focus {
 				border-color: RGB(192,192,192);
 			}
 			*:invalid {
@@ -31,7 +31,7 @@
 			div {
 				margin: 1em 0 1em 0;
 			}
-			input[type="text"].large {
+			textarea {
 				height: 20em;
 				width: 80em;
 				overflow: scroll;
@@ -57,8 +57,8 @@
 			<label for="input">
 				Input value:
 			</label>
-			<input type="text" class="large" pattern="[0-9A-Za-z\+\/]*" id="input">
-			</input>
+			<textarea data-pattern="^[0-9A-Za-z\+\/]*$" id="input">
+			</textarea>
 		</div>
 		<div>
 			<label for="inputBase">
@@ -71,8 +71,8 @@
 			<label for="output">
 				Output value:
 			</label>
-			<input type="text" class="large" readonly="true" pattern="[0-9A-Za-z\+\/]*" id="output">
-			</input>
+			<textarea readonly="true" data-pattern="^[0-9A-Za-z\+\/]*$" id="output">
+			</textarea>
 		</div>
 		<div>
 			<label for="outputBase">
@@ -168,6 +168,15 @@
 		</table>
 	</body>
 	<script>
+		var textareaPatternElements = document.querySelectorAll("textarea[data-pattern]");
+		for (var i = 0; i < textareaPatternElements; i++) {
+			textareaPatternElements[i].addEventListener("input", function() {
+				var pattern = new RegExp(this.dataset.pattern);
+				if (!pattern.test(this.value)) {
+					this.setCustomValidity(" ");
+				};
+			});
+		};
 		var digitCharacterSequence = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","+","/"];
 		var digitCharacterSequence32 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","2","3","4","5","6","7"];
 		var digitCharacterSequence64 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","+","/"];
