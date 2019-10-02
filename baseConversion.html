@@ -248,10 +248,14 @@
 						var asciiValue = inputBaseValueInitial.charCodeAt(i);
 						if (asciiValue > 96 && asciiValue < 123) {
 							inputBaseValue += String.fromCharCode(asciiValue);
+							console.log("String.fromCharCode(asciiValue) = " + String.fromCharCode(asciiValue));
 						} else {
 							inputBaseValue += inputBaseValueInitial.charAt(i);
+							console.log("inputBaseValueInitial.charAt(i) = " + inputBaseValueInitial.charAt(i));
 						};
+						console.log("inputBaseValue = " + inputBaseValue);
 					};
+					console.log("inputBaseValue = " + inputBaseValue);
 				};
 				var n = 0;
 				for (var i = 0; i < inputValue.length; i++) {
