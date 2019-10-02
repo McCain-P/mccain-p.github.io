@@ -257,8 +257,17 @@
 					n -= coefficient * degree;
 					nEncoded += outputDigitCharacterSequence[coefficient];
 				};
-				//Padding
-				output.value = nEncoded;
+				var nPadded = "";
+				if (!paddingPositionBeforeChecked) {
+					nPadded = nEncoded;
+				};
+				for (var i = 0; i < nEncoded.length % paddingNValue; i++) {
+					nPadded += paddingCharValue;
+				};
+				if (paddingPositionBeforeChecked) {
+					nPadded += nEncoded;
+				};
+				output.value = nPadded;
 			};
 		};
 		document.getElementById("submitButton").addEventListener("click", convertBase);
