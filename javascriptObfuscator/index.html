@@ -63,8 +63,27 @@
 			</label>
 			<textarea class="programData outputIntermediary" id="outputIntermediary2"></textarea>
 		</div>
-		<button id="obfuscateButton">
+		<button id="enterButton">
 			Obfuscate
 		</button>
 	</body>
+	<script>
+		/*
+		programData index  Element
+		0                  Input
+		1                  Output
+		n, where n > 1     Intermediary Output n - 2
+		*/
+		var programData = [document.getElementByid("input"), document.getElementById("output"), document.getElementById("intermediaryOutput0"), document.getElementById("intermediaryOutput1"), document.getElementById("intermediaryOutput2")];
+		var enterButton = document.getElementById("enterButton");
+		function obfuscate() {
+			//Obfuscation round 0
+			
+			//Obfuscation round 1
+			
+			//Obfuscation round 2
+		};
+		enterButton.addEventListener("click", obfuscate);
+		/\s/g
+	</script>
 </html>
