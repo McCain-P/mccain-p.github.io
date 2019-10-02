@@ -39,7 +39,7 @@
 			label[for="input"], label[for="output"] {
 				display: block;
 			}
-			*:invalid {
+			*:invalid, *[data-validity="false"] {
 				color: RGB(255,0,0);
 				border-color: RGB(255,0,0);
 			}
@@ -60,7 +60,7 @@
 			<label for="input">
 				Input value:
 			</label>
-			<textarea data-pattern="^[0-9A-Za-z\+\/]*$" id="input">
+			<textarea data-pattern="^[0-9A-Za-z\+\/]*$" data-validity="true" id="input">
 			</textarea>
 		</div>
 		<div>
@@ -74,7 +74,7 @@
 			<label for="output">
 				Output value:
 			</label>
-			<textarea readonly="true" data-pattern="^[0-9A-Za-z\+\/]*$" id="output">
+			<textarea readonly="true" data-pattern="^[0-9A-Za-z\+\/]*$" data-validity="true" id="output">
 			</textarea>
 		</div>
 		<div>
@@ -175,8 +175,10 @@
 		for (var i = 0; i < textareaPatternElements; i++) {
 			textareaPatternElements[i].addEventListener("input", function() {
 				var pattern = new RegExp(this.dataset.pattern);
-				if (!pattern.test(this.value)) {
-					this.setCustomValidity(" ");
+				if (pattern.test(this.value)) {
+					this.dataset.validity = "true";
+				} else {
+					this.dataset.validity = "false";
 				};
 			});
 		};
