@@ -112,7 +112,7 @@
 			<label for="paddingChar">
 				Padding character:
 			</label>
-			<input type="text" pattern="[ -~]" value="0" id="paddingChar">
+			<input type="text" pattern="[ -~]?" value="0" id="paddingChar">
 			</input>
 		</div>
 		<div>
@@ -214,27 +214,51 @@
 		var paddingPositionBefore = document.getElementById("paddingPositionBefore");
 		var paddingPositionAfter = document.getElementById("paddingPositionAfter");
 		function convertBase() {
+			var inputValue = input.value;
+			var inputBaseValue = inputBase.value;
+			var outputBaseValue = outputBase.value;
+			var forceDigitCharacterSequenceChecked = forceDigitCharacterSequence.checked;
+			var paddingNValue = paddingN.value;
+			var paddingCharValue = paddingChar.value;
+			var paddingPositionBeforeChecked = paddingPositionBefore.checked;
 			if (determineFormValidity()) {
-				if (forceDigitCharacterSequence.checked) {
+				if (forceDigitCharacterSequenceChecked) {
 					var inputDigitCharacterSequence = digitCharacterSequence;
 					var outputDigitCharacterSequence = digitCharacterSequence;
 				} else {
-					if (inputBase.value === 32) {
-						var inputDigitCharacterSequenceCurrent = digitCharacterSequence32;
-					} else if (inputBase.value === 64) {
-						var inputDigitCharacterSequenceCurrent = digitCharacterSequence64;
+					if (inputBaseValue === 32) {
+						var inputDigitCharacterSequence = digitCharacterSequence32;
+					} else if (inputBaseValue === 64) {
+						var inputDigitCharacterSequence = digitCharacterSequence64;
 					} else {
-						var inputDigitCharacterSequenceCurrent = digitCharacterSequence;
+						var inputDigitCharacterSequence = digitCharacterSequence;
 					};
-					if (outputBase.value === 32) {
-						var outputDigitCharacterSequenceCurrent = digitCharacterSequence32;
-					} else if (outputBase.value === 64) {
-						var outputDigitCharacterSequenceCurrent = digitCharacterSequence64;
+					if (outputBaseValue === 32) {
+						var outputDigitCharacterSequence = digitCharacterSequence32;
+					} else if (outputBaseValue === 64) {
+						var outputDigitCharacterSequence = digitCharacterSequence64;
 					} else {
-						var outputDigitCharacterSequenceCurrent = digitCharacterSequence;
+						var outputDigitCharacterSequence = digitCharacterSequence;
 					};
 				};
-				
+				var n = 0;
+				for (var i = 0; i < inputValue.length; i++) {
+					for (var j = 0; j < inputDigitCharacterSequence.length; j++) {
+						if (inputValue.charAt(i) === inputDigitCharacterSequence[j]) {
+							n += j * Math.pow(inputBaseValue, inputValue.length - i - 1);
+							break;
+						};
+					};
+				};
+				var nEncoded = "";
+				for (var i = Math.floor(Math.log(n) / Math.log(outputBaseValue)); i > -1; i--) {
+					var degree = Math.pow(outputBaseValue, i);
+					var coefficient = Math.floor(n / degree);
+					n -= coefficient * degree;
+					nEncoded += outputDigitCharacterSequence[coefficient];
+				};
+				//Padding
+				output.value = nEncoded;
 			};
 		};
 		document.getElementById("submitButton").addEventListener("click", convertBase);
