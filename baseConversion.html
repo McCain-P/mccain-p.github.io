@@ -24,10 +24,6 @@
 			button:active, input:focus, textarea:focus {
 				border-color: RGB(192,192,192);
 			}
-			*:invalid {
-				color: RGB(255,0,0);
-				border-color: RGB(255,0,0);
-			}
 			div {
 				margin: 1em 0 1em 0;
 			}
@@ -39,6 +35,13 @@
 				word-break: break-all;
 				white-space: pre-wrap;
 				font-family: "Consolas", "Menlo", "Monaco", monospace;
+			}
+			label[for="input"], label[for="output"] {
+				display: block;
+			}
+			*:invalid {
+				color: RGB(255,0,0);
+				border-color: RGB(255,0,0);
 			}
 			*::selection {
 				background-color: RGB(255,255,255);
