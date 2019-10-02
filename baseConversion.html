@@ -31,73 +31,80 @@
 			div {
 				margin: 1em 0 1em 0;
 			}
+			*::selection {
+				background-color: RGB(255,255,255);
+				color: RGB(55,90,145);
+			}
+			*:focus {
+				outline: none;
+			}
 		</style>
 	</head>
 	<body>
 		<div>
 			<label for="input">
-				Input value
+				Input value:
 			</label>
 			<input type="text" pattern="[0-9A-Za-z\+\/]" id="input">
 			</input>
 		</div>
 		<div>
 			<label for="inputBase">
-				Input base
+				Input base:
 			</label>
 			<input type="number" min="0" step="1" id="inputBase">
 			</input>
 		</div>
 		<div>
 			<label for="output">
-				Output value
+				Output value:
 			</label>
 			<input type="text" readonly="true" pattern="[0-9A-Za-z\+\/]" id="output">
 			</input>
 		</div>
 		<div>
 			<label for="outputBase">
-				Output base
+				Output base:
 			</label>
 			<input type="number" min="0" step="1" id="OutputBase">
 			</input>
 		</div>
 		<div>
 			<label for="forceDigitCharacterSequence">
-				Force 0-based digit character sequence
+				Force 0-based digit character sequence:
 			</label>
 			<input type="checkbox" checked="checked" id="forceDigitCharacterSequence">
 			</input>
 		</div>
 		<div>
 			<label for="paddingN">
-				Padding multiple
+				Padding multiple:
 			</label>
 			<input type="number" min="1" step="1" value="1" id="paddingN">
 			</input>
 		</div>
 		<div>
 			<label for="paddingChar">
-				Padding character
+				Padding character:
 			</label>
 			<input type="text" pattern="[ -~]" value="0" id="paddingChar">
 			</input>
 		</div>
 		<div>
 			<label for="paddingPosition">
-				Padding position
+				Padding position:
 			</label>
 			<div id="paddingPosition">
 				<div>
 					<label for="paddingPositionBefore">
-						Before
+						Before:
 					</label>
 					<input type="radio" name="paddingPosition" checked="checked" id="paddingPositionBefore">
 					</input>
 				</div>
 				<div>
 					<label for="paddingPositionAfter">
-						After
+						After:
 					</label>
 					<input type="radio" name="paddingPosition" id="paddingPositionAfter">
 					</input>
