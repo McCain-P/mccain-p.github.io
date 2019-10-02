@@ -245,9 +245,9 @@
 					};
 				};
 				if (paddingPositionBeforeChecked) {
-					inputValue.replace(new RegExp("(?:^)" + paddingCharValue + "+"), "");
+					inputValue = inputValue.replace(new RegExp("(?:^)" + paddingCharValue + "+"), "");
 				} else {
-					inputValue.replace(new RegExp(paddingCharValue + "+" + "(?:$)"), "");
+					inputValue = inputValue.replace(new RegExp(paddingCharValue + "+" + "(?:$)"), "");
 				};
 				if (inputBaseValue < 37) {
 					var inputValueInitial = inputValue;
