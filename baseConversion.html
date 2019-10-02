@@ -272,6 +272,9 @@
 					n -= coefficient * degree;
 					nEncoded += outputDigitCharacterSequence[coefficient];
 				};
+				if (n === 0) {
+					nEncoded = outputDigitCharacterSequence[0];
+				};
 				var nPadded = "";
 				if (!paddingPositionBeforeChecked) {
 					nPadded = nEncoded;
