@@ -31,6 +31,16 @@
 			div {
 				margin: 1em 0 1em 0;
 			}
+			input[type="text"] {
+				overflow: scroll;
+				overflow-wrap: break-word;
+				word-break: break-all;
+				white-space: pre-wrap;
+			}
+			input[type="text"].large {
+				height: 50em;
+				width: 50em;
+			}
 			*::selection {
 				background-color: RGB(255,255,255);
 				color: RGB(55,90,145);
@@ -48,7 +58,7 @@
 			<label for="input">
 				Input value:
 			</label>
-			<input type="text" pattern="[0-9A-Za-z\+\/]" id="input">
+			<input type="text" class="large" pattern="[0-9A-Za-z\+\/]" id="input">
 			</input>
 		</div>
 		<div>
@@ -62,7 +72,7 @@
 			<label for="output">
 				Output value:
 			</label>
-			<input type="text" readonly="true" pattern="[0-9A-Za-z\+\/]" id="output">
+			<input type="text" class="large" readonly="true" pattern="[0-9A-Za-z\+\/]" id="output">
 			</input>
 		</div>
 		<div>
