@@ -59,6 +59,7 @@
 		</canvas>
 	</body>
 	<script>
+		console.log("a " + c);
 		var h = 10;
 		var w = 10;
 		var canvas = document.getElementById("pixels");
@@ -83,10 +84,13 @@
 			pixelData at {x, y} = 0 -> black
 			pixelData at {x, y} = 1 -> white
 		*/
+		console.log("b " + c);
 		var primes = [0,[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]];
 		var data = [0,0,1,[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]];
 		function updateData(n) {
+			console.log("c " + c);
 			if (primes[0] !== primes.length) {
+				console.log("d " + c);
 				if (n !== 2) {
 					if (data[3][data[0]][data[1]] === 0) {
 						console.log(c);
