@@ -60,8 +60,9 @@
 	<script>
 		var h = document.body.clientHeight;
 		var w = document.body.clientWidth;
-		var c = document.getElementById("pixels");
-		c.height = h;
-		c.width = w;
+		var canvas = document.getElementById("pixels");
+		canvas.height = h;
+		canvas.width = w;
+		var c = canvas.getContext("2d");
 	</script>
 </html>
