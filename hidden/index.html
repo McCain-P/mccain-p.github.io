@@ -126,8 +126,9 @@
 								primes[0]++;
 								data[0] = 0;
 								data[1] = 0;
-								c.fillRect(data[0], data[1], 1, 1);
-								if (primes[0] === primes.length) {
+								if (primes[0] !== primes.length) {
+									c.fillRect(data[0], data[1], 1, 1);
+								else {
 									//display message
 								};
 						};
