@@ -92,5 +92,27 @@
 			pixelData at {x, y} = 1 -> white
 		*/
 		var data = [0,0,1,[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]];
+		function updateData(n) {
+			if (n === 0) {
+				
+			} else if (n === 1) {
+				
+			} else {
+				if (data[2] === 0) {
+					data[2] = 1;
+				} else {
+					data[2] = 0;
+				}
+			};
+		};
+		document.getElementById("a").addEventListener("click", function() {
+			updataData(0);
+		});
+		document.getElementById("b").addEventListener("click", function() {
+			updataData(1);
+		});
+		document.getElementById("c").addEventListener("click", function() {
+			updataData(2);
+		});
 	</script>
 </html>
