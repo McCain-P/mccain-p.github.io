@@ -40,6 +40,14 @@
 			#c:hover {
 				color: RGB(0,0,255);
 			}
+			#pixels {
+				height: 100vh;
+				width: auto;
+				position: fixed;
+				top: 0;
+				left: 50vw;
+				transform: translateX(-50%);
+			}
 		</style>
 	</head>
 	<body>
@@ -54,15 +62,13 @@
 				?
 			</span>
 		</p>
-		<canvas id="pixels">
+		<canvas height="100" width="100" id="pixels">
 		</canvas>
 	</body>
 	<script>
-		var h = document.body.clientHeight;
-		var w = document.body.clientWidth;
+		var h = 100;
+		var w = 100;
 		var canvas = document.getElementById("pixels");
-		canvas.height = h;
-		canvas.width = w;
 		var c = canvas.getContext("2d");
 		c.fillStyle = "#ffffff";
 		c.fillRect(0, 0, 1, 1);
