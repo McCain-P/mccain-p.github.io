@@ -71,6 +71,7 @@
 		var w = 100;
 		var canvas = document.getElementById("pixels");
 		var c = canvas.getContext("2d");
+		c.imageSmoothingEnabled = false;
 		c.fillStyle = "#ffffff";
 		c.fillRect(0, 0, 1, 1);
 	</script>
