@@ -23,17 +23,6 @@
 				left: 50vw;
 				transform: translate(-50%, -50%);
 			}
-			#questionMark > span {
-			}
-			#a {
-			
-			}
-			#b {
-			
-			}
-			#c {
-			
-			}
 			#a:hover {
 				color: #ff0000;
 			}
@@ -129,7 +118,18 @@
 								if (primes[0] !== primes.length) {
 									c.fillRect(data[0], data[1], 1, 1);
 								else {
-									//display message
+									var a = document.getElementById("a");
+									var b = document.getElementById("b");
+									var c = document.getElementById("c");
+									a.innerHTML = "!";
+									b.innerHTML = "!";
+									c.innerHTML = "!";
+									a.style.color = "#00ffff";
+									b.style.color = "#ff00ff";
+									c.style.color = "#ffff00";
+									a.id = "d";
+									b.id = "e";
+									c.id = "f";
 								};
 						};
 				} else {
