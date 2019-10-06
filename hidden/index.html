@@ -59,7 +59,6 @@
 		</canvas>
 	</body>
 	<script>
-		console.log("a " + c);
 		var h = 10;
 		var w = 10;
 		var canvas = document.getElementById("pixels");
@@ -84,13 +83,10 @@
 			pixelData at {x, y} = 0 -> black
 			pixelData at {x, y} = 1 -> white
 		*/
-		console.log("b " + c);
 		var primes = [0,[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]];
 		var data = [0,0,1,[[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0]]];
 		function updateData(n) {
-			console.log("c " + c);
 			if (primes[0] !== primes.length) {
-				console.log("d " + c);
 				if (n !== 2) {
 					if (data[3][data[0]][data[1]] === 0) {
 						console.log(c);
@@ -123,18 +119,18 @@
 								if (primes[0] !== primes.length) {
 									c.fillRect(data[0], data[1], 1, 1);
 								} else {
-									var a = document.getElementById("a");
-									var b = document.getElementById("b");
-									var c = document.getElementById("c");
-									a.innerHTML = "!";
-									b.innerHTML = "!";
-									c.innerHTML = "!";
-									a.style.color = "#00ffff";
-									b.style.color = "#ff00ff";
-									c.style.color = "#ffff00";
-									a.id = "d";
-									b.id = "e";
-									c.id = "f";
+									var elementA = document.getElementById("a");
+									var elementB = document.getElementById("b");
+									var elementC = document.getElementById("c");
+									elementA.innerHTML = "!";
+									elementB.innerHTML = "!";
+									elementC.innerHTML = "!";
+									elementA.style.color = "#00ffff";
+									elementB.style.color = "#ff00ff";
+									elementC.style.color = "#ffff00";
+									elementA.id = "d";
+									elementB.id = "e";
+									elementC.id = "f";
 								};
 						};
 				} else {
