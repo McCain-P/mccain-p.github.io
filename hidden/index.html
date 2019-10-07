@@ -115,12 +115,9 @@
 								primes[0]++;
 								data[0] = 0;
 								data[1] = 0;
-								if (primes[0] !== primes.length) {
+								if (primes[0] !== primes[1].length) {
 									c.fillRect(data[0], data[1], 1, 1);
 								} else {
-									window.alert("A");
-									window.alert("primes[0] = " + primes[0]);
-									window.alert("primes.length = " + primes.length);
 									var elementA = document.getElementById("a");
 									var elementB = document.getElementById("b");
 									var elementC = document.getElementById("c");
