@@ -28,10 +28,10 @@
 		var time = document.getElementById("time");
 		var timeFinal = new Date("2019-10-08T00:00:00");
 		var timeCurrent = Date.now();
-		var timeDifference = timeFinal - timeCurrent;
+		var timeDifference = new Date(timeFinal - timeCurrent);
 		function updateTime() {
 			timeCurrent = Date.now();
-			timeDifference = timeFinal - timeCurrent;
+			timeDifference = new Date(timeFinal - timeCurrent);
 			time.innerHTML = timeDifference.getFullYear() + "-" + timeDifference.getMonth() + "-" + timeDifference.getDate() + "T" + timeDifference.getHours() + ":" + timeDifference.getMinutes() + ":" + timeDifference.getSeconds() + "." + timeDifference.milliseconds();
 		};
 		window.setInterval(updateTime, 100);
