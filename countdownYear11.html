@@ -32,7 +32,7 @@
 		function updateTime() {
 			timeCurrent = Date.now();
 			timeDifference = timeFinal - timeCurrent;
-			time.innerHTML = timeDifference.getFullYear() + "-" + timeDifference.getMonth() + "-" + timeDifference.getDay() + "T" + timeDifference.getHours() + ":" + timeDifference.getMinutes() + ":" + timeDifference.getSeconds() + "." + timeDifference.milliseconds();
+			time.innerHTML = timeDifference.getFullYear() + "-" + timeDifference.getMonth() + "-" + timeDifference.getDate() + "T" + timeDifference.getHours() + ":" + timeDifference.getMinutes() + ":" + timeDifference.getSeconds() + "." + timeDifference.milliseconds();
 		};
 		window.setInterval(updateTime, 100);
 	</script>
