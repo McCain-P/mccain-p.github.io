@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>
+			Year 11
+		</title>
+		<style>
+			#time {
+				font-family: "Arial", sans-serif;
+				color: RGB(255,255,255);
+				font-size: 10vw;
+				margin: 0;
+				padding: 0;
+				position: fixed;
+				top: 50vh;
+				left: 50vw;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+	</head>
+	<body>
+		<p id="time">
+		</p>
+	</body>
+	<script>
+		var time = document.getElementById("time");
+		var timeFinal = new Date("2019-10-08T00:00:00");
+		var timeCurrent = Date.now();
+		var timeDifference = timeFinal - timeCurrent;
+		function updateTime() {
+			timeCurrent = Date.now();
+			timeDifference = timeFinal - timeCurrent;
+			time.innerHTML = timeDifference;
+		};
+		window.setInterval(updateTime, 100);
+	</script>
+</html>
