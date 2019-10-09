@@ -12,22 +12,45 @@
 		</style>
 	</head>
 	<body>
+		<h1>
+			Dynamically Testing Characters Which Must Be Escaped
 		<p>
-			Characters that must be escaped within Javascript Strings:
+			Javascript Strings:
 		</p>
 		<p class="code">
-			<code id="escapeCharacters">
+			<code id="escapeCharactersJsStrings">
+			</code>
+		</p>
+		<p>
+			Javascript Regular-Expressions:
+		</p>
+		<p class="code">
+			<code id="escapeCharactersJsRegexes">
+			</code>
+		</p>
+		<p>
+			HTML Content:
+		</p>
+		<p class="code">
+			<code id="escapeCharactersHtmlContent">
+			</code>
+		</p>
+		<p>
+			HTML Attributes:
+		</p>
+		<p class="code">
+			<code id="escapeCharactersHtmlAttributes">
 			</code>
 		</p>
 	</body>
 	<script>
 		var character = "";
-		var escapeCharacters = document.getElementById("escapeCharacters");
+		var escapeCharactersJsStrings = document.getElementById("escapeCharactersJsStrings");
 		try {
 			var characterTemplate = String.fromCharCode(0);
 			character = characterTemplate;
 			if (character !== characterTemplate) {
-				escapeCharacters.innerHTML = character;
+				escapeCharactersJsStrings.innerHTML = character;
 			};
 		} catch (e) {
 		};
@@ -36,7 +59,7 @@
 				var characterTemplate = String.fromCharCode(i);
 				character = characterTemplate;
 				if (character !== characterTemplate) {
-					escapeCharacters.innerHTML += ", " + character;
+					escapeCharactersJsStrings.innerHTML += ", " + character;
 				};
 			} catch (e) {
 			};
