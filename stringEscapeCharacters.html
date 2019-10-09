@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>
+			JavaScript String Escape Characters
+		</title>
+		<style>
+			*.code, *.code > code {
+				color: RGB(255,255,255);
+				background-color: RGB(0,0,0);
+				font-family: "Consolas", "Menlo", "Monaco", monospace;
+			};
+		</style>
+	</head>
+	<body>
+		<p>
+			Characters that must be escaped within Javascript Strings:
+		</p>
+		<p class="code">
+			<code id="escapeCharacters">
+			</code>
+		</p>
+	</body>
+	<script>
+		var character = "";
+		var escapeCharacters = document.getElementById("escapeCharacters");
+		try {
+			var characterTemplate = String.fromCharCode(0);
+			character = characterTemplate;
+			if (character === characterTemplate) {
+				escapeCharacters.innerHTML = character;
+			};
+		} catch (e) {
+		};
+		for (var i = 1; i < 128; i++) {
+			try {
+				var characterTemplate = String.fromCharCode(i);
+				character = characterTemplate;
+				if (character === characterTemplate) {
+					escapeCharacters.innerHTML += ", " + character;
+				};
+			} catch (e) {
+			};
+		};
+	</script>
+</html>
