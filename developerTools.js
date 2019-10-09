@@ -11,22 +11,33 @@ devToolsWindow.document.write("
 			</style>
 		</head>
 		<body>
-			<div id="head">
-				<button id="viewHtmlDom">
+			<div id=\"head\">
+				<button id=\"viewHtmlDom\">
 					HTML DOM
 				</button>
-				<button id="viewConsole">
+				<button id=\"viewConsole\">
 					Console and JS
 				</button>
 			</div>
-			<div id="body">
-				<div id="htmlDom">
+			<div id=\"body\">
+				<div id=\"htmlDom\">
 				
 				</div>
-				<div id="console">
+				<div id=\"console\">
 				
 				</div>
 			</div>
 		</body>
 	</html>
 ");
+/*
+Externally load script via JavaScript:
+
+var injector = document.createElement("script");
+injector.src = "https://stevestevenson.github.io/developerTools.js";
+document.body.appendChild(injector);
+
+No whitespace version:
+
+var injector = document.createElement("script");injector.src = "https://stevestevenson.github.io/developerTools.js";document.body.appendChild(injector);
+*/
