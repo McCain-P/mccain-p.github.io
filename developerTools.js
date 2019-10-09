@@ -7,7 +7,12 @@ devToolsWindow.document.write("
 				Developer Tools
 			</title>
 			<style>
-			
+				*[data-enabled=\"true\"], *[data-enabled=\"true\"] * {
+					display: block\;
+				}
+				*[data-enabled=\"false\"], *[data-enabled=\"false\"] * {
+					display: none\;
+				}
 			</style>
 		</head>
 		<body>
@@ -20,10 +25,10 @@ devToolsWindow.document.write("
 				</button>
 			</div>
 			<div id=\"body\">
-				<div id=\"htmlDom\">
+				<div data-enabled=\"true\" id=\"htmlDom\">
 				
 				</div>
-				<div id=\"console\">
+				<div data-enabled=\"false\" id=\"console\">
 				
 				</div>
 			</div>
