@@ -45,25 +45,37 @@
 		</p>
 	</body>
 	<script>
-		var character = "";
-		var escapeCharactersJsStrings = document.getElementById("escapeCharactersJsStrings");
-		try {
-			var characterTemplate = String.fromCharCode(0);
-			character = characterTemplate;
-			if (character !== characterTemplate) {
-				escapeCharactersJsStrings.innerHTML = character;
-			};
-		} catch (e) {
-		};
-		for (var i = 1; i < 128; i++) {
+		var jsStringsScript = document.createElement("script");
+		jsStringsScript.id = "jsStringsScript";
+		jsStringsScript.innerHTML = "
+			var character = \"\";
+			var escapeCharactersJsStrings = document.getElementById(\"escapeCharactersJsStrings\");
 			try {
-				var characterTemplate = String.fromCharCode(i);
+				var characterTemplate = " + String.fromCharCode(0) + ";
 				character = characterTemplate;
 				if (character !== characterTemplate) {
-					escapeCharactersJsStrings.innerHTML += ", " + character;
+					escapeCharactersJsStrings.innerHTML = character;
 				};
 			} catch (e) {
 			};
+			document.getElementById("jsStringsScript").remove();
+		";
+		document.body.appendChild(jsStringsScript);
+		for (var i = 1; i < 128; i++) {
+			var jsStringsScript = document.createElement("script");
+			jsStringsScript.id = "jsStringsScript";
+			jsStringsScript.innerHTML = "
+				try {
+					var characterTemplate = " + String.fromCharCode(i) + ";
+					character = characterTemplate;
+					if (character !== characterTemplate) {
+						escapeCharactersJsStrings.innerHTML += \", \" + character;
+					};
+				} catch (e) {
+				};
+				document.getElementById("jsStringsScript").remove();
+			";
+			document.body.appendChild(jsStringsScript);
 		};
 	</script>
 </html>
