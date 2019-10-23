@@ -1,7 +1,7 @@
 var n = 0;
 window.addEventListener("keydown", function(e) {
 	var key = e.key;
-	var characterIndexes = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+	var characterIndexes = ["v", "r", "o", "o", "m", "v", "r", "o", "o", "m"];
 	if (characterIndexes[n] === key) {
 		n++;
 	} else {
