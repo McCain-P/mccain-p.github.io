@@ -7,7 +7,7 @@ window.addEventListener("keydown", function(e) {
 	} else {
 		n = 0;
 	};
-	if (n === 10) {
+	if (n === characterIndexes.length) {
 		var styleElement = document.createElement("style");
 		styleElement.innerHTML = "@keyframes colorTransition { 0% { background-color: RGB(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "); } 100% { background-color: RGB(" + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + "); } }";
 		document.head.appendChild(styleElement);
