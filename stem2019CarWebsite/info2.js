@@ -21,15 +21,19 @@ window.addEventListener("keydown", function(e) {
 			if (directionKey === "ArrowUp" || directionKey === "w") {
 				imagePosition[1]--;
 				image.style.top = String(imagePosition[1]) + "vh";
+				image.style.transform = "scale(-1, 1) rotate(90deg)";
 			} else if (directionKey === "ArrowDown" || directionKey === "s") {
 				imagePosition[1]++;
 				image.style.top = String(imagePosition[1]) + "vh";
+				image.style.transform = "scale(1, 1) rotate(270deg)";
 			} else if (directionKey === "ArrowLeft" || directionKey === "a") {
 				imagePosition[0]--;
 				image.style.left = String(imagePosition[0]) + "vh";
+				image.style.transform = "scale(-1, 1) rotate(0deg)";
 			} else if (directionKey === "ArrowRight" || directionKey === "d") {
 				imagePosition[0]++;
 				image.style.left = String(imagePosition[0]) + "vh";
+				image.style.transform = "scale(1, 1) rotate(0deg)";
 			};
 		});
 	};
