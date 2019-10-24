@@ -18,19 +18,20 @@ window.addEventListener("keydown", function(e) {
 		var imagePosition = [50, 50];
 		window.addEventListener("keydown", function(e) {
 			var directionKey = e.key;
-			if (directionKey === "ArrowUp") {
+			if (directionKey === "ArrowUp" || directionKey === "w") {
 				imagePosition[1]--;
 				image.style.top = String(imagePosition[1]) + "vh";
-			} else if (directionKey === "ArrowDown") {
+			} else if (directionKey === "ArrowDown" || directionKey === "s") {
 				imagePosition[1]++;
 				image.style.top = String(imagePosition[1]) + "vh";
-			} else if (directionKey === "ArrowLeft") {
+			} else if (directionKey === "ArrowLeft" || directionKey === "a") {
 				imagePosition[0]--;
 				image.style.left = String(imagePosition[0]) + "vh";
-			} else if (directionKey === "ArrowRight") {
+			} else if (directionKey === "ArrowRight" || directionKey === "d") {
 				imagePosition[0]++;
 				image.style.left = String(imagePosition[0]) + "vh";
 			};
 		});
 	};
 });
+d
