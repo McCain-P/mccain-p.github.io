@@ -3,7 +3,7 @@ var characterIndexes = [["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowL
 window.addEventListener("keydown", function(e) {
 	var key = e.key;
 	for (var i = 0; i < characterIndexes.length; i++) {
-		if (characterIndexes[i][n] === key) {
+		if (characterIndexes[i][n][i] === key) {
 			n[i]++;
 		} else {
 			n[i] = 0;
