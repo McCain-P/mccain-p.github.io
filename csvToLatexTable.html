@@ -19,10 +19,10 @@
 		calculate.addEventListener("click", function() {
 			data = input.value.split("\n");
 			for (var i = 0; i < data.length; i++) {
-				data.replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)(?:$)/, "");
-				data.replace(/,/, " & ");
-				data += " \\\\\\hline";
-				output.value += data + "\n";
+				data[i].replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)(?:$)/, "");
+				data[i].replace(/,/, " & ");
+				data[i] += " \\\\\\hline";
+				output.value += data[i] + "\n";
 			};
 		});
 	</script>
