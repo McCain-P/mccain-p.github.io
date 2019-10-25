@@ -19,15 +19,17 @@
 		calculate.addEventListener("click", function() {
 			data = input.value.split("\n");
 			for (var i = 0; i < data.length; i++) {
-				console.log(data[i]);
-				data[i] = data[i].replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)(?:$)/, "");
-				console.log(data[i]);
-				data[i] = data[i].replace(/,/, " & ");
-				console.log(data[i]);
-				data[i] += " \\\\\\hline";
-				console.log(data[i]);
-				console.log("");
-				output.value += data[i] + "\n";
+				if (data[i] !== "" && data[i] !== " " && data[i] !== "\n" && data[i] !== " \n") {
+					console.log(data[i]);
+					data[i] = data[i].replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)(?:$)/, "");
+					console.log(data[i]);
+					data[i] = data[i].replace(/,/, " & ");
+					console.log(data[i]);
+					data[i] += " \\\\\\hline";
+					console.log(data[i]);
+					console.log("");
+					output.value += data[i] + "\n";
+				};
 				/*
 				^\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2},\d{1,2}\.\d{1,2}$
 				*/
