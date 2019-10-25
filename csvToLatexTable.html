@@ -20,9 +20,9 @@
 			data = input.value.split("\n");
 			for (var i = 0; i < data.length; i++) {
 				console.log(data[i]);
-				data[i].replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)(?:$)/, "");
+				data[i] = data[i].replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)(?:$)/, "");
 				console.log(data[i]);
-				data[i].replace(/,/, " & ");
+				data[i] = data[i].replace(/,/, " & ");
 				console.log(data[i]);
 				data[i] += " \\\\\\hline";
 				console.log(data[i]);
