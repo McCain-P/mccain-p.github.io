@@ -15,13 +15,15 @@
 		var input = document.getElementById("input");
 		var output = document.getElementById("output");
 		var calculate = document.getElementById("calculate");
-		var data = "";
+		var data = [""];
 		calculate.addEventListener("click", function() {
-			data = input.value;
-			data.replace(/(?:[\r\n].+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)[\r\n]/, "");
-			data.replace(/,/, " & ");
-			data += " \\\\\\hline";
-			output.value = data;
+			data = input.value.split("\n");
+			for (var i = 0; i < data.length; i++) {
+				data.replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)(?:$)/, "");
+				data.replace(/,/, " & ");
+				data += " \\\\\\hline";
+				output.value += data + "\n";
+			};
 		});
 	</script>
 </hmtl>
