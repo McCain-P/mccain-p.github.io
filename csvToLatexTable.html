@@ -18,7 +18,7 @@
 		var data = "";
 		calculate.addEventListener("click", function() {
 			data = input.value;
-			data.replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)$/, "");
+			data.replace(/(?:[\r\n].+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)[\r\n]/, "");
 			data.replace(/,/, " & ");
 			data += " \\\\\\hline";
 			output.value = data;
