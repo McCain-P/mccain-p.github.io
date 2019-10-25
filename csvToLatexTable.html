@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>
+			CSV to Latex Table
+		</title>
+	</head>
+	<body>
+		<textarea id="input"></textarea>
+		<textarea id="output"></textarea>
+		<button id="calculate">
+			Calculate
+		</button>
+	</body>
+	<script>
+		var input = document.getElementById("input");
+		var output = document.getElementById("output");
+		var calculate = document.getElementById("calculate");
+		var data = "";
+		calculate.addEventListener("click", function() {
+			data = input.value;
+			data.replace(/(?:^.+,.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+,)(?:.+,)(.+)$/, "");
+			data.replace(/,/, " & ");
+			data += " \\\\\\hline";
+		});
+	</script>
+</hmtl>
