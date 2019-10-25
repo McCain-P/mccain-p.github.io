@@ -1,0 +1,78 @@
+\begin{document}
+\usepackage{amsmath}
+\usepackage{mhchem}
+\usepackage{spreadtab}
+\documentclass{article}
+\pagenumbering{gobble}
+\title{Molar Enthalpy of the Neutralization of \ce{HCl}}
+\author{McCain Potasky}
+\date{2019-10-25}
+\maketitle
+\newpage
+\tableofcontents
+\pagenumbering{arabic}
+\newpage
+\section{Abstract}
+The molar enthalpy of neutralization of \ce{HCl} (hydrochloric acid) is determined by measuring the change in temperature caused by the neutralization of aqueous hydrochloric acid (\ce{HCl(aq)}) by aqueous sodium hydroxide (\ce{NaOH(aq)}), with the reaction being described by the equation \eq{HCl(aq) + NaOH(aq) -> NaCl(aq) + H2O(l)}.
+\newpage
+\section{Formulae}
+\subsection{Notation}
+\begin{tabular}{|l|l|}
+Symbol & Definition \\\hline
+$M_{\ce{NaOH}}$ & Molarity of \ce{NaOH} \\\hline
+$M_{\ce{HCl}}$ & Molarity of \ce{HCl} \\\hline
+$V_{\ce{NaOH}}$ & Volume of \ce{NaOH} \\\hline
+$V_{\ce{HCl}}$ & Volume of \ce{HCl} \\\hline
+$mol_{\ce{NaOH}}$ & Moles of \ce{NaOH} (value) \\\hline
+$mol_{\ce{HCl}}$ & Moles of \ce{HCl} (value) \\\hline
+$m_{\ce{NaOH}}$ & Mass of \ce{NaOH} \\\hline
+$m_{\ce{HCl}}$ & Mass of \ce{HCl} \\\hline
+${T_0}_{\ce{NaOH}}$ & Initial temperature of \ce{NaOH} \\\hline
+${T_0}_{\ce{HCl}}$ & Initial temperature of \ce{HCl} \\\hline
+${T_0}_{\ce{NaOH(aq) + HCl(aq)}}$ & Initial temperature of \ce{NaOH(aq) + HCl(aq)}; average of the initial temperatures of \ce{NaOH(aq)} and \ce{HCl(aq)} \\\hline
+$T_{\ce{NaOH(aq) + HCl(aq)}}$ & Final temperature of \ce{NaOH(aq) + HCl(aq)} \\\hline
+$c_{\ce{NaOH(aq) + HCl(aq)}}$ & Specific heat capacity of \ce{NaOH(aq) + HCl(aq)} \\\hline
+$q$ & Heat energy of the reaction \\\hline
+$\Delta H_{\text{rxn}}$ & Enthalpy of reaction \\\hline
+$\frac{\Delta H_{\text{rxn}}}{\text{mol}}$ & Molar enthalpy of reaction \\\hline
+$M\ce{NaOH}$ & Molars of \ce{NaOH} \\\hline
+$M\ce{HCl}$ & Molars of \ce{HCl} \\\hline
+$L$ & Litres \\\hline
+$mol\ce{NaOH}$ & Moles of \ce{NaOH} (unit) \\\hline
+$mol\ce{HCl}$ & Moles of \ce{HCl} (unit) \\\hline
+$\degreeC$ & Degrees Celsius \\\hline
+$kg$ & Kilograms \\\hline
+$J$ & Joules \\\hline
+mol & Moles \\\hline
+\end{tabular}
+\newpage
+\section{Data}
+\subsection{Main Values}
+\begin{tabular}{|*{6}{l|}}
+& Trial 1 & Trial 2 & Trial 3 & Trial 4 & Trial 5 & Trial Average \\\hline
+$M_{\ce{NaOH}}$ ($M\ce{NaOH}$) & 1.1 & 1.1 & 1.1 & 1.1 & 1.1 & 1.1 \\\hline
+$M_{\ceHCl}}$ ($M\ce{HCl}$) & 1.0 & 1.0 & 1.0 & 1.0 & 1.0 & 1.0 \\\hline
+$V_{\ce{NaOH}}$ ($L$) & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 \\\hline
+$V_{\ce{HCl}}$ ($L$) & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 & 0.05 \\\hline
+$mol_{\ce{NaOH}}$ ($mol\ce{NaOH}$) & x & x & x & x & x & x \\\hline
+$mol_{\ce{HCl}}$ ($mol\ce{HCl}$) & x & x & x & x & x & x \\\hline
+$mol_{\ce{NaOH}}$ (kg) & x & x & x & x & x & x \\\hline
+$mol_{\ce{NaOH}}$ (kg) & x & x & x & x & x & x \\\hline
+${T_0}_{\ce{NaOH}}$ ($\degreeC$) & x & x & x & x & x & x \\\hline
+${T_0}_{\ce{HCl}}$ ($\degreeC$) & x & x & x & x & x & x \\\hline
+${T_0}_{\ce{NaOH(aq) + HCl(aq)}}$ ($\degreeC$) & x & x & x & x & x & x \\\hline
+$T_{\ce{NaOH(aq) + HCl(aq)}}$ ($\degreeC$) & x & x & x & x & x & x \\\hline
+$c_{\ce{NaOH(aq) + HCl(aq)}}$ ($x$) & x & x & x & x & x & x \\\hline
+$q$ ($J$) & x & x & x & x & x & x \\\hline
+$\Delta H_{\text{rxn}}$ ($J$) & x & x & x & x & x & x \\\hline
+$\frac{\Delta H_{\text{rxn}}}{\text{mol}}$ ($\frac{J}{mol}$) & x & x & x & x & x & x \\\hline
+\end{tabular}
+Thus, $\frac{\Delta H_{rxn}}{\text{mol}}$ of \eq{HCl(aq) + NaOH(aq) -> NaCl(aq) + H2O(l)} is $x$.
+\subsection{Temperature Data}
+\subsubsection{Graph}
+\subsubsection{Table}
+\begin{tabular}{|*{6}{l|}}
+$t$ ($s$) & $T_{\text{Trial 1}}$ ($\degreeC$) & $T_{\text{Trial 2}}$ ($\degreeC$) & $T_{\text{Trial 3}}$ ($\degreeC$) & $T_{\text{Trial 4}}$ ($\degreeC$) & $T_{\text{Trial 5}}$ ($\degreeC$) \\\hline
+0 & x & x & x & x & x \\\hline
+\end{tabular}
+\end{document}
