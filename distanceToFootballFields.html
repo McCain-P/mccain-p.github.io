@@ -8,6 +8,32 @@
 		</style>
 	</head>
 	<body>
-		
+		<datalist id="units">
+			<option value="m">
+				m
+			</option>
+			<option value="km">
+				km
+			</option>
+			<option value="cm">
+				cm
+			</option>
+			<option value="mm">
+				mm
+			</option>
+			<option value="ft">
+				ft
+			</option>
+			<option value="in">
+				in
+			</option>
+		</datalist>
+		<label for="inputLength">
+			Length:
+		</label>
+		<input type="number" id="inputLength">
+		</input>
+		<input type="text" list="units" id="inputUnits">
+		</input>
 	</body>
 </html>
