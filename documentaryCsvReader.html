@@ -3,31 +3,15 @@
 		<title>
 			CSV to Latex Table
 		</title>
-		<style>
-			#input, #output {
-				height: 40vh;
-				width: 40vw;
-				position: fixed;
-			}
-			#input {
-				top: 10vh;
-				left: 10vw;
-			}
-			#output {
-				bottom: 10vh;
-				left: 10vw;
-			}
-			#process {
-				height: 5vh;
-				width: 5vw;
-				position: fixed;
-				top: 10vh;
-				right: 10vw;
-			}
 	</head>
 	<body>
 		<textarea id="input"></textarea>
 		<textarea readonly="true" id="output"></textarea>
+		<label for="catagory">
+			Catagory:
+		</label>
+		<input type="text" id="catagory">
+		</input>
 		<button id="process">
 			Process
 		</button>
@@ -36,6 +20,8 @@
 		var input = document.getElementById("input");
 		var output = document.getElementById("output");
 		var process = document.getElementById("process");
+		var catagoryElement = document.getElementById("catagory");
+		var catagory = "";
 		var inputData = [""];
 		var regex = /^([A-Z][a-z]+),([A-Z][a-z]+),\d+,([A-Za-z\.]+),\d,[A-Z],(?:\w+,)*(Forensic\sScience\sTeam\s\d),?(?:\w+,)*\w+,?$/;
 		var data = [];
@@ -44,6 +30,8 @@
 		var name = "";
 		var entryPresent = false;
 		process.addEventListener("click", function() {
+			catagory = catagoryElement.value;
+			regex = /^([A-Z][a-z]+),([A-Z][a-z]+),\d+,([A-Za-z\.]+),\d,[A-Z],(?:\w+,)*(Forensic\sScience\sTeam\s\d),?(?:\w+,)*\w+,?$/;
 			inputData = input.value.split("\n");
 			for (var i = 0; i < inputData.length; i++) {
 				parsedData = regex.exec(inputData[i]);
