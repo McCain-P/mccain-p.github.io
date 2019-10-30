@@ -31,7 +31,7 @@
 		var entryPresent = false;
 		process.addEventListener("click", function() {
 			catagory = catagoryElement.value;
-			regex = new RegExp("^([A-Z][a-z]+),([A-Z][a-z]+),\\d+,([A-Za-z\\.]+),\\d,[A-Z],(?:\\w+,)*(" + catagory.replace(" ", "\\s") + "\\s\\d),?(?:\\w+,)*\\w+,?$");
+			regex = new RegExp("^([A-Z][a-z]+),([A-Z][a-z]+),\\d+,([A-Za-z\\.]+),\\d,[A-Z],(?:\\w+,)*(" + catagory.replace(" ", "\\s") + "\\sTeam\\s\\d),?(?:\\w+,)*\\w+,?$");
 			inputData = input.value.split("\n");
 			for (var i = 0; i < inputData.length; i++) {
 				parsedData = regex.exec(inputData[i]);
