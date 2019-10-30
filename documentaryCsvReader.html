@@ -30,6 +30,7 @@
 		var name = "";
 		var entryPresent = false;
 		process.addEventListener("click", function() {
+			try {
 			catagory = catagoryElement.value;
 			regex = new RegExp("^([A-Z][a-z]+),([A-Z][a-z]+),\\d+,([A-Za-z\\.]+),\\d,[A-Z],(?:\\w+,)*(" + catagory.replace(" ", "\\s") + "\\sTeam\\s\\d),?(?:\\w+,)*\\w+,?$");
 			inputData = input.value.split("\n");
@@ -58,6 +59,9 @@
 					output.value += data[i][1][j] + ", ";
 				};
 				output.value += data[i][1][0] + ")\n";
+			};
+			} catch (e) {
+				console.log(e);
 			};
 		});
 	/*
