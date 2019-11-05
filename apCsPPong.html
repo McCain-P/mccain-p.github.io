@@ -4,10 +4,81 @@
 			Pong
 		</title>
 		<style>
-		
+			body {
+				background-color: RGB(0,0,0);
+			}
+			p, h1, h2 {
+				color: RGB(255,255,255);
+				font-family: "Arial", sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+			#canvas {
+				height: 80vh;
+				width: 80vh;
+				position: fixed;
+				top: 10vh;
+				left: 0;
+			}
+			#title {
+				height: 10vh;
+				width: 100vw;
+				position: fixed;
+				top: 2vh;
+				left: 10vw;
+				text-align: left;
+				font-size: 5vh;
+			}
+			#configuration {
+				height: 10vh;
+				width: 100vw;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+			}
+			#openKeyBindings {
+				
+			}
+			#keyBindings {
+				
+			}
+			#errorMessage {
+				
+			}
+			#errorMessageHeader {
+				
+			}
+			#errorMessageBody {
+				
+			}
 		</style>
 	</head>
 	<body>
-	
+		<h1 id="title">
+			Pong
+		</h1>
+		<canvas id="canvas">
+		</canvas>
+		<div id="configuration">
+			<button id="openKeyBindings">
+				Key Bindings
+			</button>
+			<div id="keyBindings">
+			</div>
+		</div>
+		<div id="errorMessage">
+			<h2 id="errorMessageHeader">
+				An Error Has Occurred:
+			</h2>
+			<p id="errorMessageBody">
+			</p>
+		</div>
 	</body>
+	<script>
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		var canvas = document.getElementById("canvas");
+		canvas.width = w;
+		canvas.height = h;
+	</script>
 </html>
