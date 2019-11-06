@@ -13,6 +13,10 @@
 				margin: 0;
 				padding: 0;
 			}
+			.framed {
+				background-color: RGB(0,0,0);
+				border: 0.5vw solid RGB(255,255,255);
+			}
 			#canvas {
 				z-index: 0;
 				height: 80vh;
@@ -20,7 +24,6 @@
 				position: fixed;
 				top: 10vh;
 				left: 0;
-				border: 2vw solid RGB(255,255,255);
 			}
 			#title {
 				z-index: 0;
@@ -44,8 +47,6 @@
 				z-index: 1;
 			}
 			#openKeyBindings {
-				background-color: RGB(0,0,0);
-				border: 2vw solid RGB(255,255,255);
 				font-size: 2vw;
 				width: 20%;
 				height: 80%;
@@ -54,15 +55,13 @@
 				right: 10%;
 			}
 			.popup {
+				display: none;
 				z-index: 2;
 			}
 			.popup * {
 				z-index: 3;
 			}
 			#keyBindings {
-				display: none;
-				background-color: RGB(0,0,0);
-				border: 2vw solid RGB(255,255,255);
 				width: 50vh;
 				height: 50vh;
 				position: fixed;
@@ -70,8 +69,18 @@
 				left: calc(50vw - 25vh);
 			}
 			#closeKeyBindings {
+				width: 10%;
+				height: 10%;
+				position: absolute;
+				top: 5%;
+				left: 5%;
 			}
 			#errorMessage {
+				width: 50vh;
+				height: 50vh;
+				position: fixed;
+				top: 25vh;
+				left: calc(50vw - 25vh);
 			}
 			#errorMessageHeader {
 			}
@@ -83,19 +92,19 @@
 		<h1 id="title">
 			Pong
 		</h1>
-		<canvas id="canvas">
+		<canvas class="framed" id="canvas">
 		</canvas>
 		<div id="configuration">
-			<button id="openKeyBindings">
+			<button class="framed" id="openKeyBindings">
 				Key Bindings
 			</button>
-			<div class="popup" id="keyBindings">
-				<button id="closeKeyBindings">
+			<div class="popup framed" id="keyBindings">
+				<button class="framed" id="closeKeyBindings">
 					X
 				</button>
 			</div>
 		</div>
-		<div class="popup" id="errorMessage">
+		<div class="popup framed" id="errorMessage">
 			<h2 id="errorMessageHeader">
 				An Error Has Occurred:
 			</h2>
