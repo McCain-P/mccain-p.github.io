@@ -14,6 +14,7 @@
 				padding: 0;
 			}
 			#canvas {
+				z-index: 0;
 				height: 80vh;
 				width: 80vh;
 				position: fixed;
@@ -22,6 +23,7 @@
 				border: 2vw solid RGB(255,255,255);
 			}
 			#title {
+				z-index: 0;
 				height: 10vh;
 				width: 100vw;
 				position: fixed;
@@ -31,11 +33,15 @@
 				font-size: 5vh;
 			}
 			#configuration {
+				z-index: 0;
 				height: 10vh;
 				width: 100vw;
 				position: fixed;
 				bottom: 0;
 				left: 0;
+			}
+			#configuration > button {
+				z-index: 1;
 			}
 			#openKeyBindings {
 				background-color: RGB(0,0,0);
@@ -43,21 +49,33 @@
 				font-size: 2vw;
 				width: 20%;
 				height: 80%;
-				position: fixed;
+				position: absolute;
 				top: 10%;
 				right: 10%;
 			}
+			.popup {
+				z-index: 2;
+			}
+			.popup * {
+				z-index: 3;
+			}
 			#keyBindings {
-				
+				display: none;
+				background-color: RGB(0,0,0);
+				border: 2vw solid RGB(255,255,255);
+				width: 50vh;
+				height: 50vh;
+				position: fixed;
+				top: 25vh;
+				left: calc(50vw - 25vh);
+			}
+			#closeKeyBindings {
 			}
 			#errorMessage {
-				
 			}
 			#errorMessageHeader {
-				
 			}
 			#errorMessageBody {
-				
 			}
 		</style>
 	</head>
@@ -71,10 +89,13 @@
 			<button id="openKeyBindings">
 				Key Bindings
 			</button>
-			<div id="keyBindings">
+			<div class="popup" id="keyBindings">
+				<button id="closeKeyBindings">
+					X
+				</button>
 			</div>
 		</div>
-		<div id="errorMessage">
+		<div class="popup" id="errorMessage">
 			<h2 id="errorMessageHeader">
 				An Error Has Occurred:
 			</h2>
