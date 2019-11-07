@@ -20,6 +20,9 @@
 				background-color: RGB(0,0,0);
 				border: 0.5vw solid RGB(255,255,255);
 			}
+			.framed.thin {
+				border-width: 0.25vw;
+			}
 			#canvas {
 				z-index: 0;
 				height: 80vh;
@@ -64,7 +67,6 @@
 				position: absolute;
 				top: 10%;
 				right: 5%;
-				border-width: 0.25vw;
 			}
 			.popup {
 				z-index: 2;
@@ -112,11 +114,11 @@
 		<canvas class="framed" id="canvas">
 		</canvas>
 		<div id="configuration">
-			<button class="framed" id="openKeyBindings">
+			<button class="framed thin" id="openKeyBindings">
 				Key Bindings
 			</button>
 			<div class="popup framed disabled" id="keyBindings">
-				<button class="framed" id="closeKeyBindings">
+				<button class="framed thin" id="closeKeyBindings">
 					X
 				</button>
 			</div>
