@@ -63,11 +63,16 @@
 				right: 5%;
 			}
 			.popup {
-				display: none;
 				z-index: 2;
 			}
 			.popup * {
 				z-index: 3;
+			}
+			.popup.disabled {
+				display: none;
+			}
+			.popup.enabled {
+				display: block;
 			}
 			#keyBindings {
 				width: 50vh;
@@ -106,13 +111,13 @@
 			<button class="framed" id="openKeyBindings">
 				Key Bindings
 			</button>
-			<div class="popup framed" id="keyBindings">
+			<div class="popup framed disabled" id="keyBindings">
 				<button class="framed" id="closeKeyBindings">
 					X
 				</button>
 			</div>
 		</div>
-		<div class="popup framed" id="errorMessage">
+		<div class="popup framed disabled" id="errorMessage">
 			<h2 id="errorMessageHeader">
 				An Error Has Occurred:
 			</h2>
@@ -121,6 +126,12 @@
 		</div>
 	</body>
 	<script>
+		var openKeyBindings = document.getElementById("openKeyBindings");
+		var keyBindings = document.getElementById("keyBindings");
+		openKeyBindings.addEventListener("click", function() {
+			keyBindings.classList.remove("disabled");
+			keyBindings.classList.add("enabled");
+		});
 		var w = window.innerWidth;
 		var h = window.innerHeight;
 		var canvas = document.getElementById("canvas");
