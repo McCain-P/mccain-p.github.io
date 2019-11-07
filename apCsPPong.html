@@ -10,7 +10,7 @@
 			body *:focus {
 				outline: none;
 			}
-			p, h1, h2, button {
+			p, h1, h2, button, label {
 				color: RGB(255,255,255);
 				font-family: "Arial", sans-serif;
 				margin: 0;
@@ -123,6 +123,33 @@
 				<button class="framed thin" id="closeKeyBindings">
 					X
 				</button>
+				<div class="key">
+					<label for="keyPaddle0Up">
+						Paddle 0 Up
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up">
+					</input>
+					<label for="keyPaddle0Down">
+						Paddle 0 Down
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down">
+					</input>
+					<label for="keyPaddle1Up">
+						Paddle 1 Up
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up">
+					</input>
+					<label for="keyPaddle1Down">
+						Paddle 1 Down
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down">
+					</input>
+					<label for="keyClose">
+						Close
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyClose">
+					</input>
+				</div>
 			</div>
 		</div>
 		<div class="popup framed disabled" id="errorMessage">
