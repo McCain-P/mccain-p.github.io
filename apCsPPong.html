@@ -132,9 +132,14 @@
 	<script>
 		var openKeyBindings = document.getElementById("openKeyBindings");
 		var keyBindings = document.getElementById("keyBindings");
+		var closeKeyBindings = document.getElementById("closeKeyBindings");
 		openKeyBindings.addEventListener("click", function() {
 			keyBindings.classList.remove("disabled");
 			keyBindings.classList.add("enabled");
+		});
+		closeKeyBindings.addEventListener("click", function() {
+			keyBindings.classList.remove("enabled");
+			keyBindings.classList.add("disabled");
 		});
 		var w = window.innerWidth;
 		var h = window.innerHeight;
