@@ -12,8 +12,13 @@
 		</input>
 	</body>
 	<script>
+	//Access the element in the HTML DOM ("Document Object Model") with an id value of "txt"; this allows the program to reference the <p> element as a variable named "txt"
+	//The program will use the "txt" element to display text to the user
 	var txt = document.getElementById("txt");
+		//This adds an event listener to the <input> element, with the "input" event being called whenever the element's value is updated by the user (whenever the user types into the element)
+		//The parameter "e" is the event object returned by the event, which contains some information pertinent to the specific event; the event object is not used by the function, though it still accepts it as a parameter
 		document.getElementById("n").addEventListener("input", function(e) {
+			//This obtains what the user typed
 			var n = document.getElementById("n").value;
 			switch (n) {
 				case "1": {
@@ -33,9 +38,19 @@
 					break;
 				};
 				default: {
+					//Uses a regular expression (regex statement) to check if the user input is a number
+					/*
+					Regex finds ("matches") patterns in strings
+					A regex statement is contained within two "/" characters
+					"\d" matches a digit character (0-9, and some Unicode characters in some implementations)
+					"X+" matches one or more of whatever X is
+					Thus, "/\d+/" checks if the user input is a number that is at least 1 digit long
+					*/
 					if (/\d+/.test(n)) {
+						//This statement will execute if the user input is a number that is not 1-4
 						txt.innerHTML = "GO SEAHAWKS!";
 					} else {
+						//This statement will execute if the user input is not a number
 						txt.innerHTML = "Hey Dummy, choose a number!";
 					};
 					break;
