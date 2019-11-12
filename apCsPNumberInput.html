@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>
+			AP CS P Number-Input
+		</title>
+	</head>
+	<body>
+		<p id="txt">
+			Input a number:
+		</p>
+		<input id="n">
+		</input>
+	</body>
+	<script>
+	var txt = document.getElementById("txt");
+		document.getElementById("n").addEventListener("input", function(e) {
+			var n = document.getElementById("n").value;
+			switch (n) {
+				case "1": {
+					txt.innerHTML = "You chose blue";
+					break;
+				};
+				case "2": {
+					txt.innerHTML = "You like cats";
+					break;
+				};
+				case "3": {
+					txt.innerHTML = "The moon is made of green cheese";
+					break;
+				};
+				case "4": {
+					txt.innerHTML = "Once upon a midnight dreary...";
+					break;
+				};
+				default: {
+					if (/\d+/.test(n)) {
+						txt.innerHTML = "GO SEAHAWKS!";
+					} else {
+						txt.innerHTML = "Hey Dummy, choose a number!";
+					};
+					break;
+				};
+			};
+		});
+	</script>
+</html>
