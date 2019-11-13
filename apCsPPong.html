@@ -7,6 +7,10 @@
 			body {
 				background-color: RGB(0,0,0);
 			}
+			body * {
+				margin: 0;
+				padding: 0;
+			}
 			body *:focus {
 				outline: none;
 			}
@@ -71,6 +75,11 @@
 			}
 			.popup {
 				z-index: 2;
+				width: 90vh;
+				height: 90vh;
+				position: fixed;
+				top: 5vh;
+				left: calc(50vw - 45vh);
 			}
 			.popup * {
 				z-index: 3;
@@ -81,32 +90,20 @@
 			.popup.enabled {
 				display: block;
 			}
-			#keyBindings {
-				width: 90vh;
-				height: 90vh;
-				position: fixed;
-				top: 5vh;
-				left: calc(50vw - 45vh);
-			}
-			#closeKeyBindings {
+			.popupClose {
 				width: 5%;
 				height: 5%;
 				position: absolute;
 				top: 1.25%;
 				left: 1.25%;
 			}
-			#errorMessage {
-				width: 90vh;
-				height: 90vh;
-				position: fixed;
-				top: 5vh;
-				left: calc(50vw - 45vh);
-			}
 			#errorMessageHeader {
 				color: RGB(255,0,0);
+				padding: 5%;
 			}
 			#errorMessageBody {
 				color: RGB(255,0,0);
+				padding: 5%;
 			}
 		</style>
 	</head>
@@ -120,37 +117,51 @@
 			<button class="framed thin" id="openKeyBindings">
 				Key Bindings
 			</button>
-			<div class="popup framed disabled" id="keyBindings">
-				<button class="framed thin" id="closeKeyBindings">
+			<div class="popup config framed disabled" id="keyBindings">
+				<button class="popupClose framed thin" id="closeKeyBindings">
 					X
 				</button>
-				<div class="key">
-					<label for="keyPaddle0Up">
-						Paddle 0 Up
-					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up">
-					</input>
-					<label for="keyPaddle0Down">
-						Paddle 0 Down
-					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down">
-					</input>
-					<label for="keyPaddle1Up">
-						Paddle 1 Up
-					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up">
-					</input>
-					<label for="keyPaddle1Down">
-						Paddle 1 Down
-					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down">
-					</input>
-					<label for="keyClose">
-						Close
-					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyClose">
-					</input>
-				</div>
+				<label for="keyPaddle0Up">
+					Paddle 0 Up
+				</label>
+				<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up">
+				</input>
+				<label for="keyPaddle0Down">
+					Paddle 0 Down
+				</label>
+				<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down">
+				</input>
+				<label for="keyPaddle1Up">
+					Paddle 1 Up
+				</label>
+				<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up">
+				</input>
+				<label for="keyPaddle1Down">
+					Paddle 1 Down
+				</label>
+				<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down">
+				</input>
+				<label for="keyClose">
+					Close
+				</label>
+				<input type="text" readonly="true" class="framed thin" id="keyClose">
+				</input>
+			</div>
+			<button class="framed thin" id="openScoring">
+				Scoring
+			</button>
+			<div class="popup config framed disabled" id="scoring">
+				<button class="popupClose framed thin" id="closeScoring">
+					X
+				</button>
+			</div>
+			<button class="framed thin" id="openVisuals">
+				Visuals
+			</button>
+			<div class="popup config framed disabled" id="visuals">
+				<button class="popupClose framed thin" id="closeVisuals">
+					X
+				</button>
 			</div>
 		</div>
 		<div class="popup framed disabled" id="errorMessage">
