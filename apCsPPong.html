@@ -114,7 +114,16 @@
 			}
 			#errorMessage > h2, #errorMessage > p {
 				color: RGB(255,0,0);
-				margin: 5%;
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+			#errorMessageHeader {
+				margin-top: 5%;
+				margin-bottom: 2.5%;
+			}
+			#errorMessageBody {
+				margin-top: 2.5%;
+				margin-bottom: 5%;
 			}
 		</style>
 	</head>
@@ -175,7 +184,7 @@
 				</button>
 			</div>
 		</div>
-		<div class="popup framed enabled" id="errorMessage">
+		<div class="popup framed disabled" id="errorMessage">
 			<h2 id="errorMessageHeader">
 				An Error Has Occurred:
 			</h2>
