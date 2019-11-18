@@ -107,14 +107,14 @@
 				top: 1.25%;
 				left: 1.25%;
 			}
-			.popup.config > label {
-				margin: 5% 5% 5% 5%;
+			.popupConfig > p, .popup.config > button:not(.popupClose) {
+				margin: 5%;
 			}
-			.popup.config > input {
-				margin: 5%  50% 5% 5%;
+			.popup.config > p > label {
+				margin: 0 2.5% 0 0;
 			}
-			.popup.config > button:not(.popupClose) {
-				margin: 5%; 50%; 5%; 5%;
+			.popup.config > p > input {
+				margin: 0 0 0 2.5%;
 			}
 			#errorMessage > h2, #errorMessage > p {
 				color: RGB(255,0,0);
@@ -145,31 +145,41 @@
 				<button class="popupClose framed thin" id="closeKeyBindings">
 					X
 				</button>
-				<label for="keyPaddle0Up">
-					Paddle 0 Up
-				</label>
-				<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up">
-				</input>
-				<label for="keyPaddle0Down">
-					Paddle 0 Down
-				</label>
-				<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down">
-				</input>
-				<label for="keyPaddle1Up">
-					Paddle 1 Up
-				</label>
-				<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up">
-				</input>
-				<label for="keyPaddle1Down">
-					Paddle 1 Down
-				</label>
-				<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down">
-				</input>
-				<label for="keyClose">
-					Close
-				</label>
-				<input type="text" readonly="true" class="framed thin" id="keyClose">
-				</input>
+				<p>
+					<label for="keyPaddle0Up">
+						Paddle 0 Up
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up">
+					</input>
+				</p>
+				<p>
+					<label for="keyPaddle0Down">
+						Paddle 0 Down
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down">
+					</input>
+				</p>
+				<p>
+					<label for="keyPaddle1Up">
+						Paddle 1 Up
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up">
+					</input>
+				</p>
+				<p>
+					<label for="keyPaddle1Down">
+						Paddle 1 Down
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down">
+					</input>
+				</p>
+				<p>
+					<label for="keyClose">
+						Close
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyClose">
+					</input>
+				</p>
 			</div>
 			<button class="framed thin" id="openScoring">
 				Scoring
