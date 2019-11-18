@@ -230,6 +230,7 @@
 		</div>
 	</body>
 	<script>
+		//<gui>
 		var openKeyBindings = document.getElementById("openKeyBindings");
 		var keyBindings = document.getElementById("keyBindings");
 		var closeKeyBindings = document.getElementById("closeKeyBindings");
@@ -241,10 +242,173 @@
 			keyBindings.classList.remove("enabled");
 			keyBindings.classList.add("disabled");
 		});
+		//</gui>
+		//<game & gui>
 		var w = window.innerWidth;
 		var h = window.innerHeight;
 		var canvas = document.getElementById("canvas");
 		canvas.width = w;
 		canvas.height = h;
+		var c = canvas.getContext("2d");
+		//</game & gui>
+		//<game>
+		setActiveCanvas("canvas");
+		setFillColor("#000000");
+		c.fillRect(0, 0, w, h);
+		setFillColor("#FFFFFF");
+		/*
+		positionSize = {
+		  {
+		    {paddle0X, paddle0Y},
+		    {paddle0W, paddle0H}
+		  },
+		  {
+		    {paddle1X, paddle1Y},
+		    {paddle1W, paddle1H}
+		  },
+		  {
+		    {ballX, ballY},
+		    {ballW, ballH}
+		  }
+		}
+		*/
+		var padding = w / 8;
+		var ballR = w / 32;
+		positionSize = [
+		  [
+		    [padding, (h / 2) - (w / 8)],
+		    [w / 16, w / 4]
+		  ],
+		  [
+		    [w - padding - (w / 16), (h / 2) - (w / 8)],
+		    [w / 16, w / 4]
+		  ],
+		  [
+		    [w / 2, h / 2],
+		    [2 * ballR, 2 * ballR]
+		  ]
+		];
+		c.fillRect(positionSize[0][0][0], positionSize[0][0][1], positionSize[0][1][0], positionSize[0][1][1]);
+		c.fillRect(positionSize[1][0][0], positionSize[1][0][1], positionSize[1][1][0], positionSize[1][1][1]);
+		c.arc(positionSize[2][0][0], positionSize[2][0][1], ballR, 0, 2 * Math.PI);
+		textLabel("errorMessage", "An error has occurred:");
+		hideElement("errorMessage");
+		var errorH = 3 * w / 8;
+		var errorW = w / 2;
+		setSize("errorMessage", errorW, errorH);
+		setPosition("errorMessage", w / 2 - errorW / 2, h / 2 - errorH / 2);
+		setProperty("errorMessage", "background-color", "#000000");
+		setProperty("errorMessage", "border-color", "#FFFFFF");
+		setProperty("errorMessage", "border-width", w / 64);
+		function moveObject(object, x, y, relativePositioning) {
+		  var objectType = 0;
+		  switch (object) {
+		    case 0:
+		    case 1:
+		      objectType = 0;
+		      break;
+		    case 2:
+		      objectType = 1;
+		      break;
+		    default:
+		      return undefined;
+		  };
+		  if (objectType === 0) {
+		    setFillColor("#000000");
+		    c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
+		    setFillColor("#FFFFFF");
+		  } else {
+		    setFillColor("#000000");
+		    c.fillRect(positionSize[object][0][0] - (positionSize[object][1][0] / 2), positionSize[object][0][1] - (positionSize[object][1][1] / 2), positionSize[object][1][0], positionSize[object][1][1]);
+		    setFillColor("#FFFFFF");
+		  };
+		  if (relativePositioning) {
+		    positionSize[object][0][0] += x;
+		    positionSize[object][0][1] += y;
+		  } else {
+		    positionSize[object][0][0] = x;
+		    positionSize[object][0][1] = y;
+		  };
+		  if (objectType === 0) {
+		    c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
+		  } else {
+		    c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2, 0, 2 * Math.PI);
+		  };
+		};
+		var paddleMovementLoop = [0, 0];
+		function paddleMovement(paddle, state, direction) {
+		  stopTimedLoop(paddleMovementLoop[paddle]);
+		  if (state) {
+		    paddleMovementLoop[paddle] = timedLoop(10, function() {
+		      var d0 = ((h / 50) * direction);
+		      var d = positionSize[paddle][0][1] + d0
+		      if (d < 0) {
+		        d0 = -positionSize[paddle][0][1];
+		      } else if (d + positionSize[paddle][1][1] > h) {
+		        d0 = h - (positionSize[paddle][0][1] + positionSize[paddle][1][1]);
+		      };
+		      moveObject(paddle, 0, d0, true);
+		    });
+		  };
+		};
+		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down}
+		var keyBindings = ["w", "s", "Up", "Down"];
+		function errorHandling(errorObject) {
+		  setText("errorMessage", "errorMessage", "An error has occurred:\n" + errorObject.name + ": " + errorObject.message);
+		  showElement("errorMessage");
+		};
+		onEvent("screen1", "keydown", function(e) {
+		  try {
+		    var key = e.key;
+		    switch (key) {
+		      case keyBindings[0]:
+		        paddleMovement(0, true, -1);
+		        break;
+		      case keyBindings[1]:
+		        paddleMovement(0, true, 1);
+		        break;
+		      case keyBindings[2]:
+		        paddleMovement(1, true, -1);
+		        break;
+		      case keyBindings[3]:
+		        paddleMovement(1, true, 1);
+		        break;
+		      default:
+		        break;
+		    };
+		  } catch (e) {
+		    errorHandling(e);
+		  };
+		});
+		onEvent("screen1", "keyup", function(e) {
+		  try {
+		    var key = e.key;
+		    switch(key) {
+		      case keyBindings[0]:
+		        paddleMovement(0, false, -1);
+		        break;
+		      case keyBindings[1]:
+		        paddleMovement(0, false, 1);
+		        break;
+		      case keyBindings[2]:
+		        paddleMovement(1, false, -1);
+		        break;
+		      case keyBindings[3]:
+		        paddleMovement(1, false, 1);
+		        break;
+		      default:
+		        break;
+		    };
+		  } catch (e) {
+		    errorHandling(e);
+		  };
+		});
+		//ballVelocity = {Magnitude, direction (radian angle), x vector, y vector}
+		var ballVelocity = [h / 200, Math.random() * Math.PI, ballVelocity[0] * Math.cos(ballVelocity[1]), ballVelocity[0] * Math.sin(ballVelocity[1])];
+		var ballMovement = timedLoop(10, function() {
+		  //check if it hits something. If so, both only put it as close as it can get (cut both x and y vectors equally), and then do any reflections or whatever if so.
+		  moveObject(2, ?, ?, true);
+		});
+		//</game>
 	</script>
 </html>
