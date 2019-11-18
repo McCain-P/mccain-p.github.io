@@ -112,15 +112,16 @@
 				margin: 4.5vh;
 				padding: 0;
 				font-size: 4.5vh;
-				position: static;
+				position: relative;
 			}
 			.popup.config > p > label {
 				/*
 				margin: 4.5vh;
 				*/
-				display: block;
 				position: absolute;
 				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
 				font-size: 4.5vh;
 			}
 			.popup.config > p > input {
@@ -130,6 +131,8 @@
 				display: block;
 				position: absolute;
 				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
 				font-size: 4.5vh;
 				width: 18vh;
 			}
