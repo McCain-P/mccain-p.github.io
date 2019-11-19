@@ -215,12 +215,12 @@
 		//<game & gui>
 		//keyBindings, maxScore, and colors are configuration values
 		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down}
-		var keyBindings = ["w", "s", "Up", "Down"];
+		var keyBindings = ["w", "s", "ArrowUp", "ArrowDown"];
 		var maxScore = 6;
 		//colors = {backgroundColor, paddle0Color, paddle1Color, ballColor}
 		var colors = ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"];
 		//defaultConfigurationValues = {keyBindings, maxScore, colors}
-		var defaultConfigurationValues = [["w", "s", "Up", "Down"], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
+		var defaultConfigurationValues = [["w", "s", "ArrowUp", "ArrowDown"], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
 		//</game & gui>
 		//<gui>
 		var openKeyBindings = document.getElementById("openKeyBindings");
@@ -357,18 +357,23 @@
 				var key = e.key;
 				switch (key) {
 					case keyBindings[0]:
+						console.log("0");
 		  				paddleMovement(0, true, -1);
 		  				break;
 		  			case keyBindings[1]:
+						console.log("1");
 						paddleMovement(0, true, 1);
 						break;
 					case keyBindings[2]:
+						console.log("2");
 						paddleMovement(1, true, -1);
 						break;
 					case keyBindings[3]:
+						console.log("3");
 						paddleMovement(1, true, 1);
 						break;
 					default:
+						console.log("d");
 						break;
 				};
 			} catch (errorObject) {
