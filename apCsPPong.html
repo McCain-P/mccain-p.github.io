@@ -450,6 +450,15 @@ Collision at a point (x, y) if:
 
 sqrt(|o_x - x|^2 + |o_y - y|^2) <= r and (c_x <= x <= c_x + w and c_y <= y <= c_y + h)
 
+o_x - r <= x <= o_x + r
+c_x <= x <= c_x + w
+
+a l  b
+*----*
+  *----*
+  A L  B
+(a <= A && a + l >= A) || A <= a <= A + L
+(positionSize[2][0][0] - positionSize[2][1][0] / 2 <= positionSize[0][0][0] && positionSize[2][0][0] - positionSize[2][1][0] + positionSize[0][0][0] >= positionSize[0][0][0]) || (positionSize[0][0][0] <= positionSize[2][0][0] - positionSize[2][1][0] / 2 && positionSize[2][0][0] - positionSize[2][1][0] / 2 <= positionSize[0][0][0] + positionSize[0][1][0])
 Collision at border:
 
 o_x - r <= 0 || o_x + r >= w || o_y - r <= 0 || o_y + r >= h
