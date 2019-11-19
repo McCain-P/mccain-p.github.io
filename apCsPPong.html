@@ -277,9 +277,8 @@
 		canvas.width = w;
 		canvas.height = h;
 		var c = canvas.getContext("2d");
-		setFillColor(colors[0]);
+		c.fillStyle = colors[0];
 		c.fillRect(0, 0, w, h);
-		setFillColor("#FFFFFF");
 		/*
 		positionSize = {
 			{
