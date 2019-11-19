@@ -413,5 +413,43 @@
 			moveObject(2, ballVelocity[2], ballVelocity[3], true);
 		}, 10);
 		//</game>
+/*
+(o_x, o_y): circle origin
+r: Circle radius
+
+(c_x, c_y): top-left corner of rectangle
+w: rectangle width
+h: rectangle height
+
+
+Collision at a point (x, y) if:
+
+sqrt(|o_x - x|^2 + |o_y - y|^2) <= r and (c_x <= x <= c_x + w and c_y <= y <= c_y + h)
+
+Collision at border:
+
+o_x - r <= 0 || o_x + r >= w || o_y - r <= 0 || o_y + r >= h
+
+Top:   o_y - r <= 0
+Down:  o_y + r >= h
+Left:  o_x - r <= 0
+Right: o_x + r >= w
+
+frictionAcceleration = frictionConstant * ballVelocityX * paddleVelocityDirection
+//frictionConstant = coefficientOfFriction * ballM
+
+On collision with paddle:
+
+v_x *= -1;
+v_x += frictionAcceleration in the same direction as the new, inverted v_x
+v_y += frictionAcceleration
+
+On collision with wall:
+	Vertical:   x_y *= -1
+	Horizontal: v_x *= -1
+
+To-do: Add Play/Pause / running button
+*Button is black when game is running and grey when it is paused
+*/
 	</script>
 </html>
