@@ -90,7 +90,9 @@
 				position: fixed;
 				top: 5vh;
 				left: calc(50vw - 45vh);
+				/*
 				padding: 9vh;
+				*/
 			}
 			.popup * {
 				z-index: 3;
@@ -108,36 +110,45 @@
 				top: 1.25%;
 				left: 1.25%;
 			}
+			.popupConfig {
+				display: grid;
+				grid: auto-flow repeat(auto-fit, 5vh) / 51vh 11vh;
+			}
 			.popupConfig > p, .popup.config > button:not(.popupClose) {
+				/*
 				margin: 4.5vh;
 				padding: 0;
+				*/
 				font-size: 4.5vh;
+				/*
 				position: relative;
 				top: 0;
 				left: 0;
-				background-color: RGB(255,0,0);
+				*/
 			}
 			.popup.config > p > label {
 				/*
 				margin: 4.5vh;
-				*/
 				position: absolute;
 				left: 0;
 				top: 50%;
 				transform: translateY(-50%);
+				*/
 				font-size: 4.5vh;
 			}
 			.popup.config > p > input {
 				/*
 				margin: 4.5vh;
-				*/
 				display: block;
 				position: absolute;
 				right: 0;
 				top: 50%;
 				transform: translateY(-50%);
+				*/
 				font-size: 4.5vh;
+				/*
 				width: 18vh;
+				*/
 			}
 			#errorMessage > h2, #errorMessage > p {
 				color: RGB(255,0,0);
