@@ -94,17 +94,22 @@
 				padding: 9vh;
 				*/
 			}
+			.popup > .popupContent {
+				z-index: 2;
+				width: 72vh;
+				height: 72vh;
+				position: absolute;
+				top: 9vh;
+				left: 9vh;
+			}
 			.popup * {
 				z-index: 3;
 			}
-			.popup.disabled, .popup.config.disabled {
+			.popup.disabled {
 				display: none;
 			}
 			.popup.enabled {
 				display: block;
-			}
-			.popup.config.enabled {
-				display: grid;
 			}
 			.popupClose {
 				width: 5%;
@@ -113,15 +118,17 @@
 				top: 1.25%;
 				left: 1.25%;
 			}
-			.popup.config {
+			.popup.config > .popupContent {
 				display: grid;
 				grid-template: repeat(auto-fit, 5vh) / 51vh 11vh;
 				grid-auto-flow: row;
 				grid-gap: 9vh 20vh;
 				place-items: stretch;
-				justify-content: center;
 			}
+			/*
 			.popup.config > p, .popup.config > button:not(.popupClose) {
+			*/
+			.popup.config > .popupContent > p, .popup.config > .popupContent > button:not(.popupClose) {
 				/*
 				margin: 4.5vh;
 				padding: 0;
@@ -186,41 +193,33 @@
 				<button class="popupClose framed thin" id="closeKeyBindings">
 					X
 				</button>
-				<p>
+				<div class="popupContent">
 					<label for="keyPaddle0Up">
 						Paddle 0 Up
 					</label>
 					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up">
 					</input>
-				</p>
-				<p>
 					<label for="keyPaddle0Down">
 						Paddle 0 Down
 					</label>
 					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down">
 					</input>
-				</p>
-				<p>
 					<label for="keyPaddle1Up">
 						Paddle 1 Up
 					</label>
 					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up">
 					</input>
-				</p>
-				<p>
 					<label for="keyPaddle1Down">
 						Paddle 1 Down
 					</label>
 					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down">
 					</input>
-				</p>
-				<p>
 					<label for="keyClose">
 						Close
 					</label>
 					<input type="text" readonly="true" class="framed thin" id="keyClose">
 					</input>
-				</p>
+				</div>
 			</div>
 			<button class="framed thin" id="openScoring">
 				Scoring
