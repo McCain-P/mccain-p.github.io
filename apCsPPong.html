@@ -311,8 +311,11 @@
 				[2 * ballR, 2 * ballR]
 			]
 		];
+		c.fillStyle = colors[1];
 		c.fillRect(positionSize[0][0][0], positionSize[0][0][1], positionSize[0][1][0], positionSize[0][1][1]);
+		c.fillStyle = colors[2];
 		c.fillRect(positionSize[1][0][0], positionSize[1][0][1], positionSize[1][1][0], positionSize[1][1][1]);
+		c.fillStyle = colors[3];
 		c.arc(positionSize[2][0][0], positionSize[2][0][1], ballR, 0, 2 * Math.PI);
 		/*
 		textLabel("errorMessage", "An error has occurred:");
