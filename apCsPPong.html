@@ -90,9 +90,6 @@
 				position: fixed;
 				top: 5vh;
 				left: calc(50vw - 45vh);
-				/*
-				padding: 9vh;
-				*/
 			}
 			.popup > .popupContent {
 				z-index: 2;
@@ -125,44 +122,12 @@
 				grid-gap: 9vh 10vh;
 				place-items: stretch;
 			}
-			/*
-			.popup.config > p, .popup.config > button:not(.popupClose) {
-			*/
-			.popup.config > .popupContent > p, .popup.config > .popupContent > button:not(.popupClose) {
-				/*
-				margin: 4.5vh;
-				padding: 0;
-				*/
+			.popup.config > .popupContent > label, .popup.config > .popupContent > input, .popup.config > .popupContent > button:not(.popupClose) {
 				font-size: 4.5vh;
-				/*
-				position: relative;
-				top: 0;
-				left: 0;
-				*/
+				text-align: center;
 			}
-			.popup.config > p > label {
-				/*
-				margin: 4.5vh;
-				position: absolute;
-				left: 0;
-				top: 50%;
-				transform: translateY(-50%);
-				*/
-				font-size: 4.5vh;
-			}
-			.popup.config > p > input {
-				/*
-				margin: 4.5vh;
-				display: block;
-				position: absolute;
-				right: 0;
-				top: 50%;
-				transform: translateY(-50%);
-				*/
-				font-size: 4.5vh;
-				/*
-				width: 18vh;
-				*/
+			.popup.config > label {
+				text-align: left;
 			}
 			#errorMessage > h2, #errorMessage > p {
 				color: RGB(255,0,0);
