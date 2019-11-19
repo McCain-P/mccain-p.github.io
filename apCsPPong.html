@@ -352,6 +352,7 @@
 			*/
 		};
 		window.addEventListener("keydown", function(e) {
+			console.log("keydown " + e.key);
 			try {
 				var key = e.key;
 				switch (key) {
@@ -375,6 +376,7 @@
 			};
 		});
 		window.addEventListener("keyup", function(e) {
+			console.log("keyup " + e.key);
 			try {
 				var key = e.key;
 				switch(key) {
