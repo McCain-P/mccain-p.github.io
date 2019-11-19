@@ -410,25 +410,31 @@
 		ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
 		ballVelocity[1] = ballVelocity[2] * Math.sin(ballVelocity[3]);
 		var ballMovement = window.setInterval(function() {
-			//Top or bottom edge
+			//Top edge or bottom edge
 			if (positionSize[2][0][1] - positionSize[2][1][0] / 2 <= 0 || positionSize[2][0][1] + positionSize[2][1][0] / 2 >= h) {
 				
 			};
-			//Left edge
-			if (positionSize[2][0][0] - positionSize[2][1][0] / 2 <= 0) {
-				
+			//{Left edge, right edge}
+			var horizontalEdgeCollisions = [positionSize[2][0][0] - positionSize[2][1][0] / 2 <= 0, positionSize[2][0][0] + positionSize[2][1][0] / 2 >= w];
+			//Left edge or right edge
+			if (horizontalEdgeCollisions[0] || horizontalEdgeCollisions[1]) {
+				//Left edge
+				if (horizontalEdgeCollisions[0]) {
+				//Right edge
+				} else {
+					
+				};
 			};
-			//Right edge
-			if (positionSize[2][0][0] - positionSize[2][1][0] / 2 <= 0) {
-				
-			};
-			//Paddle 0
-			if () {
-				
-			};
-			//Paddle 1
-			if () {
-				
+			//{Paddle 0, paddle 1}
+			var paddleCollisions = [];
+			//Paddle 0 or paddle 1
+			if (paddleCollision[0] || paddleCollision[1]) {
+				//Paddle 0
+				if (paddleCollisions[0]) {
+				//Paddle 1	
+				} else {
+					
+				};
 			};
 			moveObject(2, ballVelocity[0], ballVelocity[1], true);
 		}, 10);
