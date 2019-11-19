@@ -307,12 +307,12 @@
 					return undefined;
 			};
 			c.fillStyle = colors[0];
-			//0.5 is added to w, h, and r to account for a "white-outline residue" that occurs
+			//2 pixels is added to w and h to account for an "outline residue" that occurs
 			if (objectType === 0) {
-				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] + 0.5, positionSize[object][1][1] + 0.5);
+				c.fillRect(positionSize[object][0][0] - 1, positionSize[object][0][1] - 1, positionSize[object][1][0] + 2, positionSize[object][1][1] + 2);
 			} else {
 				//c.fillRect(positionSize[object][0][0] - (positionSize[object][1][0] / 2), positionSize[object][0][1] - (positionSize[object][1][1] / 2), positionSize[object][1][0], positionSize[object][1][1]);
-				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2 + 0.5, 0, 2 * Math.PI);
+				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2 + 1, 0, 2 * Math.PI);
 				c.fill();
 			};
 			if (relativePositioning) {
