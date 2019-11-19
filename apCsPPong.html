@@ -307,11 +307,12 @@
 					return undefined;
 			};
 			c.fillStyle = colors[0];
+			//0.5 is added to w, h, and r to account for a "white-outline residue" that occurs
 			if (objectType === 0) {
-				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
+				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] + 0.5, positionSize[object][1][1] + 0.5);
 			} else {
 				//c.fillRect(positionSize[object][0][0] - (positionSize[object][1][0] / 2), positionSize[object][0][1] - (positionSize[object][1][1] / 2), positionSize[object][1][0], positionSize[object][1][1]);
-				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2, 0, 2 * Math.PI);
+				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2 + 0.5, 0, 2 * Math.PI);
 				c.fill();
 			};
 			if (relativePositioning) {
@@ -404,13 +405,34 @@
 				errorHandling(errorObject);
 		  };
 		});
-		//ballVelocity = {Magnitude, direction (radian angle), x vector, y vector}
-		var ballVelocity = [h / 200, Math.random() * Math.PI];
-		ballVelocity[2] = ballVelocity[0] * Math.cos(ballVelocity[1]);
-		ballVelocity[3] = ballVelocity[0] * Math.sin(ballVelocity[1]);
+		//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
+		var ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
+		ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
+		ballVelocity[1] = ballVelocity[2] * Math.sin(ballVelocity[3]);
 		var ballMovement = window.setInterval(function() {
-			//check if it hits something. If so, both only put it as close as it can get (cut both x and y vectors equally), and then do any reflections or whatever if so.
-			moveObject(2, ballVelocity[2], ballVelocity[3], true);
+			//Top edge
+			if (positionSize[2][0][1] - positionSize[2][1][0] / 2 <= 0) {
+				
+			};
+			//Bottom edge
+			if (positionSize[2][0][1] + positionSize[2][1][0] / 2 >= h) {
+				
+			};
+			//Left edge
+			if (positionSize[2][0][0] - positionSize[2][1][0] / 2 <= 0) {
+				
+			};
+			//Right edge
+			if (positionSize[2][0][0] - positionSize[2][1][0] / 2 <= 0) {
+				
+			};
+			if () {
+				
+			};
+			if () {
+				
+			};
+			moveObject(2, ballVelocity[0], ballVelocity[1], true);
 		}, 10);
 		//</game>
 /*
