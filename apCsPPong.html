@@ -224,15 +224,15 @@
 		//</game & gui>
 		//<gui>
 		var openKeyBindings = document.getElementById("openKeyBindings");
-		var keyBindings = document.getElementById("keyBindings");
+		var keyBindingsPopup = document.getElementById("keyBindings");
 		var closeKeyBindings = document.getElementById("closeKeyBindings");
 		openKeyBindings.addEventListener("click", function() {
-			keyBindings.classList.remove("disabled");
-			keyBindings.classList.add("enabled");
+			keyBindingsPopup.classList.remove("disabled");
+			keyBindingsPopup.classList.add("enabled");
 		});
 		closeKeyBindings.addEventListener("click", function() {
-			keyBindings.classList.remove("enabled");
-			keyBindings.classList.add("disabled");
+			keyBindingsPopup.classList.remove("enabled");
+			keyBindingsPopup.classList.add("disabled");
 		});
 		//</gui>
 		//<game>
