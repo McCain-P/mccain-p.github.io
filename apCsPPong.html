@@ -440,7 +440,7 @@
 		var ballVelocity = [h / 200, Math.random() * Math.PI, ballVelocity[0] * Math.cos(ballVelocity[1]), ballVelocity[0] * Math.sin(ballVelocity[1])];
 		var ballMovement = window.setInterval(function() {
 			//check if it hits something. If so, both only put it as close as it can get (cut both x and y vectors equally), and then do any reflections or whatever if so.
-			moveObject(2, ?, ?, true);
+			moveObject(2, ballVelocity[2], ballVelocity[3], true);
 		}, 10);
 		//</game>
 	</script>
