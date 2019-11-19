@@ -258,17 +258,12 @@
 		var defaultConfigurationValues = [["w", "s", "Up", "Down"], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
 		//</game & gui>
 		//<gui>
-		console.log("A");
 		var openKeyBindings = document.getElementById("openKeyBindings");
 		var keyBindings = document.getElementById("keyBindings");
 		var closeKeyBindings = document.getElementById("closeKeyBindings");
-		console.log("keyBindings = " + keyBindings);
 		openKeyBindings.addEventListener("click", function() {
-			console.log("C");
-			console.log("keyBindings = " + keyBindings);
 			keyBindings.classList.remove("disabled");
 			keyBindings.classList.add("enabled");
-			console.log("keyBindings.classList = " + keyBindings.classList);
 		});
 		closeKeyBindings.addEventListener("click", function() {
 			keyBindings.classList.remove("enabled");
