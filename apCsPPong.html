@@ -349,7 +349,9 @@
 			if (objectType === 0) {
 				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
 			} else {
-				c.fillRect(positionSize[object][0][0] - (positionSize[object][1][0] / 2), positionSize[object][0][1] - (positionSize[object][1][1] / 2), positionSize[object][1][0], positionSize[object][1][1]);
+				//c.fillRect(positionSize[object][0][0] - (positionSize[object][1][0] / 2), positionSize[object][0][1] - (positionSize[object][1][1] / 2), positionSize[object][1][0], positionSize[object][1][1]);
+				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2, 0, 2 * Math.PI);
+				c.fill();
 			};
 			if (relativePositioning) {
 				positionSize[object][0][0] += x;
