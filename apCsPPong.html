@@ -230,6 +230,16 @@
 		</div>
 	</body>
 	<script>
+		//<game & gui>
+		//keyBindings, maxScore, and colors are configuration values
+		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down}
+		var keyBindings = ["w", "s", "Up", "Down"];
+		var maxScore = 6;
+		//colors = {backgroundColor, paddle0Color, paddle1Color, ballColor}
+		var colors = ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"];
+		//defaultConfigurationValues = {keyBindings, maxScore, colors}
+		var defaultConfigurationValues = [["w", "s", "Up", "Down"], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
+		//</game & gui>
 		//<gui>
 		var openKeyBindings = document.getElementById("openKeyBindings");
 		var keyBindings = document.getElementById("keyBindings");
@@ -243,17 +253,15 @@
 			keyBindings.classList.add("disabled");
 		});
 		//</gui>
-		//<game & gui>
+		//<game>
 		var w = window.innerWidth;
 		var h = window.innerHeight;
 		var canvas = document.getElementById("canvas");
 		canvas.width = w;
 		canvas.height = h;
 		var c = canvas.getContext("2d");
-		//</game & gui>
-		//<game>
 		setActiveCanvas("canvas");
-		setFillColor("#000000");
+		setFillColor(colors[0]);
 		c.fillRect(0, 0, w, h);
 		setFillColor("#FFFFFF");
 		/*
@@ -291,6 +299,7 @@
 		c.fillRect(positionSize[0][0][0], positionSize[0][0][1], positionSize[0][1][0], positionSize[0][1][1]);
 		c.fillRect(positionSize[1][0][0], positionSize[1][0][1], positionSize[1][1][0], positionSize[1][1][1]);
 		c.arc(positionSize[2][0][0], positionSize[2][0][1], ballR, 0, 2 * Math.PI);
+		/*
 		textLabel("errorMessage", "An error has occurred:");
 		hideElement("errorMessage");
 		var errorH = 3 * w / 8;
@@ -300,6 +309,7 @@
 		setProperty("errorMessage", "background-color", "#000000");
 		setProperty("errorMessage", "border-color", "#FFFFFF");
 		setProperty("errorMessage", "border-width", w / 64);
+		*/
 		function moveObject(object, x, y, relativePositioning) {
 			var objectType = 0;
 			switch (object) {
@@ -313,14 +323,11 @@
 				default:
 					return undefined;
 			};
+			c.fillStyle = colors[0];
 			if (objectType === 0) {
-				setFillColor("#000000");
 				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
-				setFillColor("#FFFFFF");
 			} else {
-				setFillColor("#000000");
 				c.fillRect(positionSize[object][0][0] - (positionSize[object][1][0] / 2), positionSize[object][0][1] - (positionSize[object][1][1] / 2), positionSize[object][1][0], positionSize[object][1][1]);
-				setFillColor("#FFFFFF");
 			};
 			if (relativePositioning) {
 				positionSize[object][0][0] += x;
@@ -329,17 +336,19 @@
 				positionSize[object][0][0] = x;
 				positionSize[object][0][1] = y;
 			};
+			c.fillStyle = colors[object + 1];
 			if (objectType === 0) {
 				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
 			} else {
 				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2, 0, 2 * Math.PI);
+				c.fill();
 			};
 		};
 		var paddleMovementLoop = [0, 0];
 		function paddleMovement(paddle, state, direction) {
-			stopTimedLoop(paddleMovementLoop[paddle]);
+			window.clearInterval(paddleMovementLoop[paddle]);
 			if (state) {
-				paddleMovementLoop[paddle] = timedLoop(10, function() {
+				paddleMovementLoop[paddle] = window.setInterval(function() {
 					var d0 = ((h / 50) * direction);
 					var d = positionSize[paddle][0][1] + d0
 					if (d < 0) {
@@ -348,16 +357,16 @@
 						d0 = h - (positionSize[paddle][0][1] + positionSize[paddle][1][1]);
 					};
 					moveObject(paddle, 0, d0, true);
-				});
+				}, 10);
 			};
 		};
-		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down}
-		var keyBindings = ["w", "s", "Up", "Down"];
 		function errorHandling(errorObject) {
+			/*
 			setText("errorMessage", "errorMessage", "An error has occurred:\n" + errorObject.name + ": " + errorObject.message);
 			showElement("errorMessage");
+			*/
 		};
-		onEvent("screen1", "keydown", function(e) {
+		window.addEventListener("keydown", function(e) {
 			try {
 				var key = e.key;
 				switch (key) {
@@ -376,11 +385,11 @@
 					default:
 						break;
 				};
-			} catch (e) {
-				errorHandling(e);
+			} catch (errorObject) {
+				errorHandling(errorObject);
 			};
 		});
-		onEvent("screen1", "keyup", function(e) {
+		window.addEventListener("keyup", function(e) {
 			try {
 				var key = e.key;
 				switch(key) {
@@ -399,16 +408,16 @@
 					default:
 						break;
 				};
-			} catch (e) {
-				errorHandling(e);
+			} catch (errorObject) {
+				errorHandling(errorObject);
 		  };
 		});
 		//ballVelocity = {Magnitude, direction (radian angle), x vector, y vector}
 		var ballVelocity = [h / 200, Math.random() * Math.PI, ballVelocity[0] * Math.cos(ballVelocity[1]), ballVelocity[0] * Math.sin(ballVelocity[1])];
-		var ballMovement = timedLoop(10, function() {
+		var ballMovement = window.setInterval(function() {
 			//check if it hits something. If so, both only put it as close as it can get (cut both x and y vectors equally), and then do any reflections or whatever if so.
 			moveObject(2, ?, ?, true);
-		});
+		}, 10);
 		//</game>
 	</script>
 </html>
