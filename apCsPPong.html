@@ -275,7 +275,7 @@
 		//colors = {backgroundColor, paddle0Color, paddle1Color, ballColor}
 		var colors = ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"];
 		//defaultConfigurationValues = {keyBindings, maxScore, colors}
-		var defaultConfigurationValues = [["w", "s", "ArrowUp", "ArrowDown"], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
+		var defaultConfigurationValues = [["w", "s", "ArrowUp", "ArrowDown", "Space"], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
 		//scores = {player0, player1}
 		scores = [0, 0];
 		var ballVelocity = [];
@@ -350,6 +350,25 @@
 		var startStopButton = document.getElementById("startStop");
 		startStopButton.addEventListener("click", function() {
 			startStop(!gameRunning);
+		});
+		var keyBindingsOptions = document.getElementById("keyBindings").children.getElementsByTagName("input");
+		var keyBindingsEventListeners = [];
+		for (var i = 0; i < keyBindingsOptions.length; i++) {
+			keyBindingsOptions[i].addEventListener("focus", function(e) {
+				keyBindingsOptions[e.target.data.index] = e.target.addEventListener("keydown", function(keyE) {
+					keyBindings[keyE.target.data.index] = keyE.key;
+					keyE.target.value = keyE.key;
+				});
+			});
+			keyBindingsOptions[i].addEventListener("blur", function(e) {
+				e.target.removeEventListener(keyBindingsOptions[e.target.data.index]);
+			});
+		};
+		document.getElementById("restoreDefaultsKeyBindings").addEventListener("click", function(e) {
+			for (var i = 0; i < keyBindings.length; i++) {
+				keyBindings[i] = defaultConfigurationValues[0][i];
+				keyBindingsOptions[i].value = defaultConfigurationValues[0][keyBindingsOptions[i].data.index]
+			};
 		});
 		//</gui>
 		//<game>
