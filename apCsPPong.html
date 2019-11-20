@@ -211,32 +211,27 @@
 					<label for="keyPaddle0Up">
 						Paddle 0 Up
 					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up">
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up" data-index="0" value="w">
 					</input>
 					<label for="keyPaddle0Down">
 						Paddle 0 Down
 					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down">
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down" data-index="1" value="s">
 					</input>
 					<label for="keyPaddle1Up">
 						Paddle 1 Up
 					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up">
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up" data-index="2" value="ArrowUp">
 					</input>
 					<label for="keyPaddle1Down">
 						Paddle 1 Down
 					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down">
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down" data-index="3" value="ArrowDown">
 					</input>
 					<label for="keyStartStop">
 						Start/Stop
 					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyStartStop">
-					</input>
-					<label for="keyClose">
-						Close
-					</label>
-					<input type="text" readonly="true" class="framed thin" id="keyClose">
+					<input type="text" readonly="true" class="framed thin" id="keyStartStop" data-index="4" value="Space">
 					</input>
 					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsKeyBindings">
 						Restore Defaults
@@ -274,8 +269,8 @@
 	<script>
 		//<game & gui>
 		//keyBindings, maxScore, and colors are configuration values
-		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down, startStop, close} space, esc
-		var keyBindings = ["w", "s", "ArrowUp", "ArrowDown"];
+		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down, startStop}
+		var keyBindings = ["w", "s", "ArrowUp", "ArrowDown", "Space"];
 		var maxScore = 6;
 		//colors = {backgroundColor, paddle0Color, paddle1Color, ballColor}
 		var colors = ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"];
