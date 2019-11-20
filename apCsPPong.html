@@ -306,7 +306,9 @@
 		c.fillStyle = colors[2];
 		c.fillRect(positionSize[1][0][0], positionSize[1][0][1], positionSize[1][1][0], positionSize[1][1][1]);
 		c.fillStyle = colors[3];
+		c.beginPath();
 		c.arc(positionSize[2][0][0], positionSize[2][0][1], ballR, 0, 2 * Math.PI);
+		c.fill();
 		/*
 		textLabel("errorMessage", "An error has occurred:");
 		hideElement("errorMessage");
@@ -336,7 +338,7 @@
 			if (objectType === 0) {
 				c.fillRect(positionSize[object][0][0] - 1, positionSize[object][0][1] - 1, positionSize[object][1][0] + 2, positionSize[object][1][1] + 2);
 			} else {
-				//c.fillRect(positionSize[object][0][0] - (positionSize[object][1][0] / 2), positionSize[object][0][1] - (positionSize[object][1][1] / 2), positionSize[object][1][0], positionSize[object][1][1]);
+				c.beginPath();
 				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2 + 1, 0, 2 * Math.PI);
 				c.fill();
 			};
@@ -351,6 +353,7 @@
 			if (objectType === 0) {
 				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
 			} else {
+				c.beginPath();
 				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2, 0, 2 * Math.PI);
 				c.fill();
 			};
@@ -372,10 +375,9 @@
 			};
 		};
 		function errorHandling(errorObject) {
-			/*
-			setText("errorMessage", "errorMessage", "An error has occurred:\n" + errorObject.name + ": " + errorObject.message);
-			showElement("errorMessage");
-			*/
+			document.getElementById("errorMessageBody").innerHTML = errorObject.name + ": " + errorObject.message;
+			document.getElementById("errorMessage").classList.remove("disabled");
+			document.getElementById("errorMessage").classList.add("enabled");
 		};
 		window.addEventListener("keydown", function(e) {
 			try {
