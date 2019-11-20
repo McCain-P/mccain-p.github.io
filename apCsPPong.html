@@ -433,25 +433,31 @@
 			var edges = [positionSize[2][0][0] - circleRadius, positionSize[2][0][0] + circleRadius, positionSize[2][0][1] - circleRadius, positionSize[2][0][1] + circleRadius, positionSize[paddle][0][0], positionSize[paddle][0][0] + positionSize[paddle][1][0], positionSize[paddle][0][1], positionSize[paddle][0][1] + positionSize[paddle][1][1]];
 			//closestEdges = {circleHorizontal, circleVertical, rectangleHorizontal, rectangleVertical}
 			var closestEdges = [];
+			//distances = {horizontalDistance, verticalDistance}
+			var distances = [];
 			if (edges[1] <= edges[4]) {
 				closestEdges[0] = edges[1];
 				closestEdges[2] = edges[4];
+				distances[0] = Math.abs(closestEdges[0] - closestEdges[2]);
 			} else if (edges[0] >= edges[5]) {
 				closestEdges[0] = edges[0];
 				closestEdges[2] = edges[5];
+				distances[0] = Math.abs(closestEdges[0] - closestEdges[2]);
 			} else {
-				return true;
+				distances[0] = 0;
 			};
 			if (edges[3] <= edges[6]) {
 				closestEdges[1] = edges[3];
 				closestEdges[3] = edges[6];
+				distances[1] = Math.abs(closestEdges[1] - closestEdges[3]);
 			} else if (edges[2] >= edges[7]) {
 				closestEdges[1] = edges[2];
 				closestEdges[3] = edges[7];
+				distances[1] = Math.abs(closestEdges[1] - closestEdges[3]);
 			} else {
-				return true;
+				distances[1] = 0;
 			};
-			return circleRadius >= Math.sqrt(Math.pow(Math.abs(closestEdges[0] - closestEdges[2]), 2) + Math.pow(Math.abs(closestEdges[1] - closestEdges[3]), 2));
+			return circleRadius >= Math.sqrt(Math.pow(distances[0], 2) + Math.pow(distances[1], 2));
 		};
 		//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
 		var ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
