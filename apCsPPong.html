@@ -351,7 +351,7 @@
 		startStopButton.addEventListener("click", function() {
 			startStop(!gameRunning);
 		});
-		var keyBindingsOptions = document.getElementById("keyBindings").children.getElementsByTagName("input");
+		var keyBindingsOptions = document.getElementById("keyBindings").getElementsByTagName("input");
 		var keyBindingsEventListeners = [];
 		for (var i = 0; i < keyBindingsOptions.length; i++) {
 			keyBindingsOptions[i].addEventListener("focus", function(e) {
