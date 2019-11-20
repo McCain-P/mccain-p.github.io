@@ -430,7 +430,7 @@
 			var closestVerticalEdge = 0;
 			var circleRadius = positionSize[2][1][0] / 2;
 			//edges = {circleLeftEdge, circleRightEdge, circleTopEdge, circleBottomEdge, paddleLeftEdge, paddleRightEdge, paddleTopEdge, paddleBottomEdge}
-			var edges = [positionSize[2][0][0] - circleRadius, positionSize[2][0][0] + circleRadius, positionSize[2][0][1] - circleRadius, positionSize[2][0][1] + circleRadius, position[paddle][0][0], position[paddle][0][0] + position[paddle][1][0], position[paddle][0][1], position[paddle][0][1] + position[paddle][1][1]];
+			var edges = [positionSize[2][0][0] - circleRadius, positionSize[2][0][0] + circleRadius, positionSize[2][0][1] - circleRadius, positionSize[2][0][1] + circleRadius, positionSize[paddle][0][0], positionSize[paddle][0][0] + positionSize[paddle][1][0], positionSize[paddle][0][1], positionSize[paddle][0][1] + positionSize[paddle][1][1]];
 			//closestEdges = {circleHorizontal, circleVertical, rectangleHorizontal, rectangleVertical}
 			var closestEdges = [];
 			if (edges[1] <= edges[4]) {
