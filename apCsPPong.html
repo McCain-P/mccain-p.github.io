@@ -120,14 +120,22 @@
 				grid-template: repeat(auto-fit, 5vh) / 51vh 11vh;
 				grid-auto-flow: row;
 				grid-gap: 4.5vh 10vh;
-				place-items: stretch;
+				/*place-items: stretch;*/
+				place-items: start;
 			}
 			.popup.config > .popupContent > label, .popup.config > .popupContent > input, .popup.config > .popupContent > button:not(.popupClose) {
 				font-size: 4.5vh;
-				text-align: center;
+				text-align: left;
+				height: 5vh;
 			}
 			.popup.config > .popupContent > label {
-				text-align: left;
+				width: 51vh;
+			}
+			.popup.config > .popupContent > input {
+				width: 11vh;
+			}
+			.popup.config > .popupContent > .restoreDefaultsButton {
+				width: 25.5vh;
 			}
 			#errorMessage > h2, #errorMessage > p {
 				color: RGB(255,0,0);
@@ -184,6 +192,9 @@
 					</label>
 					<input type="text" readonly="true" class="framed thin" id="keyClose">
 					</input>
+					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsKeyBindings">
+						Restore Defaults
+					</button>
 				</div>
 			</div>
 			<button class="framed thin" id="openScoring">
