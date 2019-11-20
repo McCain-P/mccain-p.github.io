@@ -324,7 +324,7 @@
 			};
 			c.fillStyle = colors[0];
 			//residueCorrectionAmount pixels is added to w and h to account for an "outline residue" that occurs when removing objects by drawing over them with the background color
-			var residueCorrectionAmount = 1;
+			var residueCorrectionAmount = 2;
 			if (objectType === 0) {
 				c.fillRect(positionSize[object][0][0] - residueCorrectionAmount / 2, positionSize[object][0][1] - residueCorrectionAmount / 2, positionSize[object][1][0] + residueCorrectionAmount, positionSize[object][1][1] + residueCorrectionAmount);
 			} else {
@@ -339,6 +339,7 @@
 				positionSize[object][0][0] = x;
 				positionSize[object][0][1] = y;
 			};
+			/*
 			c.fillStyle = colors[object + 1];
 			if (objectType === 0) {
 				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
@@ -347,6 +348,15 @@
 				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2, 0, 2 * Math.PI);
 				c.fill();
 			};
+			*/
+			for (var i = 0; i < 2; i++) {
+				c.fillStyle = colors[i + 1];
+				c.fillRect(positionSize[i][0][0], positionSize[i][0][1], positionSize[i][1][0], positionSize[i][1][1]);
+			};
+			c.fillStyle = colors[3];
+			c.beginPath();
+			c.arc(positionSize[2][0][0], positionSize[2][0][1], positionSize[2][1][0] / 2, 0, 2 * Math.PI);
+			c.fill();
 		};
 		var paddleMovementLoop = [0, 0];
 		function paddleMovement(paddle, state, direction) {
@@ -415,6 +425,34 @@
 				errorHandling(errorObject);
 		  };
 		});
+		function circleRectangleCollision(paddle) {
+			var closestHorizontalEdge = 0;
+			var closestVerticalEdge = 0;
+			var circleRadius = positionSize[2][1][0] / 2;
+			//edges = {circleLeftEdge, circleRightEdge, circleTopEdge, circleBottomEdge, paddleLeftEdge, paddleRightEdge, paddleTopEdge, paddleBottomEdge}
+			var edges = [positionSize[2][0][0] - circleRadius, positionSize[2][0][0] + circleRadius, positionSize[2][0][1] - circleRadius, positionSize[2][0][1] + circleRadius, position[paddle][0][0], position[paddle][0][0] + position[paddle][1][0], position[paddle][0][1], position[paddle][0][1] + position[paddle][1][1]];
+			//closestEdges = {circleHorizontal, circleVertical, rectangleHorizontal, rectangleVertical}
+			var closestEdges = [];
+			if (edges[1] <= edges[4]) {
+				closestEdges[0] = edges[1];
+				closestEdges[2] = edges[4]
+			} else if (edges[0] >= edges[5]) {
+				closestEdges[0] = edges[0];
+				closestEdges[2] = edges[5]
+			} else {
+				return true;
+			};
+			if (edges[3] <= edges[6]) {
+				closestEdges[1] = edges[3];
+				closestEdges[3] = edges[6];
+			} else if (edges[2] >= edges[7]) {
+				closestEdges[1] = edges[2];
+				closestEdges[3] = edges[7];
+			} else {
+				return true;
+			};
+			return circleRadius >= Math.sqrt(Math.pow(Math.abs(closestEdges[0] - closestEdges[2]), 2) + Math.pow(Math.abs(closestEdges[1] - closestEdges[3]), 2));
+		};
 		//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
 		var ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
 		ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
@@ -437,15 +475,15 @@
 				};
 			};
 			//{Paddle 0, paddle 1}
-			var paddleCollisions = [(positionSize[0][0][0] <= positionSize[2][0][0] - positionSize[2][1][0] / 2 && positionSize[2][0][0] - positionSize[2][1][0] / 2 <= positionSize[0][0][0] + positionSize[0][1][0]) && (positionSize[0][0][1] <= positionSize[2][0][1] + positionSize[2][1][1] / 2 && positionSize[2][0][1] + positionSize[2][1][1] / 2 <= positionSize[0][0][1] + positionSize[0][1][1]), (positionSize[1][0][0] <= positionSize[2][0][0] + positionSize[2][1][0] / 2 && positionSize[2][0][0] + positionSize[2][1][0] / 2 <= positionSize[1][0][0] + positionSize[1][1][0]) && (positionSize[1][0][1] <= positionSize[2][0][1] + positionSize[2][1][1] / 2 && positionSize[2][0][1] + positionSize[2][1][1] / 2 <= positionSize[1][0][1] + positionSize[1][1][1])];
+			var paddleCollisions = [circleRectangleCollision(0), circleRectangleCollision(1)];
 			//Paddle 0 or paddle 1
 			if (paddleCollisions[0] || paddleCollisions[1]) {
 				ballVelocity[0] *= -1;
-				//Paddle 0
 				if (paddleCollisions[0]) {
-				//Paddle 1	
-				} else {
+					//Paddle 0
 					
+				} else {
+					//Paddle 1
 				};
 			};
 			moveObject(2, ballVelocity[0], ballVelocity[1], true);
