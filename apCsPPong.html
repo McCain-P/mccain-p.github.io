@@ -534,32 +534,27 @@
 			};
 		});
 		var audioContext = new AudioContext();
-		var lowHertz = audioContext.createOscillator();
-		lowHertz.type = "square";
-		lowHertz.frequency.value = 110;
-		var mediumHertz = audioContext.createOscillator();
-		mediumHertz.type = "square";
-		mediumHertz.frequency.value = 220;
-		var highHertz = audioContext.createOscillator();
-		highHertz.type = "square";
-		highHertz.frequency.value = 440;
-		function playFrequency(f) {
-			switch (f) {
+		function playFrequency(fPreset) {
+			var f = 0;
+			switch (fPreset) {
 				case 0:
-					lowHertz.start(audioContext.currentTime);
-					lowHertz.stop(audioContext.currentTime + 0.25);
+					f = 110;
 					break;
 				case 1:
-					mediumHertz.start(audioContext.currentTime);
-					mediumHertz.stop(audioContext.currentTime + 0.25);
+					f = 220;
 					break;
 				case 2:
-					highHertz.start(audioContext.currentTime);
-					highHertz.stop(audioContext.currentTime + 0.25);
+					f = 440;
 					break;
 				default:
+					f = fPreset;
 					break;
 			};
+			fHertzTone = audioContext.createOscillator();
+			fHertzTone.type = "square";
+			fHertzTone.frequency.value = f;
+			fHertzTone.start(audioContext.currentTime);
+			fHertzTone.stop(audioContext.currentTime + 0.5);
 		};
 		function circleRectangleCollision(paddle) {
 			var closestHorizontalEdge = 0;
