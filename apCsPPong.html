@@ -309,17 +309,6 @@
 		c.beginPath();
 		c.arc(positionSize[2][0][0], positionSize[2][0][1], ballR, 0, 2 * Math.PI);
 		c.fill();
-		/*
-		textLabel("errorMessage", "An error has occurred:");
-		hideElement("errorMessage");
-		var errorH = 3 * w / 8;
-		var errorW = w / 2;
-		setSize("errorMessage", errorW, errorH);
-		setPosition("errorMessage", w / 2 - errorW / 2, h / 2 - errorH / 2);
-		setProperty("errorMessage", "background-color", "#000000");
-		setProperty("errorMessage", "border-color", "#FFFFFF");
-		setProperty("errorMessage", "border-width", w / 64);
-		*/
 		function moveObject(object, x, y, relativePositioning) {
 			var objectType = 0;
 			switch (object) {
@@ -334,12 +323,13 @@
 					return undefined;
 			};
 			c.fillStyle = colors[0];
-			//2 pixels is added to w and h to account for an "outline residue" that occurs
+			//residueCorrectionAmount pixels is added to w and h to account for an "outline residue" that occurs when removing objects by drawing over them with the background color
+			var residueCorrectionAmount = 2;
 			if (objectType === 0) {
-				c.fillRect(positionSize[object][0][0] - 1, positionSize[object][0][1] - 1, positionSize[object][1][0] + 2, positionSize[object][1][1] + 2);
+				c.fillRect(positionSize[object][0][0] - residueCorrectionAmount / 2, positionSize[object][0][1] - residueCorrectionAmount / 2, positionSize[object][1][0] + residueCorrectionAmount, positionSize[object][1][1] + residueCorrectionAmount);
 			} else {
 				c.beginPath();
-				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2 + 1, 0, 2 * Math.PI);
+				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2 + residueCorrectionAmount / 2, 0, 2 * Math.PI);
 				c.fill();
 			};
 			if (relativePositioning) {
