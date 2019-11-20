@@ -543,6 +543,22 @@
 		var highHertz = audioContext.createOscillator();
 		highHertz.type = "square";
 		highHertz.frequency.value = 440;
+		function playFrequency(f) {
+			switch (f) {
+				case 0:
+					lowHertz.start();
+					window.setTimeout(lowHertz.stop(), 250);
+					break;
+				case 1:
+					mediumHertz.start();
+					window.setTimeout(mediumHertz.stop(), 250);
+					break;
+				case 2:
+					highHertz.start();
+					window.setTimeout(highHertz.stop(), 250);
+					break;
+			};
+		};
 		function circleRectangleCollision(paddle) {
 			var closestHorizontalEdge = 0;
 			var closestVerticalEdge = 0;
