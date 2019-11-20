@@ -361,7 +361,7 @@
 				});
 			});
 			keyBindingsOptions[i].addEventListener("blur", function(e) {
-				e.target.removeEventListener(keyBindingsOptions[e.target.dataset.index]);
+				e.target.removeEventListener("keydown", keyBindingsOptions[e.target.dataset.index]);
 			});
 		};
 		document.getElementById("restoreDefaultsKeyBindings").addEventListener("click", function(e) {
