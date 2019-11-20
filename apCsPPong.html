@@ -355,19 +355,19 @@
 		var keyBindingsEventListeners = [];
 		for (var i = 0; i < keyBindingsOptions.length; i++) {
 			keyBindingsOptions[i].addEventListener("focus", function(e) {
-				keyBindingsOptions[e.target.data.index] = e.target.addEventListener("keydown", function(keyE) {
-					keyBindings[keyE.target.data.index] = keyE.key;
+				keyBindingsOptions[e.target.dataset.index] = e.target.addEventListener("keydown", function(keyE) {
+					keyBindings[keyE.target.dataset.index] = keyE.key;
 					keyE.target.value = keyE.key;
 				});
 			});
 			keyBindingsOptions[i].addEventListener("blur", function(e) {
-				e.target.removeEventListener(keyBindingsOptions[e.target.data.index]);
+				e.target.removeEventListener(keyBindingsOptions[e.target.dataset.index]);
 			});
 		};
 		document.getElementById("restoreDefaultsKeyBindings").addEventListener("click", function(e) {
 			for (var i = 0; i < keyBindings.length; i++) {
 				keyBindings[i] = defaultConfigurationValues[0][i];
-				keyBindingsOptions[i].value = defaultConfigurationValues[0][keyBindingsOptions[i].data.index]
+				keyBindingsOptions[i].value = defaultConfigurationValues[0][keyBindingsOptions[i].dataset.index]
 			};
 		});
 		//</gui>
@@ -533,6 +533,16 @@
 				errorHandling(errorObject);
 			};
 		});
+		var audioContext = new AudioContext();
+		var lowHertz = audioContext.createOscillator();
+		lowHertz.type = "square";
+		lowHertz.frequency.value = 110;
+		var mediumHertz = audioContext.createOscillator();
+		mediumHertz.type = "square";
+		mediumHertz.frequency.value = 220;
+		var highHertz = audioContext.createOscillator();
+		highHertz.type = "square";
+		highHertz.frequency.value = 440;
 		function circleRectangleCollision(paddle) {
 			var closestHorizontalEdge = 0;
 			var closestVerticalEdge = 0;
