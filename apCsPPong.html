@@ -295,13 +295,41 @@
 		var keyBindingsPopup = document.getElementById("keyBindings");
 		var closeKeyBindings = document.getElementById("closeKeyBindings");
 		openKeyBindings.addEventListener("click", function() {
-			gameRunning = false;
+			startStop(false);
 			keyBindingsPopup.classList.remove("disabled");
 			keyBindingsPopup.classList.add("enabled");
 		});
 		closeKeyBindings.addEventListener("click", function() {
 			keyBindingsPopup.classList.remove("enabled");
 			keyBindingsPopup.classList.add("disabled");
+		});
+		var openScoring = document.getElementById("openScoring");
+		var scoringPopup = document.getElementById("scoring");
+		var closeScoring = document.getElementById("closeScoring");
+		openScoring.addEventListener("click", function() {
+			startStop(false);
+			scoringPopup.classList.remove("disabled");
+			scoringPopup.classList.add("enabled");
+		});
+		closeScoring.addEventListener("click", function() {
+			scoringPopup.classList.remove("enabled");
+			scoringPopup.classList.add("disabled");
+		});
+		var openVisuals = document.getElementById("openVisuals");
+		var visualsPopup = document.getElementById("visuals");
+		var closeVisuals = document.getElementById("closeVisuals");
+		openVisuals.addEventListener("click", function() {
+			startStop(false);
+			visualsPopup.classList.remove("disabled");
+			visualsPopup.classList.add("enabled");
+		});
+		closeVisuals.addEventListener("click", function() {
+			visualsPopup.classList.remove("enabled");
+			visualsPopup.classList.add("disabled");
+		});
+		var startStopButton = document.getElementById("startStop");
+		startStopButton.addEventListener("click", function() {
+			startStop(!gameRunning);
 		});
 		//</gui>
 		//<game>
