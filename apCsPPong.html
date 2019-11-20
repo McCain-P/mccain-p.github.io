@@ -190,6 +190,11 @@
 					</label>
 					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down">
 					</input>
+					<label for="keyStartStop">
+						Start/Stop
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyStartStop">
+					</input>
 					<label for="keyClose">
 						Close
 					</label>
@@ -228,7 +233,7 @@
 	<script>
 		//<game & gui>
 		//keyBindings, maxScore, and colors are configuration values
-		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down}
+		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down, startStop, close} space, esc
 		var keyBindings = ["w", "s", "ArrowUp", "ArrowDown"];
 		var maxScore = 6;
 		//colors = {backgroundColor, paddle0Color, paddle1Color, ballColor}
