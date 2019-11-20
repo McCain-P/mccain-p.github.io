@@ -169,15 +169,18 @@
 				right: calc(50vw - 35vh);
 			}
 			@keyframes flashingAnimation {
-				from {
-					display: none;
+				0% {
+					visibility: hidden;
 				}
-				to {
-					display: block;
+				50% {
+					visibility: hidden;
+				}
+				100% {
+					visibility: visible;
 				}
 			}
 			.flashing {
-				animation: 0.5s linear 0s infinite normal none running flashingAnimation;
+				animation: 1s linear 0s infinite normal none running flashingAnimation;
 			}
 		</style>
 	</head>
