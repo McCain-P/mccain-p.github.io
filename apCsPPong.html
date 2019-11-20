@@ -546,16 +546,16 @@
 		function playFrequency(f) {
 			switch (f) {
 				case 0:
-					lowHertz.start();
-					window.setTimeout(lowHertz.stop(), 250);
+					lowHertz.start(audioContext.currentTime);
+					lowHertz.stop(audioContext.currentTime + 0.25);
 					break;
 				case 1:
-					mediumHertz.start();
-					window.setTimeout(mediumHertz.stop(), 250);
+					mediumHertz.start(audioContext.currentTime);
+					mediumHertz.stop(audioContext.currentTime + 0.25);
 					break;
 				case 2:
-					highHertz.start();
-					window.setTimeout(highHertz.stop(), 250);
+					highHertz.start(audioContext.currentTime);
+					highHertz.stop(audioContext.currentTime + 0.25);
 					break;
 				default:
 					break;
