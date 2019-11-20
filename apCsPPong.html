@@ -324,7 +324,7 @@
 			};
 			c.fillStyle = colors[0];
 			//residueCorrectionAmount pixels is added to w and h to account for an "outline residue" that occurs when removing objects by drawing over them with the background color
-			var residueCorrectionAmount = 1.5;
+			var residueCorrectionAmount = 1;
 			if (objectType === 0) {
 				c.fillRect(positionSize[object][0][0] - residueCorrectionAmount / 2, positionSize[object][0][1] - residueCorrectionAmount / 2, positionSize[object][1][0] + residueCorrectionAmount, positionSize[object][1][1] + residueCorrectionAmount);
 			} else {
