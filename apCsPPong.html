@@ -156,6 +156,17 @@
 				margin-top: 2.5%;
 				margin-bottom: 5%;
 			}
+			@keyframes flashing {
+				from {
+					display: none;
+				}
+				to {
+					display: block;
+				}
+			}
+			.flashing {
+				/*animation: ;*/
+			}
 		</style>
 	</head>
 	<body>
@@ -246,12 +257,45 @@
 		var colors = ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"];
 		//defaultConfigurationValues = {keyBindings, maxScore, colors}
 		var defaultConfigurationValues = [["w", "s", "ArrowUp", "ArrowDown"], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
+		//scores = {player0, player1}
+		scores = [0, 0];
+		var ballVelocity = [];
+		function initializeBall() {
+			//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
+			ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
+			ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
+			ballVelocity[1] = ballVelocity[2] * Math.sin(ballVelocity[3]);
+		};
+		var gameRunning = false;
+		var gameComplete = false;
+		var scoreElements = [document.getElementById("score0"), document.getElementById("score1")];
+		function startStop(status) {
+			if (status && gameComplete) {
+				scores = [0, 0];
+				for (var i = 0; i < scoreElements.length; i++) {
+					scoreElements[i].innerHTML = "0";
+					scoreElements[i].classList.remove("flashing");
+				};
+				moveObject(2, 0, 0, false);
+				initializeBall();
+				gameComplete = false;
+			};
+			gameRunning = status;
+			if (status) {
+				document.getElementById("startStop").innerHTML = "Stop";
+			} else {
+				paddleMovement(0, false, 0);
+				paddleMovement(1, false, 0);
+				document.getElementById("startStop").innerHTML = "Start";
+			};
+		};
 		//</game & gui>
 		//<gui>
 		var openKeyBindings = document.getElementById("openKeyBindings");
 		var keyBindingsPopup = document.getElementById("keyBindings");
 		var closeKeyBindings = document.getElementById("closeKeyBindings");
 		openKeyBindings.addEventListener("click", function() {
+			gameRunning = false;
 			keyBindingsPopup.classList.remove("disabled");
 			keyBindingsPopup.classList.add("enabled");
 		});
@@ -339,16 +383,6 @@
 				positionSize[object][0][0] = x;
 				positionSize[object][0][1] = y;
 			};
-			/*
-			c.fillStyle = colors[object + 1];
-			if (objectType === 0) {
-				c.fillRect(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0], positionSize[object][1][1]);
-			} else {
-				c.beginPath();
-				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2, 0, 2 * Math.PI);
-				c.fill();
-			};
-			*/
 			for (var i = 0; i < 2; i++) {
 				c.fillStyle = colors[i + 1];
 				c.fillRect(positionSize[i][0][0], positionSize[i][0][1], positionSize[i][1][0], positionSize[i][1][1]);
@@ -358,10 +392,13 @@
 			c.arc(positionSize[2][0][0], positionSize[2][0][1], positionSize[2][1][0] / 2, 0, 2 * Math.PI);
 			c.fill();
 		};
+		var paddleDirection = [0, 0];
 		var paddleMovementLoop = [0, 0];
 		function paddleMovement(paddle, state, direction) {
 			window.clearInterval(paddleMovementLoop[paddle]);
+			paddleDirection[paddle] = 0;
 			if (state) {
+				paddleDirection[paddle] = direction;
 				paddleMovementLoop[paddle] = window.setInterval(function() {
 					var d0 = ((h / 50) * direction);
 					var d = positionSize[paddle][0][1] + d0
@@ -381,22 +418,24 @@
 		};
 		window.addEventListener("keydown", function(e) {
 			try {
-				var key = e.key;
-				switch (key) {
-					case keyBindings[0]:
-		  				paddleMovement(0, true, -1);
-		  				break;
-		  			case keyBindings[1]:
-						paddleMovement(0, true, 1);
-						break;
-					case keyBindings[2]:
-						paddleMovement(1, true, -1);
-						break;
-					case keyBindings[3]:
-						paddleMovement(1, true, 1);
-						break;
-					default:
-						break;
+				if (gameRunning) {
+					var key = e.key;
+					switch (key) {
+						case keyBindings[0]:
+		  					paddleMovement(0, true, -1);
+		  					break;
+		  				case keyBindings[1]:
+							paddleMovement(0, true, 1);
+							break;
+						case keyBindings[2]:
+							paddleMovement(1, true, -1);
+							break;
+						case keyBindings[3]:
+							paddleMovement(1, true, 1);
+							break;
+						default:
+							break;
+					};
 				};
 			} catch (errorObject) {
 				errorHandling(errorObject);
@@ -404,26 +443,28 @@
 		});
 		window.addEventListener("keyup", function(e) {
 			try {
-				var key = e.key;
-				switch(key) {
-					case keyBindings[0]:
-						paddleMovement(0, false, -1);
-						break;
-					case keyBindings[1]:
-						paddleMovement(0, false, 1);
-						break;
-					case keyBindings[2]:
-						paddleMovement(1, false, -1);
-						break;
-					case keyBindings[3]:
-						paddleMovement(1, false, 1);
-						break;
-					default:
-						break;
+				if (gameRunning) {
+					var key = e.key;
+					switch(key) {
+						case keyBindings[0]:
+							paddleMovement(0, false, -1);
+							break;
+						case keyBindings[1]:
+							paddleMovement(0, false, 1);
+							break;
+						case keyBindings[2]:
+							paddleMovement(1, false, -1);
+							break;
+						case keyBindings[3]:
+							paddleMovement(1, false, 1);
+							break;
+						default:
+							break;
+					};
 				};
 			} catch (errorObject) {
 				errorHandling(errorObject);
-		  };
+			};
 		});
 		function circleRectangleCollision(paddle) {
 			var closestHorizontalEdge = 0;
@@ -459,40 +500,56 @@
 			};
 			return circleRadius >= Math.sqrt(Math.pow(distances[0], 2) + Math.pow(distances[1], 2));
 		};
-		//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
-		var ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
-		ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
-		ballVelocity[1] = ballVelocity[2] * Math.sin(ballVelocity[3]);
+		initializeBall();
+		function updateScore(player) {
+			scores[player]++;
+			scoreElements[player].innerHTML = scores[player];
+			if (scores[player] === maxScore) {
+				gameComplete = true;
+				startStop(false);
+				scoreElements[player].classList.add("flashing");
+			} else {
+				initializeBall();
+			};
+		};
+		var paddleAcceleration = h * Math.sqrt(2) / 1600;
 		var ballMovement = window.setInterval(function() {
 			try {
-				//Top edge or bottom edge
-				if (positionSize[2][0][1] - positionSize[2][1][0] / 2 <= 0 || positionSize[2][0][1] + positionSize[2][1][0] / 2 >= h) {
-					ballVelocity[1] *= -1;
-				};
-				//{Left edge, right edge}
-				var horizontalEdgeCollisions = [positionSize[2][0][0] - positionSize[2][1][0] / 2 <= 0, positionSize[2][0][0] + positionSize[2][1][0] / 2 >= w];
-				//Left edge or right edge
-				if (horizontalEdgeCollisions[0] || horizontalEdgeCollisions[1]) {
-					ballVelocity[0] *= -1;
-					if (horizontalEdgeCollisions[0]) {
-						//Left edge
-					} else {
-						//Right edge
+				if (gameRunning) {
+					//Top edge or bottom edge
+					if (positionSize[2][0][1] - positionSize[2][1][0] / 2 <= 0 || positionSize[2][0][1] + positionSize[2][1][0] / 2 >= h) {
+						ballVelocity[1] *= -1;
 					};
-				};
-				//{Paddle 0, paddle 1}
-				var paddleCollisions = [circleRectangleCollision(0), circleRectangleCollision(1)];
-				//Paddle 0 or paddle 1
-				if (paddleCollisions[0] || paddleCollisions[1]) {
-					ballVelocity[0] *= -1;
-					if (paddleCollisions[0]) {
-						//Paddle 0
-						
-					} else {
-						//Paddle 1
+					//{Left edge, right edge}
+					var horizontalEdgeCollisions = [positionSize[2][0][0] - positionSize[2][1][0] / 2 <= 0, positionSize[2][0][0] + positionSize[2][1][0] / 2 >= w];
+					//Left edge or right edge
+					if (horizontalEdgeCollisions[0] || horizontalEdgeCollisions[1]) {
+						ballVelocity[0] *= -1;
+						if (horizontalEdgeCollisions[0]) {
+							//Left edge
+							updateScore(1);
+						} else {
+							//Right edge
+							updateScore(0);
+						};
 					};
+					//{Paddle 0, paddle 1}
+					var paddleCollisions = [circleRectangleCollision(0), circleRectangleCollision(1)];
+					//Paddle 0 or paddle 1
+					if (paddleCollisions[0] || paddleCollisions[1]) {
+						ballVelocity[0] *= -1;
+						if (paddleCollisions[0]) {
+							//Paddle 0
+							ballVelocity[0] += paddleAcceleration;
+							ballVelocity[1] += paddleAcceleration * paddleDirection[0];
+						} else {
+							//Paddle 1
+							ballVelocity[0] += -paddleAcceleration;
+							ballVelocity[1] += paddleAcceleration * paddleDirection[1];
+						};
+					};
+					moveObject(2, ballVelocity[0], ballVelocity[1], true);
 				};
-				moveObject(2, ballVelocity[0], ballVelocity[1], true);
 			} catch (errorObject) {
 				errorHandling(errorObject);
 			};
