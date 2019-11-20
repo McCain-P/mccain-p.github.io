@@ -445,7 +445,7 @@
 				};
 			};
 			//{Paddle 0, paddle 1}
-			var paddleCollisions = [];
+			var paddleCollisions = [positionSize[2][0][0] - positionSize[2][1][0] / 2 == positionSize[0][0][0] + positionSize[0][1][0], positionSize[2][0][0] + positionSize[2][1][0] / 2 == positionSize[1][0][0]];
 			//Paddle 0 or paddle 1
 			if (paddleCollision[0] || paddleCollision[1]) {
 				ballVelocity[0] *= -1;
