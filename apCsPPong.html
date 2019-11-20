@@ -285,6 +285,7 @@
 		scores = [0, 0];
 		var ballVelocity = [];
 		function initializeBall() {
+			moveObject(2, w / 2, h / 2, false);
 			//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
 			ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
 			ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
