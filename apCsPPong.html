@@ -608,6 +608,7 @@
 				if (gameRunning) {
 					//Top edge or bottom edge
 					if (positionSize[2][0][1] - positionSize[2][1][0] / 2 <= 0 || positionSize[2][0][1] + positionSize[2][1][0] / 2 >= h) {
+						playFrequency(1);
 						ballVelocity[1] *= -1;
 					};
 					//{Left edge, right edge}
@@ -615,6 +616,7 @@
 					//Left edge or right edge
 					if (horizontalEdgeCollisions[0] || horizontalEdgeCollisions[1]) {
 						ballVelocity[0] *= -1;
+						playFrequency(0);
 						if (horizontalEdgeCollisions[0]) {
 							//Left edge
 							updateScore(1);
@@ -628,6 +630,7 @@
 					//Paddle 0 or paddle 1
 					if (paddleCollisions[0] || paddleCollisions[1]) {
 						ballVelocity[0] *= -1;
+						playFrequency(2);
 						if (paddleCollisions[0]) {
 							//Paddle 0
 							ballVelocity[0] += paddleAcceleration;
