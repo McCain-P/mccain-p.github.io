@@ -538,30 +538,58 @@
 			axis = 1 -> y axis
 		*/
 		function circleRectangleCollision() {
+			var paddleCollision = [false, false];
 			if () {
 				//Paddle 0 right edge
-				
+				ballVelocity[0] *= -1;
+				ballVelocity[0] += paddleAcceleration;
+				paddleCollision[0] = true;
 			} else if () {
 				//Paddle 1 left edge
-				
+				ballVelocity[0] *= -1;
+				ballVelocity[0] -= paddleAcceleration;
+				paddleCollision[1] = true;
 			} else if () {
 				//Paddle 0 top edge
-				
+				ballVelocity[1] *= -1;
+				ballVelocity[1] -= paddleAcceleration;
+				paddleCollision[0] = true;
 			} else if () {
 				//Paddle 0 bottom edge
-				
+				ballVelocity[1] *= -1;
+				ballVelocity[1] += paddleAcceleration;
+				paddleCollision[0] = true;
 			} else if () {
 				//Paddle 1 top edge
-				
+				ballVelocity[1] *= -1;
+				ballVelocity[1] -= paddleAcceleration;
+				paddleCollision[1] = true;
 			} else if () {
 				//Paddle 1 bottom edge
-				
+				ballVelocity[1] *= -1;
+				ballVelocity[1] += paddleAcceleration;
+				paddleCollision[1] = true;
 			} else if () {
 				//Paddle 0 left edge
-				
+				ballVelocity[0] *= -1;
+				ballVelocity[0] -= paddleAcceleration;
+				paddleCollision[0] = true;
 			} else if () {
 				//Paddle 1 right edge
-				
+				ballVelocity[0] *= -1;
+				ballVelocity[0] += paddleAcceleration;
+				paddleCollision[1] = true;
+			};
+			if (paddleCollision[0] || paddleCollision[1]) {
+				//Any paddle edge
+				playFrequency(2);
+				if (paddleCollision[0]) {
+					//Paddle 0 edges
+					ballVelocity[1] += paddleAcceleration * paddleDirection[0];
+				} else {
+					//Paddle 1 edges
+					ballVelocity[1] += paddleAcceleration * paddleDirection[1];
+				};
 			};
 		};
 		initializeBall();
