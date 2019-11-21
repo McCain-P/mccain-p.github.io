@@ -276,39 +276,6 @@
 		var colors = ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"];
 		//defaultConfigurationValues = {keyBindings, maxScore, colors}
 		var defaultConfigurationValues = [["w", "s", "ArrowUp", "ArrowDown", "Space"], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
-		//scores = {player0, player1}
-		scores = [0, 0];
-		var ballVelocity = [];
-		function initializeBall() {
-			moveObject(2, w / 2, h / 2, false);
-			//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
-			ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
-			ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
-			ballVelocity[1] = ballVelocity[2] * Math.sin(ballVelocity[3]);
-		};
-		var gameRunning = false;
-		var gameComplete = false;
-		var scoreElements = [document.getElementById("score0"), document.getElementById("score1")];
-		function startStop(status) {
-			if (status && gameComplete) {
-				scores = [0, 0];
-				for (var i = 0; i < scoreElements.length; i++) {
-					scoreElements[i].innerHTML = "0";
-					scoreElements[i].classList.remove("flashing");
-				};
-				moveObject(2, 0, 0, false);
-				initializeBall();
-				gameComplete = false;
-			};
-			gameRunning = status;
-			if (status) {
-				document.getElementById("startStop").innerHTML = "Stop";
-			} else {
-				paddleMovement(0, false, 0);
-				paddleMovement(1, false, 0);
-				document.getElementById("startStop").innerHTML = "Start";
-			};
-		};
 		//</game & gui>
 		//<game>
 		var w = window.innerWidth;
@@ -421,6 +388,31 @@
 			document.getElementById("errorMessageBody").innerHTML = errorObject.name + ": " + errorObject.message;
 			document.getElementById("errorMessage").classList.remove("disabled");
 			document.getElementById("errorMessage").classList.add("enabled");
+		};
+		//scores = {player0, player1}
+		scores = [0, 0];
+		var gameRunning = false;
+		var gameComplete = false;
+		var scoreElements = [document.getElementById("score0"), document.getElementById("score1")];
+		function startStop(status) {
+			if (status && gameComplete) {
+				scores = [0, 0];
+				for (var i = 0; i < scoreElements.length; i++) {
+					scoreElements[i].innerHTML = "0";
+					scoreElements[i].classList.remove("flashing");
+				};
+				moveObject(2, 0, 0, false);
+				initializeBall();
+				gameComplete = false;
+			};
+			gameRunning = status;
+			if (status) {
+				document.getElementById("startStop").innerHTML = "Stop";
+			} else {
+				paddleMovement(0, false, 0);
+				paddleMovement(1, false, 0);
+				document.getElementById("startStop").innerHTML = "Start";
+			};
 		};
 		window.addEventListener("keydown", function(e) {
 			try {
@@ -591,6 +583,14 @@
 					ballVelocity[1] += paddleAcceleration * paddleDirection[1];
 				};
 			};
+		};
+		var ballVelocity = [];
+		function initializeBall() {
+			moveObject(2, w / 2, h / 2, false);
+			//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
+			ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
+			ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
+			ballVelocity[1] = ballVelocity[2] * Math.sin(ballVelocity[3]);
 		};
 		initializeBall();
 		function updateScore(player) {
