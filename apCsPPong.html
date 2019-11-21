@@ -523,24 +523,27 @@
 			return circleRadius >= Math.sqrt(Math.pow(distances[0], 2) + Math.pow(distances[1], 2));
 		};
 		*/
-		/*
-			paddle = 0 -> paddle 0
-			paddle = 1 -> paddle 1
-			axis = 0 -> x axis
-			axis = 1 -> y axis
-		*/
 		function crc(crcType, crcN, crcM0, crcM1) {
 			var crcH = positionSize[2][0][0];
 			var crcK = positionSize[2][0][1];
 			var crcR = positionSize[2][1][0] / 2;
 			var intermediate0 = 0;
-			if (crcType === 0) {
+			if (crcType) {
 				intermediate0 = crcN * (2 * crcH - crcN) - crcH * crcH + crcR * crcR;
 			} else {
 				intermediate0 = crcR * crcR - crcN * (crcN - 2 * crcK) - crcK * crcK;
 			};
 			var intermediate1 = Math.sqrt(intermediate0) / 2;
-			return null;
+			var crcA = 0;
+			var crcB = 0;
+			if (crcType) {
+				crcA = -crcK - intermediate1;
+				crcB = -crcK + intermediate1;
+			} else {
+				crcA = crcH - intermediate1;
+				crcB = crcH + intermediate1;
+			};
+			return intermediate0 >= 0 && ((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB));
 		};
 		function circleRectangleCollision() {
 			var paddleCollision = [false, false];
