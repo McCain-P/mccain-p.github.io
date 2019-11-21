@@ -759,7 +759,7 @@
 		var scoringElement = document.getElementById("scoring").getElementsByTagName("input")[0];
 		scoringElement.addEventListener("input", function(e) {
 			if (/^\d+$/.test(scoringElement.value)) {
-				maxScore = scoringElement.value;
+				maxScore = Number(scoringElement.value);
 			};
 		});
 		document.getElementById("restoreDefaultsScoring").addEventListener("click", function(e) {
