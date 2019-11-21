@@ -428,8 +428,8 @@
 		};
 		window.addEventListener("keydown", function(e) {
 			try {
+				var key = e.key;
 				if (gameRunning) {
-					var key = e.key;
 					switch (key) {
 						case keyBindings[0]:
 		  					paddleMovement(0, true, -1);
@@ -446,6 +446,9 @@
 						default:
 							break;
 					};
+				};
+				if (key === keyBindings[4]) {
+					startStop(!gameRunning);
 				};
 			} catch (errorObject) {
 				errorHandling(errorObject);
