@@ -185,6 +185,10 @@
 			.flashing {
 				animation: 1s linear 0s infinite normal none running flashingAnimation;
 			}
+			input:invalid {
+				color: RGB(255,0,0);
+				border-color: RGB(255,0,0);
+			}
 		</style>
 	</head>
 	<body>
@@ -249,7 +253,7 @@
 					<label for="scoreLimit">
 						Score Limit
 					</label>
-					<input type="text" class="framed thin" id="scoreLimit" data-index="0" value="6">
+					<input type="text" pattern="^\d+$" class="framed thin" id="scoreLimit" value="6">
 					</input>
 					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsScoring">
 						Restore Defaults
