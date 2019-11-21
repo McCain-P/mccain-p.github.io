@@ -752,9 +752,15 @@
 				keyBindingsOptions[i].value = defaultConfigurationValues[0][keyBindingsOptions[i].dataset.index]
 			};
 		});
+		var scoringElement = document.getElementById("scoring").getElementsByTagName("input")[0];
+		scoringElement.addEventListener("input", function(e) {
+			if (/^\d+$/.test(scoringElement.value)) {
+				maxScore = scoringElement.value;
+			};
+		});
 		document.getElementById("restoreDefaultsScoring").addEventListener("click", function(e) {
 			maxScore = defaultConfigurationValues[1];
-			document.getElementById("scoring").getElementsByTagName("input")[0].value = defaultConfigurationValues[1];
+			scoringElement.value = defaultConfigurationValues[1];
 		});
 		document.getElementById("restoreDefaultsVisuals").addEventListener("click", function(e) {
 			for (var i = 0; i < colors.length; i++) {
