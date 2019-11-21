@@ -529,14 +529,21 @@
 			axis = 0 -> x axis
 			axis = 1 -> y axis
 		*/
-		function circleRectangleCollision() {
-			var paddleCollision = [false, false];
+		function crc(crcType, crcN, crcM0, crcM1) {
 			var crcH = positionSize[2][0][0];
 			var crcK = positionSize[2][0][1];
 			var crcR = positionSize[2][1][0] / 2;
-			var crcN = [];
-			var crcA = [];
-			var crcB = [];
+			var intermediate0 = 0;
+			if (crcType === 0) {
+				intermediate0 = crcN * (2 * crcH - crcN) - crcH * crcH + crcR * crcR;
+			} else {
+				intermediate0 = crcR * crcR - crcN * (crcN - 2 * crcK) - crcK * crcK;
+			};
+			var intermediate1 = Math.sqrt(intermediate0) / 2;
+			return null;
+		};
+		function circleRectangleCollision() {
+			var paddleCollision = [false, false];
 			if () {
 				//Paddle 0 right edge
 				ballVelocity[0] *= -1;
