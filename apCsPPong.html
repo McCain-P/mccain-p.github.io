@@ -549,31 +549,37 @@
 			var paddleCollision = [false, false];
 			if (crc(true, positionSize[0][0][0] + positionSize[0][1][0], positionSize[0][0][1], positionSize[0][0][1] + positionSize[0][1][1])) {
 				//Paddle 0 right edge
+				console.log("0r");
 				ballVelocity[0] *= -1;
 				ballVelocity[0] += paddleAcceleration;
 				paddleCollision[0] = true;
 			} else if (crc(true, positionSize[1][0][0], positionSize[1][0][1], positionSize[1][0][1] + positionSize[1][1][1])) {
 				//Paddle 1 left edge
+				console.log("1l");
 				ballVelocity[0] *= -1;
 				ballVelocity[0] -= paddleAcceleration;
 				paddleCollision[1] = true;
 			} else if (crc(false, positionSize[0][0][1], positionSize[0][0][0], positionSize[0][0][0] + positionSize[0][1][0])) {
 				//Paddle 0 top edge
+				console.log("0t");
 				ballVelocity[1] *= -1;
 				ballVelocity[1] -= paddleAcceleration;
 				paddleCollision[0] = true;
 			} else if (crc(false, positionSize[0][0][1] + positionSize[0][1][1], positionSize[0][0][0], positionSize[0][0][0] + positionSize[0][1][0])) {
 				//Paddle 0 bottom edge
+				console.log("0b");
 				ballVelocity[1] *= -1;
 				ballVelocity[1] += paddleAcceleration;
 				paddleCollision[0] = true;
 			} else if (crc(false, positionSize[1][0][1], positionSize[1][0][0], positionSize[1][0][0] + positionSize[1][1][0])) {
 				//Paddle 1 top edge
+				console.log("1t");
 				ballVelocity[1] *= -1;
 				ballVelocity[1] -= paddleAcceleration;
 				paddleCollision[1] = true;
 			} else if (crc(false, positionSize[1][0][1] + positionSize[1][1][1], positionSize[1][0][0], positionSize[1][0][0] + positionSize[1][1][0])) {
 				//Paddle 1 bottom edge
+				console.log("1b");
 				ballVelocity[1] *= -1;
 				ballVelocity[1] += paddleAcceleration;
 				paddleCollision[1] = true;
@@ -584,6 +590,7 @@
 				paddleCollision[0] = true;
 			} else if (crc(true, positionSize[1][0][0] + positionSize[1][1][0], positionSize[1][0][1], positionSize[1][0][1] + positionSize[1][1][1])) {
 				//Paddle 1 right edge
+				console.log("1r");
 				ballVelocity[0] *= -1;
 				ballVelocity[0] += paddleAcceleration;
 				paddleCollision[1] = true;
