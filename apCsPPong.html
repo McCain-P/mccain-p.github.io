@@ -253,7 +253,7 @@
 					<label for="scoreLimit">
 						Score Limit
 					</label>
-					<input type="text" pattern="^\d+$" class="framed thin" id="scoreLimit" value="6">
+					<input type="text" pattern="^\d*[1-9]\d*$" class="framed thin" id="scoreLimit" value="6">
 					</input>
 					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsScoring">
 						Restore Defaults
@@ -758,7 +758,7 @@
 		});
 		var scoringElement = document.getElementById("scoring").getElementsByTagName("input")[0];
 		scoringElement.addEventListener("input", function(e) {
-			if (/^\d+$/.test(scoringElement.value)) {
+			if (/^\d*[1-9]\d*$/.test(scoringElement.value)) {
 				maxScore = Number(scoringElement.value);
 			};
 		});
