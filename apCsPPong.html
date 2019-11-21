@@ -643,6 +643,7 @@
 							updateScore(0);
 						};
 					};
+					/*
 					//{Paddle 0, paddle 1}
 					var paddleCollisions = [circleRectangleCollision(0), circleRectangleCollision(1)];
 					//Paddle 0 or paddle 1
@@ -659,6 +660,8 @@
 							ballVelocity[1] += paddleAcceleration * paddleDirection[1];
 						};
 					};
+					*/
+					circleRectangleCollision();
 					moveObject(2, ballVelocity[0], ballVelocity[1], true);
 				};
 			} catch (errorObject) {
