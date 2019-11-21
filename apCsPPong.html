@@ -245,6 +245,16 @@
 				<button class="popupClose framed thin" id="closeScoring">
 					X
 				</button>
+				<div class="popupContent">
+					<label for="scoreLimit">
+						Score Limit
+					</label>
+					<input type="text" class="framed thin" id="scoreLimit" data-index="0" value="6">
+					</input>
+					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsScoring">
+						Restore Defaults
+					</button>
+				</div>
 			</div>
 			<button class="framed thin" id="openVisuals">
 				Visuals
@@ -253,6 +263,8 @@
 				<button class="popupClose framed thin" id="closeVisuals">
 					X
 				</button>
+				<div class="popupContent">
+				</div>
 			</div>
 			<button class="framed thin" id="startStop">
 				Start
@@ -730,12 +742,23 @@
 				e.target.removeEventListener("keydown", keyBindingsOptions[e.target.dataset.index]);
 			});
 		};
+		
 		document.getElementById("restoreDefaultsKeyBindings").addEventListener("click", function(e) {
 			for (var i = 0; i < keyBindings.length; i++) {
 				keyBindings[i] = defaultConfigurationValues[0][i];
 				keyBindingsOptions[i].value = defaultConfigurationValues[0][keyBindingsOptions[i].dataset.index]
 			};
 		});
+		document.getElementById("restoreDefaultsScoring").addEventListener("click", function(e) {
+			maxScore = defaultConfigurationValues[1];
+			document.getElementById("visuals").getElementsByTagName("input")[0].value = defaultConfigurationValues[1];
+		};
+		document.getElementById("restoreDefaultsVisuals").addEventListener("click", function(e) {
+			for (var i = 0; i < colors.length; i++) {
+				colors[i] = defaultConfigurationValues[2][i];
+				keyBindingsOptions[i].value = defaultConfigurationValues[2][keyBindingsOptions[i].dataset.index]
+			};
+		});								   
 		//</gui>
 	</script>
 </html>
