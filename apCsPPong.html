@@ -216,7 +216,7 @@
 			</canvas>
 		</div>
 		<div id="configuration">
-			<button data-associatedPopup="keyBindings" class="framed thin" id="openKeyBindings">
+			<button data-associatedpopup="keyBindings" class="framed thin" id="openKeyBindings">
 				Key Bindings
 			</button>
 			<div class="popup config framed disabled" data-index="0" id="keyBindings">
@@ -254,7 +254,7 @@
 					</button>
 				</div>
 			</div>
-			<button data-associatedPopup="scoring" class="framed thin" id="openScoring">
+			<button data-associatedpopup="scoring" class="framed thin" id="openScoring">
 				Scoring
 			</button>
 			<div class="popup config framed disabled" data-index="1" id="scoring">
@@ -272,7 +272,7 @@
 					</button>
 				</div>
 			</div>
-			<button data-associatedPopup="visuals" class="framed thin" id="openVisuals">
+			<button data-associatedpopup="visuals" class="framed thin" id="openVisuals">
 				Visuals/Audio
 			</button>
 			<div class="popup config framed disabled" data-index="2" id="visuals">
@@ -866,16 +866,16 @@
 		var configKeyBindingsEventListeners = [];
 		for (var i = 0; i < configButtons.length; i++) {
 			var configButton = configButtons[i];
-			if (configButton.dataset.associatedPopup !== undefined) {
-				var associatedPopup = document.getElementById(configButton.dataset.associatedPopup);
+			if (configButton.dataset.associatedpopup !== undefined) {
+				var associatedPopup = document.getElementById(configButton.dataset.associatedpopup);
 				configButton.addEventListener("click", function(e) {
 					startStop(false);
-					var targetPopup = document.getElementById(this.dataset.associatedPopup);
+					var targetPopup = document.getElementById(this.dataset.associatedpopup);
 					targetPopup.classList.remove("disabled");
 					targetPopup.classList.add("enabled");
 				});
 				associatedPopup.getElementsByClassName("popupClose")[0].addEventListener("click", function(e) {
-					var targetPopup = document.getElementById(this.dataset.associatedPopup);
+					var targetPopup = document.getElementById(this.dataset.associatedpopup);
 					targetPopup.classList.remove("enabled");
 					targetPopup.classList.add("disabled");
 				});
