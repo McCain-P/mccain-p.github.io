@@ -870,12 +870,12 @@
 				var associatedPopup = document.getElementById(configButton.dataset.associatedpopup);
 				configButton.addEventListener("click", function(e) {
 					startStop(false);
-					var targetPopup = document.getElementById(this.dataset.associatedpopup);
+					var targetPopup = document.getElementById(e.target.dataset.associatedpopup);
 					targetPopup.classList.remove("disabled");
 					targetPopup.classList.add("enabled");
 				});
 				associatedPopup.getElementsByClassName("popupClose")[0].addEventListener("click", function(e) {
-					var targetPopup = document.getElementById(this.dataset.associatedpopup);
+					var targetPopup = document.getElementById(e.target.dataset.associatedpopup);
 					targetPopup.classList.remove("enabled");
 					targetPopup.classList.add("disabled");
 				});
@@ -909,7 +909,7 @@
 					};
 				};
 				associatedPopup.getElementsByClassName("restoreDefaultsButton")[0].addEventListener("click", function(e) {
-					var targetPopup = this.parentElement.parentElement;
+					var targetPopup = e.target.parentElement.parentElement;
 					var optionElements = targetPopup.getElementsByTagName("input");
 					for (var i = 0; i < optionElements.length; i++) {
 						config[targetPopup.dataset.index] = configDefault[targetPopup.dataset.index];
