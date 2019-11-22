@@ -972,9 +972,9 @@
 						config[targetPopup.dataset.index][j] = configDefault[targetPopup.dataset.index][j];
 					};
 					for (var j = 0; j < optionElements.length; j++) {
-						if (config.type === "text") {
+						if (optionElements[j].type === "text") {
 							optionElements[j].value = config[targetPopup.dataset.index];
-						} else if (config.type === "checkbox") {
+						} else if (optionElements[j].type === "checkbox") {
 							optionElements[j].checked = config[targetPopup.dataset.index];
 						};
 					};
