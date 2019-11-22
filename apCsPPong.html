@@ -709,6 +709,10 @@
 				crcA = crcH - intermediate1;
 				crcB = crcH + intermediate1;
 			};
+			if (crcType) {
+				console.log("intermediate0 >= 0: " + intermediate0 >= 0);
+				console.log("((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB)): " + (((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB))));
+			};
 			return intermediate0 >= 0 && ((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB));
 		};
 		function circleRectangleCollision() {
