@@ -759,7 +759,7 @@
 		function updateScore(player) {
 			scores[player]++;
 			scoreElements[player].innerHTML = scores[player];
-			if (scores[player] === config[1]) {
+			if (scores[player] === config[1][0]) {
 				gameComplete = true;
 				startStop(false);
 				scoreElements[player].classList.add("flashing");
@@ -904,7 +904,6 @@
 			console.log("i = " + i);
 			var configButton = configButtons[i];
 			if (configButton.dataset.associatedpopup !== undefined) {
-				var associatedPopup = document.getElementById(configButton.dataset.associatedpopup);
 				configButton.addEventListener("click", function(e) {
 					console.log("e.target = " + e.target);
 					startStop(false);
@@ -912,6 +911,7 @@
 					targetPopup.classList.remove("disabled");
 					targetPopup.classList.add("enabled");
 				});
+				var associatedPopup = document.getElementById(configButton.dataset.associatedpopup);
 				associatedPopup.getElementsByClassName("popupClose")[0].addEventListener("click", function(e) {
 					var targetPopup = e.target.parentElement;
 					targetPopup.classList.remove("enabled");
@@ -922,7 +922,8 @@
 					if (associatedPopup.id === "keyBindings") {
 						options[j].addEventListener("focus", function(e) {
 							configKeyBindingsEventListeners[e.target.dataset.index] = e.target.addEventListener("keydown", function(keyE) {
-								config[associatedPopup.dataset.index][keyE.target.dataset.index] = keyE.key;
+								var targetPopup = e.target.parentElement.parentElement;
+								config[targetPopup.dataset.index][keyE.target.dataset.index] = keyE.key;
 								keyE.target.value = keyE.key;
 							});
 						});
@@ -931,17 +932,20 @@
 						});
 					} else {
 						options[j].addEventListener("input", function(e) {
-							if (options[j].pattern === "" || RegExp(options[j].pattern).test(options[j].value)) {
+							if (e.target.pattern === "" || RegExp(e.target.pattern).test(e.target.value)) {
+								var targetPopup = "";
 								var configValue = "";
-								if (config.type === "text") {
-									configValue = options[j].value;
+								if (e.target.type === "text") {
+									targetPopup = e.target.parentElement.parentElement;
+									configValue = e.target.value;
 									if (/\d+/.test(configValue)) {
 										configValue = Number(configValue);
 									};
-								} else if (config.type === "checkbox") {
-									configValue = options[j].checked;
+								} else if (e.target.type === "checkbox") {
+									targetPopup = e.target.parentElement.parentElement.parentElement;
+									configValue = e.target.checked;
 								};
-								config[associatedPopup.dataset.index][options[j].dataset.index] = configValue;
+								config[targetPopup.dataset.index][e.target.dataset.index] = configValue;
 							};
 						});
 					};
