@@ -296,6 +296,7 @@
 	</body>
 	<script>
 		//<game & gui>
+		/*
 		//keyBindings, maxScore, and colors are configuration values
 		//keyBindings = {paddle0Up, paddle0Down, paddle1Up, paddle1Down, startStop}
 		var keyBindings = ["w", "s", "ArrowUp", "ArrowDown", " "];
@@ -304,6 +305,52 @@
 		var colors = ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"];
 		//defaultConfigurationValues = {keyBindings, maxScore, colors}
 		var defaultConfigurationValues = [["w", "s", "ArrowUp", "ArrowDown", " "], 6, ["#000000", "#FFFFFF", "#FFFFFF", "#FFFFFF"]];
+		*/
+		/*
+		Configuration values
+		
+		config = {
+			keyBindings = {
+				paddle0Up,
+				paddle0Down,
+				paddle1Up,
+				paddle1Down,
+				startStop
+			},
+			scoring = {
+				maxScore
+			},
+			visualsAndAudio = {
+				backgroundColor,
+				paddle0Color,
+				paddle1Color,
+				ballColor,
+				audioEnabled
+			}
+		}
+		
+		configDefault is identically structured to config
+		*/
+		var configDefault = [
+			[
+				"w",
+				"s",
+				"ArrowUp",
+				"ArrowDown",
+				" "
+			],
+			[
+				6
+			],
+			[
+				"#000000",
+				"#FFFFFF",
+				"#FFFFFF",
+				"#FFFFFF",
+				false
+			]
+		];
+		var config = configDefault;
 		//</game & gui>
 		//<game>
 		var h = 0.8 * window.innerHeight;
@@ -312,7 +359,7 @@
 		canvas.width = w;
 		canvas.height = h;
 		var c = canvas.getContext("2d");
-		c.fillStyle = colors[0];
+		c.fillStyle = config[2][0];
 		c.fillRect(0, 0, w, h);
 		/*
 		positionSize = {
@@ -346,11 +393,11 @@
 				[2 * ballR, 2 * ballR]
 			]
 		];
-		c.fillStyle = colors[1];
+		c.fillStyle = config[2][1];
 		c.fillRect(positionSize[0][0][0], positionSize[0][0][1], positionSize[0][1][0], positionSize[0][1][1]);
-		c.fillStyle = colors[2];
+		c.fillStyle = config[2][2];
 		c.fillRect(positionSize[1][0][0], positionSize[1][0][1], positionSize[1][1][0], positionSize[1][1][1]);
-		c.fillStyle = colors[3];
+		c.fillStyle = config[2][3];
 		c.beginPath();
 		c.arc(positionSize[2][0][0], positionSize[2][0][1], ballR, 0, 2 * Math.PI);
 		c.fill();
@@ -367,7 +414,7 @@
 				default:
 					return undefined;
 			};
-			c.fillStyle = colors[0];
+			c.fillStyle = config[2][0];
 			//residueCorrectionAmount pixels is added to w and h to account for an "outline residue" that occurs when removing objects by drawing over them with the background color
 			var residueCorrectionAmount = 2;
 			if (objectType === 0) {
@@ -385,10 +432,10 @@
 				positionSize[object][0][1] = y;
 			};
 			for (var i = 0; i < 2; i++) {
-				c.fillStyle = colors[i + 1];
+				c.fillStyle = config[2][i + 1];
 				c.fillRect(positionSize[i][0][0], positionSize[i][0][1], positionSize[i][1][0], positionSize[i][1][1]);
 			};
-			c.fillStyle = colors[3];
+			c.fillStyle = config[2][3];
 			c.beginPath();
 			c.arc(positionSize[2][0][0], positionSize[2][0][1], positionSize[2][1][0] / 2, 0, 2 * Math.PI);
 			c.fill();
@@ -447,23 +494,23 @@
 				var key = e.key;
 				if (gameRunning) {
 					switch (key) {
-						case keyBindings[0]:
+						case config[0][0]:
 		  					paddleMovement(0, true, -1);
 		  					break;
-		  				case keyBindings[1]:
+		  				case config[0][1]:
 							paddleMovement(0, true, 1);
 							break;
-						case keyBindings[2]:
+						case config[0][2]:
 							paddleMovement(1, true, -1);
 							break;
-						case keyBindings[3]:
+						case config[0][3]:
 							paddleMovement(1, true, 1);
 							break;
 						default:
 							break;
 					};
 				};
-				if (key === keyBindings[4]) {
+				if (key === config[0][4]) {
 					startStop(!gameRunning);
 				};
 			} catch (errorObject) {
@@ -475,16 +522,16 @@
 				if (gameRunning) {
 					var key = e.key;
 					switch(key) {
-						case keyBindings[0]:
+						case config[0][0]:
 							paddleMovement(0, false, -1);
 							break;
-						case keyBindings[1]:
+						case config[0][1]:
 							paddleMovement(0, false, 1);
 							break;
-						case keyBindings[2]:
+						case config[0][2]:
 							paddleMovement(1, false, -1);
 							break;
-						case keyBindings[3]:
+						case config[0][3]:
 							paddleMovement(1, false, 1);
 							break;
 						default:
@@ -650,7 +697,7 @@
 		function updateScore(player) {
 			scores[player]++;
 			scoreElements[player].innerHTML = scores[player];
-			if (scores[player] === maxScore) {
+			if (scores[player] === config[1]) {
 				gameComplete = true;
 				startStop(false);
 				scoreElements[player].classList.add("flashing");
