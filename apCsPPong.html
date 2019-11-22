@@ -280,6 +280,34 @@
 					X
 				</button>
 				<div class="popupContent">
+					<label for="backgroundColor">
+						Background Color
+					</label>
+					<input type="text" pattern="^#[0-9a-fA-F]{6}$" class="framed thin" id="backgroundColor" data-index="0" value="#000000">
+					</input>
+					<label for="paddle0Color">
+						Paddle 0 Color
+					</label>
+					<input type="text" pattern="^#[0-9a-fA-F]{6}$" class="framed thin" id="paddle0Color" data-index="1" value="#FFFFFF">
+					</input>
+					<label for="paddle1Color">
+						Paddle 1 Color
+					</label>
+					<input type="text" pattern="^#[0-9a-fA-F]{6}$" class="framed thin" id="paddle1Color" data-index="2" value="#FFFFFF">
+					</input>
+					<label for="ballColor">
+						Ball Color
+					</label>
+					<input type="text" pattern="^#[0-9a-fA-F]{6}$" class="framed thin" id="ballColor" data-index="3" value="#FFFFFF">
+					</input>
+					<label for="audioEnabled">
+						Audio
+					</label>
+					<input type="checkbox" class="framed thin" id="audioEnabled" data-index="4" checked="false">
+					</input>
+					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsVisuals">
+						Restore Defaults
+					</button>
 				</div>
 			</div>
 			<button class="framed thin" id="startStop">
