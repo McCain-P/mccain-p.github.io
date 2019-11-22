@@ -623,9 +623,7 @@
 		});
 		var audioContext = 0;
 		function playFrequency(fPreset) {
-			console.log("playFrequency " + fPreset);
 			if (config[2][4]) {
-				console.log("yes");
 				var f = 0;
 				switch (fPreset) {
 					case 0:
@@ -644,6 +642,7 @@
 				fHertzTone = audioContext.createOscillator();
 				fHertzTone.type = "square";
 				fHertzTone.frequency.value = f;
+				fHertzTone.connect(audioContext.destination);
 				fHertzTone.start(audioContext.currentTime);
 				fHertzTone.stop(audioContext.currentTime + 0.5);
 			};
