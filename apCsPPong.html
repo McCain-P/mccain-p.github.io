@@ -816,7 +816,15 @@
 							e.target.removeEventListener("keydown", configKeyBindingsEventListeners[e.target.dataset.index]);
 						});
 					} else {
-						
+						options[i].addEventListener("input", function(e) {
+							if (options[i].pattern === "" || RegExp(options[i].pattern).test(options[i].value)) {
+								var configValue = options[i].value;
+								if (/\d+/.test(configValue)) {
+									configValue = Number(configValue);
+								};
+								config[associatedPopup.dataset.index][options[i].dataset.index] = configValue;
+							};
+						});
 					};
 				};
 			};
