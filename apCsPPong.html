@@ -602,7 +602,7 @@
 				errorHandling(errorObject);
 			};
 		});
-		var audioContext = new AudioContext();
+		var audioContext = 0;
 		function playFrequency(fPreset) {
 			if (config[2][4]) {
 				var f = 0;
@@ -964,6 +964,9 @@
 				});
 			};
 		};
+		document.getElementById("startStop").addEventListener("click", function() {
+			startStop(!gameRunning);
+		});
 		document.getElementById("audioEnabled").addEventListener("input", function(e) {
 			if (e.target.checked) {
 				audioContext = new AudioContext();
