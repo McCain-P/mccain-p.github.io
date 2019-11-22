@@ -967,7 +967,9 @@
 				associatedPopup.getElementsByClassName("restoreDefaultsButton")[0].addEventListener("click", function(e) {
 					var targetPopup = e.target.parentElement.parentElement;
 					var optionElements = targetPopup.getElementsByTagName("input");
-					config[targetPopup.dataset.index] = configDefault[targetPopup.dataset.index];
+					for (var j = 0; j < config[targetPopup.dataset.index].length; j++) {
+						config[targetPopup.dataset.index][j] = configDefault[targetPopup.dataset.index][j];
+					};
 					for (var j = 0; j < optionElements.length; j++) {
 						if (config.type === "text") {
 							optionElements[j].value = config[targetPopup.dataset.index];
