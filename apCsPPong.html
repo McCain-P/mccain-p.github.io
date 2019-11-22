@@ -891,9 +891,9 @@
 				moveObject(0, 0, 0, true);
 			};
 		});
-		var buttonElements = document.getElementsByTagName("button");
-		for (var i = 0; i < buttonElements.length; i++) {
-			buttonElements[i].addEventListener("click", function(e) {
+		var focusElements = document.querySelectorAll("button, input");
+		for (var i = 0; i < focusElements.length; i++) {
+			focusElements[i].addEventListener("click", function(e) {
 				e.target.blur();
 			});
 		};
