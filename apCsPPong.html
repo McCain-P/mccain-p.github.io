@@ -705,8 +705,13 @@
 			if (crcType) {
 				crcA = -crcK - intermediate1;
 				crcB = -crcK + intermediate1;
-				console.log("crcA = " + crcA);
-				console.log("crcB = " + crcB);
+				if (crcA !== NaN) {
+					console.log("crcA = " + crcA);
+					console.log("crcB = " + crcB);
+					console.log("(crcM0 >= crcA && crcM0 <= crcB) = " + (crcM0 >= crcA && crcM0 <= crcB));
+					console.log("(crcM1 >= crcA && crcM1 <= crcB) = " + (crcM1 >= crcA && crcM1 <= crcB));
+					console.log("(crcM0 <= crcA && crcM1 >= crcB) = " + (crcM0 <= crcA && crcM1 >= crcB));
+				};
 			} else {
 				crcA = crcH - intermediate1;
 				crcB = crcH + intermediate1;
