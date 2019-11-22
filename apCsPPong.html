@@ -134,7 +134,6 @@
 				grid-template: repeat(auto-fit, 5vh) / 51vh 11vh;
 				grid-auto-flow: row;
 				grid-gap: 4.5vh 10vh;
-				/*place-items: stretch;*/
 				place-items: start;
 			}
 			.popup.config > .popupContent > label, .popup.config > .popupContent > input, .popup.config > .popupContent > .inputCheckbox, .popup.config > .popupContent > button:not(.popupClose) {
@@ -680,16 +679,6 @@
 				crcA = crcH - intermediate1;
 				crcB = crcH + intermediate1;
 			};
-			if (!isNaN(crcA)) {
-				console.log(crcType);
-				console.log("crcA = " + crcA);
-				console.log("crcB = " + crcB);
-				console.log("crcM0 = " + crcM0);
-				console.log("crcM1 = " + crcM1);
-				console.log("(crcM0 >= crcA && crcM0 <= crcB) = " + (crcM0 >= crcA && crcM0 <= crcB));
-				console.log("(crcM1 >= crcA && crcM1 <= crcB) = " + (crcM1 >= crcA && crcM1 <= crcB));
-				console.log("(crcM0 <= crcA && crcM1 >= crcB) = " + (crcM0 <= crcA && crcM1 >= crcB));
-			};
 			return intermediate0 >= 0 && ((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB));
 		};
 		function circleRectangleCollision() {
@@ -797,24 +786,6 @@
 							updateScore(0);
 						};
 					};
-					/*
-					//{Paddle 0, paddle 1}
-					var paddleCollisions = [circleRectangleCollision(0), circleRectangleCollision(1)];
-					//Paddle 0 or paddle 1
-					if (paddleCollisions[0] || paddleCollisions[1]) {
-						ballVelocity[0] *= -1;
-						playFrequency(2);
-						if (paddleCollisions[0]) {
-							//Paddle 0
-							ballVelocity[0] += paddleAcceleration;
-							ballVelocity[1] += paddleAcceleration * paddleDirection[0];
-						} else {
-							//Paddle 1
-							ballVelocity[0] += -paddleAcceleration;
-							ballVelocity[1] += paddleAcceleration * paddleDirection[1];
-						};
-					};
-					*/
 					circleRectangleCollision();
 					moveObject(2, ballVelocity[0], ballVelocity[1], true);
 				};
