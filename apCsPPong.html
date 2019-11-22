@@ -703,8 +703,10 @@
 			var crcA = 0;
 			var crcB = 0;
 			if (crcType) {
-				crcA = -crcK - intermediate1;
-				crcB = -crcK + intermediate1;
+				//crcA = -crcK - intermediate1;
+				//crcB = -crcK + intermediate1;
+				crcA = crcK - intermediate1;
+				crcB = crcK + intermediate1;
 			} else {
 				crcA = crcH - intermediate1;
 				crcB = crcH + intermediate1;
