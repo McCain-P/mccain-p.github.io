@@ -1002,10 +1002,16 @@
 			startStop(!gameRunning);
 		});
 		document.getElementById("audioEnabled").addEventListener("input", function(e) {
+			/*
 			if (e.target.checked) {
 				audioContext = new AudioContext();
+				
 			} else {
 				audioContext.close();
+			};
+			*/
+			if (audioContext === 0 && e.target.checked && config[2][4]) {
+				audioContext = new AudioContext();
 			};
 		});
 		document.getElementById("backgroundColor").addEventListener("input", function(e) {
