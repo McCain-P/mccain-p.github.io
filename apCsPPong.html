@@ -705,19 +705,11 @@
 			if (crcType) {
 				crcA = -crcK - intermediate1;
 				crcB = -crcK + intermediate1;
+				console.log("crcA = " + crcA);
+				console.log("crcB = " + crcB);
 			} else {
 				crcA = crcH - intermediate1;
 				crcB = crcH + intermediate1;
-			};
-			if (crcType) {
-				var testA = (intermediate0 >= 0);
-				var testB = (((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB)));
-				if (testA) {
-					console.log("A");
-				};
-				if (testB) {
-					console.log("B");
-				};
 			};
 			return intermediate0 >= 0 && ((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB));
 		};
