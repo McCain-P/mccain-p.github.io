@@ -990,10 +990,7 @@
 			if (e.target.checked) {
 				audioContext = new AudioContext();
 			} else {
-				try {
-					audioContext.close();
-				} catch (e if e instanceof TypeError) {	
-				};
+				audioContext.close();
 			};
 		});
 		//</gui>
