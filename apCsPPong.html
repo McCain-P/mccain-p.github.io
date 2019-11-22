@@ -705,7 +705,7 @@
 			if (crcType) {
 				crcA = -crcK - intermediate1;
 				crcB = -crcK + intermediate1;
-				if (crcA !== NaN) {
+				if (!isNaN(crcA)) {
 					console.log("crcA = " + crcA);
 					console.log("crcB = " + crcB);
 					console.log("(crcM0 >= crcA && crcM0 <= crcB) = " + (crcM0 >= crcA && crcM0 <= crcB));
