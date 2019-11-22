@@ -918,30 +918,30 @@
 					targetPopup.classList.add("disabled");
 				});
 				var options = associatedPopup.getElementsByTagName("input");
-				for (var i = 0; i < options.length; i++) {
+				for (var j = 0; j < options.length; j++) {
 					if (associatedPopup.id === "keyBindings") {
-						options[i].addEventListener("focus", function(e) {
+						options[j].addEventListener("focus", function(e) {
 							configKeyBindingsEventListeners[e.target.dataset.index] = e.target.addEventListener("keydown", function(keyE) {
 								config[associatedPopup.dataset.index][keyE.target.dataset.index] = keyE.key;
 								keyE.target.value = keyE.key;
 							});
 						});
-						options[i].addEventListener("blur", function(e) {
+						options[j].addEventListener("blur", function(e) {
 							e.target.removeEventListener("keydown", configKeyBindingsEventListeners[e.target.dataset.index]);
 						});
 					} else {
-						options[i].addEventListener("input", function(e) {
-							if (options[i].pattern === "" || RegExp(options[i].pattern).test(options[i].value)) {
+						options[j].addEventListener("input", function(e) {
+							if (options[j].pattern === "" || RegExp(options[j].pattern).test(options[j].value)) {
 								var configValue = "";
 								if (config.type === "text") {
-									configValue = options[i].value;
+									configValue = options[j].value;
 									if (/\d+/.test(configValue)) {
 										configValue = Number(configValue);
 									};
 								} else if (config.type === "checkbox") {
-									configValue = options[i].checked;
+									configValue = options[j].checked;
 								};
-								config[associatedPopup.dataset.index][options[i].dataset.index] = configValue;
+								config[associatedPopup.dataset.index][options[j].dataset.index] = configValue;
 							};
 						});
 					};
@@ -949,12 +949,12 @@
 				associatedPopup.getElementsByClassName("restoreDefaultsButton")[0].addEventListener("click", function(e) {
 					var targetPopup = e.target.parentElement.parentElement;
 					var optionElements = targetPopup.getElementsByTagName("input");
-					for (var i = 0; i < optionElements.length; i++) {
-						config[targetPopup.dataset.index] = configDefault[targetPopup.dataset.index];
+					config[targetPopup.dataset.index] = configDefault[targetPopup.dataset.index];
+					for (var j = 0; j < optionElements.length; j++) {
 						if (config.type === "text") {
-							optionElements.value = config[targetPopup.dataset.index];
+							optionElements[j].value = config[targetPopup.dataset.index];
 						} else if (config.type === "checkbox") {
-							optionElements.checked = config[targetPopup.dataset.index];
+							optionElements[j].checked = config[targetPopup.dataset.index];
 						};
 					};
 				});
