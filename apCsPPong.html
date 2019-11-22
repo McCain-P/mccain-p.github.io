@@ -653,42 +653,6 @@
 				fHertzTone.stop(audioContext.currentTime + 0.2);
 			};
 		};
-		/*
-		function circleRectangleCollision(paddle) {
-			var closestHorizontalEdge = 0;
-			var closestVerticalEdge = 0;
-			var circleRadius = positionSize[2][1][0] / 2;
-			//edges = {circleLeftEdge, circleRightEdge, circleTopEdge, circleBottomEdge, paddleLeftEdge, paddleRightEdge, paddleTopEdge, paddleBottomEdge}
-			var edges = [positionSize[2][0][0] - circleRadius, positionSize[2][0][0] + circleRadius, positionSize[2][0][1] - circleRadius, positionSize[2][0][1] + circleRadius, positionSize[paddle][0][0], positionSize[paddle][0][0] + positionSize[paddle][1][0], positionSize[paddle][0][1], positionSize[paddle][0][1] + positionSize[paddle][1][1]];
-			//closestEdges = {circleHorizontal, circleVertical, rectangleHorizontal, rectangleVertical}
-			var closestEdges = [];
-			//distances = {horizontalDistance, verticalDistance}
-			var distances = [];
-			if (edges[1] <= edges[4]) {
-				closestEdges[0] = edges[1];
-				closestEdges[2] = edges[4];
-				distances[0] = Math.abs(closestEdges[0] - closestEdges[2]);
-			} else if (edges[0] >= edges[5]) {
-				closestEdges[0] = edges[0];
-				closestEdges[2] = edges[5];
-				distances[0] = Math.abs(closestEdges[0] - closestEdges[2]);
-			} else {
-				distances[0] = 0;
-			};
-			if (edges[3] <= edges[6]) {
-				closestEdges[1] = edges[3];
-				closestEdges[3] = edges[6];
-				distances[1] = Math.abs(closestEdges[1] - closestEdges[3]);
-			} else if (edges[2] >= edges[7]) {
-				closestEdges[1] = edges[2];
-				closestEdges[3] = edges[7];
-				distances[1] = Math.abs(closestEdges[1] - closestEdges[3]);
-			} else {
-				distances[1] = 0;
-			};
-			return circleRadius >= Math.sqrt(Math.pow(distances[0], 2) + Math.pow(distances[1], 2));
-		};
-		*/
 		function crc(crcType, crcN, crcM0, crcM1) {
 			var crcH = positionSize[2][0][0];
 			var crcK = positionSize[2][0][1];
@@ -703,8 +667,13 @@
 			var crcA = 0;
 			var crcB = 0;
 			if (crcType) {
-				//crcA = -crcK - intermediate1;
-				//crcB = -crcK + intermediate1;
+				/*
+				Old values:
+				crcA = -crcK - intermediate1;
+				crcB = -crcK + intermediate1;
+				
+				Multiplying the old values by -1 so that they fit within the canvas, and swapping the values so that the smaller one was first, fixed the values for some reason
+				*/
 				crcA = crcK - intermediate1;
 				crcB = crcK + intermediate1;
 			} else {
