@@ -41,6 +41,15 @@
 				top: 10vh;
 				left: calc(50vw - 40vh);
 			}
+			#canvasLight {
+				z-index: 0;
+				height: 80vh;
+				width: 80vh;
+				position: fixed;
+				top: 10vh;
+				left: calc(50vw - 40vh);
+				background: radial-gradient(circle farthest-corner at 10% 10%, RGBA(255,255,255,1) 0, RGBA(0,0,0,0) 100%);
+			}
 			#title {
 				z-index: 0;
 				height: auto;
@@ -160,7 +169,7 @@
 				font-size: 6vh;
 				position: fixed;
 				top: 15vh;
-				z-index: 0;
+				z-index: 1;
 			}
 			#score0 {
 				left: calc(50vw - 35vh);
