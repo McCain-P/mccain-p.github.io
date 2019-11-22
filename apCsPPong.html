@@ -589,8 +589,7 @@
 							break;
 					};
 				};
-				if (key === config[0][4] && !startStopKeyDown) {
-					startStopKeyDown = true;
+				if (key === config[0][4]) {
 					startStop(!gameRunning);
 				};
 			} catch (errorObject) {
@@ -617,9 +616,6 @@
 						default:
 							break;
 					};
-				};
-				if (key === config[0][4] && startStopKeyDown) {
-					startStopKeyDown = false;
 				};
 			} catch (errorObject) {
 				errorHandling(errorObject);
