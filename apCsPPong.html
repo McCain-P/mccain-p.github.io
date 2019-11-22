@@ -791,7 +791,7 @@
 		function updateScore(player) {
 			scores[player]++;
 			scoreElements[player].innerHTML = scores[player];
-			if (scores[player] === config[1][0]) {
+			if (scores[player] >= config[1][0]) {
 				gameComplete = true;
 				startStop(false);
 				scoreElements[player].classList.add("flashing");
