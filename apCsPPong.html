@@ -960,8 +960,12 @@
 				});
 			};
 		};
-		document.getElementById("").addEventListener("input", function(e) {
-			
+		document.getElementById("audioEnabled").addEventListener("input", function(e) {
+			if (e.target.checked) {
+				audioContext = new AudioContext();
+			} else {
+				audioContext.close();
+			};
 		});
 		//</gui>
 	</script>
