@@ -899,7 +899,7 @@
 		var configButtons = document.getElementById("configuration").querySelectorAll("#configuration > button");
 		var configKeyBindingsEventListeners = [];
 		console.log(configButtons);
-		cosole.log(configButtons.length);
+		console.log(configButtons.length);
 		for (var i = 0; i < configButtons.length; i++) {
 			console.log("i = " + i);
 			var configButton = configButtons[i];
@@ -960,6 +960,9 @@
 				});
 			};
 		};
+		document.getElementById("").addEventListener("input", function(e) {
+			
+		});
 		//</gui>
 	</script>
 </html>
