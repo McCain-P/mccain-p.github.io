@@ -623,7 +623,9 @@
 		});
 		var audioContext = 0;
 		function playFrequency(fPreset) {
+			console.log("playFrequency " + fPreset);
 			if (config[2][4]) {
+				console.log("yes");
 				var f = 0;
 				switch (fPreset) {
 					case 0:
@@ -988,7 +990,10 @@
 			if (e.target.checked) {
 				audioContext = new AudioContext();
 			} else {
-				audioContext.close();
+				try {
+					audioContext.close();
+				} catch (e if e instanceof TypeError) {	
+				};
 			};
 		});
 		//</gui>
