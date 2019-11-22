@@ -898,14 +898,10 @@
 		//var configButtons = document.getElementById("configuration").getElementsByTagName("button");
 		var configButtons = document.getElementById("configuration").querySelectorAll("#configuration > button");
 		var configKeyBindingsEventListeners = [];
-		console.log(configButtons);
-		console.log(configButtons.length);
 		for (var i = 0; i < configButtons.length; i++) {
-			console.log("i = " + i);
 			var configButton = configButtons[i];
 			if (configButton.dataset.associatedpopup !== undefined) {
 				configButton.addEventListener("click", function(e) {
-					console.log("e.target = " + e.target);
 					startStop(false);
 					var targetPopup = document.getElementById(e.target.dataset.associatedpopup);
 					targetPopup.classList.remove("disabled");
@@ -953,6 +949,12 @@
 				associatedPopup.getElementsByClassName("restoreDefaultsButton")[0].addEventListener("click", function(e) {
 					var targetPopup = e.target.parentElement.parentElement;
 					var optionElements = targetPopup.getElementsByTagName("input");
+					console.log("e.target = " + e.target);
+					console.log("e.target.parentElement = " + e.target.parentElement);
+					console.log("e.target.parentElement.parentElement = " + e.target.parentElement.parentElement);
+					console.log("targetPopup = " + targetPopup);
+					console.log("optionElements = " + optionElements);
+					console.log("targetPopup.dataset.index = " + targetPopup.dataset.index);
 					config[targetPopup.dataset.index] = configDefault[targetPopup.dataset.index];
 					for (var j = 0; j < optionElements.length; j++) {
 						if (config.type === "text") {
