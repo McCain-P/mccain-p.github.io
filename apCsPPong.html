@@ -966,7 +966,7 @@
 								if (e.target.type === "text") {
 									targetPopup = e.target.parentElement.parentElement;
 									configValue = e.target.value;
-									if (/\d+/.test(configValue)) {
+									if (/^\d+$/.test(configValue)) {
 										configValue = Number(configValue);
 									};
 								} else if (e.target.type === "checkbox") {
