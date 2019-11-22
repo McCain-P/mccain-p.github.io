@@ -920,6 +920,8 @@
 		document.getElementById("backgroundColor").addEventListener("input", function(e) {
 			if (e.target.pattern.match(e.target.value)) {
 				c.fillStyle = e.target.value;
+				console.log("e.target = " + e.target);
+				console.log("e.target.value = " + e.target.value);
 				c.fillRect(0, 0, w, h);
 				//moveObject is being used to redraw all objects on the screen; object 0 is not moved
 				moveObject(0, 0, 0, true);
