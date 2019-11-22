@@ -787,7 +787,7 @@
 		});
 		*/
 		var configButtons = document.getElementById("configuration").getElementsByTagName("button");
-		var configOptionsEventListeners = [];
+		var configKeyBindingsEventListeners = [];
 		for (var i = 0; i < configButtons.length; i++) {
 			var configButton = configButton[i];
 			if (configButton.dataset.associatedPopup !== undefined) {
@@ -804,6 +804,13 @@
 					targetPopup.classList.add("disabled");
 				});
 				var options = associatedPopup.getElementsByTagName("input");
+				for (var i = 0; i < options.length; i++) {
+					if (associatedPopup.id === "keyBindings") {
+						
+					} else {
+						
+					};
+				};
 			};
 		};
 		//</gui>
