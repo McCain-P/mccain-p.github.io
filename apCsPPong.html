@@ -412,11 +412,6 @@
 				}, 10);
 			};
 		};
-		function errorHandling(errorObject) {
-			document.getElementById("errorMessageBody").innerHTML = errorObject.name + ": " + errorObject.message;
-			document.getElementById("errorMessage").classList.remove("disabled");
-			document.getElementById("errorMessage").classList.add("enabled");
-		};
 		//scores = {player0, player1}
 		scores = [0, 0];
 		var gameRunning = false;
@@ -441,6 +436,11 @@
 				paddleMovement(1, false, 0);
 				document.getElementById("startStop").innerHTML = "Start";
 			};
+		};
+		function errorHandling(errorObject) {
+			document.getElementById("errorMessageBody").innerHTML = errorObject.name + ": " + errorObject.message;
+			document.getElementById("errorMessage").classList.remove("disabled");
+			document.getElementById("errorMessage").classList.add("enabled");
 		};
 		window.addEventListener("keydown", function(e) {
 			try {
