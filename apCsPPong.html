@@ -806,7 +806,15 @@
 				var options = associatedPopup.getElementsByTagName("input");
 				for (var i = 0; i < options.length; i++) {
 					if (associatedPopup.id === "keyBindings") {
-						
+						options[i].addEventListener("focus", function(e) {
+							configKeyBindingsEventListeners[e.target.dataset.index] = e.target.addEventListener("keydown", function(keyE) {
+								config[associatedPopup.dataset.index][keyE.target.dataset.index] = keyE.key;
+								keyE.target.value = keyE.key;
+							});
+						});
+						options[i].addEventListener("blur", function(e) {
+							e.target.removeEventListener("keydown", configKeyBindingsEventListeners[e.target.dataset.index]);
+						});
 					} else {
 						
 					};
