@@ -391,6 +391,25 @@
 		
 		configDefault is identically structured to config
 		*/
+		var config = [
+			[
+				"w",
+				"s",
+				"ArrowUp",
+				"ArrowDown",
+				" "
+			],
+			[
+				6
+			],
+			[
+				"#000000",
+				"#FFFFFF",
+				"#FFFFFF",
+				"#FFFFFF",
+				false
+			]
+		];
 		var configDefault = [
 			[
 				"w",
@@ -410,7 +429,6 @@
 				false
 			]
 		];
-		var config = configDefault;
 		//</game & gui>
 		//<game>
 		var h = 0.8 * window.innerHeight;
@@ -949,12 +967,6 @@
 				associatedPopup.getElementsByClassName("restoreDefaultsButton")[0].addEventListener("click", function(e) {
 					var targetPopup = e.target.parentElement.parentElement;
 					var optionElements = targetPopup.getElementsByTagName("input");
-					console.log("e.target = " + e.target);
-					console.log("e.target.parentElement = " + e.target.parentElement);
-					console.log("e.target.parentElement.parentElement = " + e.target.parentElement.parentElement);
-					console.log("targetPopup = " + targetPopup);
-					console.log("optionElements = " + optionElements);
-					console.log("targetPopup.dataset.index = " + targetPopup.dataset.index);
 					config[targetPopup.dataset.index] = configDefault[targetPopup.dataset.index];
 					for (var j = 0; j < optionElements.length; j++) {
 						if (config.type === "text") {
