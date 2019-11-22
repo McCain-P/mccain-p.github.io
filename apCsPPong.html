@@ -818,15 +818,32 @@
 					} else {
 						options[i].addEventListener("input", function(e) {
 							if (options[i].pattern === "" || RegExp(options[i].pattern).test(options[i].value)) {
-								var configValue = options[i].value;
-								if (/\d+/.test(configValue)) {
-									configValue = Number(configValue);
+								var configValue = "";
+								if (config.type === "text") {
+									configValue = options[i].value;
+									if (/\d+/.test(configValue)) {
+										configValue = Number(configValue);
+									};
+								} else if (config.type === "checkbox") {
+									configValue = options[i].checked;
 								};
 								config[associatedPopup.dataset.index][options[i].dataset.index] = configValue;
 							};
 						});
 					};
 				};
+				associatedPopup.getElementsByClassName("restoreDefaultsButton")[0].addEventListener("click", function(e) {
+					var targetPopup = this.parentElement.parentElement;
+					var optionElements = targetPopup.getElementsByTagName("input");
+					for (var i = 0; i < optionElements.length; i++) {
+						config[targetPopup.dataset.index] = configDefault[targetPopup.dataset.index];
+						if (config.type === "text") {
+							optionElements.value = config[targetPopup.dataset.index];
+						} else if (config.type === "checkbox") {
+							optionElements.checked = config[targetPopup.dataset.index];
+						};
+					};
+				});
 			};
 		};
 		//</gui>
