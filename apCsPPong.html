@@ -875,7 +875,7 @@
 					targetPopup.classList.add("enabled");
 				});
 				associatedPopup.getElementsByClassName("popupClose")[0].addEventListener("click", function(e) {
-					var targetPopup = document.getElementById(e.target.dataset.associatedpopup);
+					var targetPopup = e.target.parentElement;
 					targetPopup.classList.remove("enabled");
 					targetPopup.classList.add("disabled");
 				});
