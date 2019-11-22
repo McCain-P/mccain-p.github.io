@@ -710,8 +710,14 @@
 				crcB = crcH + intermediate1;
 			};
 			if (crcType) {
-				console.log("A: " + (intermediate0 >= 0));
-				console.log("B: " + (((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB))));
+				var testA = (intermediate0 >= 0);
+				var testB = (((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB)));
+				if (testA) {
+					console.log("A");
+				};
+				if (testB) {
+					console.log("B");
+				};
 			};
 			return intermediate0 >= 0 && ((crcM0 >= crcA && crcM0 <= crcB) || (crcM1 >= crcA && crcM1 <= crcB) || (crcM0 <= crcA && crcM1 >= crcB));
 		};
