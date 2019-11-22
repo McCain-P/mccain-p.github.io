@@ -864,7 +864,7 @@
 		var configButtons = document.getElementById("configuration").getElementsByTagName("button");
 		var configKeyBindingsEventListeners = [];
 		for (var i = 0; i < configButtons.length; i++) {
-			var configButton = configButton[i];
+			var configButton = configButtons[i];
 			if (configButton.dataset.associatedPopup !== undefined) {
 				var associatedPopup = document.getElementById(configButton.dataset.associatedPopup);
 				configButton.addEventListener("click", function(e) {
