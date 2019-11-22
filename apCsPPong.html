@@ -1005,7 +1005,9 @@
 			};
 		});
 		document.getElementById("backgroundColor").addEventListener("input", function(e) {
+			console.log("receive");
 			if (e.target.pattern.match(e.target.value)) {
+				console.log("yes");
 				c.fillStyle = config[2][0];
 				c.fillRect(0, 0, w, h);
 				//moveObject is being used to redraw all objects on the screen; object 0 is not moved
