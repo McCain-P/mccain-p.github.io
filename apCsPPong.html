@@ -1004,6 +1004,12 @@
 				audioContext.close();
 			};
 		});
+		var buttonElements = document.getElementsByTagName("button");
+		for (var i = 0; i < buttonElements.length; i++) {
+			buttonElements[i].addEventListener("click", function(e) {
+				e.target.blur();
+			});
+		};
 		//</gui>
 	</script>
 </html>
