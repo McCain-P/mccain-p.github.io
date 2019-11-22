@@ -897,10 +897,14 @@
 		var configButtons = document.getElementById("configuration").querySelectorAll("#configuration > button");
 		var configKeyBindingsEventListeners = [];
 		for (var i = 0; i < configButtons.length; i++) {
+			console.log("i = " + i);
 			var configButton = configButtons[i];
+			console.log("configButton = " + configButton);
 			if (configButton.dataset.associatedpopup !== undefined) {
 				var associatedPopup = document.getElementById(configButton.dataset.associatedpopup);
+				console.log("configButton = " + configButton);
 				configButton.addEventListener("click", function(e) {
+					console.log("e.target = " + e.target);
 					startStop(false);
 					var targetPopup = document.getElementById(e.target.dataset.associatedpopup);
 					targetPopup.classList.remove("disabled");
