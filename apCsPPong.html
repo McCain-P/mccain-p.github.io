@@ -567,6 +567,7 @@
 			document.getElementById("errorMessage").classList.remove("disabled");
 			document.getElementById("errorMessage").classList.add("enabled");
 		};
+		var startStopKeyDown = false;
 		window.addEventListener("keydown", function(e) {
 			try {
 				var key = e.key;
@@ -588,9 +589,9 @@
 							break;
 					};
 				};
-				if (key === config[0][4]) {
+				if (key === config[0][4] && !startStopKeyDown) {
+					startStopKeyDown = true;
 					startStop(!gameRunning);
-					console.log("key");
 				};
 			} catch (errorObject) {
 				errorHandling(errorObject);
@@ -616,6 +617,9 @@
 						default:
 							break;
 					};
+				};
+				if (key === config[0][4] && startStopKeyDown) {
+					startStopKeyDown = false;
 				};
 			} catch (errorObject) {
 				errorHandling(errorObject);
