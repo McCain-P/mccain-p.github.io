@@ -973,9 +973,9 @@
 					};
 					for (var j = 0; j < optionElements.length; j++) {
 						if (optionElements[j].type === "text") {
-							optionElements[j].value = config[targetPopup.dataset.index];
+							optionElements[j].value = config[targetPopup.dataset.index][j];
 						} else if (optionElements[j].type === "checkbox") {
-							optionElements[j].checked = config[targetPopup.dataset.index];
+							optionElements[j].checked = config[targetPopup.dataset.index][j];
 						};
 					};
 				});
