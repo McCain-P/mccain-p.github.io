@@ -1,0 +1,902 @@
+<html>
+	<head>
+		<title>
+			Pong
+		</title>
+		<style>
+			body {
+				background-color: RGB(0,0,0);
+			}
+			body * {
+				margin: 0;
+				padding: 0;
+				cursor: default;
+			}
+			body button, body input {
+				cursor: pointer;
+			}
+			body *::selection {
+				color: RGB(0,0,0);
+				background-color: RGB(255,255,255);
+			}
+			body *:focus {
+				outline: none;
+			}
+			p, h1, h2, button, label, input {
+				color: RGB(255,255,255);
+				font-family: "Arial", sans-serif;
+			}
+			.framed {
+				background-color: RGB(0,0,0);
+				border: 0.5vw solid RGB(255,255,255);
+			}
+			.framed.thin {
+				border-width: 0.25vw;
+			}
+			#canvas {
+				z-index: -2;
+				height: 80vh;
+				width: 80vh;
+				position: fixed;
+				top: 10vh;
+				left: calc(50vw - 40vh);
+				mix-blend-mode: multiply;
+			}
+			#canvasShading {
+				z-index: -1;
+				height: 80vh;
+				width: 80vh;
+				position: fixed;
+				top: calc(10vh + 0.5vw);
+				left: calc(50.5vw - 40vh);
+				background: radial-gradient(circle farthest-corner at top 10% left 10%, RGB(255,255,255) 0, RGB(32,32,32) 100%);
+			}
+			#title {
+				z-index: 0;
+				height: auto;
+				width: auto;
+				position: fixed;
+				top: 2vh;
+				left: 5vw;
+				text-align: left;
+				font-size: 6vh;
+			}
+			#configuration {
+				z-index: 0;
+				height: calc(10vh - 1vw);
+				width: 100vw;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				border-top: 0.5vw solid RGB(255,255,255);
+			}
+			button:hover, input:hover, .inputCheckbox > label:hover {
+				background-color: RGB(64,64,64);
+			}
+			button:active, input:focus, .inputCheckbox > label:focus {
+				background-color: RGB(32,32,32);
+			}
+			#configuration > button {
+				z-index: 1;
+				font-size: 2vw;
+				width: 20%;
+				height: 80%;
+				position: absolute;
+				top: 10%;
+			}
+			#openKeyBindings {
+				right: 5%;
+			}
+			#openScoring {
+				right: 30%;
+			}
+			#openVisuals {
+				right: 55%;
+			}
+			#startStop {
+				right: 80%;
+			}
+			.popup {
+				z-index: 2;
+				width: 90vh;
+				height: 90vh;
+				position: fixed;
+				top: 5vh;
+				left: calc(50vw - 45vh);
+			}
+			.popup > .popupContent {
+				z-index: 3;
+				width: 72vh;
+				height: 72vh;
+				position: absolute;
+				top: 9vh;
+				left: 9vh;
+			}
+			.popup * {
+				z-index: 4;
+			}
+			.popup.disabled {
+				display: none;
+			}
+			.popup.enabled {
+				display: block;
+			}
+			.popupClose {
+				width: 5%;
+				height: 5%;
+				position: absolute;
+				top: 1.25%;
+				left: 1.25%;
+				font-size: 3vh;
+			}
+			.popup.config > .popupContent {
+				display: grid;
+				grid-template: repeat(auto-fit, 5vh) / 51vh 11vh;
+				grid-auto-flow: row;
+				grid-gap: 4.5vh 10vh;
+				place-items: start;
+			}
+			.popup.config > .popupContent > label, .popup.config > .popupContent > input, .popup.config > .popupContent > .inputCheckbox, .popup.config > .popupContent > button:not(.popupClose) {
+				font-size: 4.5vh;
+				text-align: left;
+				height: 5vh;
+			}
+			.popup.config > .popupContent > label, .popup.config > .popupContent > .restoreDefaultsButton {
+				width: 51vh;
+			}
+			.popup.config > .popupContent > input, .popup.config > .popupContent > .inputCheckbox {
+				width: 11vh;
+				font-size: 2vh;
+				text-align: center;
+			}
+			.inputCheckbox {
+				position: relative;
+				top: 0;
+				left: 0;
+			}
+			.inputCheckbox > * {
+				height: inherit;
+				width: inherit;
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-size: inherit;
+			}
+			.inputCheckbox > input {
+				opacity: 0;
+			}
+			.inputCheckbox > label {
+				height: calc(100% - 0.5vw);
+				width: calc(100% - 0.5vw);
+			}
+			.inputCheckbox > label > span {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.inputCheckbox > input:checked + label > span:first-child {
+				display: inline;
+			}
+			.inputCheckbox > input:checked + label > span:last-child {
+				display: none;
+			}
+			.inputCheckbox > input:not(:checked) + label > span:first-child {
+				display: none;
+			}
+			.inputCheckbox > input:not(:checked) + label > span:last-child {
+				display: inline;
+			}
+			.popup.config > .popupContent > button:not(.popupClose) {
+				font-size: 4vh;
+			}
+			#errorMessage > h2, #errorMessage > p {
+				color: RGB(255,0,0);
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+			#errorMessageHeader {
+				margin-top: 5%;
+				margin-bottom: 2.5%;
+			}
+			#errorMessageBody {
+				margin-top: 2.5%;
+				margin-bottom: 5%;
+			}
+			.score {
+				font-size: 6vh;
+				position: fixed;
+				top: 15vh;
+				z-index: 0;
+			}
+			#score0 {
+				left: calc(50vw - 35vh);
+			}
+			#score1 {
+				right: calc(50vw - 35vh);
+			}
+			@keyframes flashingAnimation {
+				0% {
+					visibility: hidden;
+				}
+				50% {
+					visibility: hidden;
+				}
+				51% {
+					visibility: visible;
+				}
+				100% {
+					visibility: visible;
+				}
+			}
+			.flashing {
+				animation: 1s linear 0s infinite normal none running flashingAnimation;
+			}
+			input:invalid {
+				color: RGB(255,0,0);
+				border-color: RGB(255,0,0);
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="title">
+			Pong
+		</h1>
+		<p class="score" id="score0">
+			0
+		</p>
+		<p class="score" id="score1">
+			0
+		</p>
+		<div id="canvasShading">
+			<canvas class="framed" id="canvas">
+			</canvas>
+		</div>
+		<div id="configuration">
+			<button data-associatedpopup="keyBindings" class="framed thin" id="openKeyBindings">
+				Key Bindings
+			</button>
+			<div class="popup config framed disabled" data-index="0" id="keyBindings">
+				<button class="popupClose framed thin" id="closeKeyBindings">
+					X
+				</button>
+				<div class="popupContent">
+					<label for="keyPaddle0Up">
+						Paddle 0 Up
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Up" data-index="0" value="w">
+					</input>
+					<label for="keyPaddle0Down">
+						Paddle 0 Down
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle0Down" data-index="1" value="s">
+					</input>
+					<label for="keyPaddle1Up">
+						Paddle 1 Up
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Up" data-index="2" value="ArrowUp">
+					</input>
+					<label for="keyPaddle1Down">
+						Paddle 1 Down
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyPaddle1Down" data-index="3" value="ArrowDown">
+					</input>
+					<label for="keyStartStop">
+						Start/Stop
+					</label>
+					<input type="text" readonly="true" class="framed thin" id="keyStartStop" data-index="4" value=" ">
+					</input>
+					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsKeyBindings">
+						Restore Defaults
+					</button>
+				</div>
+			</div>
+			<button data-associatedpopup="scoring" class="framed thin" id="openScoring">
+				Scoring
+			</button>
+			<div class="popup config framed disabled" data-index="1" id="scoring">
+				<button class="popupClose framed thin" id="closeScoring">
+					X
+				</button>
+				<div class="popupContent">
+					<label for="scoreLimit">
+						Score Limit
+					</label>
+					<input type="text" pattern="^\d*[1-9]\d*$" class="framed thin" id="scoreLimit" data-index="0" value="6">
+					</input>
+					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsScoring">
+						Restore Defaults
+					</button>
+				</div>
+			</div>
+			<button data-associatedpopup="visuals" class="framed thin" id="openVisuals">
+				Visuals/Audio
+			</button>
+			<div class="popup config framed disabled" data-index="2" id="visuals">
+				<button class="popupClose framed thin" id="closeVisuals">
+					X
+				</button>
+				<div class="popupContent">
+					<label for="backgroundColor">
+						Background Color
+					</label>
+					<input type="text" pattern="^#[0-9a-fA-F]{6}$" class="framed thin" id="backgroundColor" data-index="0" value="#000000">
+					</input>
+					<label for="paddle0Color">
+						Paddle 0 Color
+					</label>
+					<input type="text" pattern="^#[0-9a-fA-F]{6}$" class="framed thin" id="paddle0Color" data-index="1" value="#FFFFFF">
+					</input>
+					<label for="paddle1Color">
+						Paddle 1 Color
+					</label>
+					<input type="text" pattern="^#[0-9a-fA-F]{6}$" class="framed thin" id="paddle1Color" data-index="2" value="#FFFFFF">
+					</input>
+					<label for="ballColor">
+						Ball Color
+					</label>
+					<input type="text" pattern="^#[0-9a-fA-F]{6}$" class="framed thin" id="ballColor" data-index="3" value="#FFFFFF">
+					</input>
+					<label for="audioEnabled">
+						Audio
+					</label>
+					<div class="inputCheckbox">
+						<input type="checkbox" class="framed thin" id="audioEnabled" data-index="4">
+						</input>
+						<label for="audioEnabled" class="framed thin">
+							<span>
+								Enabled
+							</span>
+							<span>
+								Disabled
+							</span>
+						</label>
+					</div>
+					<button class="framed thin restoreDefaultsButton" id="restoreDefaultsVisuals">
+						Restore Defaults
+					</button>
+				</div>
+			</div>
+			<button class="framed thin" id="startStop">
+				Start
+			</button>
+		</div>
+		<div class="popup framed disabled" id="errorMessage">
+			<h2 id="errorMessageHeader">
+				An Error Has Occurred:
+			</h2>
+			<p id="errorMessageBody">
+			</p>
+		</div>
+	</body>
+	<script>
+		//<game & gui>
+		/*
+		Configuration values
+		
+		config = {
+			keyBindings = {
+				paddle0Up,
+				paddle0Down,
+				paddle1Up,
+				paddle1Down,
+				startStop
+			},
+			scoring = {
+				maxScore
+			},
+			visualsAndAudio = {
+				backgroundColor,
+				paddle0Color,
+				paddle1Color,
+				ballColor,
+				audioEnabled
+			}
+		}
+		
+		configDefault is identically structured to config
+		*/
+		var config = [
+			[
+				"w",
+				"s",
+				"ArrowUp",
+				"ArrowDown",
+				" "
+			],
+			[
+				6
+			],
+			[
+				"#000000",
+				"#FFFFFF",
+				"#FFFFFF",
+				"#FFFFFF",
+				false
+			]
+		];
+		var configDefault = [
+			[
+				"w",
+				"s",
+				"ArrowUp",
+				"ArrowDown",
+				" "
+			],
+			[
+				6
+			],
+			[
+				"#000000",
+				"#FFFFFF",
+				"#FFFFFF",
+				"#FFFFFF",
+				false
+			]
+		];
+		//</game & gui>
+		//<game>
+		var h = 0.8 * window.innerHeight;
+		var w = h;
+		var canvas = document.getElementById("canvas");
+		canvas.width = w;
+		canvas.height = h;
+		var c = canvas.getContext("2d");
+		c.fillStyle = config[2][0];
+		c.fillRect(0, 0, w, h);
+		/*
+		positionSize = {
+			{
+				{paddle0X, paddle0Y},
+				{paddle0W, paddle0H}
+			},
+			{
+				{paddle1X, paddle1Y},
+				{paddle1W, paddle1H}
+			},
+			{
+				{ballX, ballY},
+				{ballW, ballH}
+			}
+		}
+		*/
+		var padding = w / 16;
+		var ballR = w / 64;
+		positionSize = [
+			[
+				[padding, (h / 2) - (w / 8)],
+				[w / 32, w / 4]
+			],
+			[
+				[w - padding - (w / 32), (h / 2) - (w / 8)],
+				[w / 32, w / 4]
+			],
+			[
+				[w / 2, h / 2],
+				[2 * ballR, 2 * ballR]
+			]
+		];
+		c.fillStyle = config[2][1];
+		c.fillRect(positionSize[0][0][0], positionSize[0][0][1], positionSize[0][1][0], positionSize[0][1][1]);
+		c.fillStyle = config[2][2];
+		c.fillRect(positionSize[1][0][0], positionSize[1][0][1], positionSize[1][1][0], positionSize[1][1][1]);
+		c.fillStyle = config[2][3];
+		c.beginPath();
+		c.arc(positionSize[2][0][0], positionSize[2][0][1], ballR, 0, 2 * Math.PI);
+		c.fill();
+		function moveObject(object, x, y, relativePositioning) {
+			var objectType = 0;
+			switch (object) {
+				case 0:
+				case 1:
+					objectType = 0;
+					break;
+				case 2:
+					objectType = 1;
+					break;
+				default:
+					return undefined;
+			};
+			c.fillStyle = config[2][0];
+			//residueCorrectionAmount pixels is added to w and h to account for an "outline residue" that occurs when removing objects by drawing over them with the background color
+			var residueCorrectionAmount = 2;
+			if (objectType === 0) {
+				c.fillRect(positionSize[object][0][0] - residueCorrectionAmount / 2, positionSize[object][0][1] - residueCorrectionAmount / 2, positionSize[object][1][0] + residueCorrectionAmount, positionSize[object][1][1] + residueCorrectionAmount);
+			} else {
+				c.beginPath();
+				c.arc(positionSize[object][0][0], positionSize[object][0][1], positionSize[object][1][0] / 2 + residueCorrectionAmount / 2, 0, 2 * Math.PI);
+				c.fill();
+			};
+			if (relativePositioning) {
+				positionSize[object][0][0] += x;
+				positionSize[object][0][1] += y;
+			} else {
+				positionSize[object][0][0] = x;
+				positionSize[object][0][1] = y;
+			};
+			for (var i = 0; i < 2; i++) {
+				c.fillStyle = config[2][i + 1];
+				c.fillRect(positionSize[i][0][0], positionSize[i][0][1], positionSize[i][1][0], positionSize[i][1][1]);
+			};
+			c.fillStyle = config[2][3];
+			c.beginPath();
+			c.arc(positionSize[2][0][0], positionSize[2][0][1], positionSize[2][1][0] / 2, 0, 2 * Math.PI);
+			c.fill();
+		};
+		var paddleDirection = [0, 0];
+		var paddleMovementLoop = [0, 0];
+		function paddleMovement(paddle, state, direction) {
+			window.clearInterval(paddleMovementLoop[paddle]);
+			paddleDirection[paddle] = 0;
+			if (state) {
+				paddleDirection[paddle] = direction;
+				paddleMovementLoop[paddle] = window.setInterval(function() {
+					var d0 = ((h / 50) * direction);
+					var d = positionSize[paddle][0][1] + d0
+					if (d < 0) {
+						d0 = -positionSize[paddle][0][1];
+					} else if (d + positionSize[paddle][1][1] > h) {
+						d0 = h - (positionSize[paddle][0][1] + positionSize[paddle][1][1]);
+					};
+					moveObject(paddle, 0, d0, true);
+				}, 10);
+			};
+		};
+		//scores = {player0, player1}
+		scores = [0, 0];
+		var gameRunning = false;
+		var gameComplete = false;
+		var scoreElements = [document.getElementById("score0"), document.getElementById("score1")];
+		function startStop(status) {
+			if (status && gameComplete) {
+				scores = [0, 0];
+				for (var i = 0; i < scoreElements.length; i++) {
+					scoreElements[i].innerHTML = "0";
+					scoreElements[i].classList.remove("flashing");
+				};
+				moveObject(2, 0, 0, false);
+				initializeBall();
+				gameComplete = false;
+			};
+			gameRunning = status;
+			if (status) {
+				document.getElementById("startStop").innerHTML = "Stop";
+			} else {
+				paddleMovement(0, false, 0);
+				paddleMovement(1, false, 0);
+				document.getElementById("startStop").innerHTML = "Start";
+			};
+		};
+		function errorHandling(errorObject) {
+			document.getElementById("errorMessageBody").innerHTML = errorObject.name + ": " + errorObject.message;
+			document.getElementById("errorMessage").classList.remove("disabled");
+			document.getElementById("errorMessage").classList.add("enabled");
+		};
+		var startStopKeyDown = false;
+		window.addEventListener("keydown", function(e) {
+			try {
+				var key = e.key;
+				if (gameRunning) {
+					switch (key) {
+						case config[0][0]:
+		  					paddleMovement(0, true, -1);
+		  					break;
+		  				case config[0][1]:
+							paddleMovement(0, true, 1);
+							break;
+						case config[0][2]:
+							paddleMovement(1, true, -1);
+							break;
+						case config[0][3]:
+							paddleMovement(1, true, 1);
+							break;
+						default:
+							break;
+					};
+				};
+				if (key === config[0][4]) {
+					startStop(!gameRunning);
+				};
+			} catch (errorObject) {
+				errorHandling(errorObject);
+			};
+		});
+		window.addEventListener("keyup", function(e) {
+			try {
+				if (gameRunning) {
+					var key = e.key;
+					switch(key) {
+						case config[0][0]:
+							paddleMovement(0, false, -1);
+							break;
+						case config[0][1]:
+							paddleMovement(0, false, 1);
+							break;
+						case config[0][2]:
+							paddleMovement(1, false, -1);
+							break;
+						case config[0][3]:
+							paddleMovement(1, false, 1);
+							break;
+						default:
+							break;
+					};
+				};
+			} catch (errorObject) {
+				errorHandling(errorObject);
+			};
+		});
+		var audioContext = 0;
+		function playFrequency(fPreset) {
+			if (config[2][4]) {
+				var f = 0;
+				switch (fPreset) {
+					case 0:
+						f = 110;
+						break;
+					case 1:
+						f = 220;
+						break;
+					case 2:
+						f = 440;
+						break;
+					default:
+						f = fPreset;
+						break;
+				};
+				fHertzTone = audioContext.createOscillator();
+				fHertzTone.type = "square";
+				fHertzTone.frequency.value = f;
+				fHertzTone.connect(audioContext.destination);
+				fHertzTone.start(audioContext.currentTime);
+				fHertzTone.stop(audioContext.currentTime + 0.2);
+			};
+		};
+		function crc(crcType, crcN, crcM0, crcM1) {
+			var crcH = positionSize[2][0][0];
+			var crcK = positionSize[2][0][1];
+			var crcR = positionSize[2][1][0] / 2;
+			var intermediate0 = 0;
+			if (crcType) {
+				intermediate0 = crcN * (2 * crcH - crcN) - crcH * crcH + crcR * crcR;
+			} else {
+				intermediate0 = crcR * crcR - crcN * (crcN - 2 * crcK) - crcK * crcK;
+			};
+			var intermediate1 = Math.sqrt(intermediate0) / 2;
+			var crcA = 0;
+			var crcB = 0;
+			if (crcType) {
+				/*
+				Old values:
+				crcA = -crcK - intermediate1;
+				crcB = -crcK + intermediate1;
+				
+				Multiplying the old values by -1 so that they fit within the canvas, and swapping the values so that the smaller one was first, fixed the values for some reason
+				*/
+				crcA = crcK - intermediate1;
+				crcB = crcK + intermediate1;
+			} else {
+				crcA = crcH - intermediate1;
+				crcB = crcH + intermediate1;
+			};
+			return intermediate0 >= 0 && (crcB >= crcM0 && crcA <= crcM1);
+		};
+		var previousEdgeCollision = [false, false];
+		function circleRectangleCollision() {
+			previousEdgeCollision[1] = true;
+			var paddleCollision = [false, false];
+			if (crc(true, positionSize[0][0][0] + positionSize[0][1][0], positionSize[0][0][1], positionSize[0][0][1] + positionSize[0][1][1])) {
+				//Paddle 0 right edge
+				if (!previousEdgeCollision[0]) {
+					ballVelocity[0] *= -1;
+					ballVelocity[0] += paddleAcceleration;
+					paddleCollision[0] = true;
+				};
+			} else if (crc(true, positionSize[1][0][0], positionSize[1][0][1], positionSize[1][0][1] + positionSize[1][1][1])) {
+				//Paddle 1 left edge
+				if (!previousEdgeCollision[0]) {
+					ballVelocity[0] *= -1;
+					ballVelocity[0] -= paddleAcceleration;
+					paddleCollision[1] = true;
+				};
+			} else if (crc(false, positionSize[0][0][1], positionSize[0][0][0], positionSize[0][0][0] + positionSize[0][1][0])) {
+				//Paddle 0 top edge
+				if (!previousEdgeCollision[0]) {
+					ballVelocity[1] *= -1;
+					ballVelocity[1] -= paddleAcceleration;
+					paddleCollision[0] = true;
+				};
+			} else if (crc(false, positionSize[0][0][1] + positionSize[0][1][1], positionSize[0][0][0], positionSize[0][0][0] + positionSize[0][1][0])) {
+				//Paddle 0 bottom edge
+				if (!previousEdgeCollision[0]) {
+					ballVelocity[1] *= -1;
+					ballVelocity[1] += paddleAcceleration;
+					paddleCollision[0] = true;
+				};
+			} else if (crc(false, positionSize[1][0][1], positionSize[1][0][0], positionSize[1][0][0] + positionSize[1][1][0])) {
+				//Paddle 1 top edge
+				if (!previousEdgeCollision[0]) {
+					ballVelocity[1] *= -1;
+					ballVelocity[1] -= paddleAcceleration;
+					paddleCollision[1] = true;
+				};
+			} else if (crc(false, positionSize[1][0][1] + positionSize[1][1][1], positionSize[1][0][0], positionSize[1][0][0] + positionSize[1][1][0])) {
+				//Paddle 1 bottom edge
+				if (!previousEdgeCollision[0]) {
+					ballVelocity[1] *= -1;
+					ballVelocity[1] += paddleAcceleration;
+					paddleCollision[1] = true;
+				};
+			} else if (crc(true, positionSize[0][0][0], positionSize[0][0][1], positionSize[0][0][1] + positionSize[0][1][1])) {
+				//Paddle 0 left edge
+				if (!previousEdgeCollision[0]) {
+					ballVelocity[0] *= -1;
+					ballVelocity[0] -= paddleAcceleration;
+					paddleCollision[0] = true;
+				};
+			} else if (crc(true, positionSize[1][0][0] + positionSize[1][1][0], positionSize[1][0][1], positionSize[1][0][1] + positionSize[1][1][1])) {
+				//Paddle 1 right edge
+				if (!previousEdgeCollision[0]) {
+					ballVelocity[0] *= -1;
+					ballVelocity[0] += paddleAcceleration;
+					paddleCollision[1] = true;
+				};
+			} else {
+				previousEdgeCollision[1] = false;
+			};
+			previousEdgeCollision[0] = previousEdgeCollision[1];
+			if (paddleCollision[0] || paddleCollision[1]) {
+				//Any paddle edge
+				playFrequency(2);
+				if (paddleCollision[0]) {
+					//Paddle 0 edges
+					ballVelocity[1] += paddleAcceleration * paddleDirection[0];
+				} else {
+					//Paddle 1 edges
+					ballVelocity[1] += paddleAcceleration * paddleDirection[1];
+				};
+			};
+		};
+		var ballVelocity = [];
+		function initializeBall() {
+			moveObject(2, w / 2, h / 2, false);
+			//ballVelocity = {x vector, y vector, magnitude, direction (radian angle)}
+			ballVelocity = [0, 0, h / 200, Math.random() * 2 * Math.PI];
+			ballVelocity[0] = ballVelocity[2] * Math.cos(ballVelocity[3]);
+			ballVelocity[1] = ballVelocity[2] * Math.sin(ballVelocity[3]);
+		};
+		initializeBall();
+		function updateScore(player) {
+			scores[player]++;
+			scoreElements[player].innerHTML = scores[player];
+			if (scores[player] >= config[1][0]) {
+				gameComplete = true;
+				startStop(false);
+				scoreElements[player].classList.add("flashing");
+			} else {
+				initializeBall();
+			};
+		};
+		var paddleAcceleration = h * Math.sqrt(2) / 1600;
+		var ballMovement = window.setInterval(function() {
+			try {
+				if (gameRunning) {
+					//Top edge or bottom edge
+					if (positionSize[2][0][1] - positionSize[2][1][0] / 2 <= 0 || positionSize[2][0][1] + positionSize[2][1][0] / 2 >= h) {
+						playFrequency(1);
+						ballVelocity[1] *= -1;
+					};
+					//{Left edge, right edge}
+					var horizontalEdgeCollisions = [positionSize[2][0][0] - positionSize[2][1][0] / 2 <= 0, positionSize[2][0][0] + positionSize[2][1][0] / 2 >= w];
+					//Left edge or right edge
+					if (horizontalEdgeCollisions[0] || horizontalEdgeCollisions[1]) {
+						ballVelocity[0] *= -1;
+						playFrequency(0);
+						if (horizontalEdgeCollisions[0]) {
+							//Left edge
+							updateScore(1);
+						} else {
+							//Right edge
+							updateScore(0);
+						};
+					};
+					circleRectangleCollision();
+					moveObject(2, ballVelocity[0], ballVelocity[1], true);
+				};
+			} catch (errorObject) {
+				errorHandling(errorObject);
+			};
+		}, 10);
+		//</game>
+		//<gui>
+		var configButtons = document.getElementById("configuration").querySelectorAll("#configuration > button");
+		var configKeyBindingsEventListeners = [];
+		for (var i = 0; i < configButtons.length; i++) {
+			var configButton = configButtons[i];
+			if (configButton.dataset.associatedpopup !== undefined) {
+				configButton.addEventListener("click", function(e) {
+					startStop(false);
+					var targetPopup = document.getElementById(e.target.dataset.associatedpopup);
+					targetPopup.classList.remove("disabled");
+					targetPopup.classList.add("enabled");
+				});
+				var associatedPopup = document.getElementById(configButton.dataset.associatedpopup);
+				associatedPopup.getElementsByClassName("popupClose")[0].addEventListener("click", function(e) {
+					var targetPopup = e.target.parentElement;
+					targetPopup.classList.remove("enabled");
+					targetPopup.classList.add("disabled");
+				});
+				var options = associatedPopup.getElementsByTagName("input");
+				for (var j = 0; j < options.length; j++) {
+					if (associatedPopup.id === "keyBindings") {
+						options[j].addEventListener("focus", function(e) {
+							configKeyBindingsEventListeners[e.target.dataset.index] = e.target.addEventListener("keydown", function(keyE) {
+								var targetPopup = e.target.parentElement.parentElement;
+								config[targetPopup.dataset.index][keyE.target.dataset.index] = keyE.key;
+								keyE.target.value = keyE.key;
+							});
+						});
+						options[j].addEventListener("blur", function(e) {
+							e.target.removeEventListener("keydown", configKeyBindingsEventListeners[e.target.dataset.index]);
+						});
+					} else {
+						options[j].addEventListener("input", function(e) {
+							if (e.target.pattern === "" || RegExp(e.target.pattern).test(e.target.value)) {
+								var targetPopup = "";
+								var configValue = "";
+								if (e.target.type === "text") {
+									targetPopup = e.target.parentElement.parentElement;
+									configValue = e.target.value;
+									if (/^\d+$/.test(configValue)) {
+										configValue = Number(configValue);
+									};
+								} else if (e.target.type === "checkbox") {
+									targetPopup = e.target.parentElement.parentElement.parentElement;
+									configValue = e.target.checked;
+								};
+								config[targetPopup.dataset.index][e.target.dataset.index] = configValue;
+							};
+						});
+					};
+				};
+				associatedPopup.getElementsByClassName("restoreDefaultsButton")[0].addEventListener("click", function(e) {
+					var targetPopup = e.target.parentElement.parentElement;
+					var optionElements = targetPopup.getElementsByTagName("input");
+					for (var j = 0; j < config[targetPopup.dataset.index].length; j++) {
+						config[targetPopup.dataset.index][j] = configDefault[targetPopup.dataset.index][j];
+					};
+					for (var j = 0; j < optionElements.length; j++) {
+						if (optionElements[j].type === "text") {
+							optionElements[j].value = config[targetPopup.dataset.index][j];
+						} else if (optionElements[j].type === "checkbox") {
+							optionElements[j].checked = config[targetPopup.dataset.index][j];
+						};
+					};
+				});
+			};
+		};
+		document.getElementById("startStop").addEventListener("click", function() {
+			startStop(!gameRunning);
+		});
+		document.getElementById("audioEnabled").addEventListener("input", function(e) {
+			if (audioContext === 0 && e.target.checked && config[2][4]) {
+				audioContext = new AudioContext();
+			};
+		});
+		document.getElementById("backgroundColor").addEventListener("input", function(e) {
+			if (RegExp(e.target.pattern).test(e.target.value)) {
+				c.fillStyle = e.target.value;
+				c.fillRect(0, 0, w, h);
+				//moveObject is being used to redraw all objects on the screen; object 0 is not moved
+				moveObject(0, 0, 0, true);
+			};
+		});
+		var buttonElements = document.getElementsByTagName("button");
+		for (var i = 0; i < buttonElements.length; i++) {
+			buttonElements[i].addEventListener("click", function(e) {
+				e.target.blur();
+			});
+		};
+		//</gui>
+	</script>
+</html>
