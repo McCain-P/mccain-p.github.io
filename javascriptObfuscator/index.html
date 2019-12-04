@@ -92,12 +92,18 @@
 		//programData follows the same structure as dataDisplayElements, and stores the internal values of the data
 		var programData = [dataDisplayElements[0].value];
 		var identifier = "";
+		//validIdentifierCharacters = {valid characters, index of the beginning of the characters that cannot be used as the first character}
+		var validIdentifierCharacters = ["$ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz0123456789", 0];
+		for (var i = 0; i < validIdentifierCharacters.length; i++) {
+			console.log(i + " = " + validIdentifierCharacters[i]);
+		};
 		function incrementIdentifier() {
 			
 		};
 		function obfuscate() {
 			programData[2] = programData[0];
 			//Obfuscation round 0 - whitespace-character removal and neutral identifiers
+			//Whitespace-character removal
 			//List of JavaScript statements that must be followed by a space
 			var whitespaceStatements = ["var", "let", "const", "return", "function", "function*", "async", "class", "import", "export"];
 			//Component of the regex statement that includes the whitespace statements
@@ -108,6 +114,8 @@
 			var whitespaceRegex = new RegExp("[^" + regexComponent + "]\\s", "g");
 			programData[2] = programData[2].replace(whitespaceRegex, "");
 			dataDisplayElements[2].value = programData[2];
+			//Neutral identifiers
+			
 			//Obfuscation round 1 - structure modification
 			
 			//Obfuscation round 2 - identifier alteration / aliases
