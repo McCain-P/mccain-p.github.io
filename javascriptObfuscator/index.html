@@ -161,4 +161,27 @@
 		};
 		document.getElementById("enterButton").addEventListener("click", obfuscate);
 	</script>
+	<!--
+	Resources
+	
+	https://github.com/aemkei/jsfuck
+
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+	Shortest method identifiers: isNaN, match
+	Shortest complete way, including the object it uses (this assumes that each character in the method name takes the same amount of characters to represent, and that each value passed to the parameter takes up the same amount of characters. You will need to figure out how to write every one of them, and see which is shortest: Number.isNaN = +[]["isNaN"]
+	[+[]][0].constructor.isNaN(0)
+	[+[]][+[]].constructor.isNaN(+[])
+	[+[]][+[]]["constructor"]["isNaN"](+[])
+
+	NaN = +[][[]]   , which can be plugged into the Number.isNaN method instead of 0 to receive the boolean true.
+	This would be:
+	[+[]][+[]]["constructor"]["isNaN"](+[][[]])
+	-->
 </html>
