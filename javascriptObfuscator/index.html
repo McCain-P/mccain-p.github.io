@@ -79,27 +79,29 @@
 	</body>
 	<script>
 		/*
-		programData index  Element
-		0                  Input
-		1                  Output
-		n, where n > 1     Intermediary Output n - 2
+		dataDisplayElements index  Element
+		0                          Input
+		1                          Output
+		n, where n > 1             Intermediary Output n - 2
 		*/
-		var programData = [document.getElementByid("input"), document.getElementById("output"), document.getElementById("intermediaryOutput0"), document.getElementById("intermediaryOutput1"), document.getElementById("intermediaryOutput2"), document.getElementById("intermediaryOutput3")];
-		var enterButton = document.getElementById("enterButton");
+		var dataDisplayElements = [document.getElementByid("input"), document.getElementById("output"), document.getElementById("intermediaryOutput0"), document.getElementById("intermediaryOutput1"), document.getElementById("intermediaryOutput2"), document.getElementById("intermediaryOutput3")];
+		//programData follows the same structure as dataDisplayElements, and stores the internal values of the data
+		var programData = [dataDisplayElements[0].value];
 		var identifier = "";
 		function incrementIdentifier() {
 			
 		};
 		function obfuscate() {
-			var programDataCurrent = programData[0].value;
+			programData[2] = programData[0];
 			//Obfuscation round 0 - whitespace-character removal and neutral identifiers
-			programDataCurrent = programDataCurrent.replace(/\s/g, "");
+			programData[2] = programData[2].replace(/[((?:\S)\s)(\s(?:\S))]/g, "");
+			dataDisplayElements[2].value = programData[2];
 			//Obfuscation round 1 - structure modification
 			
 			//Obfuscation round 2 - identifier alteration / aliases
 			
 			//Obfuscation round 3 - reduced character-set
 		};
-		enterButton.addEventListener("click", obfuscate);
+		document.getElementById("enterButton").addEventListener("click", obfuscate);
 	</script>
 </html>
