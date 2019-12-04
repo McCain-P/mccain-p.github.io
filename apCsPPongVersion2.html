@@ -883,14 +883,16 @@
 				audioContext = new AudioContext();
 			};
 		});
-		document.getElementById("backgroundColor").addEventListener("input", function(e) {
+		function redrawBackground() {
 			if (RegExp(e.target.pattern).test(e.target.value)) {
 				c.fillStyle = e.target.value;
 				c.fillRect(0, 0, w, h);
 				//moveObject is being used to redraw all objects on the screen; object 0 is not moved
 				moveObject(0, 0, 0, true);
 			};
-		});
+		};
+		document.getElementById("backgroundColor").addEventListener("input", redrawBackground);
+		document.getElementById("restoreDefaultsVisuals").addEventListener("click", redrawBackground);
 		var buttonElements = document.getElementsByTagName("button");
 		for (var i = 0; i < buttonElements.length; i++) {
 			buttonElements[i].addEventListener("click", function(e) {
