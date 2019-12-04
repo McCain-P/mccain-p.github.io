@@ -883,7 +883,7 @@
 				audioContext = new AudioContext();
 			};
 		});
-		function redrawBackground() {
+		function redrawBackground(e) {
 			if (RegExp(e.target.pattern).test(e.target.value)) {
 				c.fillStyle = e.target.value;
 				c.fillRect(0, 0, w, h);
