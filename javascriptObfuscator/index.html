@@ -97,7 +97,7 @@
 		function obfuscate() {
 			programData[2] = programData[0];
 			//Obfuscation round 0 - whitespace-character removal and neutral identifiers
-			programData[2] = programData[2].replace(/[((?:\S)\s)(\s(?:\S))]/g, "");
+			programData[2] = programData[2].replace(/[((?:\s)\s)(\s(?:\s))]/g, "");
 			dataDisplayElements[2].value = programData[2];
 			//Obfuscation round 1 - structure modification
 			
