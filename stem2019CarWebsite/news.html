@@ -51,6 +51,7 @@
 				left: 50%;
 				transform: translate(-50%,-50%);
 			}
+			/*
 			#title::before {
 				content: "";
 				display: block;
@@ -59,13 +60,14 @@
 				background-color: RGB(255,255,0);
 				transform: skew(345deg) rotate(330deg);
 			}
+			*/
 			.dynamicHighlight::after {
 				display: block;
 				content: "";
 				background-color: RGB(255,255,0);
 				height: 0.8em;
 				width: 1em;
-				transform: rotate(22.5deg);
+				transform: rotate(22.5deg) skew(-22.5deg);
 				position: absolute;
 				top: 0;
 				left: -50%;
