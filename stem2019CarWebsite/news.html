@@ -63,10 +63,10 @@
 			*/
 			@keyframes dynamicHighlight {
 				from {
-					
+					width: 0;
 				}
 				to {
-					
+					width: 3em;
 				}
 			}
 			.dynamicHighlight::after {
@@ -74,7 +74,9 @@
 				content: "";
 				background-color: RGB(255,255,0);
 				height: 0.8em;
+				/*
 				width: 1em;
+				*/
 				transform: rotate(15deg) skew(-22.5deg);
 				position: absolute;
 				top: 0;
