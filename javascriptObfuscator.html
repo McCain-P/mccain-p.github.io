@@ -142,7 +142,8 @@
 			//Obfuscation round 0 - whitespace-character removal and neutral identifiers
 			//Whitespace-character removal
 			//List of JavaScript statements that must be followed by a space
-			var whitespaceStatements = ["var", "let", "const", "return", "function", "function*", "async", "class", "import", "export"];
+			//{statement, requiresPreceedingWhitespace, requiresSucceedingWhitespace}
+			var whitespaceStatements = [["var", false, true], ["let", false, true], ["const", false, true], ["return", false, true], ["function", false, true], ["function*", false, true], ["async", false, true], ["class", false, true], ["import" ,false, true], ["export", false, true], ["delete", false, true], ["instanceof", true, true], ["in", true, true]];
 			//Component of the regex statement that includes the whitespace statements
 			var regexComponent = "";
 			for (var i = 0; i < whitespaceStatements.length; i++) {
