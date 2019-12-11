@@ -67,13 +67,7 @@
 					bottom: 0;
 				}
 				to {
-					width: 3em;
-					/*
-					bottom: calc(3em * 1.73205080757 - 2 * 3em);
-					*/
-					/*
-					-w(2 - sqrt(3)) = wsqrt(3) - 2w = 3em * 1.73205080757 - 2 * 3em
-					*/
+					width: 4em;
 				}
 			}
 			.dynamicHighlight::after {
@@ -81,13 +75,7 @@
 				content: "";
 				background-color: RGB(255,255,0);
 				height: 0.8em;
-				/*
-				width: 1em;
-				*/
 				transform-origin: top left;
-				/*
-				transform: rotate(15deg) skew(-22.5deg);
-				*/
 				transform: rotate(7.5deg) skew(-22.5deg);
 				position: absolute;
 				top: 0;
