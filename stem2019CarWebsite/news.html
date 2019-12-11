@@ -59,13 +59,24 @@
 				background-color: RGB(255,255,0);
 				transform: skew(345deg) rotate(330deg);
 			}
+			.dynamicHighlight::after {
+				display: block;
+				content: "";
+				background-color: RGB(255,255,0);
+				height: 1em;
+				width: 10em;
+				transform: rotate(45deg);
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="header">
 		</div>
 		<div id="titleHeader">
-			<h1 id="title">
+			<h1 class="dynamicHighlight" id="title">
 				News
 			</h1>
 		</div>
