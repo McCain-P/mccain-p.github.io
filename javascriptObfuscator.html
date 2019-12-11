@@ -143,13 +143,36 @@
 			//Whitespace-character removal
 			//List of JavaScript statements that must be followed by a space
 			//{statement, requiresPreceedingWhitespace, requiresSucceedingWhitespace}
-			var whitespaceStatements = [["var", false, true], ["let", false, true], ["const", false, true], ["return", false, true], ["function", false, true], ["function*", false, true], ["async", false, true], ["class", false, true], ["import" ,false, true], ["export", false, true], ["delete", false, true], ["instanceof", true, true], ["in", true, true]];
+			var whitespaceStatements = [
+				["var", false, true],
+				["let", false, true],
+				["const", false, true],
+				["return", false, true],
+				["function", false, true],
+				["function*", false, true],
+				["async", false, true],
+				["class", false, true],
+				["import" ,false, true],
+				["export", false, true],
+				["delete", false, true],
+				["instanceof", true, true],
+				["in", true, true],
+				["new", false, true],
+				["throw", false, true],
+				["typeof", false, true],
+				["void", false, true],
+				["yield", false, true]
+			];
 			//Component of the regex statement that includes the whitespace statements
-			var regexComponent = "";
-			for (var i = 0; i < whitespaceStatements.length; i++) {
-				regexComponent += "(?:" + whitespaceStatements[i] + ")";
+			var regexComponent = ["", ""];
+			for (var i = 0; i < whitespaceStatments[i].length - 1; i++) {
+				for (var j = 0; j < whitespaceStatements.length; j++) {
+					if (whitespaceStatements[j][i + 1]) {
+						regexComponent[i] += "(?:" + whitespaceStatements[j][0] + ")";
+					};
+				};
 			};
-			var whitespaceRegex = new RegExp("[^" + regexComponent + "]\\s", "g");
+			var whitespaceRegex = new RegExp("[^" + regexComponent[1] + "]\\s[^" + regexComponent[0] + "]", "g");
 			programData[2] = programData[2].replace(whitespaceRegex, "");
 			dataDisplayElements[2].value = programData[2];
 			//Neutral identifiers
