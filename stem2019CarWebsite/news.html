@@ -64,9 +64,14 @@
 			@keyframes dynamicHighlight {
 				from {
 					width: 0;
+					bottom: 0;
 				}
 				to {
 					width: 3em;
+					bottom: calc(3em * 1.73205080757 - 2 * 3em);
+					/*
+					-w(2 - sqrt(3)) = wsqrt(3) - 2w = 3em * 1.73205080757 - 2 * 3em
+					*/
 				}
 			}
 			.dynamicHighlight::after {
