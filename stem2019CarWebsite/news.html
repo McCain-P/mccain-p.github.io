@@ -73,7 +73,18 @@
 				z-index: -1;
 				animation: 1.5s linear 0s 1 normal forwards running dynamicHighlight;
 			}
+			#articles {
+				position: fixed;
+				top: 25vh;
+				left: 5vw;
+				width: 90vw;
+				height: auto;
+			}
 			.article {
+				position: static;
+				width: 100%;
+				height: auto;
+				border-top: 0.75vh solid RGB(0,0,0);
 			}
 		</style>
 	</head>
@@ -85,13 +96,27 @@
 				News
 			</h1>
 		</div>
-		<div class="article">
-			<h2>
-				Article A
-			</h2>
-			<p>
-				Article A text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
-			</p>
+		<div id="articles">
+			<div class="article">
+				<h2>
+					Article A
+				</h2>
+				<img>
+				</img>
+				<p>
+					Article A text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
+				</p>
+			</div>
+			<div class="article">
+				<h2>
+					Article B
+				</h2>
+				<img>
+				</img>
+				<p>
+					Article B text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
+				</p>
+			</div>
 		</div>
 	</body>
 	<script src="info.js">
