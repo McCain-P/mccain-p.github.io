@@ -31,6 +31,7 @@
 				position: fixed;
 				top: 5vh;
 				left: 0;
+				z-index: 2;
 			}
 			#titleHeader::after {
 				content: "";
@@ -51,6 +52,7 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%,-50%);
+				z-index: 4;
 			}
 			@keyframes dynamicHighlight {
 				from {
@@ -71,7 +73,7 @@
 				position: absolute;
 				top: 0;
 				left: 15%;
-				z-index: -1;
+				z-index: 3;
 				animation: 1.5s linear 0s 1 normal forwards running dynamicHighlight;
 			}
 			#articles {
@@ -87,6 +89,7 @@
 				*/
 				height: auto;
 				overflow-y: scroll;
+				z-index: 0;
 			}
 			.article {
 				position: static;
@@ -100,13 +103,20 @@
 			.article > p {
 				font-size: 2vh;
 			}
-			#articlesCover {
+			#articlesCoverTop, #articlesCoverBottom {
 				background-color: RGB(255,255,255);
-				height: 10vh;
 				width: 100vw;
 				position: fixed;
-				bottom: 0;
 				left: 0;
+				z-index: 1;
+			}
+			#articlesCoverTop {
+				height: 25vh;
+				top: 0;
+			}
+			#articlesCoverBottom {
+				height: 10vh;
+				bottom: 0;
 			}
 		</style>
 	</head>
@@ -117,6 +127,8 @@
 			<h1 class="dynamicHighlight" id="title">
 				News
 			</h1>
+		</div>
+		<div id="articlesCoverTop">
 		</div>
 		<div id="articles">
 			<div class="article">
@@ -220,7 +232,7 @@
 				</p>
 			</div>
 		</div>
-		<div id="articlesCover">
+		<div id="articlesCoverBottom">
 		</div>
 	</body>
 	<script src="info.js">
