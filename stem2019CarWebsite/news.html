@@ -75,11 +75,17 @@
 				animation: 1.5s linear 0s 1 normal forwards running dynamicHighlight;
 			}
 			#articles {
+				/*
 				position: fixed;
+				*/
+				position: absolute;
 				top: 25vh;
 				left: 5vw;
 				width: 90vw;
+				/*
 				height: 65vh;
+				*/
+				height: auto;
 				overflow-y: scroll;
 			}
 			.article {
@@ -93,6 +99,14 @@
 			}
 			.article > p {
 				font-size: 2vh;
+			}
+			#articlesCover {
+				background-color: RGB(255,255,255);
+				height: 10vh;
+				width: 100vw;
+				position: fixed;
+				bottom: 0;
+				left: 0;
 			}
 		</style>
 	</head>
@@ -205,6 +219,8 @@
 					Article J text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
 			</div>
+		</div>
+		<div id="articlesCover">
 		</div>
 	</body>
 	<script src="info.js">
