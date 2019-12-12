@@ -31,7 +31,6 @@
 				position: fixed;
 				top: 5vh;
 				left: 0;
-				z-index: 2;
 			}
 			#titleHeader::after {
 				content: "";
@@ -52,7 +51,6 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%,-50%);
-				z-index: 4;
 			}
 			@keyframes dynamicHighlight {
 				from {
@@ -73,7 +71,6 @@
 				position: absolute;
 				top: 0;
 				left: 15%;
-				z-index: 3;
 				animation: 1.5s linear 0s 1 normal forwards running dynamicHighlight;
 			}
 			#articles {
@@ -92,7 +89,7 @@
 				*/
 				height: calc(auto + 10vh);
 				overflow-y: scroll;
-				z-index: 0;
+				z-index: -1;
 			}
 			.article {
 				position: static;
@@ -111,7 +108,7 @@
 				width: 100vw;
 				position: fixed;
 				left: 0;
-				z-index: 1;
+				z-index: 0;
 			}
 			#articlesCoverTop {
 				height: 25vh;
