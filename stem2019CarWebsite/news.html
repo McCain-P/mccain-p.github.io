@@ -24,7 +24,7 @@
 				position: fixed;
 				top: 0;
 				left: 0;
-				z-index: 0;
+				z-index: 3;
 			}
 			#titleHeader {
 				height: 10vh;
@@ -32,7 +32,7 @@
 				position: fixed;
 				top: 5vh;
 				left: 0;
-				z-index: 0;
+				z-index: 3;
 			}
 			#titleHeader::after {
 				content: "";
@@ -43,7 +43,7 @@
 				bottom: 0;
 				left: calc(100vw / 3);
 				border-bottom: 1vh solid RGB(0,0,0);
-				z-index: 0;
+				z-index: 3;
 			}
 			#title {
 				font-style: italic;
@@ -54,7 +54,7 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%,-50%);
-				z-index: 0;
+				z-index: 3;
 			}
 			@keyframes dynamicHighlight {
 				from {
@@ -76,7 +76,7 @@
 				top: 0;
 				left: 15%;
 				animation: 1.5s linear 0s 1 normal forwards running dynamicHighlight;
-				z-index: -1;
+				z-index: 2;
 			}
 			#articles {
 				position: absolute;
@@ -86,7 +86,7 @@
 				height: auto;
 				/*Padding to account for the bottom cover*/
 				padding-bottom: 10vh;
-				z-index: -3;
+				z-index: 0;
 			}
 			#articles::before, #articles::after {
 				/*Top and bottom covers of the articles element*/
@@ -96,7 +96,7 @@
 				width: 100vw;
 				position: fixed;
 				left: 0;
-				z-index: -2;
+				z-index: 1;
 			}
 			#articles::before {
 				/*Top cover of the articles element*/
