@@ -89,35 +89,38 @@
 				*/
 				height: auto;
 				z-index: -1;
-				/*Padding to account for the bottom cover (articlesCoverBottom)*/
+				/*Padding to account for the bottom cover*/
 				padding-bottom: 10vh;
 			}
-			.article {
-				position: static;
-				width: 100%;
-				height: auto;
-				border-top: 0.75vh solid RGB(0,0,0);
-			}
-			.article > h2 {
-				font-size: 4vh;
-			}
-			.article > p {
-				font-size: 2vh;
-			}
-			#articlesCoverTop, #articlesCoverBottom {
+			#articles::before, #articles::after {
+				/*Top and bottom covers of the articles element*/
 				background-color: RGB(255,255,255);
 				width: 100vw;
 				position: fixed;
 				left: 0;
 				z-index: 0;
 			}
-			#articlesCoverTop {
+			#articles::before {
+				/*Top cover of the articles element*/
 				height: 25vh;
 				top: 0;
 			}
-			#articlesCoverBottom {
+			#articles::after {
+				/*Bottom cover of the articles element*/
 				height: 10vh;
 				bottom: 0;
+			}
+			article {
+				position: static;
+				width: 100%;
+				height: auto;
+				border-top: 0.75vh solid RGB(0,0,0);
+			}
+			article > h2 {
+				font-size: 4vh;
+			}
+			article > p {
+				font-size: 2vh;
 			}
 		</style>
 	</head>
@@ -129,10 +132,8 @@
 				News
 			</h1>
 		</div>
-		<div id="articlesCoverTop">
-		</div>
 		<div id="articles">
-			<div class="article">
+			<article>
 				<h2>
 					Article A
 				</h2>
@@ -141,8 +142,8 @@
 				<p>
 					Article A text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-			<div class="article">
+			</article>
+			<article>
 				<h2>
 					Article B
 				</h2>
@@ -151,8 +152,8 @@
 				<p>
 					Article B text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-			<div class="article">
+			</article>
+			<article>
 				<h2>
 					Article C
 				</h2>
@@ -161,8 +162,8 @@
 				<p>
 					Article C text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-			<div class="article">
+			</article>
+			<article>
 				<h2>
 					Article D
 				</h2>
@@ -171,8 +172,8 @@
 				<p>
 					Article D text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-			<div class="article">
+			</article>
+			<article>
 				<h2>
 					Article E
 				</h2>
@@ -181,7 +182,7 @@
 				<p>
 					Article E text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
+			</article>
 			<div class="article">
 				<h2>
 					Article F
@@ -191,8 +192,8 @@
 				<p>
 					Article F text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-			<div class="article">
+			</article>
+			<article>
 				<h2>
 					Article G
 				</h2>
@@ -201,8 +202,8 @@
 				<p>
 					Article G text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-			<div class="article">
+			</article>
+			<article>
 				<h2>
 					Article H
 				</h2>
@@ -211,8 +212,8 @@
 				<p>
 					Article H text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-			<div class="article">
+			</article>
+			<article>
 				<h2>
 					Article I
 				</h2>
@@ -221,8 +222,8 @@
 				<p>
 					Article I text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-			<div class="article">
+			</article>
+			<article>
 				<h2>
 					Article J
 				</h2>
@@ -231,9 +232,7 @@
 				<p>
 					Article J text etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc. etc.
 				</p>
-			</div>
-		</div>
-		<div id="articlesCoverBottom">
+			</article>
 		</div>
 	</body>
 	<script src="info.js">
