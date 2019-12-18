@@ -1,4 +1,4 @@
-nav {
+#navbar {
 	height: 5vh;
 	width: 100vw;
 	position: fixed;
@@ -11,18 +11,18 @@ nav {
 	justify-content: space-around;
 	flex: auto;
 }
-nav > img, nav > a {
+#navbar > img, nav > a {
 	
 }
-nav > img {
+#navbar > img {
 	background-color: RGB(255,0,0);
 }
-nav > a {
+#navbar > a {
 	color: RGB(192,192,192);
 	font-family: "Arial", sans-serif;
 	font-size: 3vh;
 	text-decoration: none;
 }
-nav > a:visited {
+#navbar > a:visited {
 	color: RGB(192,192,192);
 }
