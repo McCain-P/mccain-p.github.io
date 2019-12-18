@@ -18,7 +18,7 @@
 				color: RGB(0,0,0);
 				font-family: "Times New Roman", serif;
 			}
-			#header {
+			nav {
 				height: 5vh;
 				width: 100vw;
 				position: fixed;
@@ -26,7 +26,7 @@
 				left: 0;
 				z-index: 3;
 			}
-			#titleHeader {
+			header {
 				height: 10vh;
 				width: 100vw;
 				position: fixed;
@@ -34,7 +34,7 @@
 				left: 0;
 				z-index: 3;
 			}
-			#titleHeader::after {
+			header::after {
 				content: "";
 				display: block;
 				height: 0;
@@ -123,13 +123,13 @@
 		</style>
 	</head>
 	<body>
-		<div id="header">
-		</div>
-		<div id="titleHeader">
+		<nav>
+		</nav>
+		<header>
 			<h1 class="dynamicHighlight" id="title">
 				News
 			</h1>
-		</div>
+		</header>
 		<div id="articles">
 			<article>
 				<h2>
