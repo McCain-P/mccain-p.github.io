@@ -25,8 +25,9 @@
 	animation-duration: 1s;
 	animation-timing-function: linear;
 	animation-delay: 0s;
-	animation-iteration-count: 2;
-	animation-fill-mode: both;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: none;
 }
 @keyframes anchorHover {
 	from {
@@ -44,38 +45,11 @@
 		color: RGB(128,128,128);
 	}
 }
-/*
 #navbar > a:hover {
 	animation-name: anchorHover;
-	animation-direction: normal;
-	animation-play-state: running;
-}
-#navbar > a:not(:hover) {
-	animation-name: anchorHover;
-	animation-direction: reverse;
 	animation-play-state: running;
 }
 #navbar > a:active {
 	animation-name: anchorClick;
-	animation-direction: normal;
 	animation-play-state: running;
-}
-#navbar > a:not(:active) {
-	animation-name: anchorClick;
-	animation-direction: reverse;
-	animation-play-state: running;
-}
-*/
-#navbar > a:hover {
-	animation-name: anchorHover;
-	animation-direction: alternate;
-	animation-play-state: running;
-}
-#navbar > a:active {
-	animation-name: anchorClick;
-	animation-direction: alternate;
-	animation-play-state: running;
-}
-#navbar > a:visited {
-	color: RGB(192,192,192);
 }
