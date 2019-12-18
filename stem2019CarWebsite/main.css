@@ -27,7 +27,7 @@
 	animation-delay: 0s;
 	animation-iteration-count: 1;
 	animation-direction: normal;
-	animation-fill-mode: none;
+	animation-fill-mode: forwards;
 }
 @keyframes anchorHover {
 	from {
