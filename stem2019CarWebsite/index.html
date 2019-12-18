@@ -4,7 +4,28 @@
 			Index
 		</title>
 		<style>
-			h1 {
+			nav {
+				height: 5vh;
+				width: 100vw;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: linear-gradient(135deg, RGB(192,0,0), RGB(128,0,0));
+				display: flex;
+			}
+			nav > img, nav > a {
+				
+			}
+			nav > img {
+				background-color: RGB(255,0,0);
+			}
+			nav > a {
+				color: RGB(192,192,192);
+				font-family: "Arial", sans-serif;
+				font-size: 4vh;
+				background-color: RGB(0,0,255);
+			}
+			#x {
 				color: RGB(0,0,0);
 				background-color: RGB(255,255,0);
 				font-family: "Times New Roman", serif;
@@ -18,7 +39,26 @@
 		</style>
 	</head>
 	<body>
-		<h1>
+		<nav>
+			<img src="" id="logo">
+			</img>
+			<a href="index.html">
+				Homepage
+			</a>
+			<a href="about.html">
+				About Us, FAQ
+			</a>
+			<a href="models.html">
+				Models
+			</a>
+			<a href="physicsSimulations.html">
+				Simulations
+			</a>
+			<a href="news.html">
+				News
+			</a>
+		</nav>
+		<h1 id="x">
 			Index
 		</h1>
 	</body>
