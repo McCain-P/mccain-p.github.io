@@ -3,6 +3,8 @@
 		<title>
 			News
 		</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		</link>
 		<style>
 			body {
 				background-color: RGB(255,255,255);
@@ -18,13 +20,14 @@
 				color: RGB(0,0,0);
 				font-family: "Times New Roman", serif;
 			}
-			nav {
-				height: 5vh;
-				width: 100vw;
-				position: fixed;
-				top: 0;
-				left: 0;
+			#navbar.newsStyle {
 				z-index: 3;
+			}
+			#navbar.newsStyle > img {
+				
+			}
+			#navbar.newsStyle > a {
+				
 			}
 			header {
 				height: 10vh;
@@ -123,7 +126,24 @@
 		</style>
 	</head>
 	<body>
-		<nav>
+		<nav class="newsStyle" id="navbar">
+			<img src="logo.svg">
+			</img>
+			<a href="index.html">
+				Homepage
+			</a>
+			<a href="about.html">
+				About Us, FAQ
+			</a>
+			<a href="models.html">
+				Models
+			</a>
+			<a href="physicsSimulations.html">
+				Simulations
+			</a>
+			<a href="news.html">
+				News
+			</a>
 		</nav>
 		<header>
 			<h1 class="dynamicHighlight" id="title">
