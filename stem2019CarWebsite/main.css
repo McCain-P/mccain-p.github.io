@@ -22,7 +22,7 @@
 	font-family: "Arial", sans-serif;
 	font-size: 2.5vh;
 	text-decoration: none;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
 	animation-timing-function: linear;
 	animation-delay: 0s;
 	animation-iteration-count: 1;
@@ -45,11 +45,24 @@
 		color: RGB(128,128,128);
 	}
 }
+@keyframes anchorHoverClick {
+	from {
+		color: RGB(255,255,255);
+	}
+	to {
+		color: RGB(128,128,128);
+	}
+}
 #navbar > a:hover {
 	animation-name: anchorHover;
 	animation-play-state: running;
 }
 #navbar > a:active {
 	animation-name: anchorClick;
+	animation-play-state: running;
+}
+#navbar > a:hover:active {
+	animation-name: anchorHoverClick;
+	animation-duration: 1s;
 	animation-play-state: running;
 }
