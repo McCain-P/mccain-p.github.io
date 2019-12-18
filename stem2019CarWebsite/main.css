@@ -1,0 +1,28 @@
+nav {
+	height: 5vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: linear-gradient(135deg, RGB(192,0,0), RGB(128,0,0));
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-around;
+	flex: auto;
+}
+nav > img, nav > a {
+	
+}
+nav > img {
+	background-color: RGB(255,0,0);
+}
+nav > a {
+	color: RGB(192,192,192);
+	font-family: "Arial", sans-serif;
+	font-size: 3vh;
+	text-decoration: none;
+}
+nav > a:visited {
+	color: RGB(192,192,192);
+}
