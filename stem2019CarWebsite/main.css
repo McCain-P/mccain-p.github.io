@@ -39,14 +39,6 @@
 }
 @keyframes anchorClick {
 	from {
-		color: RGB(192,192,192);
-	}
-	to {
-		color: RGB(128,128,128);
-	}
-}
-@keyframes anchorHoverClick {
-	from {
 		color: RGB(255,255,255);
 	}
 	to {
@@ -59,10 +51,5 @@
 }
 #navbar > a:active {
 	animation-name: anchorClick;
-	animation-play-state: running;
-}
-#navbar > a:hover:active {
-	animation-name: anchorHoverClick;
-	animation-duration: 1s;
 	animation-play-state: running;
 }
