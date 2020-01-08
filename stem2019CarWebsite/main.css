@@ -23,7 +23,7 @@
 	/*
 	font-size: 2.5vh;
 	*/
-	font-size: 2.5vh;
+	font-size: min(2.5vh, 3vw);
 	text-decoration: none;
 	animation-duration: 0.2s;
 	animation-timing-function: linear;
