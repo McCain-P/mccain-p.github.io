@@ -20,12 +20,8 @@
 #navbar > a {
 	color: RGB(192,192,192);
 	font-family: "Arial", sans-serif;
-	/*
-	font-size: 2.5vh;
-	*/
 	font-size: min(2.5vh, 3vw);
 	text-decoration: none;
-	animation-duration: 0.2s;
 	animation-timing-function: linear;
 	animation-delay: 0s;
 	animation-iteration-count: 1;
@@ -51,8 +47,10 @@
 #navbar > a:hover {
 	animation-name: anchorHover;
 	animation-play-state: running;
+	animation-duration: 0.2s;
 }
 #navbar > a:active {
 	animation-name: anchorClick;
 	animation-play-state: running;
+	animation-duration: 0.4s;
 }
