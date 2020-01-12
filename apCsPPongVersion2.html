@@ -436,14 +436,17 @@
 		];
 		//</game & gui>
 		//<game>
+		//Dimensions of the canvas are relative to the dimensions of the window, and all other values are defined in terms of the canvas width and height, making the visuals scale with the window
 		var h = 0.8 * window.innerHeight;
 		var w = h;
+		//Establishing references to the canvas; setting the canvas up
 		var canvas = document.getElementById("canvas");
 		canvas.width = w;
 		canvas.height = h;
 		var c = canvas.getContext("2d");
 		c.fillStyle = config[2][0];
 		c.fillRect(0, 0, w, h);
+		//positionSize is a set (which contains sets) / matrix that stores the positions and dimensions of all objects (which are paddle 0, paddle 1, and ball)
 		/*
 		positionSize = {
 			{
@@ -476,6 +479,7 @@
 				[2 * ballR, 2 * ballR]
 			]
 		];
+		//Inititally drawing the objects to the screen/canvas
 		c.fillStyle = config[2][1];
 		c.fillRect(positionSize[0][0][0], positionSize[0][0][1], positionSize[0][1][0], positionSize[0][1][1]);
 		c.fillStyle = config[2][2];
@@ -484,8 +488,15 @@
 		c.beginPath();
 		c.arc(positionSize[2][0][0], positionSize[2][0][1], ballR, 0, 2 * Math.PI);
 		c.fill();
+		//Changes the position of a given object
 		function moveObject(object, x, y, relativePositioning) {
 			var objectType = 0;
+			/*
+			objectType = 0 -> Notation for drawing the object positions it relative to its top-left corner
+			objectType = 1 -> Notation for drawing the object positions it relative to its origin (center-point)
+			
+			objectType accounts for this discrepancy
+			*/
 			switch (object) {
 				case 0:
 				case 1:
