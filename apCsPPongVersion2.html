@@ -929,9 +929,9 @@
 		});
 		//Redraws the background immediately when the background color configuration-value is changed
 		function redrawBackground(e) {
-			if (RegExp(e.target.pattern).test(e.target.value)) {
-				console.log(e.target.value);
-				c.fillStyle = e.target.value;
+			var backgroundColor = document.getElementById("backgroundColor");
+			if (RegExp(backgroundColor.pattern).test(backgroundColor.value)) {
+				c.fillStyle = backgroundColor.value;
 				c.fillRect(0, 0, w, h);
 				//moveObject is being used to redraw all objects on the screen; object 0 is not moved
 				moveObject(0, 0, 0, true);
