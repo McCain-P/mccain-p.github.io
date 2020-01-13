@@ -525,6 +525,7 @@
 				positionSize[object][0][0] = x;
 				positionSize[object][0][1] = y;
 			};
+			//Redraws all objects on the screen, due to the aforementioned outline residue
 			for (var i = 0; i < 2; i++) {
 				c.fillStyle = config[2][i + 1];
 				c.fillRect(positionSize[i][0][0], positionSize[i][0][1], positionSize[i][1][0], positionSize[i][1][1]);
@@ -536,11 +537,13 @@
 		};
 		var paddleDirection = [0, 0];
 		var paddleMovementLoop = [0, 0];
+		//Moves the paddles, handling all of the things associated with that; it utilizes the moveObject function after determining the parameters to send to it via the laws of the paddle movement
 		function paddleMovement(paddle, state, direction) {
 			window.clearInterval(paddleMovementLoop[paddle]);
 			paddleDirection[paddle] = 0;
 			if (state) {
 				paddleDirection[paddle] = direction;
+				//The paddleMovementLoop function of each paddle is called at a rate equal to their speed (if the proper user input is present)
 				paddleMovementLoop[paddle] = window.setInterval(function() {
 					var d0 = ((h / 50) * direction);
 					var d = positionSize[paddle][0][1] + d0
@@ -553,11 +556,13 @@
 				}, 10);
 			};
 		};
+		//Storing various values associated with the game logic of winning/losing, points, etc.
 		//scores = {player0, player1}
 		scores = [0, 0];
 		var gameRunning = false;
 		var gameComplete = false;
 		var scoreElements = [document.getElementById("score0"), document.getElementById("score1")];
+		//Starts and stops the game; changes the state of the game between running and stopped/finished/paused
 		function startStop(status) {
 			if (status && gameComplete) {
 				scores = [0, 0];
