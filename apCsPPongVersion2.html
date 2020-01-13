@@ -705,6 +705,9 @@
 			};
 			return intermediate0 >= 0 && (crcB >= crcM0 && crcA <= crcM1);
 		};
+		//Determines if a collision occurs between the ball and an edge of a paddle at the current point in time
+		//Reflects the ball's velocity off of the side of the paddle the ball collides with, and accelerates the ball based on the paddle's velocity (the ball is slightly accelerated in the direction the paddle is moving if the paddle has a non-zero velocity)
+		//previousEdgeCollision is used to prevent the same collision between two objects from registering multiple times
 		var previousEdgeCollision = [false, false];
 		function circleRectangleCollision() {
 			previousEdgeCollision[1] = true;
@@ -781,6 +784,7 @@
 				};
 			};
 		};
+		//Initializes the ball to its starting position with a given velocity
 		var ballVelocity = [];
 		function initializeBall() {
 			moveObject(2, w / 2, h / 2, false);
@@ -790,6 +794,7 @@
 			ballVelocity[1] = ballVelocity[2] * Math.sin(ballVelocity[3]);
 		};
 		initializeBall();
+		//Updates the score of a player, and determines if the player has won
 		function updateScore(player) {
 			scores[player]++;
 			scoreElements[player].innerHTML = scores[player];
@@ -801,10 +806,12 @@
 				initializeBall();
 			};
 		};
+		//Handles the ball movement, including altering the velocity of the ball depending on various things
 		var paddleAcceleration = h * Math.sqrt(2) / 1600;
 		var ballMovement = window.setInterval(function() {
 			try {
 				if (gameRunning) {
+					//Ball reflects off of the edges of the playing area
 					//Top edge or bottom edge
 					if (positionSize[2][0][1] - positionSize[2][1][0] / 2 <= 0 || positionSize[2][0][1] + positionSize[2][1][0] / 2 >= h) {
 						playFrequency(1);
@@ -824,7 +831,9 @@
 							updateScore(0);
 						};
 					};
+					//Handles collisions between the ball and a paddle
 					circleRectangleCollision();
+					//Moves the ball to its next position based on its speed
 					moveObject(2, ballVelocity[0], ballVelocity[1], true);
 				};
 			} catch (errorObject) {
@@ -833,11 +842,13 @@
 		}, 10);
 		//</game>
 		//<gui>
+		//Sets up the configuration buttons to open their respective configuration windows
 		var configButtons = document.getElementById("configuration").querySelectorAll("#configuration > button");
 		var configKeyBindingsEventListeners = [];
 		for (var i = 0; i < configButtons.length; i++) {
 			var configButton = configButtons[i];
 			if (configButton.dataset.associatedpopup !== undefined) {
+				//Makes the configuration window visible when the respective configuration button is clicked
 				configButton.addEventListener("click", function(e) {
 					startStop(false);
 					var targetPopup = document.getElementById(e.target.dataset.associatedpopup);
@@ -845,6 +856,7 @@
 					targetPopup.classList.add("enabled");
 				});
 				var associatedPopup = document.getElementById(configButton.dataset.associatedpopup);
+				//Makes the configuration window close/invisible when the close button is clicked
 				associatedPopup.getElementsByClassName("popupClose")[0].addEventListener("click", function(e) {
 					var targetPopup = e.target.parentElement;
 					targetPopup.classList.remove("enabled");
@@ -852,7 +864,9 @@
 				});
 				var options = associatedPopup.getElementsByTagName("input");
 				for (var j = 0; j < options.length; j++) {
+					//Handles events regarding the input fields for key bindings
 					if (associatedPopup.id === "keyBindings") {
+						//Adds and removes the event listener for keypresses when the input element is selected/unselected (focused/blurred)
 						options[j].addEventListener("focus", function(e) {
 							configKeyBindingsEventListeners[e.target.dataset.index] = e.target.addEventListener("keydown", function(keyE) {
 								var targetPopup = e.target.parentElement.parentElement;
@@ -864,7 +878,10 @@
 							e.target.removeEventListener("keydown", configKeyBindingsEventListeners[e.target.dataset.index]);
 						});
 					} else {
+						//Handles the event listeners of input elements for the configuration values that require text-based user input
+						//Updates whenever the value of the input element changes
 						options[j].addEventListener("input", function(e) {
+							//User input validation
 							if (e.target.pattern === "" || RegExp(e.target.pattern).test(e.target.value)) {
 								var targetPopup = "";
 								var configValue = "";
@@ -883,6 +900,7 @@
 						});
 					};
 				};
+				//Sets up the "Restore Defaults" buttons that restore the configuration values in their respective configuration windows to their default values
 				associatedPopup.getElementsByClassName("restoreDefaultsButton")[0].addEventListener("click", function(e) {
 					var targetPopup = e.target.parentElement.parentElement;
 					var optionElements = targetPopup.getElementsByTagName("input");
@@ -899,14 +917,17 @@
 				});
 			};
 		};
+		//Event listener for the manual stopping and starting of the game via a button press
 		document.getElementById("startStop").addEventListener("click", function() {
 			startStop(!gameRunning);
 		});
+		//Event listener for the audio option
 		document.getElementById("audioEnabled").addEventListener("input", function(e) {
 			if (audioContext === 0 && e.target.checked && config[2][4]) {
 				audioContext = new AudioContext();
 			};
 		});
+		//Redraws the background immediately when the background color configuration-value is changed
 		function redrawBackground(e) {
 			if (RegExp(e.target.pattern).test(e.target.value)) {
 				c.fillStyle = e.target.value;
@@ -917,6 +938,7 @@
 		};
 		document.getElementById("backgroundColor").addEventListener("input", redrawBackground);
 		document.getElementById("restoreDefaultsVisuals").addEventListener("click", redrawBackground);
+		//Removes focus from a button element after it is clicked; focus remaining on a button element after it has been clicked leads to issues in later user input
 		var buttonElements = document.getElementsByTagName("button");
 		for (var i = 0; i < buttonElements.length; i++) {
 			buttonElements[i].addEventListener("click", function(e) {
