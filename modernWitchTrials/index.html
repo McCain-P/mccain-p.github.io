@@ -120,11 +120,25 @@
 		</footer>
 	</body>
 	<script>
+		var eraSpecificContent = [
+			//{elementId, modernContent, premodernContent}
+			["", "", ""],
+			["", "", ""],
+			["", "", ""],
+			
+		];
 		document.getElementById("eraSwitch").addEventListener("click", function() {
+			var era = 0;
 			if (document.body.class === "modern") {
 				document.body.class = "premodern";
+				era = 2;
 			} else {
 				document.body.class = "modern";
+				era = 1;
+			};
+			for (var i = 0; i < eraSpecificContent.length; i++) {
+				var contentEntry = eraSpecificContent[i];
+				document.getElementById(contentEntry[0]).innerHTML = contentEntry[era];
 			};
 		});
 	</script>
