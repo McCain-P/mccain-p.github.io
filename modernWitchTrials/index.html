@@ -5,20 +5,87 @@
 		</title>
 		<style>
 			body.modern {
-			
+				background-color: RGB(192,192,192);
 			}
 			body.premodern {
-			
+				background-color: RGB(200,125,50);
+			}
+			body *::focus {
+				outline: none;
+			}
+			body.modern *::selection {
+				background-color: RGB(0,0,255);
+			}
+			body.premodern *::selection {
+				background-color: RGB(192,0,0);
 			}
 			body.modern p {
-			
+				RGB(64,64,64);
 			}
 			body.premodern p {
-			
+				RGB(0,0,0);
+			}
+			--headerHeight: 25vh;
+			--footerHeight: 10vh;
+			--contentWidth: 80vw;
+			header {
+				height: var(--headerHeight);
+				width: 100vw;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+			main {
+				height: auto;
+				width: var(--contentWidth);
+				position: absolute;
+				top: var(--headerHeight);
+				left: calc(50vw - var(--contentWidth) / 2);
+				z-index: 0;
+			}
+			/*
+			main::after {
+				content: "";
+				height: var(--footerHeight);
+				width: 100%;
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+			*/
+			footer {
+				height: var(--footerHeight);
+				width: 100vw;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+			}
+			header *, main *, footer *, section * {
+				z-index: inherit;
+			}
+			section {
+				height: X;
+				width: X;
+				position: ?;
+				margin-bottom: 20vh;
 			}
 		</style>
 	</head>
 	<body class="modern">
+		<header>
+		</header>
+		<main>
+			<section>
+			</section>
+			<section>
+			</section>
+			<section>
+			</section>
+		</main>
+		<footer>
+		</footer>
 	</body>
 	<script>
 	</script>
