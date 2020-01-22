@@ -118,5 +118,12 @@
 		</footer>
 	</body>
 	<script>
+		document.getElementById("eraSwitch").addEventListener("click", function() {
+			if (document.body.class === "modern") {
+				document.body.class = "premodern";
+			} else {
+				document.body.class = "modern";
+			};
+		});
 	</script>
 </html>
