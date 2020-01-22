@@ -129,11 +129,11 @@
 		];
 		document.getElementById("eraSwitch").addEventListener("click", function() {
 			var era = 0;
-			if (document.body.class === "modern") {
-				document.body.class = "premodern";
+			if (document.body.className === "modern") {
+				document.body.className = "premodern";
 				era = 2;
 			} else {
-				document.body.class = "modern";
+				document.body.className = "modern";
 				era = 1;
 			};
 			for (var i = 0; i < eraSpecificContent.length; i++) {
