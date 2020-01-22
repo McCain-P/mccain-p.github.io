@@ -5,7 +5,44 @@
 		</title>
 		<style>
 			@font-face {
-				
+				font-family: "Georgia Serverside";
+				src: url("resources/fonts/Georgia.woff2") format("woff2");
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "Georgia Bold Serverside";
+				src: url("resources/fonts/GeorgiaBold.woff2") format("woff2");
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "Georgia Italic Serverside";
+				src: url("resources/fonts/GeorgiaItalic.woff2") format("woff2");
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "Georgia Bold Italic Serverside";
+				src: url("resources/fonts/GeorgiaBoldItalic.woff2") format("woff2");
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "Verdana Serverside";
+				src: url("resources/fonts/Verdana.woff2") format("woff2");
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "Verdana Bold Serverside";
+				src: url("resources/fonts/VerdanaBold.woff2") format("woff2");
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "Verdana Italic Serverside";
+				src: url("resources/fonts/VerdanaItalic.woff2") format("woff2");
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "Verdana Bold Italic Serverside";
+				src: url("resources/fonts/VerdanaBoldItalic.woff2") format("woff2");
+				font-display: swap;
 			}
 			:root {
 				--headerHeight: 25vh;
@@ -29,11 +66,11 @@
 			}
 			body.modern p, body.modern h1, body.modern h2 {
 				RGB(64,64,64);
-				font-family: "Verdana", "Arial", sans-serif;
+				font-family: "Verdana", "Verdana Serverside", "Arial", sans-serif;
 			}
 			body.premodern p, body.premodern h1, body.premodern h2 {
 				RGB(0,0,0);
-				font-family: "Georgia", "Times New Roman", serif;
+				font-family: "Georgia", "Georgia Serverside", "Times New Roman", serif;
 			}
 			header {
 				height: var(--headerHeight);
