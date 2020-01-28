@@ -48,6 +48,7 @@
 				--headerHeight: 25vh;
 				--footerHeight: 10vh;
 				--contentWidth: 80vw;
+				--sectionMargin: 10vh;
 			}
 			body.modern {
 				background-color: RGB(64,64,80);
@@ -92,16 +93,14 @@
 				left: calc(50vw - var(--contentWidth) / 2);
 				z-index: 0;
 			}
-			/*
 			main::after {
 				content: "";
-				height: var(--footerHeight);
+				height: calc(var(--footerHeight) - var(--sectionMargin));
 				width: 100%;
 				position: absolute;
 				top: 100%;
 				left: 0;
 			}
-			*/
 			footer {
 				height: var(--footerHeight);
 				width: 100vw;
@@ -117,7 +116,7 @@
 				height: auto;
 				width: 100%;
 				position: static;
-				margin-bottom: 20vh;
+				margin-bottom: var(--sectionMargin);
 			}
 			section > p {
 				height: 40vh;
