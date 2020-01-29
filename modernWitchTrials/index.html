@@ -144,8 +144,17 @@
 				line-height: 3vh;
 			}
 			#catcherInTheRyeSectionHeader {
-				background: no-repeat 50% 0 / 100% auto URL("resources/theCatcherInTheRyeCover.jpg");
 				color: RGB(255,255,255);
+			}
+			#catcherInTheRyeSectionHeader:before {
+				content: "";
+				height: 200%;
+				width: 100%;
+				position: absolute;
+				top: -100%;
+				left: 0;
+				background: no-repeat 50% 0 / 100% auto URL("resources/theCatcherInTheRyeCover.jpg");
+				z-index: -1;
 			}
 			header > h1 {
 				font-size: min(6vw, calc(var(--headerHeight) / 3));
