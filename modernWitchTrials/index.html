@@ -158,10 +158,10 @@
 				top: 50%;
 				transform: translateY(-50%);
 			}
-			body.modern header > h1, body.modern section > h2 {
+			body.modern header > h1, body.modern section > h2, body.modern #author {
 				font-family: "Verdana Bold", "Verdana Bold Serverside", "Arial Bold", "Arial", sans-serif;
 			}
-			body.premodern header > h1, body.premodern section > h2 {
+			body.premodern header > h1, body.premodern section > h2, body.premodern #author {
 				font-family: "Georgia Italic", "Georgia Italic Serverside", "Times New Roman Italic", "Times New Roman", serif;
 				text-decoration: underline solid RGB(192,0,0);
 			}
@@ -208,12 +208,12 @@
 				text-align: right;
 				font-size: 2vh;
 			}
-			#author {
+			#signature {
 				height: 80%;
 				width: auto;
 				position: absolute;
 				top: 10%;
-				left: calc(1.6 * var(--footerHeight) + 75vw / 8);
+				left: calc(25vw / 4);
 				font-size: 4vh;
 			}
 		</style>
@@ -254,8 +254,8 @@
 			</section>
 		</main>
 		<footer>
-			<p id="author">
-				Created by McCain Potasky
+			<p id="signature">
+				Created by <span id="author">McCain Potasky</span>
 			</p>
 			<p id="eraSwitchCaption">
 				Click the "Era Switch" button to switch between the modern and premodern eras.
