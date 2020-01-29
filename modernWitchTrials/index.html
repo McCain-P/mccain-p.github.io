@@ -69,11 +69,11 @@
 			body.premodern *::selection {
 				background-color: RGB(192,0,0);
 			}
-			body.modern p, body.modern h1, body.modern h2, body.modern button {
+			body.modern p, body.modern h1, body.modern h2, body.modern button, body.modern figcaption {
 				color: RGB(255,255,255);
 				font-family: "Verdana", "Verdana Serverside", "Arial", sans-serif;
 			}
-			body.premodern p, body.premodern h1, body.premodern h2, body.premodern button {
+			body.premodern p, body.premodern h1, body.premodern h2, body.premodern button, body.premodern figcaption {
 				color: RGB(0,0,0);
 				font-family: "Georgia", "Georgia Serverside", "Times New Roman", serif;
 			}
@@ -139,9 +139,35 @@
 				font-size: min(3vw, calc(var(--headerHeight) / 6));
 				line-height: 2vh;
 			}
-			section > p {
+			section > p, section > figure > figcaption {
 				font-size: min(1.5vw, calc(var(--headerHeight) / 12));
 				line-height: 3vh;
+			}
+			section > figure > * {
+				position: static;
+			}
+			section > figure > img {
+				width: 75%;
+				height: auto;
+				border-width: 2vw;
+				border-style: solid;
+			}
+			body.modern section > figure > img {
+				border-color RGB(255,255,255);
+			}
+			body.premodern section > figure > img {
+				border-color: RGB(0,0,0);
+			}
+			section > figure > figcaption {
+				width: 100%;
+				height: auto;
+				text-align: center;
+			}
+			body.modern section > figure > figcaption > cite {
+				font-family: "Verdana Italic", "Verdana Italic Serverside", "Arial Italic", "Arial", sans-serif;
+			}
+			body.premodern section > figure > figcaption > cite {
+				font-family: "Georgia Italic", "Georgia Italic Serverside", "Times New Roman Italic", "Times New Roman", serif;
 			}
 			#catcherInTheRyeSectionHeader {
 				position: relative;
@@ -262,6 +288,13 @@
 				<p id="catcherInTheRyeSection">
 					X
 				</p>
+				<figure>
+					<img src="resources/theCatcherInTheRyeCover.jpg">
+					</img>
+					<figcaption>
+						<cite>The Catcher in the Rye</cite> by J. D. Salinger
+					</figcaption>
+				</figure>
 			</section>
 			<section>
 				<h2>
