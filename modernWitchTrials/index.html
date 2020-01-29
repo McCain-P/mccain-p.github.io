@@ -167,10 +167,10 @@
 				height: auto;
 				text-align: center;
 			}
-			body.modern section > figure > figcaption > cite {
+			body.modern cite {
 				font-family: "Verdana Italic", "Verdana Italic Serverside", "Arial Italic", "Arial", sans-serif;
 			}
-			body.premodern section > figure > figcaption > cite {
+			body.premodern cite {
 				font-family: "Georgia Italic", "Georgia Italic Serverside", "Times New Roman Italic", "Times New Roman", serif;
 			}
 			#catcherInTheRyeSectionHeader {
@@ -348,7 +348,7 @@
 			};
 			for (var i = 0; i < eraSpecificContent.length; i++) {
 				var contentEntry = eraSpecificContent[i];
-				document.getElementById(contentEntry[0]).textContent = contentEntry[era];
+				document.getElementById(contentEntry[0]).innerHTML = contentEntry[era];
 			};
 		});
 	</script>
