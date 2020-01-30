@@ -80,14 +80,20 @@
 			Click Here to View a Surprise!
 		</button>
 		<figure class="invisible" id="content">
-			<img src="mccainHome.png">
+			<img src="mccainHome.png" id="contentImg">
 			</img>
+			<video src="" class="invisible" id="contentVideo">
+			</video>
 			<figcaption>
 				The zeros of the analytically-continued Riemann zeta function, where the black points are the zeros.
 			</figcaption>
 		</figure>
 	</body>
 	<script>
+		if (Math.random() < 0.01) {
+			document.getElementById("contentImg").className = "invisible";
+			document.getElementById("contentVideo").className = "";
+		};
 		document.getElementById("showContent").addEventListener("click", function() {
 			if (document.getElementById("content").className === "") {
 				document.getElementById("content").className = "invisible";
