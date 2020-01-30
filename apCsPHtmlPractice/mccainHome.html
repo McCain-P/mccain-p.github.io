@@ -13,6 +13,20 @@
 			body *:focus {
 				outline: none;
 			}
+			h1, figcaption {
+				color: RGB(64,64,64);
+				font-family: "Arial", sans-serif;
+			}
+			h1 {
+				width: 80vw;
+				height: auto;
+				font-size: 5vw;
+				position: fixed;
+				top: 5vh;
+				left: 20vh;
+				background-color: RGB(128,255,128);
+				border: 1vh solid RGB(64,192,64);
+			}
 			#showContent {
 				height: 20vh;
 				width: 40vh;
@@ -39,14 +53,10 @@
 				height: auto;
 				position: static;
 			}
-			figure > img {
-			}
 			figure > figcaption {
 				background-color: RGB(255,128,128);
 				border: 1vh solid RGB(192,64,64);
-				color: RGB(64,64,64);
-				font-family: "Arial", sans-serif;
-				font-size: 1vh;
+				font-size: 10vh;
 			}
 			.invisible {
 				display: none;
@@ -60,11 +70,11 @@
 		<button id="showContent">
 			View Surprise!
 		</button>
-		<figure id="content">
+		<figure class="invisible" id="content">
 			<img src="mccainHome.png">
 			</img>
 			<figcaption>
-				A picture.
+				The zeros of the analytically-continued Riemann zeta function, where the black points are the zeros.
 			</figcaption>
 		</figure>
 	</body>
