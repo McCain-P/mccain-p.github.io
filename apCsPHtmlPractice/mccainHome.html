@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<title>
+			Hello World!
+		</title>
+		<style>
+			body {
+				background-color: RGB(220,220,220);
+			}
+			body *::selection {
+				background-color: RGB(128,128,128);
+			}
+			body *:focus {
+				outline: none;
+			}
+			h1, button, figcaption {
+				color: RGB(64,64,64);
+				font-family: "Arial", sans-serif;
+			}
+			h1 {
+				width: 80vw;
+				height: auto;
+				font-size: 5vw;
+				position: fixed;
+				top: 2vh;
+				left: 20vh;
+				background-color: RGB(128,255,128);
+				border: 1vh solid RGB(64,192,64);
+			}
+			#showContent {
+				height: 20vh;
+				width: 40vh;
+				position: fixed;
+				top: 20vh;
+				left: 20vh;
+				background-color: RGB(128,128,255);
+				border: 1vh solid RGB(64,64,192);
+				font-size: 5vh;
+			}
+			#showContent:hover {
+				background-color: RGB(192,192,255);
+				border: 1vh solid RGB(128,128,255);
+			}
+			#showContent:active {
+				background-color: RGB(64,64,192);
+				border: 1vh solid RGB(0,0,128);
+			}
+			figure {
+				width: 60vw;
+				height: auto;
+				background-color: RGB(255,255,128);
+				border: 1vh solid RGB(192,192,64);
+				padding: 2vh 10%;
+			}
+			#content {
+				position: fixed;
+				top: 60vh;
+				left: 20vh;
+			}
+			figure > * {
+				width: 80%;
+				height: auto;
+				position: static;
+			}
+			figure > figcaption {
+				background-color: RGB(255,128,128);
+				border: 1vh solid RGB(192,64,64);
+				font-size: 3vh;
+			}
+			.invisible {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			Hello World!
+		</h1>
+		<button id="showContent">
+			Click Here to View a Surprise!
+		</button>
+		<figure class="invisible" id="content">
+			<img src="mccainHome.png" id="contentImg">
+			</img>
+			<video src="" class="invisible" id="contentVideo">
+			</video>
+			<figcaption>
+				The zeros of the analytically-continued Riemann zeta function, where the black points are the zeros.
+			</figcaption>
+		</figure>
+	</body>
+	<script>
+		if (Math.random() < 0.01) {
+			document.getElementById("contentImg").className = "invisible";
+			document.getElementById("contentVideo").className = "";
+		};
+		document.getElementById("showContent").addEventListener("click", function() {
+			if (document.getElementById("content").className === "") {
+				document.getElementById("content").className = "invisible";
+			} else {
+				document.getElementById("content").className = "";
+			};
+		});
+	</script>
+</html>
