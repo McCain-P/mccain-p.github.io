@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>
+			Hello World!
+		</title>
+		<style>
+			body {
+				background-color: RGB(220,220,220);
+			}
+			body *::selection {
+				background-color: RGB(128,128,128);
+			}
+			body *:focus {
+				outline: none;
+			}
+			#showContent {
+				height: 20vh;
+				width: 40vh;
+				position: fixed;
+				top: 20vh;
+				left: 20vh;
+				background-color: RGB(128,128,255);
+				border: 1vh solid RGB(64,64,192);
+			}
+			figure {
+				width: 60vw;
+				height: auto;
+				background-color: RGB(255,255,128);
+				border: 1vh solid RGB(192,192,64);
+				padding: 2vh 10%;
+			}
+			#content {
+				position: fixed;
+				top: 60vh;
+				left: 20vh;
+			}
+			figure > * {
+				width: 80%;
+				height: auto;
+				position: static;
+			}
+			figure > img {
+			}
+			figure > figcaption {
+				background-color: RGB(255,128,128);
+				border: 1vh solid RGB(192,64,64);
+				color: RGB(64,64,64);
+				font-family: "Arial", sans-serif;
+				font-size: 1vh;
+			}
+			.invisible {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			Hello World!
+		</h1>
+		<button id="showContent">
+			View Surprise!
+		</button>
+		<figure id="content">
+			<img src="mccainHome.png">
+			</img>
+			<figcaption>
+				A picture.
+			</figcaption>
+		</figure>
+	</body>
+	<script>
+		document.getElementById("showContent").addEventListener("click", function() {
+			if (document.getElementById("content").className === "") {
+				document.getElementById("content").className = "invisible";
+			} else {
+				document.getElementById("content").className = "";
+			};
+		});
+	</script>
+</html>
