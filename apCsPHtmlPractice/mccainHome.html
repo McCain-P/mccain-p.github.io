@@ -8,7 +8,8 @@
 				background-color: RGB(220,220,220);
 			}
 			body *::selection {
-				background-color: RGB(128,128,128);
+				background-color: RGB(0,0,0);
+				color: RGB(255,255,255);
 			}
 			body *:focus {
 				outline: none;
@@ -18,14 +19,16 @@
 				font-family: "Arial", sans-serif;
 			}
 			h1 {
+				font-size: 5vw;
+				background-color: RGB(128,255,128);
+				border: 1vh solid RGB(64,192,64);
+			}
+			#heading {
 				width: 80vw;
 				height: 5vw;
-				font-size: 5vw;
 				position: fixed;
 				top: 10vh;
 				left: 10vw;
-				background-color: RGB(128,255,128);
-				border: 1vh solid RGB(64,192,64);
 			}
 			#showContent {
 				height: 10vw;
@@ -46,16 +49,16 @@
 				border: 1vh solid RGB(0,0,128);
 			}
 			figure {
-				width: 60vw;
-				height: auto;
 				background-color: RGB(255,255,128);
 				border: 1vh solid RGB(192,192,64);
 				padding: 2vh 10%;
 			}
 			#content {
+				width: 50vw;
+				height: calc(90vh - 25vw);
 				position: fixed;
-				top: 80vh;
-				left: 20vh;
+				bottom: 10vh;
+				right: 10vw;
 			}
 			figure > * {
 				width: 80%;
@@ -73,7 +76,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>
+		<h1 id="heading">
 			Hello World!
 		</h1>
 		<button id="showContent">
