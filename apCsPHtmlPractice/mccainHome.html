@@ -6,7 +6,9 @@
 		<style>
 			body {
 				background-color: RGB(220,220,220);
+				display: grid;
 				grid: repeat(auto-fit, 20vw) / 40vw;
+				grid-gap: 5vh;
 			}
 			body * {
 				margin: 0;
@@ -32,20 +34,23 @@
 				border: 1vh solid RGB(64,192,64);
 			}
 			#heading {
-				
+				grid-area:
 			}
-			#showContent {
+			.link {
 				background-color: RGB(128,128,255);
 				border: 1vh solid RGB(64,64,192);
 				font-size: 3vw;
 			}
-			#showContent:hover {
+			.link:hover {
 				background-color: RGB(192,192,255);
 				border: 1vh solid RGB(128,128,255);
 			}
-			#showContent:active {
+			.link:active {
 				background-color: RGB(64,64,192);
 				border: 1vh solid RGB(0,0,128);
+			}
+			#leapYearLink {
+				grid-area:
 			}
 			figure {
 				background-color: RGB(255,255,128);
@@ -68,26 +73,15 @@
 				font-size: 3vh;
 			}
 			#content {
-				/*
-				width: 55vw;
-				height: calc(90vh - 25vw);
-				position: fixed;
-				bottom: 10vh;
-				left: 35vw;
-				*/
+				grid-area:
 			}
-			/*
-			.invisible {
-				display: none;
-			}
-			*/
 		</style>
 	</head>
 	<body>
 		<h1 id="heading">
 			Hello World!
 		</h1>
-		<a href="leapYearCalculator.html" id="leapYearLink">
+		<a href="leapYearCalculator.html" class="link" id="leapYearLink">
 			Leap Year Calculator
 		</a>
 		<figure id="content">
