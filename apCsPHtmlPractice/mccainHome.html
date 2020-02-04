@@ -6,11 +6,13 @@
 		<style>
 			body {
 				background-color: RGB(220,220,220);
-				padding:
+				grid: repeat(auto-fit, 20vw) / 40vw;
 			}
 			body * {
+				/*
 				margin: 0;
 				padding: 0;
+				*/
 			}
 			body *::selection {
 				background-color: RGB(0,0,0);
@@ -20,7 +22,9 @@
 				outline: none;
 			}
 			body > * {
+				/*
 				position: static;
+				*/
 			}
 			h1, button, figcaption {
 				color: RGB(64,64,64);
@@ -32,18 +36,22 @@
 				border: 1vh solid RGB(64,192,64);
 			}
 			#heading {
+				/*
 				width: 80vw;
 				height: 5vw;
 				position: fixed;
 				top: 10vh;
 				left: 10vw;
+				*/
 			}
 			#showContent {
+				/*
 				height: 10vw;
 				width: 20vw;
 				position: fixed;
 				top: 25vw;
 				left: 10vw;
+				*/
 				background-color: RGB(128,128,255);
 				border: 1vh solid RGB(64,64,192);
 				font-size: 3vw;
@@ -59,19 +67,25 @@
 			figure {
 				background-color: RGB(255,255,128);
 				border: 1vh solid RGB(192,192,64);
+				/*
 				padding: 2vh 10%;
+				*/
 			}
 			#content {
+				/*
 				width: 55vw;
 				height: calc(90vh - 25vw);
 				position: fixed;
 				bottom: 10vh;
 				left: 35vw;
+				*/
 			}
 			figure > * {
+				/*
 				width: 80%;
 				height: auto;
 				position: static;
+				*/
 			}
 			figure > figcaption {
 				background-color: RGB(255,128,128);
