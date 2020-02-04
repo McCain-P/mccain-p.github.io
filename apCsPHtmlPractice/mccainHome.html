@@ -9,10 +9,8 @@
 				grid: repeat(auto-fit, 20vw) / 40vw;
 			}
 			body * {
-				/*
 				margin: 0;
 				padding: 0;
-				*/
 			}
 			body *::selection {
 				background-color: RGB(0,0,0);
@@ -22,9 +20,7 @@
 				outline: none;
 			}
 			body > * {
-				/*
-				position: static;
-				*/
+				
 			}
 			h1, button, figcaption {
 				color: RGB(64,64,64);
@@ -36,22 +32,9 @@
 				border: 1vh solid RGB(64,192,64);
 			}
 			#heading {
-				/*
-				width: 80vw;
-				height: 5vw;
-				position: fixed;
-				top: 10vh;
-				left: 10vw;
-				*/
+				
 			}
 			#showContent {
-				/*
-				height: 10vw;
-				width: 20vw;
-				position: fixed;
-				top: 25vw;
-				left: 10vw;
-				*/
 				background-color: RGB(128,128,255);
 				border: 1vh solid RGB(64,64,192);
 				font-size: 3vw;
@@ -67,9 +50,22 @@
 			figure {
 				background-color: RGB(255,255,128);
 				border: 1vh solid RGB(192,192,64);
-				/*
-				padding: 2vh 10%;
-				*/
+			}
+			figure > * {
+				position: absolute;
+			}
+			figure > img {
+				height: 50%;
+				width: auto;
+				top: 10%;
+			}
+			figure > figcaption {
+				height: 20%;
+				width: 80%;
+				bottom: 10%;
+				background-color: RGB(255,128,128);
+				border: 1vh solid RGB(192,64,64);
+				font-size: 3vh;
 			}
 			#content {
 				/*
@@ -80,31 +76,21 @@
 				left: 35vw;
 				*/
 			}
-			figure > * {
-				/*
-				width: 80%;
-				height: auto;
-				position: static;
-				*/
-			}
-			figure > figcaption {
-				background-color: RGB(255,128,128);
-				border: 1vh solid RGB(192,64,64);
-				font-size: 3vh;
-			}
+			/*
 			.invisible {
 				display: none;
 			}
+			*/
 		</style>
 	</head>
 	<body>
 		<h1 id="heading">
 			Hello World!
 		</h1>
-		<button id="showContent">
-			Click Here to View an Image
-		</button>
-		<figure class="invisible" id="content">
+		<a href="leapYearCalculator.html" id="leapYearLink">
+			Leap Year Calculator
+		</a>
+		<figure id="content">
 			<img src="mccainHome.jpg">
 			</img>
 			<figcaption>
@@ -113,6 +99,7 @@
 		</figure>
 	</body>
 	<script>
+		/*
 		document.getElementById("showContent").addEventListener("click", function() {
 			if (document.getElementById("content").className === "") {
 				document.getElementById("content").className = "invisible";
@@ -120,5 +107,6 @@
 				document.getElementById("content").className = "";
 			};
 		});
+		*/
 	</script>
 </html>
