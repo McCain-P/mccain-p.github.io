@@ -101,7 +101,7 @@
 			console.log(RegExp(dateFormats[dateFormat][0]));
 			console.log(document.getElementById("date").value);
 			console.log(RegExp(dateFormats[dateFormat][0]).test(document.getElementById("date").value));
-			var n = RegExp(dateFormats[dateFormat][0]).exec(document.getElementById("date").value)[dateFormats[dateFormat][1] + 1];
+			var n = Number(RegExp(dateFormats[dateFormat][0]).exec(document.getElementById("date").value)[dateFormats[dateFormat][1] + 1]);
 			if (RegExp(dateFormats[dateFormat][0]).test(document.getElementById("date").value) && ((n % 4 === 0) && ((n % 100 !== 0) || (n % 400 === 0)))) {
 				document.getElementById("responseBoolean").textContent = "Yes";
 				document.getElementById("response").className = "greenBackground";
