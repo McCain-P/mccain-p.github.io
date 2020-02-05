@@ -68,6 +68,15 @@
 		var MMs = "((?:0?[1-9])|(?:1[0-2]))";
 		//DDs: DD short; preceeding 0s can be omitted
 		var DDs = "((?:[012]?[1-9])|(?:3[01]))";
+		//Set of date formats: {YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY, Month DD YYYY}
+		//Member of the set of date formats: {Regex, YYYY capturing-group index, MM capturing-group index, DD capturing-group index}
+		var dateFormats = [
+			[YYYY + "-" + MM + "-" + DD, 0, 1, 2],
+			[DDs + "/" + MMs + "/" + YYYYs, 2, 1, 0],
+			[MMs + "/" + DDs + "/" + YYYYs, 1, 2, 0],
+			["(?:(Jan)(?:\.|(?:uary))?|(Feb)(?:\.|(?:ruary))?|(Mar)(?:\.|(?:ch))?|(Apr)(?:\.|(?:il))?|(May)\.?|(Jun)[\.e]?|(Jul)[\.y]?|(Aug)(?:\.|(?:ust))?|(Sep)(?:\.|(?:tember))?|(Oct)(?:\.|(?:ober))?|(Nov)(?:\.|(?:ember))?|(Dec)(?:\.|(?:ember))?) " + DDs + "(?:(?:st)|(?:nd)|(?:rd)|(?:th))?,? " + YYYYs, 1, 2, 0]
+		];
+		var dateFormat = 0;
 		function determineLeapYear() {
 			if (RegExp(dateFormats[dateFormat][0]).test(document.getElementById("date").value)) {
 				var n = RegExp(dateFormats[dateFormat][0]).exec(document.getElementById("date").value)[dateFormats[dateFormat][1] + 1];
@@ -80,15 +89,6 @@
 				};
 			};
 		};
-		//Set of date formats: {YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY, Month DD YYYY}
-		//Member of the set of date formats: {Regex, YYYY capturing-group index, MM capturing-group index, DD capturing-group index}
-		var dateFormats = [
-			[YYYY + "-" + MM + "-" + DD, 0, 1, 2],
-			[DDs + "/" + MMs + "/" + YYYYs, 2, 1, 0],
-			[MMs + "/" + DDs + "/" + YYYYs, 1, 2, 0],
-			["(?:(Jan)(?:\.|(?:uary))?|(Feb)(?:\.|(?:ruary))?|(Mar)(?:\.|(?:ch))?|(Apr)(?:\.|(?:il))?|(May)\.?|(Jun)[\.e]?|(Jul)[\.y]?|(Aug)(?:\.|(?:ust))?|(Sep)(?:\.|(?:tember))?|(Oct)(?:\.|(?:ober))?|(Nov)(?:\.|(?:ember))?|(Dec)(?:\.|(?:ember))?) " + DDs + "(?:(?:st)|(?:nd)|(?:rd)|(?:th))?,? " + YYYYs, 1, 2, 0]
-		];
-		var dateFormat = 0;
 		document.getElementById("dateFormats").addEventListener("input", function() {
 			dateFormat = Number(document.getElementById("dateFormats").value);
 			document.getElementById("date").pattern = dateFormats[dateFormat][0];
