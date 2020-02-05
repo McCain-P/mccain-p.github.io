@@ -101,16 +101,12 @@
 		function determineLeapYear() {
 			var n = RegExp(dateFormats[dateFormat][0]).exec(document.getElementById("date").value);
 			if (n !== null) {
-				console.log(dateFormats);
-				console.log(dateFormats[dateFormat]);
-				console.log(dateFormats[dateFormat][1]);
-				console.log(dateFormats[dateFormat][1] + 1);
-				console.log(n[dateFormats[dateFormat][1] + 1]);
+				console.log(n);
 				n = Number(n[dateFormats[dateFormat][1] + 1]);
+				console.log(n);
 			} else {
 				n = -1;
 			};
-			console.log(n);
 			if (RegExp(dateFormats[dateFormat][0]).test(document.getElementById("date").value) && ((n % 4 === 0) && ((n % 100 !== 0) || (n % 400 === 0)))) {
 				document.getElementById("responseBoolean").textContent = "Yes";
 				document.getElementById("response").className = "greenBackground";
