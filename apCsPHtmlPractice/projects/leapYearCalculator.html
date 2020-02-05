@@ -100,7 +100,7 @@
 		function determineLeapYear() {
 			var n = RegExp(dateFormats[dateFormat][0]).exec(document.getElementById("date").value)
 			if (n !== null) {
-				n = Number(n[dateFormats[dateFormat][1] + 1]));
+				n = Number(n[dateFormats[dateFormat][1] + 1]);
 			} else {
 				n = -1;
 			};
