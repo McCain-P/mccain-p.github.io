@@ -18,9 +18,11 @@ a, a:visited {
 }
 a:hover {
 	color: RGB(128,128,255);
+	text-decoration-color: RGB(128,128,255);
 }
 a:active {
 	color: RGB(0,0,128);
+	text-decoration-color: color: RGB(0,0,128);
 }
 .redBackground {
 	background-color: RGB(255,128,128);
