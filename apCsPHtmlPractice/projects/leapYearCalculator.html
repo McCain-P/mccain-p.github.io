@@ -86,7 +86,7 @@
 			[YYYY + "-" + MM + "-" + DD, , , ],
 			[DDs + "/" + MMs + "/" + YYYYs, , , ],
 			[MMs + "/" + DDs + "/" + YYYYs, , , ],
-			["(?:(Jan)(?:\.|(?:uary))?|(Feb)(?:\.|(?:ruary))?|(Mar)(?:\.|(?:ch))?|(Apr)(?:\.|(?:il))?|(May)\.?|(Jun)[\.e]?|(Jul)[\.y]?|(Aug)(?:\.|(?:ust))?|(Sep)(?:\.|(?:tember))?|(Oct)(?:\.|(?:ober))?|(Nov)(?:\.|(?:ember))?|(Dec)(?:\.|(?:ember))?) ", , , ],
+			["(?:(Jan)(?:\.|(?:uary))?|(Feb)(?:\.|(?:ruary))?|(Mar)(?:\.|(?:ch))?|(Apr)(?:\.|(?:il))?|(May)\.?|(Jun)[\.e]?|(Jul)[\.y]?|(Aug)(?:\.|(?:ust))?|(Sep)(?:\.|(?:tember))?|(Oct)(?:\.|(?:ober))?|(Nov)(?:\.|(?:ember))?|(Dec)(?:\.|(?:ember))?) " + DDs + "(?:(?:st)|(?:nd)|(?:rd)|(?:th))?,? " + YYYYs, , , ],
 		];
 		var dateFormat = 0;
 		document.getElementById("dateFormats").addEventListener("input", function() {
