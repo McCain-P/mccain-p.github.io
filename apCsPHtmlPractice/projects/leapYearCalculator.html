@@ -105,10 +105,8 @@
 			} else {
 				n = -1;
 			};
+			console.log(dateFormats[dateFormat][1]);
 			console.log(n);
-			console.log(n % 4);
-			console.log(n % 100);
-			console.log(n % 400);
 			if (RegExp(dateFormats[dateFormat][0]).test(document.getElementById("date").value) && ((n % 4 === 0) && ((n % 100 !== 0) || (n % 400 === 0)))) {
 				document.getElementById("responseBoolean").textContent = "Yes";
 				document.getElementById("response").className = "greenBackground";
