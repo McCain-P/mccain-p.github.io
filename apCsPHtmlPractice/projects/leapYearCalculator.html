@@ -91,7 +91,7 @@
 		//Set of date formats: {YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY, Month DD YYYY}
 		//Member of the set of date formats: {Regex, YYYY capturing-group index, MM capturing-group index, DD capturing-group index}
 		var dateFormats = [
-			[YYYY + "\\-" + MM + "\\-" + DD, 0, 1, 2],
+			[YYYY + "-" + MM + "-" + DD, 0, 1, 2],
 			[DDs + "\\/" + MMs + "\\/" + YYYYs, 2, 1, 0],
 			[MMs + "\\/" + DDs + "\\/" + YYYYs, 1, 2, 0],
 			["(?:(Jan)(?:\.|(?:uary))?|(Feb)(?:\.|(?:ruary))?|(Mar)(?:\.|(?:ch))?|(Apr)(?:\.|(?:il))?|(May)\.?|(Jun)[\.e]?|(Jul)[\.y]?|(Aug)(?:\.|(?:ust))?|(Sep)(?:\.|(?:tember))?|(Oct)(?:\.|(?:ober))?|(Nov)(?:\.|(?:ember))?|(Dec)(?:\.|(?:ember))?) " + DDs + "(?:(?:st)|(?:nd)|(?:rd)|(?:th))?,? " + YYYYs, 1, 2, 0]
