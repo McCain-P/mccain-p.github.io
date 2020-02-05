@@ -33,24 +33,58 @@
 		</style>
 	</head>
 	<body>
-		<h1 class="yellowBackground" id="header">
+		<h1 class="blueBackground" id="header">
 			Leap-Year Calculator
 		</h1>
 		<input type="text" pattern="" class="blueBackground" id="date">
 		</input>
+		<select class="yellowBackground" id="dateFormats">
+			<option value="0">
+				YYYY-MM-DD
+			</option>
+			<option value="1">
+				DD/MM/YYYY
+			</option>
+			<option value="2">
+				MM/DD/YYYY
+			</option>
+			<option value="3">
+				Month DD, YYYY
+			</option>
+		</select>
 		<p class="redBackground" id="response">
 			Leap Year: <span id="responseBoolean"></span>
 		</p>
 	</body>
 	<script>
-		document.getElementById("date").addEventListener("input", function() {
-			if (matches && ((n % 4 === 0) && ((n % 100 !== 0) || (n % 400 === 0)))) {
-				document.getElementById("responseBoolean").textContent = "Yess";
-				document.getElementById("response").className = "greenBackground";
-			} else {
-				document.getElementById("responseBoolean").textContent = "No";
-				document.getElementById("response").className = "redBackground";
+		function determineLeapYear() {
+			if (matches) {
+				var n = regex.exec(string)[? + 1];
+				if ((n % 4 === 0) && ((n % 100 !== 0) || (n % 400 === 0))) {
+					document.getElementById("responseBoolean").textContent = "Yes";
+					document.getElementById("response").className = "greenBackground";
+				} else {
+					document.getElementById("responseBoolean").textContent = "No";
+					document.getElementById("response").className = "redBackground";
+				};
 			};
+		};
+		//Set of date formats: {YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY, Month DD YYYY}
+		//Member of the set of date formats: {Regex, YYYY capturing-group index, MM capturing-group index, DD capturing-group index}
+		var dateFormats = [
+			[, , , ],
+			[, , , ],
+			[, , , ],
+			[, , , ],
+		];
+		var dateFormat = 0;
+		document.getElementById("dateFormats").addEventListener("input", function() {
+			dateFormat = Number(document.getElementById("dateFormats").value);
+			document.getElementById("date").pattern = dateFormats[dateFormat][0];
+			determineLeapYear();
+		});
+		document.getElementById("date").addEventListener("input", function() {
+			determineLeapYear();
 		});
 	</script>
 </html>
