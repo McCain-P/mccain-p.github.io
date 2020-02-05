@@ -11,6 +11,9 @@
 				padding: 0;
 				border-width: 0.5vh;
 			}
+			body > * {
+				position: fixed;
+			}
 			select {
 				border-radius: 0;
 			}
@@ -19,28 +22,32 @@
 				height: 10vh;
 				font-size: 8vh;
 				text-align: center;
-				position: fixed;
 				top: 5vh;
 				left: 10vw;
 			}
+			#date, #dateFormats {
+				width: 35vw;
+				height: 5vh;
+				top: 20vh;
+				font-size: 4vh;
+			}
 			#date {
-				/*
-				size
-				pos
-				text
-				*/
+				left: 10vw;
 			}
 			#date:invalid {
-				/*
-				bg color stuff - red
-				*/
+				background-color: RGB(255,128,128);
+				border: solid RGB(192,64,64);
+			}
+			#dateFormats {
+				right: 10vw;
 			}
 			#response {
-				/*
-				size
-				pos
-				text
-				*/
+				width: 35vw;
+				height: 10vh;
+				top: 30vh;
+				left: 10vw;
+				font-size: 8vh;
+				text-align: center;
 			}
 		</style>
 	</head>
