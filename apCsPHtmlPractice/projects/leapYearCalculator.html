@@ -4,9 +4,53 @@
 			Leap-Year Calculator
 		</title>
 		<style>
-		
+			#header {
+				/*
+				pos
+				size
+				text
+				*/
+			}
+			#date {
+				/*
+				pos
+				size
+				text
+				*/
+			}
+			#date:invalid {
+				/*
+				bg color stuff - red
+				*/
+			}
+			#response {
+				/*
+				pos
+				size
+				text
+				*/
+			}
 		</style>
 	</head>
 	<body>
+		<h1 class="yellowBackground" id="header">
+			Leap-Year Calculator
+		</h1>
+		<input type="text" pattern="" class="blueBackground" id="date">
+		</input>
+		<p class="redBackground" id="response">
+			Leap Year: <span id="responseBoolean"></span>
+		</p>
 	</body>
+	<script>
+		document.getElementById("date").addEventListener("input", function() {
+			if (matches && ((n % 4 === 0) && ((n % 100 !== 0) || (n % 400 === 0)))) {
+				document.getElementById("responseBoolean").textContent = "Yess";
+				document.getElementById("response").className = "greenBackground";
+			} else {
+				document.getElementById("responseBoolean").textContent = "No";
+				document.getElementById("response").className = "redBackground";
+			};
+		});
+	</script>
 </html>
