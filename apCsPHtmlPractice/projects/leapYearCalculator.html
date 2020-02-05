@@ -59,6 +59,15 @@
 		</p>
 	</body>
 	<script>
+		var YYYY = "\d{4}";
+		var MM = "((?:0[1-9])|(?:1[0-2]))";
+		var DD = "((?:[012][1-9])|(?:3[01]))";
+		//YYYYs: YYYY short; preceeding 0s can be omitted
+		var YYYYs = "\d{1,4}";
+		//MMs: MM short; preceeding 0s can be omitted
+		var MMs = "((?:0?[1-9])|(?:1[0-2]))";
+		//DDs: DD short; preceeding 0s can be omitted
+		var DDs = "((?:[012]?[1-9])|(?:3[01]))";
 		function determineLeapYear() {
 			if (RegExp(dateFormats[dateFormat][0]).test(document.getElementById("date").value)) {
 				var n = RegExp(dateFormats[dateFormat][0]).exec(document.getElementById("date").value)[dateFormats[dateFormat][1] + 1];
