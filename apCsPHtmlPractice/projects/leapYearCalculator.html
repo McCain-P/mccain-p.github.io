@@ -98,7 +98,9 @@
 		];
 		var dateFormat = 0;
 		function determineLeapYear() {
-			console.log("determineLeapYear");
+			console.log(RegExp(dateFormats[dateFormat][0]));
+			console.log(document.getElementById("date").value);
+			console.log(RegExp(dateFormats[dateFormat][0]).test(document.getElementById("date").value));
 			if (RegExp(dateFormats[dateFormat][0]).test(document.getElementById("date").value)) {
 				var n = RegExp(dateFormats[dateFormat][0]).exec(document.getElementById("date").value)[dateFormats[dateFormat][1] + 1];
 				if ((n % 4 === 0) && ((n % 100 !== 0) || (n % 400 === 0))) {
@@ -113,13 +115,11 @@
 			};
 		};
 		document.getElementById("dateFormats").addEventListener("input", function() {
-			console.log("dateFormats");
 			dateFormat = Number(document.getElementById("dateFormats").value);
 			document.getElementById("date").pattern = dateFormats[dateFormat][0];
 			determineLeapYear();
 		});
 		document.getElementById("date").addEventListener("input", function() {
-			console.log("date");
 			determineLeapYear();
 		});
 	</script>
