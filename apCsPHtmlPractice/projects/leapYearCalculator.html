@@ -94,8 +94,8 @@
 		var dateFormats = [
 			[YYYY + "-" + MM + "-" + DD, 0, 1, 2],
 			[DDs + "\\/" + MMs + "\\/" + YYYYs, 2, 1, 0],
-			[MMs + "\\/" + DDs + "\\/" + YYYYs, 1, 2, 0],
-			["(?:(Jan)(?:\.|(?:uary))?|(Feb)(?:\.|(?:ruary))?|(Mar)(?:\.|(?:ch))?|(Apr)(?:\.|(?:il))?|(May)\.?|(Jun)[\.e]?|(Jul)[\.y]?|(Aug)(?:\.|(?:ust))?|(Sep)(?:\.|(?:tember))?|(Oct)(?:\.|(?:ober))?|(Nov)(?:\.|(?:ember))?|(Dec)(?:\.|(?:ember))?) " + DDs + "(?:(?:st)|(?:nd)|(?:rd)|(?:th))?,? " + YYYYs, 1, 2, 0]
+			[MMs + "\\/" + DDs + "\\/" + YYYYs, 2, 0, 1],
+			["(?:(Jan)(?:\.|(?:uary))?|(Feb)(?:\.|(?:ruary))?|(Mar)(?:\.|(?:ch))?|(Apr)(?:\.|(?:il))?|(May)\.?|(Jun)[\.e]?|(Jul)[\.y]?|(Aug)(?:\.|(?:ust))?|(Sep)(?:\.|(?:tember))?|(Oct)(?:\.|(?:ober))?|(Nov)(?:\.|(?:ember))?|(Dec)(?:\.|(?:ember))?) " + DDs + "(?:(?:st)|(?:nd)|(?:rd)|(?:th))?,? " + YYYYs, 2, 0, 1]
 		];
 		var dateFormat = 0;
 		function determineLeapYear() {
