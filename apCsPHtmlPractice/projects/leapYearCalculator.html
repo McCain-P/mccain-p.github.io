@@ -61,7 +61,7 @@
 	<script>
 		function determineLeapYear() {
 			if (matches) {
-				var n = regex.exec(string)[? + 1];
+				var n = RegExp(dateFormats[dateFormat][0]).exec(document.getElementById("date").value)[dateFormats[dateFormat][1] + 1];
 				if ((n % 4 === 0) && ((n % 100 !== 0) || (n % 400 === 0))) {
 					document.getElementById("responseBoolean").textContent = "Yes";
 					document.getElementById("response").className = "greenBackground";
