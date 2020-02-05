@@ -120,5 +120,6 @@
 		document.getElementById("date").addEventListener("input", function() {
 			determineLeapYear();
 		});
+		document.getElementById("date").pattern = dateFormats[dateFormat][0];
 	</script>
 </html>
