@@ -51,7 +51,7 @@
 				MM/DD/YYYY
 			</option>
 			<option value="3">
-				Month DD, YYYY
+				Month DD, YYYY / Mon. DD, YYYY / Month DDth, YYYY / Month DD YYYY / etc.
 			</option>
 		</select>
 		<p class="redBackground" id="response">
@@ -83,10 +83,10 @@
 		//Set of date formats: {YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY, Month DD YYYY}
 		//Member of the set of date formats: {Regex, YYYY capturing-group index, MM capturing-group index, DD capturing-group index}
 		var dateFormats = [
-			[, , , ],
-			[, , , ],
-			[, , , ],
-			[, , , ],
+			[YYYY + "-" + MM + "-" + DD, , , ],
+			[DDs + "/" + MMs + "/" + YYYYs, , , ],
+			[MMs + "/" + DDs + "/" + YYYYs, , , ],
+			["(?:(Jan)(?:\.|(?:uary))?|(Feb)(?:\.|(?:ruary))?|(Mar)(?:\.|(?:ch))?|(Apr)(?:\.|(?:il))?|(May)\.?|(Jun)[\.e]?|(Jul)[\.y]?|(Aug)(?:\.|(?:ust))?|(Sep)(?:\.|(?:tember))?|(Oct)(?:\.|(?:ober))?|(Nov)(?:\.|(?:ember))?|(Dec)(?:\.|(?:ember))?) ", , , ],
 		];
 		var dateFormat = 0;
 		document.getElementById("dateFormats").addEventListener("input", function() {
