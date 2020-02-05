@@ -12,20 +12,31 @@ p, h1, h2, h3, h4, h5, h6, a, button, input, figcaption {
 	color: RGB(64,64,64);
 	font-family: "Arial", sans-serif;
 }
-a {
-
+a, a:visited {
+	color: RGB(0,0,255);
+	text-decoration: underline solid RGB(0,0,255);
+}
+a:hover {
+	color: RGB(128,128,255);
+}
+a:active {
+	color: RGB(0,0,128);
 }
 .redBackground {
-
+	background-color: RGB(255,128,128);
+	border: 1vh solid RGB(192,64,64);
 }
 .greenBackground {
-
+	background-color: RGB(128,255,128);
+	border: 1vh solid RGB(64,192,64);
 }
 .blueBackground {
-
+	background-color: RGB(128,128,255);
+	border: 1vh solid RGB(64,64,192);
 }
 .yellowBackground {
-
+	background-color: RGB(255,255,128);
+	border: 1vh solid RGB(192,192,64);
 }
 .redBackground.interactable:hover {
 
@@ -34,10 +45,11 @@ a {
 
 }
 .blueBackground.interactable:hover {
-
+	background-color: RGB(192,192,255);
+	border: 1vh solid RGB(128,128,255);
 }
 .yellowBackground.interactable:hover {
-
+	
 }
 .redBackground.interactable:active {
 
@@ -46,7 +58,8 @@ a {
 
 }
 .blueBackground.interactable:active {
-
+	background-color: RGB(64,64,192);
+	border: 1vh solid RGB(0,0,128);
 }
 .yellowBackground.interactable:active {
 
