@@ -30,6 +30,7 @@
 		</button>
 	</body>
 	<script>
+		var loadedWord = [];
 		var outputElement = document.getElementById("characterArray");
 		function updateOutput() {
 			outputElement.textContent = "";
@@ -38,7 +39,7 @@
 			};
 		};
 		function loadWord() {
-			var loadedWord = [];
+			loadedWord = [];
 			var word = document.getElementById("word").value;
 			for (var i = 0; i < word.length; i++) {
 				loadedWord[i] = word.charAt(i);
