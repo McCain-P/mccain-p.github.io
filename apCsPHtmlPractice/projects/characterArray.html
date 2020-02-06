@@ -33,8 +33,13 @@
 		<button id="scramble">
 			Scramble word loaded in character array
 		</button>
+		<code id="log">
+		</code>
 	</body>
 	<script>
+		function log(text) {
+			document.getElementById("log").innerHTML += "<br>" + text;
+		};
 		var loadedWord = [];
 		var outputElement = document.getElementById("characterArray");
 		function updateOutput() {
@@ -62,9 +67,9 @@
 			var b = 0;
 			var character = "";
 			for (var i = 0; i < loadedWord.length; i++) {
-				console.log("a = " + a);
-				console.log("b = " + b);
-				console.log("
+				log("a = " + a);
+				log("b = " + b);
+				log("
 				a = availablePositions[Math.round(Math.random() * availablePositions.length)];
 				character = loadedWord[a];
 				availablePositions.splice(a, 1);
