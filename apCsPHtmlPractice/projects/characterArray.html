@@ -62,6 +62,9 @@
 			var b = 0;
 			var character = "";
 			for (var i = 0; i < loadedWord.length; i++) {
+				console.log("a = " + a);
+				console.log("b = " + b);
+				console.log("
 				a = availablePositions[Math.round(Math.random() * availablePositions.length)];
 				character = loadedWord[a];
 				availablePositions.splice(a, 1);
