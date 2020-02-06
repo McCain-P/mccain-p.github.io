@@ -42,6 +42,7 @@
 			for (var i = 0; i < loadedWord.length - 1; i++) {
 				outputElement.textContent += loadedWord[i] + ", ";
 			};
+			outputElement.textContent += loadedWord[loadedWord.length - 1];
 		};
 		function loadWord() {
 			loadedWord = [];
