@@ -48,11 +48,19 @@
 			for (var i = 0; i < loadedWord.length; i++) {
 				availablePositions[i] = i;
 			};
-			var n = availablePositions[Math.round(Math.random() * availablePositions.length)];
-			var character = loadedWord[n];
+			var a = 0;
+			var b = 0;
+			var character = "";
 			for (var i = 0; i < loadedWord.length; i++) {
-				
-				loadedWord[n] = 
+				a = availablePositions[Math.round(Math.random() * availablePositions.length)];
+				character = loadedWord[a];
+				availablePositions.splice(a, 1);
+				b = availablePositions[Math.round(Math.random() * availablePositions.length)];
+				availablePositions.splice(b, 1);
+				loadedWord[a] = loadedWord[b];
+				loadedWord[b] = character;
+				a = b;
+				character = loadedWord[a];
 			};
 		};
 		document.getElementById("load").addEventListener("click", loadWord);
