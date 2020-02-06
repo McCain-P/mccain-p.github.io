@@ -30,17 +30,20 @@
 		</button>
 	</body>
 	<script>
+		var outputElement = document.getElementById("characterArray");
+		function updateOutput() {
+			outputElement.textContent = "";
+			for (var i = 0; i < loadedWord.length - 1; i++) {
+				outputElement.textContent += loadedWord[i] + ", ";
+			};
+		};
 		function loadWord() {
 			var loadedWord = [];
 			var word = document.getElementById("word").value;
 			for (var i = 0; i < word.length; i++) {
 				loadedWord[i] = word.charAt(i);
 			};
-			var outputElement = document.getElementById("characterArray");
-			outputElement.textContent = "";
-			for (var i = 0; i < loadedWord.length - 1; i++) {
-				outputElement.textContent += loadedWord[i] + ", ";
-			};
+			updateOutput();
 		};
 		loadWord();
 		function scrambleWord() {
@@ -62,6 +65,7 @@
 				a = b;
 				character = loadedWord[a];
 			};
+			updateOutput();
 		};
 		document.getElementById("load").addEventListener("click", loadWord);
 		document.getElementById("scramble").addEventListener("click", scrambleWord);
