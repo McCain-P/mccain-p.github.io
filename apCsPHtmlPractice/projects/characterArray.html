@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>
+			Character Array
+		</title>
+		<style>
+			code {
+				color: RGB(255,255,255);
+				background-color: RGB(0,0,0);
+				font-family: "Consolas", "Menlo", "Monaco", monospace;
+			}
+		</stlye>
+	</head>
+	<body>
+		<label for="word">
+			Word:
+		</label>
+		<input type="text" value="gracious" id="word">
+		</input>
+		<button id="load">
+			Load word into array
+		</button>
+		<label for="characterArray">
+			Character array:
+		</label>
+		<code id="characterArray">
+		</code>
+		<button id="scramble">
+			Scramble word loaded in character array
+		</button>
+	</body>
+	<script>
+		function loadWord() {
+			var loadedWord = [];
+			var word = document.getElementById("word").value;
+			for (var i = 0; i < word.length; i++) {
+				loadedWord[i] = word.charAt(i);
+			};
+			var outputElement = document.getElementById("characterArray");
+			outputElement.textContent = "";
+			for (var i = 0; i < loadedWord.length - 1; i++) {
+				outputElement.textContent += loadedWord[i] + ", ";
+			};
+		};
+		loadWord();
+		function scrambleWord() {
+			var availablePositions = [];
+			for (var i = 0; i < loadedWord.length; i++) {
+				availablePositions[i] = i;
+			};
+			for (var i = 0; i < loadedWord.length; i++) {
+				//;
+			};
+		};
+		document.getElementById("load").addEventListener("click", loadWord);
+		document.getElementById("scramble").addEventListener("click", scrambleWord);
+	</script>
+</html>
