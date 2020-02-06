@@ -48,8 +48,11 @@
 			for (var i = 0; i < loadedWord.length; i++) {
 				availablePositions[i] = i;
 			};
+			var n = availablePositions[Math.round(Math.random() * availablePositions.length)];
+			var character = loadedWord[n];
 			for (var i = 0; i < loadedWord.length; i++) {
-				//;
+				
+				loadedWord[n] = 
 			};
 		};
 		document.getElementById("load").addEventListener("click", loadWord);
