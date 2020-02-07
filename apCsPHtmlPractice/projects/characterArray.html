@@ -12,6 +12,7 @@
 			#characterArray {
 				margin-right: 10ch;
 			}
+			/*
 			#error {
 				height: 100vh;
 				width: 100vw;
@@ -22,12 +23,16 @@
 				font-size: 5vw;
 				text-align: center;
 				background-color: RGB(0,0,0);
+			}
+			*/
 		</style>
 	</head>
 	<body>
+		<!--
 		<h1 id="error">
 			Temporarily debugging
 		</h1>
+		-->
 		<label for="word">
 			Word:
 		</label>
@@ -50,8 +55,6 @@
 		</code>
 	</body>
 	<script>
-		//Testing if script is enabled being the program's messed up
-		document.body.style.backgroundColor = "red";
 		function log(text) {
 			document.getElementById("log").innerHTML += "<br>" + text;
 		};
