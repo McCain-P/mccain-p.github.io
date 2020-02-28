@@ -4,7 +4,34 @@
 			Select-Element Styling Test
 		</title>
 		<style>
-		
+			select {
+				background-color: RGB(255,255,255);
+			}
+			select, select > option {
+				color: RGB(64,64,64);
+				font-family: "Arial", sans-serif;
+			}
+			select > option:nth-child(even) {
+				background-color: RGB(255,255,255);
+			}
+			select > option:nth-child(odd) {
+				background-color: RGB(192,192,192);
+			}
+			select:hover, select > option:hover {
+				background-color: RGB(192,192,192);
+			}
+			select > option:hover {
+				text-decoration: underline solid RGB(64,64,64);
+			}
+			select:active, select > option:active {
+				background-color: RGB(128,128,128);
+			}
+			select > option:nth-child(odd):hover {
+				background-color: RGB(128,128,128);
+			}
+			select > option:nth-child(odd):hover {
+				background-color: RGB(64,64,64);
+			}
 		</style>
 	</head>
 	<body>
