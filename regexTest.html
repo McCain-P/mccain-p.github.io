@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>
+			Regex Test
+		</title>
+	</head>
+	<body>
+		<p id="console">
+		</p>
+	</body>
+	<script>
+		document.getElementById("console").textContent += /\w+(ab)?/.test("ab") + "\n";
+		document.getElementById("console").textContent += /\w+(ab)?/.test("zab") + "\n";
+		document.getElementById("console").textContent += /\w+(ab)?/.test("z") + "\n";
+		document.getElementById("console").textContent += /\w+(ab)?/.test("") + "\n";
+	</script>
+</html>
