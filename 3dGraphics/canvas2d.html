@@ -18,18 +18,23 @@
 		</canvas>
 	</body>
 	<script>
-		var c = document.getElementById("main");
+		var canvasElement = document.getElementById("main");
 		var w = Math.round(0.8 * window.height);
 		var h = w;
-		c.width = w;
-		c.height = h;
+		canvasElement.width = w;
+		canvasElement.height = h;
+		var c = canvasElement.getContext("2d");
 		var pixelData = [];
 		var dh = 255 / h;
 		var dw = 255 / w;
 		for (var i = 0; i < h; i++) {
 			for (var j = 0; j < w; j++) {
-				pixelData[i * h + j * w] = X;
+				for (var k = 0; k < 3; k++) {
+					pixelData[i * h + j * w + k] = Math.round(i * dw);
+				};
 			};
 		};
+		var pixelImageData = new ImageData(pixelData, w, h);
+		c.putImageData(pixelImageData, 0, 0);
 	</script>
 </html>
