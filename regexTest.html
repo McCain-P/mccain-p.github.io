@@ -9,9 +9,10 @@
 		</p>
 	</body>
 	<script>
-		document.getElementById("console").textContent += /\w+(ab)?/.test("ab") + "\n";
-		document.getElementById("console").textContent += /\w+(ab)?/.test("zab") + "\n";
-		document.getElementById("console").textContent += /\w+(ab)?/.test("z") + "\n";
-		document.getElementById("console").textContent += /\w+(ab)?/.test("") + "\n";
+		document.getElementById("console").innerHTML += /\w+(ab)?/.test("ab") + "<\br>";
+		document.getElementById("console").innerHTML += /\w+(ab)?/.test("zab") + "<\br>";
+		document.getElementById("console").innerHTML += /\w+(ab)?/.test("z") + "<\br>";
+		document.getElementById("console").innerHTML += /\w+(ab)?/.test("") + "<\br>";
+		document.getElementById("console").innerHTML += /\w+(ab)?/.test(" ") + "<\br>";
 	</script>
 </html>
