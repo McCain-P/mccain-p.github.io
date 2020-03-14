@@ -28,8 +28,7 @@
 		const monokumaImage = document.getElementById("monokuma");
 		const monokumaLaughAudio = document.getElementById("monokumaLaugh");
 		monokumaImage.addEventListener("click", function() {
-			console.log(/(?:.*/)?monokumaSitting.png/.test(monokumaImage.src));
-			if (/(?:.*/)?monokumaSitting.png/.test(monokumaImage.src)) {
+			if (/(?:.*\/)?monokumaSitting.png/.test(monokumaImage.src)) {
 				monokumaImage.src = "monokumaSittingGiggling.png";
 				monokumaLaughAudio.play();
 				window.setTimeout(monokumaImage.src = "monokumaSitting.png", 2000);
