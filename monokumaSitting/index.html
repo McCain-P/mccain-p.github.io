@@ -18,14 +18,17 @@
 	<body>
 		<img alt="Monokuma" id="monokuma">
 		</img>
+		<audio src="monokumaLaughUpupupupu.mp3" id="monokumaLaugh">
+		</audio>
 	</body>
 	<script>
 		const monokumaImage = document.getElementById("monokuma");
+		const monokumaLaughAudio = document.getElementById("monokumaLaugh");
 		monokumaImage.addEventListener("click", function() {
 			if (monokumaImage.src === "monokumaSitting.png") {
 				monokumaImage.src = "monokumaSittingGiggling.png";
-			} else {
-				monokumaImage.src = "monokumaSitting.png";
+				monokumaLaughAudio.play();
+				window.setTimeout(monokumaImage.src = "monokumaSitting.png", 2000);
 			};
 		});
 	</script>
