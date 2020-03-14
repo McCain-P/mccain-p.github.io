@@ -31,7 +31,9 @@
 			if (/(?:.*\/)?monokumaSitting.png/.test(monokumaImage.src)) {
 				monokumaImage.src = "monokumaSittingGiggling.png";
 				monokumaLaughAudio.play();
-				//window.setTimeout(monokumaImage.src = "monokumaSitting.png", 2000);
+				window.setTimeout(function() {
+					monokumaImage.src = "monokumaSitting.png";
+				}, 2000);
 			};
 		});
 	</script>
