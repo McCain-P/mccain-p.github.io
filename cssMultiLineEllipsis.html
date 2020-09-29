@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<style>
+			.multiLineEllipsis {
+				shape-outside: polygon(0 0, 100% 0, 100% calc(100% - lh), calc(100% - 1ch) calc(100% - 1lh), calc(100% - 1ch) 100%, 0 100%);
+				overflow: hidden;
+			}
+			.multiLineEllipsis:after {
+				content: "\2026";
+			}
+			p {
+				height: 20vh;
+				width: 30vh;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="multiLineEllipsis">
+			Uoiagignb egibnui gb'ohsihbiuabsilaofbus idg  egoihajgbahgab
+		</p>
+	</body>
+</html>
