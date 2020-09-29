@@ -4,9 +4,13 @@
 			.multiLineEllipsis {
 				shape-outside: polygon(0 0, 100% 0, 100% calc(100% - 1ex), calc(100% - 1ch) calc(100% - 1ex), calc(100% - 1ch) 100%, 0 100%);
 				overflow: hidden;
+				position: relative;
 			}
 			.multiLineEllipsis:after {
 				content: "\2026";
+				position: absolute;
+				right: 0;
+				bottom: 0;
 			}
 			p {
 				height: 20vh;
