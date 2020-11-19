@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<title>
+			Noise Maker - Vuvezela
+		</title>
+		<style>
+			:root {
+				--white: RGB(240,240,240);
+				--redTransparent: RGBA(170,70,60,0.6);
+			}
+			body {
+				background: url("images/tf2CpGranary.jpg") center / cover no-repeat fixed padding-box padding-box;
+			}
+			*:focus {
+				outline: none;
+			}
+			*::selection {
+				background-color: var(--redTransparent);
+			}
+			@font-face {
+				font-family: "TF2 Secondary";
+				src: url("fonts/tf2secondary.woff2") format("woff2");
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "TF2 Professor";
+				src: url("fonts/tf2professor.woff2") format("woff2");
+				font-display: swap;
+			}
+			#playSound {
+				font-family: "TF2 Secondary", sans-serif;
+				font-size: 4vw;
+				color: var(--white);
+				background-color: var(--redTransparent);
+				width: 40vw;
+				height: 20vw;
+				position: fixed;
+				top: calc(50vh - 10vw);
+				left: 30vw;
+				border: 1vw solid var(--white);
+				border-radius: 20% 20% 40% 20% / 40% 20% 20% 20%;
+			}
+			#caption {
+				font-family: "TF2 Professor", sans-serif;
+				font-size: 3vw;
+				color: var(--white);
+				text-align: center;
+				width: 100vw;
+				height: auto;
+				position: fixed;
+				top: 10vh;
+				left: 0;
+			};
+		</style>
+	</head>
+	<body>
+		<audio src="sounds/Vuvezela_01.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_02.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_03.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_04.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_05.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_06.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_07.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_08.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_09.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_10.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_11.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_12.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_13.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_14.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_15.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_16.wav">
+		</audio>
+		<audio src="sounds/Vuvezela_17.wav">
+		</audio>
+		<p id="caption">
+			Actual sound that is possible to hear in Team Fortress 2
+		</p>
+		<button id="playSound">
+			PLAY
+		</button>
+	</body>
+	<script>
+		function playVuvezelaNoiseMakerSound() {
+			let sound = Math.floor(Math.random() * 17 + 1).toString();
+			if (sound.length === 1) {
+				sound = "0" + sound;
+			};
+			document.querySelector('audio[src="sounds/Vuvezela_' + sound + '.wav"]').play();
+		};
+		function playVuvezelaNoiseMakers() {
+			//24 players in a server
+			for (let i = 0; i < 24; i++) {
+				//25 uses for the vuvezela noise-maker, with a 2 second delay between uses
+				for (let j = 0; j < 25; j++) {
+					console.log(i + " " + j);
+					window.setTimeout(playVuvezelaNoiseMakerSound, 2000 * j);
+				};
+			};
+		};
+		document.getElementById("playSound").addEventListener("click", playVuvezelaNoiseMakers);
+	</script>
+</html>
